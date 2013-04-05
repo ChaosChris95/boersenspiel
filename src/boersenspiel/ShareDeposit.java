@@ -1,0 +1,66 @@
+package boersenspiel;
+
+/*
+ * 
+ */
+
+public class ShareDeposit extends Asset{	//extends richtig?
+
+	ShareItem[] shareItemList = new ShareItem[0];
+	
+	public ShareDeposit(String name){
+		super(name);
+	}
+	
+	public void addShareItem(ShareItem add){
+		ShareItem[] temporal = new ShareItem[shareItemList.length + 1];
+		for (int i=0; i<shareItemList.length; i++){
+			temporal[i] = shareItemList[i];
+		}
+		temporal[temporal.length-1] = add;
+		shareItemList = temporal;
+	}
+	
+	public void removeShareItem(ShareItem remove){
+		
+		ShareItem[] temporal = new ShareItem[shareItemList.length - 1];
+		boolean identified = false;
+		for (int i=0; i<shareItemList.length-1; i++){
+			if (shareItemList[i] == remove)
+				identified = true;
+				temporal[i] = shareItemList[i+1];
+			if(identified){
+					temporal[i] = shareItemList[i+1];
+			}
+			else
+				temporal[i] = shareItemList[i];
+		}
+		shareItemList = temporal;
+	}
+	
+	public long getValue(){
+		long totalValue = 0;
+		for (int i=0; i<shareItemList.length; i++){
+			totalValue += shareItemList[i].getValue();
+		}
+		return totalValue;
+	}
+	
+	public String print(){
+		
+		String output = "";
+		for (int i=0; i<shareItemList.length; i++){
+			output += (shareItemList[i].name) + "\n";
+		}
+		return output;
+	}
+	
+	public String toString(){
+		return ("ShareDeposit " + name + " mit einem Gesamtwert von " + getValue()
+				+ ", dass aus folgenden ShareItems besteht:\n"
+				+ print());
+	}
+	
+	//Methoden kaufen=add verkaufen=remove
+	
+}
