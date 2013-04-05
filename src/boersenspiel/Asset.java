@@ -12,6 +12,10 @@ public abstract class Asset {	//Kapital
 	public Asset(String name){
 		this.name = name;
 	}
+   
+  public String getName(){
+    return name;
+  }
 	
 	public abstract long getValue();
 	
