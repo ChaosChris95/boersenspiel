@@ -1,7 +1,8 @@
 package boersenspiel;
 
-/*
- * 
+/**
+ * @author jan
+ * Der Spieler des Boersenspiels
  */
 
 public class Player {
@@ -10,13 +11,13 @@ public class Player {
 	private boolean broken =false;	//pleite
 	private CashAccount cashAccount;
 	
-	public Player(String name, CashAccount cashAccount){ //
+	public Player(String name, CashAccount cashAccount){
 		this.name=name;
-		broken=false;	//Startwert aus Account beachten
-		this.cashAccount = cashAccount;	//
+		broken=false;	//!Startwert aus Account beachten
+		this.cashAccount = cashAccount;
 	}
 	
-	public long getProperty(){	//
+	public long getProperty(){
 		return cashAccount.getValue();
 	}
 	

@@ -1,10 +1,11 @@
 package boersenspiel;
 
-/*
- * 
+/**
+ * @author jan
+ * Aktien
  */
 
-public class Share {
+public class Share { //Aktie
 
 	private final String name;
 	private long price;	//Kurs

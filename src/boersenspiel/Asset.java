@@ -1,6 +1,7 @@
 package boersenspiel;
 
-/*
+/**
+ * @author jan
  * Vermoegenswerte des Spielers
  * davon Abgeleitet sind CashAccount, ShareItems und ShareDeposit
  */
@@ -14,9 +15,7 @@ public abstract class Asset {	//Kapital
 	}
    
 	public String getName(){
-
 		return name;
-  
 	}
 	
 	public abstract long getValue();
@@ -32,7 +31,5 @@ public abstract class Asset {	//Kapital
 			}
 		}
 		return false;
-
-	}
-	
+	}	
 }

@@ -1,12 +1,13 @@
 package boersenspiel;
 
-/*
+/**
+ * @author jan
  * Der Bankaccount des Spielers
  */
 
 public class CashAccount extends Asset{ //Konto
 
-	private long accountValue;//Kontostand
+	private long accountValue; //Kontostand
 	
 	public CashAccount(String name, long accountValue){
 		super(name);

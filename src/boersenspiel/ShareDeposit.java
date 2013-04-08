@@ -1,10 +1,11 @@
 package boersenspiel;
 
-/*
- * 
+/**
+ * @author jan
+ * Hier Lagern die ShareItems (Aktienpakete)
  */
 
-public class ShareDeposit extends Asset{	//extends richtig?
+public class ShareDeposit extends Asset{
 
 	ShareItem[] shareItemList = new ShareItem[0];
 	

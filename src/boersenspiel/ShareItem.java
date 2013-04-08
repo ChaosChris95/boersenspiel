@@ -1,7 +1,8 @@
 package boersenspiel;
 
-/*
- * Aktienpakete
+/**
+ * @author jan
+ * Aktienpaktet
  */
 
 public class ShareItem extends Asset{
@@ -45,17 +46,12 @@ public class ShareItem extends Asset{
 			value += add.getPrice();
 		}
 		else if (add.getName() != name){
-			ShareItem shareItem = new ShareItem(add.getName());
+			ShareItem shareItem = new ShareItem(add.getName()); //nicht Gut Fehlermeldung?
 		}
 		
 	}
 	
 	public long getValue(){
-		/*long totalValue = 0;
-		for (int i=0; i<shareList.length; i++){
-			totalValue += shareList[i].getPrice();	
-		}
-		return totalValue;*/
 		return value;
 	}
 	
@@ -67,20 +63,8 @@ public class ShareItem extends Asset{
 		value += add;
 	}
 
-	/*public String print(){
-		String output = "";
-		for (int i=0; i<shareList.length; i++){
-			output += (shareList[i].getName()) + "\n";
-		}
-		return output;
-	}*/
-
 	public String toString(){
-		/*return ("ShareItem " + name + " mit einem Gesamtwert von " + getValue() 
-		+ ", dass aus folgenden Shares besteht:\n"
-		+ print());*/
 		return ("ShareItem " + name + " mit einem Gesamtwert von " + getValue()); 		
-		
 	}
 	
 }
