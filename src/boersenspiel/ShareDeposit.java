@@ -13,6 +13,14 @@ public class ShareDeposit extends Asset{	//extends richtig?
 	}
 	
 	public void addShareItem(ShareItem add){
+		
+		for (int i = 0; i<shareItemList.length; i++){
+			if (shareItemList[i].getName() == add.getName()){
+				shareItemList[i].addValue(add.getValue());
+				shareItemList[i].addShareAmount(add.getShareAmount());
+			}
+		}
+			
 		ShareItem[] temporal = new ShareItem[shareItemList.length + 1];
 		for (int i=0; i<shareItemList.length; i++){
 			temporal[i] = shareItemList[i];

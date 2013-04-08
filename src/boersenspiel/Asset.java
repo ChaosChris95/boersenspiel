@@ -7,7 +7,7 @@ package boersenspiel;
 
 public abstract class Asset {	//Kapital
 	
-	final String name;
+	protected String name;
 	
 	public Asset(String name){
 		this.name = name;
