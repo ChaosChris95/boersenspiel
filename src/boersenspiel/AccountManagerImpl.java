@@ -1,53 +1,55 @@
 package boersenspiel;
 
 /**
- * @author jan
- * Implementiert das Interface BancCustomerView
+ * Created with IntelliJ IDEA.
+ * User: Peach
+ * Date: 09.04.13
+ * Time: 17:34
+ * To change this template use File | Settings | File Templates.
  */
+public class AccountManagerImpl implements AccountManager{
+    @Override
+    public void createPlayer(String name, long cash) {
 
-public class AccountManagerImpl {
+    }
 
-	/*
-	Ein neues Konto anlegen (Giro- oder Festgeldkonto).
-	Einen Kontostand abfragen.
-	Einen Betrag auf ein Konto einzahlen.
-	Einen Betrag von einem Konto abheben.
-	Von einem Konto auf ein anderes Konto (bei derselben Bank) eine Überweisung durchführen. 
-	
-	alles aus BancImpl auch ins Internet
-	nicht verzinsen() und list()
-	*/
+    @Override
+    public void buy(String name, String shareName, int value) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 
-	private CashAccount[] accountList = new CashAccount[10];
-	private int accountNumber = 1000; //dummy?
-	private long bancValue = 0;
-	
-	public AccountManagerImpl (CashAccount[] accountList, int accountNumber){
-		this.accountList = accountList;
-		this.accountNumber = accountNumber;
-	}
-	
-	public long payInterest(long interest){
-		bancValue = bancValue + bancValue * interest;
-		return bancValue;
-	}
-	
-	public void list(){	//?
-	
-	}
-	
-	/*public long getValue(){
+    @Override
+    public void sell(String name, String shareName, int value) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 
-	}*/
-	
-	public void addValue(long add){
-		bancValue += add;
-	}
-	
-	public void offValue(long off){
-		bancValue -= off;
-	}
-	
-	//Überweisung?
-	
+    @Override
+    public long getCashAccountValue(String name) {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public long getShareItemValue(String name) {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public long getShareDepositValue(String name) {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public long getAssetValue(String name) {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public long getRate(String shareName) {
+        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void getList() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 }
