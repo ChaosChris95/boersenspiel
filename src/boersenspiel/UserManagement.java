@@ -19,7 +19,7 @@ public class UserManagement {
         for (int i = 0; i<this.players.length; i++){
             buffer[i] = players[i];
         }
-        buffer[buffer.length - 1] = new Player(name, new CashAccount(name, cash));
+        buffer[buffer.length - 1] = new Player(name);
         players = buffer;
     }
 

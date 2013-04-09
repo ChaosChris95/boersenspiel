@@ -8,9 +8,18 @@ package boersenspiel;
  * To change this template use File | Settings | File Templates.
  */
 public class AccountManagerImpl implements AccountManager{
+
+    private UserManagement userManagement;
+    private ShareManagement shareManagement;
+
+    public AccountManagerImpl() {
+        userManagement = new UserManagement();
+        shareManagement = new ShareManagement();
+    }
+
     @Override
     public void createPlayer(String name, long cash) {
-
+        userManagement.addPlayer(name, cash);
     }
 
     @Override
@@ -25,12 +34,12 @@ public class AccountManagerImpl implements AccountManager{
 
     @Override
     public long getCashAccountValue(String name) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return userManagement.getPlayer(name).getCashAccountValue();
     }
 
     @Override
     public long getShareItemValue(String name) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return
     }
 
     @Override
@@ -40,16 +49,16 @@ public class AccountManagerImpl implements AccountManager{
 
     @Override
     public long getAssetValue(String name) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+
     }
 
     @Override
     public long getRate(String shareName) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return shareManagement.getSpecificRate(shareName);
     }
 
     @Override
     public void getList() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        shareManagement.listAll();
     }
 }

@@ -29,7 +29,13 @@ public class ShareManagement {
                 return shares[i].getPrice();
             }
         }
-        return 0;
+        return 0;   //TODO vllt Exception
+    }
+
+    public void listAll(){
+        for (int i = 0; i < shares.length; i++){
+            shares[i].toString();
+        }
     }
 
 }

@@ -9,10 +9,9 @@ public class ShareItem extends Asset{
 	
 	private int shareAmount;
 	private long value;
-	//private Share[] shareList = new Share[0];
 	
 
-	public ShareItem(String name){
+	public ShareItem(String name, Share share){
 		super(name);
 		shareAmount = 0;
 		value = 0;		
@@ -29,15 +28,7 @@ public class ShareItem extends Asset{
 	public void addShareAmount(int add){
 		shareAmount += add;
 	}
-	
-	/*public void addShare(Share add){
-		Share[] temporal = new Share[shareList.length + 1];
-		for (int i=0; i<shareList.length; i++){
-			temporal[i] = shareList[i];
-		}
-		temporal[temporal.length-1] = add;
-		shareList = temporal;
-	}*/
+
 	
 	public void addShare(Share add){
 		

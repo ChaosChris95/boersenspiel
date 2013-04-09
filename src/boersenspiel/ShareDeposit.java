@@ -9,8 +9,8 @@ public class ShareDeposit extends Asset{
 
 	ShareItem[] shareItemList = new ShareItem[0];
 	
-	public ShareDeposit(String name){
-		super(name);
+	public ShareDeposit(){
+		super("ShareDeposit");                  //TODO evtl DepositNumber?
 	}
 	
 	public void addShareItem(ShareItem add){
@@ -29,6 +29,16 @@ public class ShareDeposit extends Asset{
 		temporal[temporal.length-1] = add;
 		shareItemList = temporal;
 	}
+
+    public void addShare(Share share) {
+        for (int i = 0; i < shareItemList.length; i++) {
+            if (shareItemList[i].getName().equals(share.getName())) {
+                shareItemList[i].addShare(share);
+                return;
+            }
+        }
+        addShareItem(new ShareItem(share.getName(),share));
+    }
 	
 	public void removeShareItem(ShareItem remove){
 		
