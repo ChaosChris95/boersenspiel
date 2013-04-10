@@ -8,9 +8,11 @@ package boersenspiel;
 public class ShareDeposit extends Asset{
 
 	ShareItem[] shareItemList = new ShareItem[0];
+	private static int depositNumber = 0;
 	
 	public ShareDeposit(){
-		super("ShareDeposit");                  //TODO evtl DepositNumber?
+		super("ShareDeposit");
+		depositNumber++;
 	}
 	
 	public void addShareItem(ShareItem add){
@@ -37,7 +39,7 @@ public class ShareDeposit extends Asset{
                 return;
             }
         }
-        addShareItem(new ShareItem(share.getName(),share));
+        addShareItem(new ShareItem(share.getName()));
     }
 	
 	public void removeShareItem(ShareItem remove){

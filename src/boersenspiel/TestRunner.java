@@ -1,7 +1,7 @@
 package boersenspiel;
 
 /*
- * 
+ * Lässt dass Programm laufen
  */
 
 public class TestRunner {
@@ -12,7 +12,7 @@ public class TestRunner {
 		System.out.println(share1.toString());
 		Share share2 = new Share("Siemens", 200); 
 		System.out.println(share2.toString());
-		Share share3 = new Share("BMW", 100); 
+		Share share3 = new Share("BMW", 150); 
 		System.out.println(share3.toString());
 		
 		ShareItem shareItem = new ShareItem ("Siemens");
@@ -24,7 +24,7 @@ public class TestRunner {
 		shareItem2.addShare(share3);
 		System.out.println(shareItem2.toString());
 		
-		ShareDeposit shareDeposit = new ShareDeposit("Projekt 1");
+		ShareDeposit shareDeposit = new ShareDeposit();
 		shareDeposit.addShareItem(shareItem);
 		shareDeposit.addShareItem(shareItem2);
 		System.out.println(shareDeposit.toString());
