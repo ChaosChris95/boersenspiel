@@ -39,7 +39,7 @@ public class AccountManagerImpl implements AccountManager{
 
     @Override
     public long getShareItemValue(String name) {
-        return
+        return 0;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AccountManagerImpl implements AccountManager{
 
     @Override
     public long getAssetValue(String name) {
-
+    	return 0;
     }
 
     @Override
