@@ -65,7 +65,7 @@ public class Player {
     }
 
     public String toString() {
-        return "Spieler mit dem Namen " + name + " und mit dem Kontostand " + getProperty();
+        return "Spieler mit dem Namen " + name + " und einem Kontostand von " + getProperty();
     }
 
 }

@@ -10,6 +10,7 @@ public class TestRunner {
 
         Player one = new Player("Bianca");
         one.addCash(40000);
+        System.out.println(one.toString());
 
 		Share share1 = new Share("Siemens", 100); 
 		System.out.println(share1.toString());
