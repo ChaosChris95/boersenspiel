@@ -1,8 +1,11 @@
 package boersenspiel;
 
 /**
- * @author jan
- * Interface wird implementiert duch BancImpl
+ * Created with IntelliJ IDEA.
+ * User: Peach
+ * Date: 09.04.13
+ * Time: 17:57
+ * To change this template use File | Settings | File Templates.
  */
 
 public interface AccountManager {
@@ -11,7 +14,7 @@ public interface AccountManager {
     public void createPlayer(String name, long cash);
 
     //Aktie kaufen
-    public void buy(String name, String shareName, int value);
+    public void buy(String name, String shareName, int value) throws Exception;
 
     //Aktie verkaufen
     public void sell(String name, String shareName, int value);
@@ -20,7 +23,7 @@ public interface AccountManager {
     public long getCashAccountValue(String name);
 
     //Abfragen des Wertes in ShareItem
-    public long getShareItemValue(String name);
+    public long getShareItemValue(String playerName, String shareItemName);
 
     //Abfragen des Wertes in ShareDeposit
     public long getShareDepositValue(String name);

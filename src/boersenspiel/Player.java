@@ -16,15 +16,37 @@ public class Player {
         this.name = name;
         broken = false;    //!Startwert aus Account beachten
         cashAccount = new CashAccount(0);
+        shareDeposit = new ShareDeposit();
 
+    }
+
+    public void addShareToDeposit(Share share, int amount){
+        shareDeposit.addShare(share, amount);
+    }
+
+    public void subShareFromDeposit(Share share, int amount) {
+        long ret = shareDeposit.sellShare(share, amount);
+        this.addCash(ret);
     }
 
     public void addCash(long cash) {
         cashAccount.addCash(cash);
     }
 
+    public void subCash(long cash) throws Exception{
+        cashAccount.subCash(cash);
+    }
+
     public long getCashAccountValue() {
         return cashAccount.getValue();
+    }
+
+    public long getShareItemValue(String shareItemName) {
+        return shareDeposit.getShareItemValue(shareItemName);
+    }
+
+    public long getShareDepositValue() {
+        return shareDeposit.getValue();
     }
 
     public long getProperty() {

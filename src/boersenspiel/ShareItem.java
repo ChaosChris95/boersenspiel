@@ -9,43 +9,41 @@ public class ShareItem extends Asset{
 	
 	private int shareAmount;
 	private long value;
+    private final Share share;
 	
 
-	public ShareItem(String name){
-		super(name);
-		shareAmount = 0;
-		value = 0;		
+	public ShareItem(Share share, int shareAmount){
+		super(share.getName());
+		this.shareAmount = shareAmount;
+		value = share.getPrice()*shareAmount;
+        this.share = share;
 	}
 	
 	public int getShareAmount(){
 		return shareAmount;
 	}
 	
-	/*public void setShareAmount(int set){
-		shareAmount = set;
-	}*/
-	
-	public void addShareAmount(int add){
-		shareAmount += add;
+	public void addShareAmount(int amount){
+        value += this.share.getPrice()*amount;
+        shareAmount += amount;
 	}
 
-	public void addShare(Share add){	
-		if (add.getName() == name){
-			shareAmount++;
-			value += add.getPrice();
-		}
-		else if (add.getName() != name){
-			System.out.println("Falsches Share wird zum ShareItem hinzugefügt");
-		}	
-	}
+    public void removeShareAmount(int amount) {
+       if (amount > shareAmount) {
+          throw new Error("Nicht genug Aktien vorhanden!");
+       } else {
+          shareAmount -= amount;
+       }
+
+    }
 	
 	public long getValue(){
 		return value;
 	}
 	
-	/*public void setValue(long set){
+	public void setValue(long set){
 		value = set;
-	}*/
+	}
 	
 	public void addValue(long add){
 		value += add;

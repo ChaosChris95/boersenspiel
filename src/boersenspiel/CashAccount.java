@@ -10,7 +10,7 @@ public class CashAccount extends Asset{ //Konto
 	private long accountValue; //Kontostand
 	
 	public CashAccount(long accountValue){
-		super("CashAccount");                       //TODO evtl Kontonummer?
+		super("CashAccount");
 		this.accountValue=accountValue;	//Startstand
 	}
 	
@@ -26,17 +26,12 @@ public class CashAccount extends Asset{ //Konto
 		return ("Der Kontostand des Accounts " + name + " betraegt: " + getValue());
 	}
 	
-	public void buy(long price){
+	public void subCash(long cash) throws Exception{
 		
-		if (price > accountValue){
-			System.out.println("Zu Teuer");
-			return;
+		if (cash > accountValue){
+            throw new Exception("Sie besitzen nicht genügend Geld!");
 		}
-		accountValue -= price;
-	}
-	
-	public void sell(long price){
-		accountValue += price;
+		accountValue -= cash;
 	}
 	
 }

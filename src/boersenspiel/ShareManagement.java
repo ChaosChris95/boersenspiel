@@ -10,7 +10,7 @@ package boersenspiel;
 public class ShareManagement {
     private Share[] shares;
 
-    public ShareManagement(){
+    public ShareManagement() {
         shares = new Share[0];
     }
 
@@ -23,17 +23,26 @@ public class ShareManagement {
         shares = buffer;
     }
 
+    public Share getShare(String shareName) {
+        for (int i = 0; i < shares.length; i++) {
+            if (shareName.equals(shares[i].getName())) {       //same: if(shares[i].equals(shareName))
+                return shares[i];
+            }
+        }
+        return null;                                          //TODO Exception
+    }
+
     public long getSpecificRate(String name) {
-        for (int i = 0; i < shares.length; i++){
+        for (int i = 0; i < shares.length; i++) {
             if (name.equals(shares[i].getName())) {
                 return shares[i].getPrice();
             }
         }
-        return 0;   //TODO vllt Exception
+        return 0;                                           //TODO vllt Exception
     }
 
-    public void listAll(){
-        for (int i = 0; i < shares.length; i++){
+    public void listAll() {
+        for (int i = 0; i < shares.length; i++) {
             shares[i].toString();
         }
     }

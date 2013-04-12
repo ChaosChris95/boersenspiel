@@ -8,11 +8,9 @@ package boersenspiel;
 public class ShareDeposit extends Asset{
 
 	ShareItem[] shareItemList = new ShareItem[0];
-	private static int depositNumber = 0;
 	
 	public ShareDeposit(){
-		super("ShareDeposit");
-		depositNumber++;
+		super("ShareDeposit");                  //TODO evtl DepositNumber?
 	}
 	
 	public void addShareItem(ShareItem add){
@@ -32,15 +30,27 @@ public class ShareDeposit extends Asset{
 		shareItemList = temporal;
 	}
 
-    public void addShare(Share share) {
+    public void addShare(Share share, int amount) {
         for (int i = 0; i < shareItemList.length; i++) {
             if (shareItemList[i].getName().equals(share.getName())) {
-                shareItemList[i].addShare(share);
+                shareItemList[i].addShareAmount(amount);
                 return;
             }
         }
-        addShareItem(new ShareItem(share.getName()));
+        addShareItem(new ShareItem(share, amount));
     }
+
+    public long sellShare(Share share, int amount) {
+        for (int i = 0; i < shareItemList.length; i++) {
+            if (shareItemList[i].getName().equals(share.getName())) {
+                shareItemList[i].removeShareAmount(amount);
+                return shareItemList[i].getValue() * amount;
+            }
+
+        }
+        return 0;
+    }
+
 	
 	public void removeShareItem(ShareItem remove){
 		
@@ -66,6 +76,15 @@ public class ShareDeposit extends Asset{
 		}
 		return totalValue;
 	}
+
+    public long getShareItemValue(String shareItemName){
+        for (int i = 0; i < shareItemList.length; i++){
+            if (shareItemName.equals(shareItemList[i].getName())){
+               return shareItemList[i].getValue();
+            }
+        }
+        return 0;
+    }
 	
 	public String print(){
 		
