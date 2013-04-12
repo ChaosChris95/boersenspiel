@@ -2,7 +2,7 @@ package boersenspiel;
 
 /**
  * @author jan
- *         Der Spieler des Boersenspiels
+ * Der Spieler des Boersenspiels
  */
 
 public class Player {

@@ -38,7 +38,7 @@ public class ShareManagement {
                 return shares[i].getPrice();
             }
         }
-        return 0;                                           //TODO vllt Exception
+        return 0;      //Veränderbarer Kurs?                                     //TODO vllt Exception
     }
 
     public void listAll() {
