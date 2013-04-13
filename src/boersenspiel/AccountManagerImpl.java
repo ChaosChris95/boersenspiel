@@ -64,7 +64,7 @@ public class AccountManagerImpl implements AccountManager{
     }
 
     @Override
-    public void getList() {
-        shareManagement.listAll();
+    public String getList() {
+        return shareManagement.listAll();
     }
 }

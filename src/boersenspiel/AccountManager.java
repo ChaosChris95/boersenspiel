@@ -14,10 +14,10 @@ public interface AccountManager {
     public void createPlayer(String name, long cash);
 
     //Aktie kaufen
-    public void buy(String name, String shareName, int value) throws Exception;
+    public void buy(String name, String shareName, int amount) throws Exception;
 
     //Aktie verkaufen
-    public void sell(String name, String shareName, int value);
+    public void sell(String name, String shareName, int amount);
 
     //Abfragen des Wertes im CashAccount
     public long getCashAccountValue(String name);
@@ -35,6 +35,6 @@ public interface AccountManager {
     public long getRate(String shareName);
 	
 	//Aktienliste mit Kurswerten ausgeben
-	public void getList();  //TODO muss noch implementiert werden
+	public String getList();  //TODO muss noch implementiert werden
 
 }

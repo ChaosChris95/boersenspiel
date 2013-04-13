@@ -12,7 +12,7 @@ public class TestRunner {
         one.addCash(40000);
         System.out.println(one.toString());
 
-		Share share1 = new Share("Siemens", 100); 
+		/*Share share1 = new Share("Siemens", 100);
 		System.out.println(share1.toString());
 		Share share2 = new Share("Ford", 200);
 		System.out.println(share2.toString());
@@ -37,7 +37,17 @@ public class TestRunner {
 
         shareDeposit.sellShare(share2, 20);
         shareDeposit.sellShare(share3, 150);
-        System.out.println(shareDeposit.toString());
+        System.out.println(shareDeposit.toString());*/
+
+        ShareManagement shareManagement = new ShareManagement();
+        shareManagement.addShare("BMW", 100);
+        shareManagement.addShare("Audi", 200);
+
+        AccountManager accountManager = new AccountManagerImpl();
+        System.out.println(accountManager.getList());
+
+        //Irgendwie stimmt hier was nicht, ich glaub es müssten addShare nicht Name und Preis übergeben werden,
+        //sondern Share sonst kann ich die toString() Methode nicht benutzen.
 	
 		/*CashAccount cashAccount = new CashAccount ("Sparkasse", 10000);
 		System.out.println(cashAccount.toString());

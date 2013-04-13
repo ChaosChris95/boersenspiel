@@ -41,10 +41,12 @@ public class ShareManagement {
         return 0;      //Veränderbarer Kurs?                                     //TODO vllt Exception
     }
 
-    public void listAll() {
+    public String listAll() {
+        String display = "Alle Verfuegbaren Aktien:\n";
         for (int i = 0; i < shares.length; i++) {
-            shares[i].toString();
+            display += shares[i].toString() + "\n";
         }
+        return display;
     }
 
 }
