@@ -51,6 +51,10 @@ public class Player {
         return shareDeposit.getValue();
     }
 
+    public int getShareAmount(String shareItemName) {
+        return shareDeposit.getShareAmount(shareItemName);
+    }
+
     public String getName() {    //
         return name;
     }

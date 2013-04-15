@@ -85,6 +85,15 @@ public class ShareDeposit extends Asset{
         }
         return 0;
     }
+
+    public int getShareAmount(String shareItemName) {
+        for (int i = 0; i < shareItemList.length; i++) {
+            if (shareItemName.equals(shareItemList[i].getName())) {
+                return shareItemList[i].getShareAmount();
+            }
+        }
+        return 0;
+    }
 	
 	public String print(){
 		
@@ -101,6 +110,6 @@ public class ShareDeposit extends Asset{
 				+ print());
 	}
 	
-	//Methoden kaufen=add verkaufen=remove
+
 	
 }

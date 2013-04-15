@@ -17,7 +17,7 @@ public interface AccountManager {
     public void buy(String name, String shareName, int amount) throws Exception;
 
     //Aktie verkaufen
-    public void sell(String name, String shareName, int amount);
+    public void sell(String name, String shareName, int amount) throws Exception;
 
     //Abfragen des Wertes im CashAccount
     public long getCashAccountValue(String name);

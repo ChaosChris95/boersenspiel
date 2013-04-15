@@ -21,8 +21,9 @@ public class TestRunner {
         System.out.println(one.getCashAccountValue());
         System.out.println(one.getShareDepositValue());
         System.out.println(one.getStockList());
-        System.out.println(one.subShareFromDeposit(shareManagement.getShare("BMW"), 5);
-
+        one.subShareFromDeposit(shareManagement.getShare("BMW"), 5);
+        System.out.println(one.getCashAccountValue());
+        System.out.println(one.getShareAmount("BMW"));
 
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
         System.out.println(accountManager.getList());
