@@ -42,9 +42,10 @@ public class ShareManagement {
     }
 
     public String listAll() {
-        String display ="Alle Verfügbaren Aktien \n";
+
+        String display = "Alle verfügbaren Aktien:\n";
         for (int i = 0; i < shares.length; i++) {
-            display += shares[i];
+            display += shares[i].getName() + "\n";                                                  //display += shares[i].toString() + "\n";
         }
         return display;
     }

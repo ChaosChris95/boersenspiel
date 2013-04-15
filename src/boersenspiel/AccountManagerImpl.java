@@ -12,9 +12,9 @@ public class AccountManagerImpl implements AccountManager{
     private UserManagement userManagement;
     private ShareManagement shareManagement;
 
-    public AccountManagerImpl() {
+    public AccountManagerImpl(ShareManagement shareManagement) {
         userManagement = new UserManagement();
-        shareManagement = new ShareManagement();
+        this.shareManagement = shareManagement;
     }
 
     @Override
