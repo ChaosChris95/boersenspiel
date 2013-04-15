@@ -43,7 +43,7 @@ public class TestRunner {
         shareManagement.addShare("BMW", 100);
         shareManagement.addShare("Audi", 200);
 
-        AccountManager accountManager = new AccountManagerImpl();
+        AccountManagerImpl accountManager = new AccountManagerImpl();
         System.out.println(accountManager.getList());
 
         //Irgendwie stimmt hier was nicht, ich glaub es müssten addShare nicht Name und Preis übergeben werden,
