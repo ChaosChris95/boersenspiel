@@ -23,6 +23,10 @@ public class ShareManagement {
         shares = buffer;
     }
 
+    public Share[] getShareList(){
+        return shares;
+    }
+
     public Share getShare(String shareName) {
         for (int i = 0; i < shares.length; i++) {
             if (shareName.equals(shares[i].getName())) {       //same: if(shares[i].equals(shareName))

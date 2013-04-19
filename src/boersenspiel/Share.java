@@ -26,5 +26,13 @@ public class Share { //Aktie
 	public String toString(){
 		return ("Share mit den Namen " + name + " und den Preis " + price);
 	}
+
+    public void setPrice(long set){
+        price = set;
+    }
+
+    public void increasePrice(long set){
+        price += set;
+    }
 	
 }

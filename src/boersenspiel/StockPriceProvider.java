@@ -7,34 +7,39 @@ package boersenspiel;
  * Time: 14:00
  * To change this template use File | Settings | File Templates.
  */
-public class StockPriceProvider {
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public abstract class StockPriceProvider {
+
+    private ShareManagement shareManagement = new ShareManagement();
+
+    public StockPriceProvider(){
+        this.shareManagement = shareManagement;
+    }
 
     public boolean isShareListed(String shareName){
+          if (shareManagement.getShare(shareName) != null)
+              return true;
           return false;
     }
 
     public long getCurrentShareRate(String shareName){
-           return 0;
+           return 0;                        //TODO aktueller Kurswert bestimmen
     }
-
 
     public Share[] getAllSharesAsSnapShot(){
-          return new Share[0];
+          return shareManagement.getShareList();    //TODO ist das damit gemeint?
     }
 
-    protected void updateShareRates(){
+    protected abstract void updateShareRates();
 
-    }
+    protected abstract void updateShareRate(Share share);
 
-    protected void updateShareRates(Share share){
-
-    }
-
-    public void startUpdate(){
-
-    }
+    public abstract void startUpdate();
 
     public Share getShare(String name){
-          return new Share("dummy", 0);
+          return shareManagement.getShare(name);
     }
 }

@@ -7,19 +7,8 @@ package boersenspiel;
  * Time: 13:56
  * To change this template use File | Settings | File Templates.
  */
-public class StockPriceViewer {
 
-    public StockPriceViewer(StockPriceInfo stockPriceInfo){
-
-    }
-
-    public void start(){
-
-    }
-
-}
-
-/*import java.util.TimerTask;
+import java.util.TimerTask;
 import java.util.Timer;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,10 +16,12 @@ import java.text.DateFormat;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class ViewerDemo extends JFrame {
+public class StockPriceViewer extends JFrame{
+
     private static final int TICK_PERIOD = 1000;
     private Timer ticker;
     private JLabel clockLabel;
+    private static StockPriceProvider stockPriceProvider = new StockPriceProvider();
 
     private class TickerTask extends TimerTask {
         public void run() {
@@ -50,7 +41,7 @@ public class ViewerDemo extends JFrame {
     }
 
 
-    public ViewerDemo() {
+    public StockPriceViewer() {
         clockLabel = new JLabel("coming soon ...");
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -64,8 +55,8 @@ public class ViewerDemo extends JFrame {
         ticker.scheduleAtFixedRate(new TickerTask(), 1000, TICK_PERIOD);
     }
 
-    public static void main(String[] args) {
-        ViewerDemo viewerDemo = new ViewerDemo();
-        viewerDemo.start();
-    }
-}*/
+    /*public static void main(String[] args) {
+        StockPriceProvider stockPriceProvider = new StockPriceViewer(stockPriceProvider);
+        stockPriceViewer.start();
+    }*/
+}
