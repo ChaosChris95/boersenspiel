@@ -1,20 +1,22 @@
 package boersenspiel;
 
 /**
- * @author jan
- * Der Spieler des Boersenspiels
+ * Created with IntelliJ IDEA.
+ * User: Jan
+ * Date: 09.04.13
+ * Time: 17:34
  */
 
 public class Player {
 
-    private final String name;    //Name
-    private boolean broken = false;    //pleite
+    private final String name;
+    private boolean broken = false;
     private CashAccount cashAccount;
     private ShareDeposit shareDeposit;
 
     public Player(String name) {
         this.name = name;
-        broken = false;    //!Startwert aus Account beachten
+        broken = false;
         cashAccount = new CashAccount(0);
         shareDeposit = new ShareDeposit();
 
@@ -55,7 +57,7 @@ public class Player {
         return shareDeposit.getShareAmount(shareItemName);
     }
 
-    public String getName() {    //
+    public String getName() {
         return name;
     }
 

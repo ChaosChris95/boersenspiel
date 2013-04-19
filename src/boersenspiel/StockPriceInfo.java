@@ -5,13 +5,29 @@ package boersenspiel;
  * User: jan
  * Date: 13.04.13
  * Time: 10:37
- * To change this template use File | Settings | File Templates.
  */
 public interface StockPriceInfo {
 
+    /**
+     * is this share an avaiable share?
+     * @param shareName
+     * @return boolean
+     */
+
     boolean isShareListed(String shareName);
 
+    /**
+     * get current price of a share
+     * @param shareName
+     * @return long
+     */
+
     long getCurrentShareRate(String shareName);
+
+    /**
+     * returns all share as an Share[]
+     * @return Share[]
+     */
 
     Share[] getAllSharesAsSnapShot();
 }

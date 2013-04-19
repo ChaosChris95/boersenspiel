@@ -5,8 +5,8 @@ package boersenspiel;
  * User: Peach
  * Date: 09.04.13
  * Time: 17:57
- * To change this template use File | Settings | File Templates.
  */
+
 public class UserManagement {
     private Player[] players;
 

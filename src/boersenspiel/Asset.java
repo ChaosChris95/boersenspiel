@@ -1,12 +1,13 @@
 package boersenspiel;
 
 /**
- * @author jan
- * Vermoegenswerte des Spielers
- * davon Abgeleitet sind CashAccount, ShareItems und ShareDeposit
+ * Created with IntelliJ IDEA.
+ * User: Jan
+ * Date: 09.04.13
+ * Time: 17:34
  */
 
-public abstract class Asset {	//Kapital
+public abstract class Asset {
 	
 	protected String name;
 	
@@ -26,7 +27,7 @@ public abstract class Asset {	//Kapital
 	public boolean equals(Object obj){
 		if (obj instanceof Asset){
 			Asset a =(Asset) obj;
-			if (this.name == a.name){
+			if (this.name == a.name){   //TODO equals
 				return true;
 			}
 		}

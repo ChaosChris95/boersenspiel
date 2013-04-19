@@ -1,12 +1,11 @@
 package boersenspiel;
 
 /**
- * Created with IntelliJ IDEA.
- * User: jan
- * Date: 15.04.13
- * Time: 14:10
- * To change this template use File | Settings | File Templates.
- */
+* Created with IntelliJ IDEA.
+* User: jan
+* Date: 15.04.13
+* Time: 14:10
+*/
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,19 +21,26 @@ public class RandomStockPriceProvider extends StockPriceProvider {
         super(shareManagement);
     }
 
-    protected void updateShareRates(){
+    protected void updateShareRates() throws NullPointerException{
 
         long erg=0;
 
-        for (int i=0; i<shareManagement.getShareLength(); i++){
-            erg =(long)Math.round(Math.random() * (max - min + 1)+ min);
-            shareManagement.getShareNumber(i).increasePrice(erg);
-        }
-
+        try {
+            for (int i=0; i<shareManagement.getShareLength(); i++){
+                erg =(long)Math.round(Math.random() * (max - min + 1)+ min);
+                shareManagement.getShareNumber(i).increasePrice(erg);
+            }
+        }catch (NullPointerException f){}
     }
 
-    protected void updateShareRate(Share share){
-        shareManagement.getShare(share.getName()).increasePrice((long)Math.round(Math.random() * (max - min + 1)+ min));
+    protected void updateShareRate(Share share) throws NullPointerException{
+
+        long erg=0;
+
+        erg = (long)Math.round(Math.random() * (max - min + 1)+ min);
+        try{
+            shareManagement.getShare(share.getName()).increasePrice(erg);
+        } catch (NullPointerException e){}
     }
 
     public void startUpdate(){

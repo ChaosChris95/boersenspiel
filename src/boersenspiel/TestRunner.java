@@ -1,8 +1,12 @@
 package boersenspiel;
 
-/*
- * Lässt dass Programm laufen
+/**
+ * Created with IntelliJ IDEA.
+ * User: jan
+ * Date: 15.04.13
+ * Time: 14:00
  */
+
 
 public class TestRunner {
 	
@@ -25,16 +29,21 @@ public class TestRunner {
         System.out.println(one.getCashAccountValue());
         System.out.println(one.getShareAmount("BMW"));
 
+
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
+
+        try {
+            accountManager.sell("name", "penis", 2);
+        } catch (NotEnoughMoneyException e) {
+            e.fillInStackTrace();
+        }
+
         System.out.println(accountManager.getList());
-	
-		/*CashAccount cashAccount = new CashAccount ("Sparkasse", 10000);
-		System.out.println(cashAccount.toString());
-		cashAccount.buy(4000);
-		cashAccount.addCash(6000);
-		System.out.println(cashAccount.toString());
-		cashAccount.buy(14000);
-		System.out.println(cashAccount.toString());*/
-	
-	}
+        RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement);
+        System.out.println(shareManagement.getShare("BMW").getPrice());
+        randomStockPriceProvider.updateShareRate(shareManagement.getShare("BMW"));
+        System.out.println(shareManagement.getShare("BMW").getPrice());
+        randomStockPriceProvider.updateShareRates();
+        System.out.println(shareManagement.getShare("BMW").getPrice());
+		}
 }

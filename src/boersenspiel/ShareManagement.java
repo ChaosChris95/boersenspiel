@@ -5,7 +5,6 @@ package boersenspiel;
  * User: Peach
  * Date: 09.04.13
  * Time: 17:57
- * To change this template use File | Settings | File Templates.
  */
 public class ShareManagement {
     private Share[] shares;
@@ -37,16 +36,16 @@ public class ShareManagement {
                 return shares[i];
             }
         }
-        return null;                                          //TODO Exception
+        return null;
     }
 
     public Share getShareNumber (int number) {
         for (int i = 0; i < shares.length; i++) {
-            if (number == i) {       //same: if(shares[i].equals(shareName))
+            if (number == i) {
                 return shares[i];
             }
         }
-        return null;                                          //TODO Exception
+        return null;
     }
 
     public long getSpecificRate(String name) {
@@ -55,14 +54,14 @@ public class ShareManagement {
                 return shares[i].getPrice();
             }
         }
-        return 0;      //Veränderbarer Kurs?                                     //TODO vllt Exception
+        return 0;                                             //TODO maybe Exception
     }
 
     public String listAll() {
 
         String display = "Alle verfügbaren Aktien:\n";
         for (int i = 0; i < shares.length; i++) {
-            display += shares[i].getName() + "\n";                                                  //display += shares[i].toString() + "\n";
+            display += shares[i].getName() + "\n";
         }
         return display;
     }

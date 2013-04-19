@@ -1,8 +1,10 @@
 package boersenspiel;
 
 /**
- * @author jan
- * Aktienpaktet
+ * Created with IntelliJ IDEA.
+ * User: Jan
+ * Date: 09.04.13
+ * Time: 17:34t
  */
 
 public class ShareItem extends Asset{

@@ -1,14 +1,16 @@
 package boersenspiel;
 
 /**
- * @author jan
- * Aktien
+ * Created with IntelliJ IDEA.
+ * User: Peach
+ * Date: 09.04.13
+ * Time: 17:34
  */
 
-public class Share { //Aktie
+public class Share {
 
 	private final String name;
-	private long price;	//Kurs
+	private long price;
 	
 	public Share(String name, long price){
 		this.name=name;

@@ -1,17 +1,19 @@
 package boersenspiel;
 
 /**
- * @author jan
- * Der Bankaccount des Spielers
+ * Created with IntelliJ IDEA.
+ * User: Jan
+ * Date: 09.04.13
+ * Time: 17:34
  */
 
-public class CashAccount extends Asset{ //Konto
+public class CashAccount extends Asset{
 
-	private long accountValue; //Kontostand
+	private long accountValue;
 	
 	public CashAccount(long accountValue){
 		super("CashAccount");
-		this.accountValue=accountValue;	//Startstand
+		this.accountValue=accountValue;
 	}
 	
 	public long getValue(){
@@ -26,10 +28,10 @@ public class CashAccount extends Asset{ //Konto
 		return ("Der Kontostand des Accounts " + name + " betraegt: " + getValue());
 	}
 	
-	public void subCash(long cash) throws Exception{
+	public void subCash(long cash) throws NotEnoughMoneyException {
 		
 		if (cash > accountValue){
-            throw new Exception("Sie besitzen nicht genügend Geld!");
+            throw new NotEnoughMoneyException("Sie besitzen nicht genügend Geld!");
 		}
 		accountValue -= cash;
 	}

@@ -5,36 +5,84 @@ package boersenspiel;
  * User: Peach
  * Date: 09.04.13
  * Time: 17:57
- * To change this template use File | Settings | File Templates.
  */
 
 public interface AccountManager {
 
-    //Anlegen eines Mitspielers mit Name
+    /**
+     * Creates a player with a name
+     * @param name
+     * @param cash
+     */
+
     public void createPlayer(String name, long cash);
 
-    //Aktie kaufen
+
+    /**
+     * buy a share
+     * @param name
+     * @param shareName
+     * @param amount
+     * @throws Exception
+     */
+
     public void buy(String name, String shareName, int amount) throws Exception;
 
-    //Aktie verkaufen
+    /**
+     * sell a share
+     * @param name
+     * @param shareName
+     * @param amount
+     * @throws Exception
+     */
+
     public void sell(String name, String shareName, int amount) throws Exception;
 
-    //Abfragen des Wertes im CashAccount
+    /**
+     * get the amount of money a certain player has
+     * @param name
+     */
     public long getCashAccountValue(String name);
 
-    //Abfragen des Wertes in ShareItem
+    /**
+     * get the price of a ShareItem (= share package)
+     * @param playerName
+     * @param shareItemName
+     * @return long
+     */
+
     public long getShareItemValue(String playerName, String shareItemName);
 
-    //Abfragen des Wertes in ShareDeposit
+    /**
+     * get the total Value of the ShareDeposit
+     * @param name
+     * @return long
+     */
+
     public long getShareDepositValue(String name);
 
-    //Abfrage des Gesamtwertes
+
+    /**
+     * get the value of an asset
+     * @param name
+     * @return long
+     */
+
     public long getAssetValue(String name);
 
-	//Abfrage des Aktienkurses
+    /**
+     * get the current price of a Share
+     * @param shareName
+     * @return long
+     */
+
     public long getRate(String shareName);
-	
-	//Aktienliste mit Kurswerten ausgeben
-	public String getList();  //TODO muss noch implementiert werden
+
+    /**
+     * return all available Shares as a String
+     * @return String
+     */
+
+	public String getList();
 
 }

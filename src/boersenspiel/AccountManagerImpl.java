@@ -5,7 +5,6 @@ package boersenspiel;
  * User: Peach
  * Date: 09.04.13
  * Time: 17:34
- * To change this template use File | Settings | File Templates.
  */
 public class AccountManagerImpl implements AccountManager{
 
@@ -23,7 +22,7 @@ public class AccountManagerImpl implements AccountManager{
     }
 
     @Override
-    public void buy(String playerName, String shareName, int amount) throws Exception{
+    public void buy(String playerName, String shareName, int amount) throws NotEnoughMoneyException, Exception{
         long shareValue = shareManagement.getSpecificRate(shareName);
         shareValue *= amount;
         userManagement.getPlayer(playerName).subCash(shareValue);
@@ -31,7 +30,7 @@ public class AccountManagerImpl implements AccountManager{
     }
 
     @Override
-    public void sell(String playerName, String shareName, int amount) throws Exception {
+    public void sell(String playerName, String shareName, int amount) throws Exception {    //TODO sell Share first
         long shareValue = shareManagement.getSpecificRate(shareName);
         shareValue *= amount;
         userManagement.getPlayer(playerName).addCash(shareValue);
