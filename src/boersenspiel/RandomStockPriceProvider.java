@@ -24,6 +24,10 @@ public class RandomStockPriceProvider extends StockPriceProvider {
 
     protected void updateShareRates(){
 
+        for (int i=0; i<shareManagement.getShareLength(); i++){
+            shareManagement.getShareNumber(i).increasePrice((long)(int)Math.round(Math.random() * (max - min + 1)+ min));
+        }
+
     }
 
     protected void updateShareRate(Share share){

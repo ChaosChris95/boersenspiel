@@ -27,9 +27,22 @@ public class ShareManagement {
         return shares;
     }
 
+    public int getShareLength(){
+        return shares.length;
+    }
+
     public Share getShare(String shareName) {
         for (int i = 0; i < shares.length; i++) {
-            if (shareName.equals(shares[i].getName())) {       //same: if(shares[i].equals(shareName))
+            if (shareName.equals(shares[i].getName())) {
+                return shares[i];
+            }
+        }
+        return null;                                          //TODO Exception
+    }
+
+    public Share getShareNumber (int number) {
+        for (int i = 0; i < shares.length; i++) {
+            if (number == i) {       //same: if(shares[i].equals(shareName))
                 return shares[i];
             }
         }
