@@ -27,9 +27,6 @@ public class TestRunner {
 
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
         System.out.println(accountManager.getList());
-
-        //Irgendwie stimmt hier was nicht, ich glaub es müssten addShare nicht Name und Preis übergeben werden,
-        //sondern Share sonst kann ich die toString() Methode nicht benutzen.
 	
 		/*CashAccount cashAccount = new CashAccount ("Sparkasse", 10000);
 		System.out.println(cashAccount.toString());
