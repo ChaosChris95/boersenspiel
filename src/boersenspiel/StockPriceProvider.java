@@ -13,9 +13,9 @@ import java.util.TimerTask;
 
 public abstract class StockPriceProvider {
 
-    private ShareManagement shareManagement = new ShareManagement();
+    private ShareManagement shareManagement;
 
-    public StockPriceProvider(){
+    public StockPriceProvider(ShareManagement shareManagement){
         this.shareManagement = shareManagement;
     }
 

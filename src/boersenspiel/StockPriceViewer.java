@@ -21,7 +21,6 @@ public class StockPriceViewer extends JFrame{
     private static final int TICK_PERIOD = 1000;
     private Timer ticker;
     private JLabel clockLabel;
-    private static StockPriceProvider stockPriceProvider = new StockPriceProvider();
 
     private class TickerTask extends TimerTask {
         public void run() {
@@ -31,7 +30,7 @@ public class StockPriceViewer extends JFrame{
         }
 
         private String createText() {
-            String output = "<html><body>hallo <br> welt <br>";
+            String output = "<html><body>Die Verfügbaren Aktien <br> mit ihrem Kurs <br>";
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             DateFormat dateFormatter = DateFormat.getDateTimeInstance();
@@ -54,9 +53,4 @@ public class StockPriceViewer extends JFrame{
         ticker = new Timer(true); //as daemon
         ticker.scheduleAtFixedRate(new TickerTask(), 1000, TICK_PERIOD);
     }
-
-    /*public static void main(String[] args) {
-        StockPriceProvider stockPriceProvider = new StockPriceViewer(stockPriceProvider);
-        stockPriceViewer.start();
-    }*/
 }

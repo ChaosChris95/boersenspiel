@@ -14,24 +14,27 @@ import java.math.*;
 
 public class RandomStockPriceProvider extends StockPriceProvider {
 
-    ShareManagement shareManagement;
-    long max = 100;
-    long min = 50;
+    private ShareManagement shareManagement;
+    private long max = 50;
+    private long min = -50;
 
     public RandomStockPriceProvider(ShareManagement shareManagement){
-        this.shareManagement = shareManagement;
+        super(shareManagement);
     }
 
     protected void updateShareRates(){
 
+        long erg=0;
+
         for (int i=0; i<shareManagement.getShareLength(); i++){
-            shareManagement.getShareNumber(i).increasePrice((long)(int)Math.round(Math.random() * (max - min + 1)+ min));
+            erg =(long)Math.round(Math.random() * (max - min + 1)+ min);
+            shareManagement.getShareNumber(i).increasePrice(erg);
         }
 
     }
 
     protected void updateShareRate(Share share){
-        shareManagement.getShare(share.getName()).increasePrice((long)(int)Math.round(Math.random() * (max - min + 1)+ min));
+        shareManagement.getShare(share.getName()).increasePrice((long)Math.round(Math.random() * (max - min + 1)+ min));
     }
 
     public void startUpdate(){
