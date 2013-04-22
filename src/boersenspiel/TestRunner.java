@@ -6,6 +6,7 @@ import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.RandomStockPriceProvider;
+import boersenspiel.gui.StockPriceViewer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,7 +20,7 @@ public class TestRunner {
 	
 	public static void main(String[] args) throws Exception {
 
-        Player one = new Player("Bianca");
+        /*Player one = new Player("Bianca");
         one.addCash(40000);
         System.out.println(one.toString());
 
@@ -51,6 +52,8 @@ public class TestRunner {
         randomStockPriceProvider.updateShareRate(shareManagement.getShare("BMW"));
         System.out.println(shareManagement.getShare("BMW").getPrice());
         randomStockPriceProvider.updateShareRates();
-        System.out.println(shareManagement.getShare("BMW").getPrice());
+        System.out.println(shareManagement.getShare("BMW").getPrice());*/
+
+        StockPriceViewer stockPriceViewer = new StockPriceViewer();
 		}
 }

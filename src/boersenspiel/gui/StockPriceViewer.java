@@ -40,7 +40,8 @@ public class StockPriceViewer extends JFrame{
 
 
     public StockPriceViewer() {
-        clockLabel = new JLabel("coming soon ...");
+        TickerTask t = new TickerTask();
+        clockLabel = new JLabel(t.createText());         //("coming soon ...");
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(100, 100);

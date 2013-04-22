@@ -34,6 +34,10 @@ public class ShareDeposit extends Asset {
 		shareItemList = temporal;
 	}
 
+    public String getName(){
+        return name;
+    }
+
     public void addShare(Share share, int amount) {
         for (int i = 0; i < shareItemList.length; i++) {
             if (shareItemList[i].getName().equals(share.getName())) {
@@ -103,7 +107,7 @@ public class ShareDeposit extends Asset {
 		
 		String output = "";
 		for (int i=0; i<shareItemList.length; i++){
-			output += (shareItemList[i].name) + "\n";
+			output += (shareItemList[i].getName()) + "\n";
 		}
 		return output;
 	}

@@ -27,7 +27,7 @@ public abstract class Asset {
 	public boolean equals(Object obj){
 		if (obj instanceof Asset){
 			Asset a =(Asset) obj;
-			if (this.name == a.name){   //TODO equals
+			if (this.name.equals(a.name)){
 				return true;
 			}
 		}

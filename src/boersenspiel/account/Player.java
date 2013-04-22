@@ -25,7 +25,7 @@ public class Player {
 
     }
 
-    public void addShareToDeposit(Share share, int amount) throws Exception {
+    public void addShareToDeposit(Share share, int amount) throws Exception {   //TODO restructured sell and buy centrally controlled in ShareDeposit? amongst others because of Exception handling
         cashAccount.subCash(share.getPrice() * amount);
         shareDeposit.addShare(share, amount);
 
@@ -64,7 +64,7 @@ public class Player {
         return name;
     }
 
-    public boolean isBroken() {
+    public boolean isBroken() {     //TODO necessary?
         if (getCashAccountValue() <= 0) {
             broken = true;
         }
