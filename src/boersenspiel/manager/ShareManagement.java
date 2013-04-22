@@ -59,6 +59,14 @@ public class ShareManagement {
         return 0;                                             //TODO maybe Exception
     }
 
+    public String getSharesAndRates(){
+        String erg = "<br>";
+        for (int i = 0; i < shares.length; i++) {
+                erg += " " + shares[i].getName() + " " + shares[i].getPrice() + "<br>";
+        }
+        return erg;
+    }
+
     public String listAll() {
 
         String display = "Alle verfügbaren Aktien:\n";

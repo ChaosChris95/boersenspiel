@@ -8,7 +8,7 @@ package boersenspiel.exceptions;
  */
 public class NotEnoughMoneyException extends RuntimeException{
 
-    public NotEnoughMoneyException(String message) {   //TODO have to be handled
+    public NotEnoughMoneyException(String message) {
         super(message);
     }
 

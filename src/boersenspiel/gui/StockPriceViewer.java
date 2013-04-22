@@ -7,6 +7,9 @@ package boersenspiel.gui;
  * Time: 13:56
  */
 
+import boersenspiel.interfaces.AccountManager;
+import boersenspiel.manager.ShareManagement;
+
 import java.util.TimerTask;
 import java.util.Timer;
 import java.util.Calendar;
@@ -17,6 +20,7 @@ import javax.swing.JLabel;
 
 public class StockPriceViewer extends JFrame{       //TODO view current share-values
 
+    private ShareManagement shareManagement;
     private static final int TICK_PERIOD = 1000;
     private Timer ticker;
     private JLabel clockLabel;
@@ -29,22 +33,23 @@ public class StockPriceViewer extends JFrame{       //TODO view current share-va
         }
 
         private String createText() {
-            String output = "<html><body>Die Verfügbaren Aktien <br> mit ihrem Kurs <br>";
+            String output = "<html><body>Die Verfügbaren Aktien mit ihrem Kurs:<br>"; //TODO list
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             DateFormat dateFormatter = DateFormat.getDateTimeInstance();
-            output += dateFormatter.format(date) + "</body></html>";
+            output += dateFormatter.format(date) + shareManagement.getSharesAndRates() + "</body></html>";
             return output;
         }
     }
 
 
-    public StockPriceViewer() {
+    public StockPriceViewer(ShareManagement shareManagement) {
+        this.shareManagement = shareManagement;
         TickerTask t = new TickerTask();
         clockLabel = new JLabel(t.createText());         //("coming soon ...");
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(100, 100);
+        setSize(500, 500);
         setVisible(true);
 
     }
