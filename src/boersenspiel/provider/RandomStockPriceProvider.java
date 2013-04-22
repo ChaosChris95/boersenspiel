@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.provider;
 
 /**
 * Created with IntelliJ IDEA.
@@ -7,9 +7,11 @@ package boersenspiel;
 * Time: 14:10
 */
 
+import boersenspiel.manager.ShareManagement;
+import boersenspiel.stock.Share;
+
 import java.util.Timer;
 import java.util.TimerTask;
-import java.math.*;
 
 public class RandomStockPriceProvider extends StockPriceProvider {
 
@@ -21,7 +23,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {
         super(shareManagement);
     }
 
-    protected void updateShareRates() throws NullPointerException{
+    public void updateShareRates() throws NullPointerException{
 
         long erg=0;
 
@@ -33,7 +35,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {
         }catch (NullPointerException f){}
     }
 
-    protected void updateShareRate(Share share) throws NullPointerException{
+    public void updateShareRate(Share share) throws NullPointerException{
 
         long erg=0;
 

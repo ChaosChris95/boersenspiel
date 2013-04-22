@@ -1,4 +1,6 @@
-package boersenspiel;
+package boersenspiel.manager;
+
+import boersenspiel.stock.Share;
 
 /**
  * Created with IntelliJ IDEA.

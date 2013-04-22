@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.interfaces;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,6 @@
-package boersenspiel;
+package boersenspiel.account;
+
+import boersenspiel.exceptions.NotEnoughMoneyException;
 
 /**
  * Created with IntelliJ IDEA.

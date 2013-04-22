@@ -1,4 +1,6 @@
-package boersenspiel;
+package boersenspiel.stock;
+
+import boersenspiel.account.Asset;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,7 +9,7 @@ package boersenspiel;
  * Time: 17:34
  */
 
-public class ShareDeposit extends Asset{
+public class ShareDeposit extends Asset {
 
 	ShareItem[] shareItemList = new ShareItem[0];
 	

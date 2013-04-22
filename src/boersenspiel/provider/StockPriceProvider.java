@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.provider;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,8 +7,8 @@ package boersenspiel;
  * Time: 14:00
  */
 
-import java.util.Timer;
-import java.util.TimerTask;
+import boersenspiel.manager.ShareManagement;
+import boersenspiel.stock.Share;
 
 public abstract class StockPriceProvider {
 

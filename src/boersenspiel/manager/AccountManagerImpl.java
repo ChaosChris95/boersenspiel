@@ -1,4 +1,7 @@
-package boersenspiel;
+package boersenspiel.manager;
+
+import boersenspiel.exceptions.NotEnoughMoneyException;
+import boersenspiel.interfaces.AccountManager;
 
 /**
  * Created with IntelliJ IDEA.
@@ -6,7 +9,7 @@ package boersenspiel;
  * Date: 09.04.13
  * Time: 17:34
  */
-public class AccountManagerImpl implements AccountManager{
+public class AccountManagerImpl implements AccountManager {
 
     private UserManagement userManagement;
     private ShareManagement shareManagement;

@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.exceptions;
 
 /**
  * Created with IntelliJ IDEA.

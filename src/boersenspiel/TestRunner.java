@@ -1,5 +1,12 @@
 package boersenspiel;
 
+import boersenspiel.account.Player;
+import boersenspiel.exceptions.NotEnoughMoneyException;
+import boersenspiel.interfaces.AccountManager;
+import boersenspiel.manager.AccountManagerImpl;
+import boersenspiel.manager.ShareManagement;
+import boersenspiel.provider.RandomStockPriceProvider;
+
 /**
  * Created with IntelliJ IDEA.
  * User: jan

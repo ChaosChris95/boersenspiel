@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.stock;
 
 /**
  * Created with IntelliJ IDEA.

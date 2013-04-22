@@ -1,4 +1,6 @@
-package boersenspiel;
+package boersenspiel.manager;
+
+import boersenspiel.account.Player;
 
 /**
  * Created with IntelliJ IDEA.

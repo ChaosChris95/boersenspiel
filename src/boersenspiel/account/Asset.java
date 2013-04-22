@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.account;
 
 /**
  * Created with IntelliJ IDEA.
