@@ -48,7 +48,7 @@ public class ShareDeposit extends Asset {
         addShareItem(new ShareItem(share, amount));
     }
 
-    public long sellShare(Share share, int amount) {
+    public long sellShare(Share share, int amount) {       //TODO do over
         for (int i = 0; i < shareItemList.length; i++) {
             if (shareItemList[i].getName().equals(share.getName())) {
                 shareItemList[i].removeShareAmount(amount);

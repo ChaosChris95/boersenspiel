@@ -35,7 +35,7 @@ public class ShareItem extends Asset {
 
     public void removeShareAmount(int amount) {
        if (amount > shareAmount) {
-          throw new Error("Nicht genug Aktien vorhanden!");
+          throw new Error("Nicht genug Aktien vorhanden!");     //TODO Exception Class
        } else {
           shareAmount -= amount;
        }

@@ -9,54 +9,62 @@ package boersenspiel.provider;
 
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.stock.Share;
+import boersenspiel.exceptions.NegativeValueException;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.lang.Math;
 
 public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where is the buck
 
     private ShareManagement shareManagement;
-    private long max = 50;
-    private long min = -50;
+    private double max = 50;
+    private double min = -50;
 
     public RandomStockPriceProvider(ShareManagement shareManagement){
         super(shareManagement);
     }
 
-    public void updateShareRates() throws NullPointerException{
+    public void updateShareRates(){
 
-        long erg=0;
+        double erg=0;
 
-        try {
-            for (int i=0; i<shareManagement.getShareLength(); i++){
-                erg =(long)Math.round(Math.random() * (max - min + 1)+ min);
-                shareManagement.getShareNumber(i).increasePrice(erg);
+        for (int i=0; i<shareManagement.getShareLength(); i++){         //TODO NullPointerException but where?
+            if (shareManagement.getShareByNumber(i) == null)
+                continue;
+            erg = Math.round(Math.random() * (max - min + 1)+ min);
+            try{
+                shareManagement.getShareByNumber(i).increasePrice((long)erg);
+            } catch (NegativeValueException e){
+                return;
             }
-        }catch (NullPointerException f){}
+        }
     }
 
-    public void updateShareRate(Share share) throws NullPointerException{
+    public void updateShareRate(Share share){
 
-        long erg=0;
+        double erg=0;
 
         erg = (long)Math.round(Math.random() * (max - min + 1)+ min);
         try{
-            shareManagement.getShare(share.getName()).increasePrice(erg);
+            shareManagement.getShare(share.getName()).increasePrice((long)erg);
         } catch (NullPointerException e){}
     }
 
+    @Override
     public void startUpdate(){
-        updateShareRates();
-        System.out.println(shareManagement.toString()); //Debugging
-
+        MyTimer myTimer = new MyTimer();
+        myTimer.startTiming();
     }
 
-    private void startTiming() {
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            public void run() {
-                RandomStockPriceProvider.this.startUpdate();
-            }
-        }, 2000, 1000);
+    class MyTimer {
+        private void startTiming() {
+            Timer timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                public void run() {
+                    RandomStockPriceProvider.this.updateShareRates();
+                }
+            }, 2000, 1000);
+        }
     }
 }

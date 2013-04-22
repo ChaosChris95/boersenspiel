@@ -41,7 +41,7 @@ public class ShareManagement {
         return null;
     }
 
-    public Share getShareNumber (int number) {
+    public Share getShareByNumber (int number) {
         for (int i = 0; i < shares.length; i++) {
             if (number == i) {
                 return shares[i];
