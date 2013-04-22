@@ -55,5 +55,10 @@ public class TestRunner {
         System.out.println(shareManagement.getShare("BMW").getPrice());*/
 
         StockPriceViewer stockPriceViewer = new StockPriceViewer();
+        ShareManagement shareManagement = new ShareManagement();
+        shareManagement.addShare("BMW", 100);
+        shareManagement.addShare("Siemens", 150);
+        RandomStockPriceProvider rdpp = new RandomStockPriceProvider(shareManagement);
+        rdpp.startUpdate();
 		}
 }

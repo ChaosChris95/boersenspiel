@@ -13,7 +13,7 @@ import boersenspiel.stock.Share;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class RandomStockPriceProvider extends StockPriceProvider {
+public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where is the buck
 
     private ShareManagement shareManagement;
     private long max = 50;
@@ -47,6 +47,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {
 
     public void startUpdate(){
         updateShareRates();
+        System.out.println(shareManagement.toString()); //Debugging
 
     }
 

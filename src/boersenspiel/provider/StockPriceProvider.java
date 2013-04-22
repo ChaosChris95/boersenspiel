@@ -25,7 +25,7 @@ public abstract class StockPriceProvider {
     }
 
     public long getCurrentShareRate(String shareName){
-           return 0;                        //TODO aktueller Kurswert bestimmen
+           return shareManagement.getShare(shareName).getPrice();
     }
 
     public Share[] getAllSharesAsSnapShot(){

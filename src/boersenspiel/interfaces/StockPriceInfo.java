@@ -11,7 +11,7 @@ import boersenspiel.stock.Share;
 public interface StockPriceInfo {
 
     /**
-     * is this share an avaiable share?
+     * is this share an available share?
      * @param shareName
      * @return boolean
      */

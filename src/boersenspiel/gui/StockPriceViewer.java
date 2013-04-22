@@ -15,7 +15,7 @@ import java.text.DateFormat;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class StockPriceViewer extends JFrame{
+public class StockPriceViewer extends JFrame{       //TODO view current share-values
 
     private static final int TICK_PERIOD = 1000;
     private Timer ticker;
