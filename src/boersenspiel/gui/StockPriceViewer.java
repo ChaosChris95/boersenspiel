@@ -40,14 +40,7 @@ public class StockPriceViewer extends JFrame{
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             DateFormat dateFormatter = DateFormat.getDateTimeInstance();
-            output += dateFormatter.format(date);
-            for (int i=0; i < 10; i++){     //dummy
-                try{
-                    randomStockPriceProvider.startUpdate(); //TODO right placement?
-                } catch (Exception e){}
-                output += shareManagement.getSharesAndRates();
-            }
-            output += "</body></html>";
+            output += dateFormatter.format(date) + shareManagement.getSharesAndRates() + "</body></html>";
             return output;
         }
     }
@@ -57,7 +50,10 @@ public class StockPriceViewer extends JFrame{
         this.shareManagement = shareManagement;
         this.randomStockPriceProvider = randomStockPriceProvider;
         TickerTask t = new TickerTask();
-        clockLabel = new JLabel(t.createText());         //("coming soon ...");
+        //while (true){
+        //    randomStockPriceProvider.startUpdate();
+            clockLabel = new JLabel(t.createText());
+        //}
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 500);

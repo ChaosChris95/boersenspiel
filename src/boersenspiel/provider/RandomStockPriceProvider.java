@@ -8,6 +8,7 @@ package boersenspiel.provider;
 */
 
 import boersenspiel.manager.ShareManagement;
+import boersenspiel.manager.UserManagement;
 import boersenspiel.stock.Share;
 import boersenspiel.exceptions.NegativeValueException;
 
@@ -21,8 +22,8 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
     private double max = 50;
     private double min = -50;
 
-    public RandomStockPriceProvider(ShareManagement shareManagement){
-        super(shareManagement);
+    public RandomStockPriceProvider(ShareManagement shareManagement, UserManagement userManagement){
+        super(shareManagement, userManagement);
     }
 
     public void updateShareRates(){

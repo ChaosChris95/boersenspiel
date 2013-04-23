@@ -8,13 +8,14 @@ package boersenspiel.provider;
  */
 
 import boersenspiel.manager.ShareManagement;
+import boersenspiel.manager.UserManagement;
 import boersenspiel.stock.Share;
 import boersenspiel.provider.StockPriceProvider;
 
 public class ConstStockPriceProvider extends StockPriceProvider {
 
-    public ConstStockPriceProvider(ShareManagement shareManagement){
-        super(shareManagement);
+    public ConstStockPriceProvider(ShareManagement shareManagement, UserManagement userManagement){
+        super(shareManagement, userManagement);
     }
 
     protected void updateShareRates(){

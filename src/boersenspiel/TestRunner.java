@@ -5,6 +5,7 @@ import boersenspiel.exceptions.NotEnoughMoneyException;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
+import boersenspiel.manager.UserManagement;
 import boersenspiel.provider.RandomStockPriceProvider;
 import boersenspiel.gui.StockPriceViewer;
 
@@ -57,9 +58,12 @@ public class TestRunner {
         ShareManagement shareManagement = new ShareManagement();
         shareManagement.addShare("BMW", 100);
         shareManagement.addShare("Siemens", 150);
-        RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement);
+        UserManagement userManagement = new UserManagement();
+        RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement, userManagement);
         StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement, randomStockPriceProvider);
-        randomStockPriceProvider.startUpdate();
-        stockPriceViewer.start();
+        while (true){
+            randomStockPriceProvider.startUpdate();
+            stockPriceViewer.start();
+        }
 		}
 }
