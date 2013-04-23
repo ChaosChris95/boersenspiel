@@ -31,5 +31,15 @@ public interface StockPriceInfo {
      * @return Share[]
      */
 
-    Share[] getAllSharesAsSnapShot();
+     Share[] getAllSharesAsSnapShot();
+
+    /**
+     * get the price of a ShareItem (= share package)
+     * @param playerName
+     * @param shareItemName
+     * @return long
+     */
+
+    long getShareItemValue(String playerName, String shareItemName);
+
 }

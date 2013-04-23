@@ -8,14 +8,18 @@ package boersenspiel.provider;
  */
 
 import boersenspiel.manager.ShareManagement;
+import boersenspiel.manager.UserManagement;
 import boersenspiel.stock.Share;
 
 public abstract class StockPriceProvider {
 
     private ShareManagement shareManagement;
+    private UserManagement userManagement;
 
-    public StockPriceProvider(ShareManagement shareManagement){
+
+    public StockPriceProvider(ShareManagement shareManagement, UserManagement userManagement){
         this.shareManagement = shareManagement;
+        this.userManagement = userManagement;
     }
 
     public boolean isShareListed(String shareName){
@@ -25,7 +29,7 @@ public abstract class StockPriceProvider {
     }
 
     public long getCurrentShareRate(String shareName){
-           return shareManagement.getShare(shareName).getPrice();
+           return shareManagement.getSpecificRate(shareName);
     }
 
     public Share[] getAllSharesAsSnapShot(){
@@ -36,9 +40,14 @@ public abstract class StockPriceProvider {
 
     protected abstract void updateShareRate(Share share);
 
-    public abstract void startUpdate();
+    public abstract void startUpdate() throws Exception;
 
     public Share getShare(String name){
           return shareManagement.getShare(name);
+    }
+
+    public long getShareItemValue(String playerName, String shareItemName) {
+        return userManagement.getPlayer(playerName).getShareItemValue(shareItemName);
+
     }
 }

@@ -15,7 +15,7 @@ public interface AccountManager {
      * @param cash
      */
 
-    public void createPlayer(String name, long cash);
+    void createPlayer(String name, long cash);
 
 
     /**
@@ -26,7 +26,7 @@ public interface AccountManager {
      * @throws Exception
      */
 
-    public void buy(String name, String shareName, int amount) throws Exception;
+    void buy(String name, String shareName, int amount) throws Exception;
 
     /**
      * sell a share
@@ -36,22 +36,13 @@ public interface AccountManager {
      * @throws Exception
      */
 
-    public void sell(String name, String shareName, int amount) throws Exception;
+    void sell(String name, String shareName, int amount) throws Exception;
 
     /**
      * get the amount of money a certain player has
      * @param name
      */
-    public long getCashAccountValue(String name);
-
-    /**
-     * get the price of a ShareItem (= share package)
-     * @param playerName
-     * @param shareItemName
-     * @return long
-     */
-
-    public long getShareItemValue(String playerName, String shareItemName);
+    long getCashAccountValue(String name);
 
     /**
      * get the total Value of the ShareDeposit
@@ -59,8 +50,7 @@ public interface AccountManager {
      * @return long
      */
 
-    public long getShareDepositValue(String name);
-
+    long getShareDepositValue(String name);
 
     /**
      * get the value of an asset
@@ -68,21 +58,11 @@ public interface AccountManager {
      * @return long
      */
 
-    public long getAssetValue(String name);
+    long getAssetValue(String name);
 
     /**
      * get the current price of a Share
      * @param shareName
      * @return long
      */
-
-    public long getRate(String shareName);
-
-    /**
-     * return all available Shares as a String
-     * @return String
-     */
-
-	public String getList();
-
 }

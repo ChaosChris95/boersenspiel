@@ -1,5 +1,7 @@
 package boersenspiel.account;
 
+import boersenspiel.exceptions.NotEnoughMoneyException;
+import boersenspiel.exceptions.NotEnoughSharesException;
 import boersenspiel.stock.Share;
 import boersenspiel.stock.ShareDeposit;
 
@@ -25,15 +27,19 @@ public class Player {
 
     }
 
-    public void addShareToDeposit(Share share, int amount) throws Exception {   //TODO restructured sell and buy centrally controlled in ShareDeposit? amongst others because of Exception handling
-        cashAccount.subCash(share.getPrice() * amount);
+    public void buy(Share share, int amount) throws NotEnoughMoneyException {
+        try {
+            cashAccount.subCash(share.getPrice() * amount);
+        } catch (NotEnoughMoneyException n) {}
         shareDeposit.addShare(share, amount);
 
     }
 
-    public void subShareFromDeposit(Share share, int amount) throws Exception{
+    public void sell(Share share, int amount) throws NotEnoughSharesException{  //TODO Exception not enough amount or no share
+        try{
+            shareDeposit.removeShare(share, amount);
+        } catch (NotEnoughSharesException s) {}
         cashAccount.addCash(share.getPrice() * amount);
-        shareDeposit.sellShare(share, amount);
     }
 
     public void addCash(long cash) {

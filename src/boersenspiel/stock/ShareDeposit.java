@@ -1,6 +1,7 @@
 package boersenspiel.stock;
 
 import boersenspiel.account.Asset;
+import boersenspiel.exceptions.NotEnoughSharesException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,7 +15,7 @@ public class ShareDeposit extends Asset {
 	ShareItem[] shareItemList = new ShareItem[0];
 	
 	public ShareDeposit(){
-		super("ShareDeposit");                  //TODO evtl DepositNumber?
+		super("ShareDeposit");
 	}
 	
 	public void addShareItem(ShareItem add){
@@ -48,18 +49,24 @@ public class ShareDeposit extends Asset {
         addShareItem(new ShareItem(share, amount));
     }
 
-    public long sellShare(Share share, int amount) {       //TODO do over
+    public long removeShare(Share share, int amount) {       //TODO do over
+
+        boolean exists = false;
         for (int i = 0; i < shareItemList.length; i++) {
             if (shareItemList[i].getName().equals(share.getName())) {
+                exists = true;
+                if (getShareAmount(shareItemList[i].getName()) < amount)
+                    throw new NotEnoughSharesException("Sie besitzen nicht genügend Aktien mit diesen Namen!");
                 shareItemList[i].removeShareAmount(amount);
                 return shareItemList[i].getValue() * amount;
             }
-
+            if (!exists){
+                throw new NotEnoughSharesException("Sie besitzen keine Aktie diesen Namens!");
+            }
         }
         return 0;
     }
 
-	
 	public void removeShareItem(ShareItem remove){
 		
 		ShareItem[] temporal = new ShareItem[shareItemList.length - 1];

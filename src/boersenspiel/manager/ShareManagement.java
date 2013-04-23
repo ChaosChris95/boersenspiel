@@ -56,7 +56,7 @@ public class ShareManagement {
                 return shares[i].getPrice();
             }
         }
-        return 0;                                             //TODO maybe Exception
+        return 0;
     }
 
     public String getSharesAndRates(){

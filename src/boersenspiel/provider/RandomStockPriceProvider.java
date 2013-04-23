@@ -52,17 +52,19 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
     }
 
     @Override
-    public void startUpdate(){
+    public void startUpdate()  throws Exception{
         MyTimer myTimer = new MyTimer();
         myTimer.startTiming();
     }
 
     class MyTimer {
-        private void startTiming() {
+        private void startTiming() throws Exception{
             Timer timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
-                public void run() {
-                    RandomStockPriceProvider.this.updateShareRates();
+                public void run(){
+                    try{
+                        RandomStockPriceProvider.this.updateShareRates();
+                    } catch (Exception e){}
                 }
             }, 2000, 1000);
         }
