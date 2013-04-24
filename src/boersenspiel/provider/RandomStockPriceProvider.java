@@ -18,7 +18,6 @@ import java.lang.Math;
 
 public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where is the buck
 
-    private ShareManagement shareManagement;
     private double max = 50;
     private double min = -50;
 
@@ -34,6 +33,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
             if (shareManagement.getShareByNumber(i) == null)
                 continue;
             erg = Math.round(Math.random() * (max - min + 1)+ min);
+            System.out.println(erg);
             try{
                 shareManagement.getShareByNumber(i).increasePrice((long)erg);
             } catch (NegativeValueException e){

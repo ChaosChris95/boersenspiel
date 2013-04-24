@@ -34,10 +34,10 @@ public class Share {
     }
 
     public void increasePrice(long set) {
-        //if (price < set){
-        //throw new NegativeArraySizeException();
-        //}
-        this.price += set;
+        if ((price < set)){
+            this.price += set;
+        }
+
     }
 
 }

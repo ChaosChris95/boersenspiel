@@ -13,7 +13,7 @@ import boersenspiel.stock.Share;
 
 public abstract class StockPriceProvider {
 
-    private ShareManagement shareManagement;
+    protected ShareManagement shareManagement;
     private UserManagement userManagement;
 
 
