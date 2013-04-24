@@ -58,21 +58,17 @@ public class TestRunner {
         ShareManagement shareManagement = new ShareManagement();
         UserManagement userManagement = new UserManagement();
 
+
+
         shareManagement.addShare("BMW", 100);
         shareManagement.addShare("Siemens", 150);
 
         RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement, userManagement);
-        randomStockPriceProvider.updateShareRate(shareManagement.getShare("BMW"));
-        System.out.println(shareManagement.getSpecificRate("BMW"));
+        randomStockPriceProvider.updateShareRates();
 
-
-
-        /*StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement, randomStockPriceProvider);
+        StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement, randomStockPriceProvider);
         stockPriceViewer.start();
+        randomStockPriceProvider.startUpdate();
 
-        while (true){
-            randomStockPriceProvider.startUpdate();
-            stockPriceViewer.revalidate();
-        }*/
 	}
 }

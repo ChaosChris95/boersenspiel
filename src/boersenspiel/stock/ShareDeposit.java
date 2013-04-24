@@ -12,30 +12,30 @@ import boersenspiel.exceptions.NotEnoughSharesException;
 
 public class ShareDeposit extends Asset {
 
-	ShareItem[] shareItemList = new ShareItem[0];
-	
-	public ShareDeposit(){
-		super("ShareDeposit");
-	}
-	
-	public void addShareItem(ShareItem add){
-		
-		for (int i = 0; i<shareItemList.length; i++){
-			if (shareItemList[i].getName() == add.getName()){
-				shareItemList[i].addValue(add.getValue());
-				shareItemList[i].addShareAmount(add.getShareAmount());
-			}
-		}
-			
-		ShareItem[] temporal = new ShareItem[shareItemList.length + 1];
-		for (int i=0; i<shareItemList.length; i++){
-			temporal[i] = shareItemList[i];
-		}
-		temporal[temporal.length-1] = add;
-		shareItemList = temporal;
-	}
+    ShareItem[] shareItemList = new ShareItem[0];
 
-    public String getName(){
+    public ShareDeposit() {
+        super("ShareDeposit");
+    }
+
+    public void addShareItem(ShareItem add) {
+
+        for (int i = 0; i < shareItemList.length; i++) {
+            if (shareItemList[i].getName() == add.getName()) {
+                shareItemList[i].addValue(add.getValue());
+                shareItemList[i].addShareAmount(add.getShareAmount());
+            }
+        }
+
+        ShareItem[] temporal = new ShareItem[shareItemList.length + 1];
+        for (int i = 0; i < shareItemList.length; i++) {
+            temporal[i] = shareItemList[i];
+        }
+        temporal[temporal.length - 1] = add;
+        shareItemList = temporal;
+    }
+
+    public String getName() {
         return name;
     }
 
@@ -60,42 +60,41 @@ public class ShareDeposit extends Asset {
                 shareItemList[i].removeShareAmount(amount);
                 return shareItemList[i].getValue() * amount;
             }
-            if (!exists){
+            if (!exists) {
                 throw new NotEnoughSharesException("Sie besitzen keine Aktie diesen Namens!");
             }
         }
         return 0;
     }
 
-	public void removeShareItem(ShareItem remove){
-		
-		ShareItem[] temporal = new ShareItem[shareItemList.length - 1];
-		boolean identified = false;
-		for (int i=0; i<shareItemList.length-1; i++){
-			if (shareItemList[i] == remove)
-				identified = true;
-				temporal[i] = shareItemList[i+1];
-			if(identified){
-					temporal[i] = shareItemList[i+1];
-			}
-			else
-				temporal[i] = shareItemList[i];
-		}
-		shareItemList = temporal;
-	}
-	
-	public long getValue(){
-		long totalValue = 0;
-		for (int i=0; i<shareItemList.length; i++){
-			totalValue += shareItemList[i].getValue();
-		}
-		return totalValue;
-	}
+    public void removeShareItem(ShareItem remove) {
 
-    public long getShareItemValue(String shareItemName){
-        for (int i = 0; i < shareItemList.length; i++){
-            if (shareItemName.equals(shareItemList[i].getName())){
-               return shareItemList[i].getValue();
+        ShareItem[] temporal = new ShareItem[shareItemList.length - 1];
+        boolean identified = false;
+        for (int i = 0; i < shareItemList.length - 1; i++) {
+            if (shareItemList[i] == remove)
+                identified = true;
+            temporal[i] = shareItemList[i + 1];
+            if (identified) {
+                temporal[i] = shareItemList[i + 1];
+            } else
+                temporal[i] = shareItemList[i];
+        }
+        shareItemList = temporal;
+    }
+
+    public long getValue() {
+        long totalValue = 0;
+        for (int i = 0; i < shareItemList.length; i++) {
+            totalValue += shareItemList[i].getValue();
+        }
+        return totalValue;
+    }
+
+    public long getShareItemValue(String shareItemName) {
+        for (int i = 0; i < shareItemList.length; i++) {
+            if (shareItemName.equals(shareItemList[i].getName())) {
+                return shareItemList[i].getValue();
             }
         }
         return 0;
@@ -109,22 +108,21 @@ public class ShareDeposit extends Asset {
         }
         return 0;
     }
-	
-	public String print(){
-		
-		String output = "";
-		for (int i=0; i<shareItemList.length; i++){
-			output += (shareItemList[i].getName()) + "\n";
-		}
-		return output;
-	}
-	
-	public String toString(){
-		return ("ShareDeposit " + name + " mit einem Gesamtwert von " + getValue()
-				+ ", dass aus folgenden ShareItems besteht:\n"
-				+ print());
-	}
-	
 
-	
+    public String print() {
+
+        String output = "";
+        for (int i = 0; i < shareItemList.length; i++) {
+            output += (shareItemList[i].getName()) + "\n";
+        }
+        return output;
+    }
+
+    public String toString() {
+        return ("ShareDeposit " + name + " mit einem Gesamtwert von " + getValue()
+                + ", dass aus folgenden ShareItems besteht:\n"
+                + print());
+    }
+
+
 }

@@ -28,9 +28,9 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
 
     public void updateShareRates(){
 
-        double erg=0;
+        long erg=0;
 
-        for (int i=0; i<shareManagement.getShareLength(); i++){         //TODO NullPointerException but where?
+        for (int i=0; i<shareManagement.getShareLength(); i++){
             if (shareManagement.getShareByNumber(i) == null)
                 continue;
             erg = Math.round(Math.random() * (max - min + 1)+ min);

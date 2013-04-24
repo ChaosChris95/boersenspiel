@@ -50,10 +50,8 @@ public class StockPriceViewer extends JFrame{
         this.shareManagement = shareManagement;
         this.randomStockPriceProvider = randomStockPriceProvider;
         TickerTask t = new TickerTask();
-        //while (true){
-        //    randomStockPriceProvider.startUpdate();
-            clockLabel = new JLabel(t.createText());
-        //}
+        randomStockPriceProvider.startUpdate();
+        clockLabel = new JLabel(t.createText());
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 500);

@@ -3,11 +3,11 @@ package boersenspiel.manager;
 import boersenspiel.stock.Share;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Peach
  * Date: 09.04.13
  * Time: 17:57
  */
+
 public class ShareManagement {
     private Share[] shares;
 
@@ -29,8 +29,9 @@ public class ShareManagement {
     }
 
     public int getShareLength(){
-        return shares.length;
+            return shares.length;
     }
+
 
     public Share getShare(String shareName) {
         for (int i = 0; i < shares.length; i++) {
