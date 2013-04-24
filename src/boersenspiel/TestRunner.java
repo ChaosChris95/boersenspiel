@@ -19,8 +19,8 @@ import boersenspiel.gui.StockPriceViewer;
 
 
 public class TestRunner {
-	
-	public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) throws Exception {
 
         /*Player one = new Player("Bianca");
         one.addCash(40000);
@@ -60,16 +60,11 @@ public class TestRunner {
         UserManagement userManagement = new UserManagement();
 
 
-        try{
-            shareManagement.addShare("BMW", 100);
-            System.out.println(shareManagement.listAll());
-            shareManagement.addShare("BMW", 200);
-            System.out.println(shareManagement.listAll());
-            shareManagement.addShare("Siemens", 150);
-
-        }   catch (SharenameAlreadyExistsException e){
-            e.printStackTrace();
-        }
+        shareManagement.addShare("BMW", 100);
+        System.out.println(shareManagement.listAll());
+        shareManagement.addShare("BMW", 200);
+        System.out.println(shareManagement.listAll());
+        shareManagement.addShare("Siemens", 150);
 
 
         RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement, userManagement);
@@ -79,5 +74,5 @@ public class TestRunner {
         stockPriceViewer.start();
         randomStockPriceProvider.startUpdate();
 
-	}
+    }
 }

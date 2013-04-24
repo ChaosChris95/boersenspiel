@@ -18,14 +18,20 @@ public class ShareManagement {
 
     public void addShare(String name, long price) throws SharenameAlreadyExistsException { //TODO shares names have to be unique
         Share[] buffer = new Share[shares.length + 1];
-        for (int i = 0; i < shares.length; i++) {
-            buffer[i] = shares[i];
-            if(shares[i].getName().equals(name)){
-                throw new SharenameAlreadyExistsException();
+        try {
+            for (int i = 0; i < shares.length; i++) {
+                buffer[i] = shares[i];
+                if(shares[i].getName().equals(name)){
+                    throw new SharenameAlreadyExistsException();
+                }
             }
+            buffer[buffer.length - 1] = new Share(name, price);
+            shares = buffer;
+        }catch (SharenameAlreadyExistsException e){
+            e.printStackTrace();
         }
-        buffer[buffer.length - 1] = new Share(name, price);
-        shares = buffer;
+
+
     }
 
     public Share[] getShareList(){
