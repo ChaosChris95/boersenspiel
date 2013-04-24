@@ -34,7 +34,7 @@ public class Share {
     }
 
     public void increasePrice(long set) {
-        if ((price < set)){
+        if (price + set > 0) {
             this.price += set;
         }
 
