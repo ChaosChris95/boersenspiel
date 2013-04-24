@@ -1,7 +1,6 @@
 package boersenspiel.gui;
 
 /**
- * Created with IntelliJ IDEA.
  * User: jan
  * Date: 15.04.13
  * Time: 13:56
@@ -36,10 +35,10 @@ public class StockPriceViewer extends JFrame{
         }
 
         private String createText(){
-            String output = "<html><body>Die Verfügbaren Aktien mit ihrem Kurs:<br>";
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             DateFormat dateFormatter = DateFormat.getDateTimeInstance();
+            String output = "<html><body>Die Verfügbaren Aktien mit ihrem Kurs:<br>";
             output += dateFormatter.format(date) + shareManagement.getSharesAndRates() + "</body></html>";
             return output;
         }

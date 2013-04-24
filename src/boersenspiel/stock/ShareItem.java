@@ -1,11 +1,9 @@
 package boersenspiel.stock;
 
 import boersenspiel.account.Asset;
-import boersenspiel.exceptions.ErrorException;
-import boersenspiel.stock.Share;
+import boersenspiel.exceptions.NotEnoughSharesException;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Jan
  * Date: 09.04.13
  * Time: 17:34t
@@ -34,12 +32,13 @@ public class ShareItem extends Asset {
         shareAmount += amount;
     }
 
-    public void removeShareAmount(int amount) throws ErrorException {
-        if (amount > shareAmount) {
-            throw new Error("Nicht genug Aktien vorhanden!");
-        } else {
-            shareAmount -= amount;
-        }
+    public void removeShareAmount(int amount) throws NotEnoughSharesException {
+        try {
+            if (amount > shareAmount) {
+            } else {
+                shareAmount -= amount;
+            }
+        } catch (NotEnoughSharesException e) {}
     }
 
     public long getValue() {

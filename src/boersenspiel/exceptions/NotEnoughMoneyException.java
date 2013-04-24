@@ -1,7 +1,6 @@
 package boersenspiel.exceptions;
 
 /**
- * Created with IntelliJ IDEA.
  * User: jan
  * Date: 19.04.13
  * Time: 16:02

@@ -61,10 +61,9 @@ public class TestRunner {
 
 
         shareManagement.addShare("BMW", 100);
-        System.out.println(shareManagement.listAll());
         shareManagement.addShare("BMW", 200);
-        System.out.println(shareManagement.listAll());
         shareManagement.addShare("Siemens", 150);
+        System.out.println(shareManagement.listAll());
 
 
         RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement, userManagement);

@@ -25,9 +25,9 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
         super(shareManagement, userManagement);
     }
 
-    public void updateShareRates(){
+    public void updateShareRates() throws NegativeValueException {
 
-        long erg=0;
+        double erg=0;
 
         for (int i=0; i<shareManagement.getShareLength(); i++){
             if (shareManagement.getShareByNumber(i) == null)

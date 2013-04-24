@@ -1,7 +1,6 @@
 package boersenspiel.account;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Jan
  * Date: 09.04.13
  * Time: 17:34
