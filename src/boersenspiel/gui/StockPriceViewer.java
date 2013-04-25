@@ -1,6 +1,7 @@
 package boersenspiel.gui;
 
 /**
+ * Created with IntelliJ IDEA.
  * User: jan
  * Date: 15.04.13
  * Time: 13:56
@@ -21,7 +22,6 @@ import javax.swing.JLabel;
 public class StockPriceViewer extends JFrame{
 
     private ShareManagement shareManagement;
-    private RandomStockPriceProvider randomStockPriceProvider;
 
     private static final int TICK_PERIOD = 1000;
     private Timer ticker;
@@ -35,21 +35,19 @@ public class StockPriceViewer extends JFrame{
         }
 
         private String createText(){
+            String output = "<html><body>Die Verfügbaren Aktien mit ihrem Kurs:<br>";
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             DateFormat dateFormatter = DateFormat.getDateTimeInstance();
-            String output = "<html><body>Die Verfügbaren Aktien mit ihrem Kurs:<br>";
             output += dateFormatter.format(date) + shareManagement.getSharesAndRates() + "</body></html>";
             return output;
         }
     }
 
 
-    public StockPriceViewer(ShareManagement shareManagement, RandomStockPriceProvider randomStockPriceProvider) throws Exception{
+    public StockPriceViewer(ShareManagement shareManagement) throws Exception{
         this.shareManagement = shareManagement;
-        this.randomStockPriceProvider = randomStockPriceProvider;
         TickerTask t = new TickerTask();
-        randomStockPriceProvider.startUpdate();
         clockLabel = new JLabel(t.createText());
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
