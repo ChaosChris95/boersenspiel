@@ -33,7 +33,7 @@ public abstract class StockPriceProvider {
     }
 
     public Share[] getAllSharesAsSnapShot(){
-          return shareManagement.getShareList();    //TODO ist das damit gemeint?
+          return shareManagement.getShareList();
     }
 
     protected abstract void updateShareRates();

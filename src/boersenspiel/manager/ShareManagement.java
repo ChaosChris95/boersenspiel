@@ -1,6 +1,6 @@
 package boersenspiel.manager;
 
-import boersenspiel.exceptions.SharenameAlreadyExistsException;
+import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.stock.Share;
 
 /**
@@ -16,18 +16,18 @@ public class ShareManagement {
         shares = new Share[0];
     }
 
-    public void addShare(String name, long price) throws SharenameAlreadyExistsException { //TODO shares names have to be unique
+    public void addShare(String name, long price) throws ShareNameAlreadyExistsException { //TODO shares names have to be unique
         Share[] buffer = new Share[shares.length + 1];
         try {
             for (int i = 0; i < shares.length; i++) {
                 buffer[i] = shares[i];
                 if(shares[i].getName().equals(name)){
-                    throw new SharenameAlreadyExistsException();
+                    throw new ShareNameAlreadyExistsException();
                 }
             }
             buffer[buffer.length - 1] = new Share(name, price);
             shares = buffer;
-        }catch (SharenameAlreadyExistsException e){
+        }catch (ShareNameAlreadyExistsException e){
             e.printStackTrace();
         }
 
@@ -35,7 +35,11 @@ public class ShareManagement {
     }
 
     public Share[] getShareList(){
-        return shares;
+        Share[] sharesCopy = new Share[shares.length];
+        for (int i=0; i<shares.length; i++){
+            sharesCopy[i] = shares[i];
+        }
+        return sharesCopy;
     }
 
     public int getShareLength(){
