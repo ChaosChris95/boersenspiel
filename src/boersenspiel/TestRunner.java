@@ -60,6 +60,7 @@ public class TestRunner {
 
         shareManagement.addShare("BMW", 100);
         shareManagement.addShare("Siemens", 150);
+        //shareManagement.addShare("BMW", 200);
 
 
         Player one = new Player("Bianca");

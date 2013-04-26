@@ -39,7 +39,7 @@ public class StockPriceViewer extends JFrame{
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             DateFormat dateFormatter = DateFormat.getDateTimeInstance();
-            output += dateFormatter.format(date) + shareManagement.getSharesAndRates() + "</body></html>";
+            output += shareManagement.getSharesAndRates() + "<br>" + dateFormatter.format(date) + "</body></html>";
             return output;
         }
     }
