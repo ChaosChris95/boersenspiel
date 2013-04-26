@@ -1,21 +1,34 @@
 package boersenspiel.interfaces;
 
-import boersenspiel.StockGameCommandType;
-
 /**
- * User: Peach
+ * Created with IntelliJ IDEA.
+ * User: jan
  * Date: 26.04.13
- * Time: 11:36
+ * Time: 10:39
  */
 public interface CommandTypeInfo {
 
+    /**
+     *
+     * @return
+     */
 
-    void getName(String name);
+    String getName();
 
-    void getHelpText(String text);
+    /**
+     *
+     * @return
+     */
 
-    void getParamType(Class <StockGameCommandType> StockGameCommandType);
+    String getHelpText();
+
+    /**
+     *
+     * @return
+     */
+
+    Class<?>[] getParamTypes();
+
+
 
 }
-
-

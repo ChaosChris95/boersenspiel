@@ -33,7 +33,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
             if (shareManagement.getShareByNumber(i) == null)
                 continue;
             erg = Math.round(Math.random() * (max - min + 1)+ min);
-            System.out.println(erg);
+            System.out.println(erg);           //TODO comment out later - just debugger
             try{
                 shareManagement.getShareByNumber(i).increasePrice((long)erg);
             } catch (NegativeValueException e){

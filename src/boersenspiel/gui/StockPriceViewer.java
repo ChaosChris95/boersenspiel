@@ -51,7 +51,7 @@ public class StockPriceViewer extends JFrame{
         clockLabel = new JLabel(t.createText());
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(300, 300);
         setVisible(true);
 
     }
