@@ -33,7 +33,7 @@ public abstract class StockPriceProvider {
     }
 
     public Share[] getAllSharesAsSnapShot(){
-          return shareManagement.getShareList();
+          return shareManagement.cloneShareList();
     }
 
     protected abstract void updateShareRates();

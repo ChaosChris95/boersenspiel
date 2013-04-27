@@ -47,9 +47,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
         double erg=0;
 
         erg = (long)Math.round(Math.random() * (max - min + 1)+ min);
-        try{
-            shareManagement.getShare(share.getName()).increasePrice((long)erg);
-        } catch (NullPointerException e){}
+        shareManagement.getShare(share.getName()).increasePrice((long)erg);
     }
 
     @Override

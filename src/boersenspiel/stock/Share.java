@@ -12,6 +12,11 @@ public class Share {
     private final String name;
     private long price;
 
+    public Share clone(){
+        Share clone = new Share(name, price);
+        return clone;
+    }
+
     public Share(String name, long price) {
         this.name = name;
         this.price = price;

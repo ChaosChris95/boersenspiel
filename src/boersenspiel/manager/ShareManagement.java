@@ -16,7 +16,7 @@ public class ShareManagement {
         shares = new Share[0];
     }
 
-    public void addShare(String name, long price) throws ShareNameAlreadyExistsException { //TODO shares names have to be unique
+    public void addShare(String name, long price) throws ShareNameAlreadyExistsException {
         Share[] buffer = new Share[shares.length + 1];
         try {
             for (int i = 0; i < shares.length; i++) {
@@ -34,10 +34,10 @@ public class ShareManagement {
 
     }
 
-    public Share[] getShareList(){
+    public Share[] cloneShareList(){    //TODO clone richtig?
         Share[] sharesCopy = new Share[shares.length];
         for (int i=0; i<shares.length; i++){
-            sharesCopy[i] = shares[i];
+            sharesCopy[i] = shares[i].clone();
         }
         return sharesCopy;
     }
@@ -75,20 +75,27 @@ public class ShareManagement {
     }
 
     public String getSharesAndRates(){
-        String erg = "<br>";
+        StringBuilder erg = new StringBuilder();
+        erg.append( "<br>" );
         for (int i = 0; i < shares.length; i++) {
-                erg += " " + shares[i].getName() + " " + shares[i].getPrice() + "<br>";
+            erg.append( ' ' );
+            erg.append( shares[i].getName( ) );
+            erg.append( ' ' );
+            erg.append( shares[i].getPrice() );
+            erg.append( "<br>" );
         }
-        return erg;
+        return erg.toString();
     }
 
     public String listAll() {
 
-        String display = "Alle verfügbaren Aktien:\n";
+        StringBuilder display = new StringBuilder();
+        display.append( "Alle verfügbaren Aktien:\n" );
         for (int i = 0; i < shares.length; i++) {
-            display += shares[i].getName() + "\n";
+            display.append(shares[i].getName() );
+            display.append( '\n' );
         }
-        return display;
+        return display.toString();
     }
 
 }
