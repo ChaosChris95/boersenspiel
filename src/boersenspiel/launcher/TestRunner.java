@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.launcher;
 
 import boersenspiel.account.Player;
 import boersenspiel.exceptions.NegativeValueException;
@@ -81,11 +81,11 @@ public class TestRunner {
 
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
 
-        /*try {
+        try {
             shareManagement.addShare("BMW", 100);
         } catch (ShareNameAlreadyExistsException e) {
-           return;
-        }*/
+            return;
+        }
 
 	}
 }

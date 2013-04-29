@@ -1,4 +1,4 @@
-package boersenspiel.Launcher;
+package boersenspiel.launcher;
 
 /**
  * Created with IntelliJ IDEA.
