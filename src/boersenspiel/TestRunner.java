@@ -41,11 +41,6 @@ public class TestRunner {
 
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
 
-        try {
-            accountManager.sell("name", "schmidt", 2);
-        } catch (NotEnoughMoneyException e) {
-            e.fillInStackTrace();
-        }
 
         System.out.println(accountManager.getList());
         RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement);
@@ -80,6 +75,14 @@ public class TestRunner {
         randomStockPriceProvider.startUpdate();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement);
         stockPriceViewer.start();
+
+        AccountManager accountManager = new AccountManagerImpl(shareManagement);
+
+        try {
+            accountManager.sell("name", "schmidt", 2);
+        } catch (NotEnoughMoneyException e) {
+            e.fillInStackTrace();
+        }
 
 	}
 }
