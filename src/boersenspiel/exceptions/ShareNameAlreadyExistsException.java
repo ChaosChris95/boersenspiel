@@ -5,7 +5,7 @@ package boersenspiel.exceptions;
  * Date: 24.04.13
  * Time: 19:52
  */
-public class ShareNameAlreadyExistsException extends RuntimeException {
+public class ShareNameAlreadyExistsException extends Exception {
 
     public ShareNameAlreadyExistsException(String msg){
         super(msg);

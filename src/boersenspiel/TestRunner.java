@@ -1,7 +1,9 @@
 package boersenspiel;
 
 import boersenspiel.account.Player;
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NotEnoughMoneyException;
+import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
@@ -72,17 +74,18 @@ public class TestRunner {
         stockPriceViewer.start();*/
 
 
+
         randomStockPriceProvider.startUpdate();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement);
         stockPriceViewer.start();
 
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
 
-        try {
-            accountManager.sell("name", "schmidt", 2);
-        } catch (NotEnoughMoneyException e) {
-            e.fillInStackTrace();
-        }
+        /*try {
+            shareManagement.addShare("BMW", 100);
+        } catch (ShareNameAlreadyExistsException e) {
+           return;
+        }*/
 
 	}
 }
