@@ -28,4 +28,6 @@ public class playerAgent {
         player.buy(share, amount);
     }
 
+    //TODO Algorithmus umsetzen
+
 }
