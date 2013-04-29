@@ -1,5 +1,7 @@
 package boersenspiel.shell;
 
+import boersenspiel.interfaces.CommandTypeInfo;
+
 /**
  * Created with IntelliJ IDEA.
  * User: jan
@@ -9,26 +11,13 @@ package boersenspiel.shell;
 
 public class CommandScanner {
 
-    /*
-    HELP         ("help", "  * list all Commands"),
-    EXIT         ("exit", "  * exit program"),
-    CREATEPLAYER ("crp",  "<name> * create a new player by name", String.class),
-    BUYSHARE     ("bus",  "<playername> <sharename> <amount> * buy that amount of shares", String.class, String.class, int.class),
-    ...
-    */
+    private CommandTypeInfo<String> commandTypeInfos;
 
-    //private CommandTypeInfo commandType = new CommandTypInfo();
-
-    public CommandScanner(){//CommandTypInfo commandInfo){
-
+    public CommandScanner(CommandTypeInfo<String> commandTypeInfos){
+        this.commandTypeInfos = commandTypeInfos;
     }
 
     public void startScan(){
-
-        char input = 'a';
-        switch(input){
-
-        }
 
     }
 

@@ -5,6 +5,7 @@ import boersenspiel.interfaces.AccountManager;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import boersenspiel.shell.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,10 +25,26 @@ public class StockGameCommandProcessor {
 
     }
 
-    public void process(){
+    /*public void process(){
 
-    }
+        CommandScanner commandScanner = new CommandScanner(StockGameCommandType.values(), shellReader);
 
+        while (true) { // die Schleife über alle Kommandos, jeweils ein Durchlauf pro Eingabezeile
+            //...
+            CommandDescriptor command = new CommandDescriptor();
+            //...
+            commandScanner.fillInCommandDesc(command);
+            //...
 
+            Object[] params = command.getParams();
 
+            StockGameCommandType commandType = (StockGameCommandType)command.getCommandType();
+            switch (commandType) {
+                case EXIT: {}
+                case HELP: {}
+                case CREATEPLAYER: { }
+            }
+        }
+        }
+    }*/
 }
