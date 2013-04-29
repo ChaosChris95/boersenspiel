@@ -1,7 +1,8 @@
 package boersenspiel.launcher;
 
 import boersenspiel.interfaces.AccountManager;
-
+import boersenspiel.interfaces.CommandTypeInfo;
+import boersenspiel.shell.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -24,7 +25,7 @@ public class StockGameCommandProcessor {
 
     }
 
-    /*public void process(){
+    public void process(){
 
         CommandScanner commandScanner = new CommandScanner(StockGameCommandType.values(), shellReader);
 
@@ -44,6 +45,5 @@ public class StockGameCommandProcessor {
                 case CREATEPLAYER: { }
             }
         }
-        }
-    }*/
+    }
 }

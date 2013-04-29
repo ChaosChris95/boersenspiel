@@ -11,7 +11,7 @@ import boersenspiel.interfaces.CommandTypeInfo;
 
 public class CommandDescriptor {
 
-    private CommandTypeInfo<String> commandType;    //= new CommandTypeInfo<String>();
+    private CommandTypeInfo<String> commandType;;
     //Objekt[]<T> params;
     //Generics?
 

@@ -13,11 +13,15 @@ public class CommandScanner {
 
     private CommandTypeInfo<String> commandTypeInfos;
 
-    public CommandScanner(CommandTypeInfo<String> commandTypeInfos){
+    public CommandScanner(CommandTypeInfo commandTypeInfos){
         this.commandTypeInfos = commandTypeInfos;
     }
 
     public void startScan(){
+
+    }
+
+    public void fillInCommandDesc(StockGameCommandType command){    //?
 
     }
 
