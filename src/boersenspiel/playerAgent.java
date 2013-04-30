@@ -6,10 +6,9 @@ import boersenspiel.stock.Share;
 import java.util.Timer;
 
 /**
- * Created with IntelliJ IDEA.
- * User: jan
+ * User: Peach
  * Date: 29.04.13
- * Time: 12:54
+ * Time: 13:22
  */
 
 public class playerAgent {
@@ -28,6 +27,8 @@ public class playerAgent {
         player.buy(share, amount);
     }
 
-    //TODO Algorithmus umsetzen
+    public void algorithm() {
+        player.
+    }
 
 }

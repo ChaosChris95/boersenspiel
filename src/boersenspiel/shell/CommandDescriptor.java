@@ -19,4 +19,9 @@ public class CommandDescriptor {
         this.commandType = commandType;
     }
 
+
+    //Woher wissen wir welche Typen gecastet werden?
+    //Welche Strings sind welche Casts
+    //Wo wirds übergeben und umgewandelt
+
 }
