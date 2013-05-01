@@ -7,6 +7,7 @@ package boersenspiel.provider;
 * Time: 14:10
 */
 
+import boersenspiel.gui.UpdateTimer;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.manager.UserManagement;
 import boersenspiel.stock.Share;
@@ -51,21 +52,18 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
     }
 
     @Override
-    public void startUpdate()  throws Exception{
-        MyTimer myTimer = new MyTimer();
+    public void startUpdate(){
+        UpdateShareTimer myTimer = new UpdateShareTimer();
         myTimer.startTiming();
     }
 
-    class MyTimer {
-        private void startTiming() throws Exception{
-            Timer timer = new Timer();
-            timer.scheduleAtFixedRate(new TimerTask() {
-                public void run(){
-                    try{
+    class UpdateShareTimer {
+        private void startTiming(){
+            UpdateTimer.getInstance(new TimerTask() {
+                public void run() {
                         RandomStockPriceProvider.this.updateShareRates();
-                    } catch (Exception e){}
                 }
-            }, 2000, 1000);
+            });
         }
     }
 }

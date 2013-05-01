@@ -28,7 +28,7 @@ public class playerAgent {
     }
 
     public void algorithm() {
-        player.
+        //player.
     }
 
 }

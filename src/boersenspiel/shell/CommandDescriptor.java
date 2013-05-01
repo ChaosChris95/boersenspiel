@@ -23,5 +23,6 @@ public class CommandDescriptor {
     //Woher wissen wir welche Typen gecastet werden?
     //Welche Strings sind welche Casts
     //Wo wirds übergeben und umgewandelt
+    //gute Frage keine Ahnung ;(
 
 }

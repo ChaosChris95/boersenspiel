@@ -25,7 +25,7 @@ public class StockGameCommandProcessor {
 
     }
 
-    public void process(){
+    public void process(){              /*
 
         CommandScanner commandScanner = new CommandScanner(StockGameCommandType.values(), shellReader);
 
@@ -44,6 +44,6 @@ public class StockGameCommandProcessor {
                 case HELP: {}
                 case CREATEPLAYER: { }
             }
-        }
+        }   */
     }
 }

@@ -77,7 +77,7 @@ public class TestRunner {
 
         randomStockPriceProvider.startUpdate();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement);
-        stockPriceViewer.start();
+        stockPriceViewer.updateInfo();
 
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
 
