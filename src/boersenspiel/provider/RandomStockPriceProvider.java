@@ -53,11 +53,12 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
 
     @Override
     public void startUpdate(){
-        UpdateShareTimer myTimer = new UpdateShareTimer();
-        myTimer.startTiming();
+        updateShareRates();
+        //UpdateShareTimer myTimer = new UpdateShareTimer();
+        //myTimer.startTiming();
     }
 
-    class UpdateShareTimer {
+/*    class UpdateShareTimer {
         private void startTiming(){
             UpdateTimer.getInstance(new TimerTask() {
                 public void run() {
@@ -65,5 +66,5 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
                 }
             });
         }
-    }
+    }*/
 }
