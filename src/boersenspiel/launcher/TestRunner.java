@@ -23,8 +23,8 @@ public class TestRunner {
 	
 	public static void main(String[] args) throws Exception {
 
-        ShareManagement shareManagement = new ShareManagement();
-        UserManagement userManagement = new UserManagement();
+        ShareManagement shareManagement = ShareManagement.getInstance();
+        UserManagement userManagement = UserManagement.getInstance();
 
         shareManagement.addShare("BMW", 100);
         shareManagement.addShare("Siemens", 150);
@@ -34,8 +34,8 @@ public class TestRunner {
         one.buy(shareManagement.getShare("BMW"), 5);
 
         RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider(shareManagement, userManagement);
-        StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement, randomStockPriceProvider);
-        stockPriceViewer.updateInfo();
+        StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement);
+        stockPriceViewer.start();
 
         AccountManager accountManager = new AccountManagerImpl(shareManagement);
 

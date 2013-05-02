@@ -9,20 +9,23 @@ package boersenspiel.shell;
 
 import boersenspiel.interfaces.CommandTypeInfo;
 
-public enum StockGameCommandType implements CommandTypeInfo{
+public enum StockGameCommandType implements CommandTypeInfo {
 
     HELP ("help", " * list all StockGameCommandType"),
     EXIT ("exit", "exit program"),
-    CREATEPLAYER ("crp",  "<playername> * create a new player by name", String.class),
+    CREATEPLAYER ("crp",  "<playername> <cash> * create a new player by name", String.class, Long.class),
     GETASSETS("gp",  "<playername> * get assets of the player", String.class),
-    BUYSHARE ("bus",  "<playername> <sharename> <amount> * buy that amount of shares", String.class, String.class, int.class),
-    SELLSHARE ("bus",  "<playername> <sharename> <amount> * sell that amount of shares", String.class, String.class, int.class),
+    BUYSHARE ("bus",  "<playername> <sharename> <amount> * buy that amount of shares", String.class, String.class, Integer.class),
+    SELLSHARE ("ses",  "<playername> <sharename> <amount> * sell that amount of shares", String.class, String.class, Integer.class),
+    GETSTOCKS ("gst", "<playername> * list all player stocks", String.class),
+    GETALLSTOCKS ("gallst", " * list all available stocks"),
+    GETCASH ("getcash", " <playername> * print players cashaccount Value", String.class),
+    BOT ("bot", " <playername> * set player as bot", String.class)
     ;
 
     private String cmdName;
     private String helpText;
     private Class<?>[] paramType;
-    //private commandTypeInfo commandType;    //not sure
 
     private StockGameCommandType(String cmdName, String helpText){
 
@@ -35,13 +38,25 @@ public enum StockGameCommandType implements CommandTypeInfo{
 
         this.cmdName = cmdName;
         this.helpText = helpText;
+        paramType = new Class<?>[1];
         paramType[0] = param;
+
+    }
+
+    private StockGameCommandType(String cmdName, String helpText, Class<?> param,  Class<?> param2){
+
+        this.cmdName = cmdName;
+        this.helpText = helpText;
+        paramType = new Class<?>[2];
+        paramType[0] = param;
+        paramType[1] = param2;
 
     }
 
     private StockGameCommandType(String cmdName, String helpText, Class<?> param1, Class<?> param2, Class<?> param3){
         this.cmdName = cmdName;
         this.helpText = helpText;
+        paramType = new Class<?>[3];
         paramType[0] = param1;
         paramType[1] = param2;
         paramType[2] = param3;
@@ -55,7 +70,12 @@ public enum StockGameCommandType implements CommandTypeInfo{
         return helpText;
     }
 
-    public Class<?>[] getParamTypes(){
+    public Class<?>[] getParamTypes() {
         return paramType;
+    }
+
+    @Override
+    public Object getTarget() {
+        return null;
     }
 }

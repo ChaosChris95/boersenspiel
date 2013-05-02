@@ -10,10 +10,19 @@ import boersenspiel.account.Player;
  */
 
 public class UserManagement {
+
+    private static UserManagement instance = null;
+    public static UserManagement getInstance() {
+        if(UserManagement.instance == null) {
+            UserManagement.instance = new UserManagement();
+        }
+        return UserManagement.instance;
+    }
+
     private Player[] players;
 
-    public UserManagement() {
-        players = new Player[0];
+    private UserManagement() {
+        this.players = new Player[0];
     }
 
     public void addPlayer(String name, long cash) {
@@ -21,7 +30,9 @@ public class UserManagement {
         for (int i = 0; i<this.players.length; i++){
             buffer[i] = players[i];
         }
-        buffer[buffer.length - 1] = new Player(name);
+        Player p = new Player(name);
+        p.addCash(cash);
+        buffer[buffer.length - 1] = p;
         players = buffer;
     }
 

@@ -6,28 +6,35 @@ package boersenspiel.interfaces;
  * Date: 26.04.13
  * Time: 10:39
  */
-public interface CommandTypeInfo<T> {
+public interface CommandTypeInfo {
 
     /**
      *
      * @return
      */
 
-    String getCmdName();
+    public String getCmdName();
 
     /**
      *
      * @return
      */
 
-    String getHelpText();
+    public String getHelpText();
 
     /**
      *
      * @return
      */
 
-    Class<?>[] getParamTypes();
+    public Class<?>[] getParamTypes();
+
+
+    public Object getTarget();
+
+
+
+
 
 
 

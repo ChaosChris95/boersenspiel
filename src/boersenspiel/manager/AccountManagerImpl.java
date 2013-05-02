@@ -11,11 +11,10 @@ import boersenspiel.interfaces.AccountManager;
  */
 public class AccountManagerImpl implements AccountManager {
 
-    private UserManagement userManagement;
+    private UserManagement userManagement = UserManagement.getInstance();
     private ShareManagement shareManagement;
 
     public AccountManagerImpl(ShareManagement shareManagement) {
-        userManagement = new UserManagement();
         this.shareManagement = shareManagement;
     }
 

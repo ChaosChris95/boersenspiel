@@ -10,9 +10,18 @@ import boersenspiel.stock.Share;
  */
 
 public class ShareManagement {
+
+    private static ShareManagement instance = null;
+    public static ShareManagement getInstance() {
+        if(ShareManagement.instance == null) {
+            ShareManagement.instance = new ShareManagement();
+        }
+        return ShareManagement.instance;
+    }
+
     private Share[] shares;
 
-    public ShareManagement() {
+    private ShareManagement() {
         shares = new Share[0];
     }
 

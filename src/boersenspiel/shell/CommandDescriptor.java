@@ -11,18 +11,21 @@ import boersenspiel.interfaces.CommandTypeInfo;
 
 public class CommandDescriptor {
 
-    private CommandTypeInfo<String> commandType;;
-    //Objekt[]<T> params;
-    //Generics?
+    public CommandTypeInfo commandType;
+    public Object[] params;
 
-    public CommandDescriptor(CommandTypeInfo commandType){
-        this.commandType = commandType;
+    public CommandDescriptor(){
+    }
+
+    public Object[] getParams(){
+        return this.params;
+    }
+
+    public CommandTypeInfo getCommandType(){
+        return this.commandType;
     }
 
 
-    //Woher wissen wir welche Typen gecastet werden?
-    //Welche Strings sind welche Casts
-    //Wo wirds übergeben und umgewandelt
-    //gute Frage keine Ahnung ;(
+
 
 }
