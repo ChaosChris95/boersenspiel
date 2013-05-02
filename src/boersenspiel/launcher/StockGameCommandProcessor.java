@@ -1,8 +1,10 @@
 package boersenspiel.launcher;
 
+import boersenspiel.PlayerAgent;
 import boersenspiel.account.Player;
 import boersenspiel.exceptions.CommandScannerException;
 import boersenspiel.exceptions.ShareNameAlreadyExistsException;
+import boersenspiel.gui.UpdateTimer;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.interfaces.CommandTypeInfo;
 import boersenspiel.manager.ShareManagement;
@@ -14,9 +16,9 @@ import java.io.PrintWriter;
 
 /**
  * Created with IntelliJ IDEA.
- * User: jan
- * Date: 26.04.13
- * Time: 10:56
+ * User: Peach
+ * Date: 02.05.13
+ * Time: 17:01
  */
 public class StockGameCommandProcessor {
 
@@ -55,8 +57,10 @@ public class StockGameCommandProcessor {
                     System.exit(0);
                     break;
                 case HELP:
-                    for(int i = 0; i < StockGameCommandType.values().length; i++) {
-                        System.out.println(StockGameCommandType.values()[i].getHelpText());
+                    StockGameCommandType en[] = StockGameCommandType.values();
+                    for(int i = 0; i < en.length; i++) {
+
+                        System.out.println(en[i].getCmdName() + ": " + en[i].getHelpText());
                     }
                     break;
                 case CREATEPLAYER:
@@ -92,6 +96,11 @@ public class StockGameCommandProcessor {
                         e.printStackTrace();
                     }
                     System.out.println("Aktie " + (String) params[0] + " mit einem Preis von " + (Long) params[1] + " erstellt.");
+                    break;
+                case BOT:
+                    PlayerAgent p = new PlayerAgent(UserManagement.getInstance().getPlayer((String) params[0]));
+                    UpdateTimer.getInstance().addTask(p.getTask());
+                    System.out.println("Stelle um auf Bot");
                     break;
             }
         }

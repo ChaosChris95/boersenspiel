@@ -8,9 +8,9 @@ import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
- * User: jan
- * Date: 26.04.13
- * Time: 10:24
+ * User: Peach
+ * Date: 02.05.13
+ * Time: 16:24
  */
 
 public class CommandScanner {
@@ -28,6 +28,9 @@ public class CommandScanner {
         String line = null;
         try {
             line = this.shellReader.readLine();
+            if(line == null) {
+                throw new CommandScannerException("Nichts eingegeben");
+            }
         } catch (IOException e) {
             throw new CommandScannerException(e.getMessage());
         }

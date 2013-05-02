@@ -22,8 +22,8 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
     private double max = 50;
     private double min = -50;
 
-    public RandomStockPriceProvider(ShareManagement shareManagement, UserManagement userManagement){
-        super(shareManagement, userManagement);
+    public RandomStockPriceProvider(){
+        super();
     }
 
     public void updateShareRates() throws NegativeValueException {

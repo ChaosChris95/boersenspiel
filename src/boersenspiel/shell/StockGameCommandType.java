@@ -27,7 +27,7 @@ public enum StockGameCommandType implements CommandTypeInfo {
 
     private String cmdName;
     private String helpText;
-    private Class<?>[] paramType;
+    private Class<?>[] paramType = new Class<?>[0];
 
     private StockGameCommandType(String cmdName, String helpText){
 

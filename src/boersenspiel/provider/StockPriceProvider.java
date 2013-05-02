@@ -17,9 +17,9 @@ public abstract class StockPriceProvider {
     private UserManagement userManagement;
 
 
-    public StockPriceProvider(ShareManagement shareManagement, UserManagement userManagement){
-        this.shareManagement = shareManagement;
-        this.userManagement = userManagement;
+    public StockPriceProvider(){
+        this.shareManagement = ShareManagement.getInstance();
+        this.userManagement = UserManagement.getInstance();
     }
 
     public boolean isShareListed(String shareName){
