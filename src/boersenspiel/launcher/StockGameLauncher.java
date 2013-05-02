@@ -19,6 +19,7 @@ public class StockGameLauncher {
         RandomStockPriceProvider rnd = new RandomStockPriceProvider();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance());
         stockPriceViewer.start();
+        rnd.startUpdate();
 
         ShareManagement.getInstance().addShare("BMW", 100);
         ShareManagement.getInstance().addShare("Siemens", 150);

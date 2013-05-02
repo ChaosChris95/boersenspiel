@@ -21,6 +21,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
 
     private double max = 50;
     private double min = -50;
+    public UpdateTimer timer = UpdateTimer.getInstance();
 
     public RandomStockPriceProvider(){
         super();
@@ -51,20 +52,11 @@ public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where
         shareManagement.getShare(share.getName()).increasePrice((long)erg);
     }
 
-    @Override
     public void startUpdate(){
-        updateShareRates();
-        //UpdateShareTimer myTimer = new UpdateShareTimer();
-        //myTimer.startTiming();
+         timer.addTask(new TimerTask() {
+             public void run() {
+                  updateShareRates();
+             }
+         });
     }
-
-/*    class UpdateShareTimer {
-        private void startTiming(){
-            UpdateTimer.getInstance(new TimerTask() {
-                public void run() {
-                        RandomStockPriceProvider.this.updateShareRates();
-                }
-            });
-        }
-    }*/
 }
