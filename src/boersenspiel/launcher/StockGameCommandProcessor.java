@@ -2,6 +2,7 @@ package boersenspiel.launcher;
 
 import boersenspiel.account.Player;
 import boersenspiel.exceptions.CommandScannerException;
+import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.interfaces.CommandTypeInfo;
 import boersenspiel.manager.ShareManagement;
@@ -60,20 +61,20 @@ public class StockGameCommandProcessor {
                     break;
                 case CREATEPLAYER:
                     UserManagement.getInstance().addPlayer((String) params[0], (Long) params[1]);
-                    System.out.println("Spieler " + (String) params[0] + " erstellt");
+                    System.out.println("Spieler " + (String) params[0] + " erstellt mit einem Accountwert von " + (Long) params[1]);
                     break;
                 case BUYSHARE:
                     UserManagement.getInstance().getPlayer((String) params[0]).buy(
                             ShareManagement.getInstance().getShare((String) params[1]),
                             (Integer) params[2]);
-                    System.out.println("Spieler " + (String) params[0] + " kaufte " + (Integer) params[2] + "Aktien von " + (String) params[1]);
+                    System.out.println("Spieler " + (String) params[0] + " kaufte " + (Integer) params[2] + " Aktien von " + (String) params[1]);
                     break;
                 case SELLSHARE:
                     UserManagement.getInstance().getPlayer((String) params[0]).sell(
                             ShareManagement.getInstance().getShare((String) params[1]),
                             (Integer) params[2]);
 
-                    System.out.println("Spieler " + (String) params[0] + " verkaufte " + (Integer) params[2] + "Aktien von " + (String) params[1]);
+                    System.out.println("Spieler " + (String) params[0] + " verkaufte " + (Integer) params[2] + " Aktien von " + (String) params[1]);
                     break;
                 case GETALLSTOCKS:
                     System.out.println(ShareManagement.getInstance().listAll());
@@ -83,6 +84,14 @@ public class StockGameCommandProcessor {
                     break;
                 case GETCASH:
                     System.out.println(UserManagement.getInstance().getPlayer((String) params[0]).getCashAccountValue());
+                    break;
+                case CREATESHARE:
+                    try {
+                        ShareManagement.getInstance().addShare((String) params[0], (Long) params[1]);
+                    } catch (ShareNameAlreadyExistsException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Aktie " + (String) params[0] + " mit einem Preis von " + (Long) params[1] + " erstellt.");
                     break;
             }
         }

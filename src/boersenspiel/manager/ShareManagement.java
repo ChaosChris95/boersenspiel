@@ -39,8 +39,6 @@ public class ShareManagement {
         }catch (ShareNameAlreadyExistsException e){
             e.printStackTrace();
         }
-
-
     }
 
     public Share[] cloneShareList(){    //TODO clone richtig?

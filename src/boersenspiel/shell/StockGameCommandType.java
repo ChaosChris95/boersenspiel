@@ -17,10 +17,12 @@ public enum StockGameCommandType implements CommandTypeInfo {
     GETASSETS("gp",  "<playername> * get assets of the player", String.class),
     BUYSHARE ("bus",  "<playername> <sharename> <amount> * buy that amount of shares", String.class, String.class, Integer.class),
     SELLSHARE ("ses",  "<playername> <sharename> <amount> * sell that amount of shares", String.class, String.class, Integer.class),
-    GETSTOCKS ("gst", "<playername> * list all player stocks", String.class),
-    GETALLSTOCKS ("gallst", " * list all available stocks"),
-    GETCASH ("getcash", " <playername> * print players cashaccount Value", String.class),
-    BOT ("bot", " <playername> * set player as bot", String.class)
+    GETSTOCKS ("getst", "<playername> * list all player stocks", String.class),
+    GETALLSTOCKS ("getallst", " * list all available stocks"),
+    GETCASH ("gc", " <playername> * print players cashaccount Value", String.class),
+    BOT ("bot", " <playername> * set player as bot", String.class),
+    CREATESHARE ("crs", "<sharename> <price> * create share with given price in system", String.class, Long.class),
+    DELETESHARE ("des", "<sharename> * delete share from system ", String.class)
     ;
 
     private String cmdName;
