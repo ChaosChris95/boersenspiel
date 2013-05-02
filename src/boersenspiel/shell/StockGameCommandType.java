@@ -20,7 +20,8 @@ public enum StockGameCommandType implements CommandTypeInfo {
     GETSTOCKS ("getst", "<playername> * list all player stocks", String.class),
     GETALLSTOCKS ("getallst", " * list all available stocks"),
     GETCASH ("gc", " <playername> * print players cashaccount Value", String.class),
-    BOT ("bot", " <playername> * set player as bot", String.class),
+    BOT ("bot", " <playername> <time> * set player as bot", String.class, Integer.class),       //TODO Bot Timer setzen, z.b bot bibi 400 soll 400 sec
+                                                                                                // bot ausführen danach automatisch zurück zum zustand player übergehen
     CREATESHARE ("crs", "<sharename> <price> * create share with given price in system", String.class, Long.class),
     DELETESHARE ("des", "<sharename> * delete share from system ", String.class)
     ;
