@@ -41,7 +41,11 @@ public class ShareManagement {
         }
     }
 
-    public Share[] cloneShareList(){    //TODO clone richtig?
+    public void deleteShare(String name) {                   //TODO Implementieren
+
+    }
+
+    public Share[] cloneShareList(){                        //TODO clone richtig?
         Share[] sharesCopy = new Share[shares.length];
         for (int i=0; i<shares.length; i++){
             sharesCopy[i] = shares[i].clone();

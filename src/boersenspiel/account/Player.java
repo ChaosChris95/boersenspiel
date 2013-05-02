@@ -69,7 +69,7 @@ public class Player {
         return name;
     }
 
-    public boolean isBroken() {     //TODO necessary?
+    public boolean isBroken() {
         if (getCashAccountValue() <= 0) {
             broken = true;
         }

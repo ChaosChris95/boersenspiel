@@ -22,7 +22,7 @@ public enum StockGameCommandType implements CommandTypeInfo {
     GETCASH ("gc", " <playername> * print players cashaccount Value", String.class),
     BOT ("bot", " <playername> * set player as bot", String.class),
     CREATESHARE ("crs", "<sharename> <price> * create share with given price in system", String.class, Long.class),
-    DELETESHARE ("des", "<sharename> * delete share from system ", String.class)    //TODO Implementierung in ShareManagement
+    DELETESHARE ("des", "<sharename> * delete share from system ", String.class)
     ;
 
     private String cmdName;
