@@ -17,9 +17,9 @@ public class StockGameLauncher {
 
     public static void main(String [] args) throws Exception {
         RandomStockPriceProvider rnd = new RandomStockPriceProvider();
-        StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance());
-        stockPriceViewer.start();
+        StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(),rnd);
         rnd.startUpdate();
+        stockPriceViewer.updateInfo();
 
         ShareManagement.getInstance().addShare("BMW", 100);
         ShareManagement.getInstance().addShare("Siemens", 150);

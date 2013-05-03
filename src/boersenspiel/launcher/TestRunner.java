@@ -33,9 +33,9 @@ public class TestRunner {
         Player one = new Player("Bianca");
         one.buy(shareManagement.getShare("BMW"), 5);
 
-        RandomStockPriceProvider randomStockPriceProvider = new RandomStockPriceProvider();
-        StockPriceViewer stockPriceViewer = new StockPriceViewer(shareManagement);
-        stockPriceViewer.start();
+        RandomStockPriceProvider rnd = new RandomStockPriceProvider();
+        StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(), rnd);
+        stockPriceViewer.updateInfo();
 
         AccountManager accountManager = new AccountManagerImpl();
 
