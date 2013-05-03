@@ -9,26 +9,30 @@ package boersenspiel.interfaces;
 public interface CommandTypeInfo {
 
     /**
-     *
-     * @return
+     * get name of command
+     * @return String
      */
 
     public String getCmdName();
 
     /**
-     *
-     * @return
+     * get help text
+     * @return String
      */
 
     public String getHelpText();
 
     /**
-     *
-     * @return
+     * get the types of the parameters of a command
+     * @return Class\<\?\>[]
      */
 
     public Class<?>[] getParamTypes();
 
+    /**
+     * get the target
+     * @return Object
+     */
 
     public Object getTarget();
 
