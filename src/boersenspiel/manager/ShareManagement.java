@@ -41,11 +41,20 @@ public class ShareManagement {
         }
     }
 
-    public void deleteShare(String name) {                   //TODO Implementieren
-
+    public void deleteShare(String name) {
+        Share[] buffer = new Share[shares.length - 1];
+        int j = 0;
+        for (int i = 0; i < shares.length; i++) {
+            if (shares[i].getName().equals(name)){
+            continue;
+            }
+            buffer[j] = shares[i];
+            j++;
+        }
+        shares = buffer;
     }
 
-    public Share[] cloneShareList(){                        //TODO clone richtig?
+    public Share[] cloneShareList(){
         Share[] sharesCopy = new Share[shares.length];
         for (int i=0; i<shares.length; i++){
             sharesCopy[i] = shares[i].clone();

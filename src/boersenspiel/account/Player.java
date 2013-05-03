@@ -34,7 +34,7 @@ public class Player {
 
     }
 
-    public void sell(Share share, int amount) throws NotEnoughSharesException{  //TODO Exception not enough amount or no share
+    public void sell(Share share, int amount) throws NotEnoughSharesException{
         try{
             shareDeposit.removeShare(share, amount);
         } catch (NotEnoughSharesException s) {}

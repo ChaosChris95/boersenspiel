@@ -49,7 +49,7 @@ public class ShareDeposit extends Asset {
         addShareItem(new ShareItem(share, amount));
     }
 
-    public long removeShare(Share share, int amount) {       //TODO do over
+    public long removeShare(Share share, int amount) {
 
         boolean exists = false;
         for (int i = 0; i < shareItemList.length; i++) {

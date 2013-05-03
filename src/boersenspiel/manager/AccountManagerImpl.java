@@ -32,7 +32,7 @@ public class AccountManagerImpl implements AccountManager {
     }
 
     @Override
-    public void sell(String playerName, String shareName, int amount) throws Exception {    //TODO sell Share first
+    public void sell(String playerName, String shareName, int amount) throws Exception {
         long shareValue = shareManagement.getSpecificRate(shareName);
         shareValue *= amount;
         userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);

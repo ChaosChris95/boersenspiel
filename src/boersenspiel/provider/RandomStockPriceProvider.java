@@ -17,7 +17,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.lang.Math;
 
-public class RandomStockPriceProvider extends StockPriceProvider {  //TODO Where is the buck
+public class RandomStockPriceProvider extends StockPriceProvider {
 
     private double max = 50;
     private double min = -50;

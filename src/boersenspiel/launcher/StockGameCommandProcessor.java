@@ -97,10 +97,14 @@ public class StockGameCommandProcessor {
                     }
                     System.out.println("Aktie " + (String) params[0] + " mit einem Preis von " + (Long) params[1] + " erstellt.");
                     break;
+                case DELETESHARE:
+                    ShareManagement.getInstance().deleteShare((String) params[0]);
+                    System.out.println("Aktien " + (String) params[0] + " wurde aus dem System gelöscht");
+                    break;
                 case BOT:
                     PlayerAgent p = new PlayerAgent(UserManagement.getInstance().getPlayer((String) params[0]));
                     UpdateTimer.getInstance().addTask(p.getTask());
-                    System.out.println("Stelle um auf Bot");
+                    System.out.println("Stelle" + (String) params[0] + " um auf Bot");
                     break;
             }
         }
