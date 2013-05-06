@@ -52,6 +52,7 @@ public class CashAccountTest extends TestCase{
     public void testSubCash1() {
         cashAccount1.subCash(800);
         this.assertEquals("1000-800", 200, cashAccount1.getValue());
+        // bla
     }
 
     /*@Test(expected=NotEnoughMoneyException.class)         //it does not work! why?
