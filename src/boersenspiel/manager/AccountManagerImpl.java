@@ -25,10 +25,12 @@ public class AccountManagerImpl implements AccountManager {
     @Override
     public void createPlayer(String name, long cash) {
         userManagement.addPlayer(name, cash);
+        System.out.println("Spieler " + name + " erstellt mit einem Accountwert von " + cash);
     }
 
     public void botPlayer(String name) {
         this.playerAgent = new PlayerAgent(userManagement.getPlayer(name));
+        System.out.println("Stelle" + name + " um auf Bot");
     }
 
     public Player getPlayer(String name) {
@@ -40,6 +42,7 @@ public class AccountManagerImpl implements AccountManager {
         long shareValue = shareManagement.getSpecificRate(shareName);
         shareValue *= amount;
         userManagement.getPlayer(playerName).buy(shareManagement.getShare(shareName), amount);
+        System.out.println("Spieler " + playerName + " kaufte " + amount + " Aktien von " + shareName);
     }
 
     @Override
@@ -47,6 +50,7 @@ public class AccountManagerImpl implements AccountManager {
         long shareValue = shareManagement.getSpecificRate(shareName);
         shareValue *= amount;
         userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);
+        System.out.println("Spieler " + playerName + " verkaufte " + amount + " Aktien von " + shareName);
     }
 
     @Override

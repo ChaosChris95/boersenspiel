@@ -24,7 +24,7 @@ public class CommandScanner {
 
     public void fillInCommandDesc(CommandDescriptor command) throws CommandScannerException {
 
-        String line = null;
+        String line;
         try {
             line = this.shellReader.readLine();
             if(line == null) {
@@ -37,19 +37,20 @@ public class CommandScanner {
         String cmd = parts[0].toLowerCase();
 
         for(int i = 0; i < this.commandTypeInfos.length; i++) {
-            if(this.commandTypeInfos[i].getCmdName().equals(cmd)) {
+            if (this.commandTypeInfos[i].getCmdName().equals(cmd)) {
                 command.commandType = this.commandTypeInfos[i];
 
                 Class<?>[] classes = command.commandType.getParamTypes();
-                if(classes.length != parts.length - 1) {
+                if (classes.length != parts.length - 1) {
                     throw new CommandScannerException("Nicht genug Parameter");
                 }
 
                 command.params = new Object[classes.length];
 
-                for(int j = 0; j < classes.length; j++) {
-                    Class<?> clas = classes[j];
-                    command.params[j] = clas.getClass().cast(parts[j + 1]);
+                for (int j = 0; j < classes.length; j++) {
+                    Class<?> clash = classes[j];
+                    command.params[j] = clash.getClass().cast(parts[j + 1]);
+                    throw new CommandScannerException("Fehlerhafte Eingabe");
                 }
                 return;
             }

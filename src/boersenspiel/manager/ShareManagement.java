@@ -36,6 +36,7 @@ public class ShareManagement {
             }
             buffer[buffer.length - 1] = new Share(name, price);
             shares = buffer;
+            System.out.println("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
         }catch (ShareNameAlreadyExistsException e){
             e.printStackTrace();
         }
@@ -52,6 +53,7 @@ public class ShareManagement {
             j++;
         }
         shares = buffer;
+        System.out.println("Aktie " + name + " wurde aus dem System gelöscht.");
     }
 
     public Share[] cloneShareList(){

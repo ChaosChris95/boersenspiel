@@ -36,6 +36,7 @@ public interface CommandTypeInfo {
 
     public String getTarget();
 
+    public String getFunc();
 
 
 
