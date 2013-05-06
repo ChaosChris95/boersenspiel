@@ -1,7 +1,6 @@
 package boersenspiel.provider;
 
 /**
- * Created with IntelliJ IDEA.
  * User: jan
  * Date: 15.04.13
  * Time: 14:07

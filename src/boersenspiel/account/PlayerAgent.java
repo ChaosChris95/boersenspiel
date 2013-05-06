@@ -7,6 +7,7 @@ import boersenspiel.stock.Share;
 
 import java.text.DateFormat;
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * User: Peach
@@ -17,16 +18,12 @@ import java.util.*;
 public class PlayerAgent {
 
     Player player;
+    private static Logger logger = Logger.getLogger(PlayerAgent.class.getName());
 
     public PlayerAgent(Player player) {
         this.player = player;
 
     }
-
-    /*public void setPlayer(Player player) {
-       this.player = player;
-    }
-    */
 
     public void sell(Share share, int amount) {
         player.sell(share, amount);
@@ -42,12 +39,12 @@ public class PlayerAgent {
         while(player.getCashAccountValue() > 0) {
             n = (int)(Math.random() * (ShareManagement.getInstance().getShareLength() - 1));
             s = ShareManagement.getInstance().getShareByNumber(n);
-            System.out.println("Kaufe 5 Aktien von " +  s.getName());
+            logger.info("Kaufe 5 Aktien von " +  s.getName());
             player.buy(s, 5);
 
             n = (int)(Math.random() * (ShareManagement.getInstance().getShareLength() - 1));
             s = ShareManagement.getInstance().getShareByNumber(n);
-            System.out.println("Verkaufe 3 Aktien von " +  s.getName());
+            logger.info("Verkaufe 3 Aktien von " +  s.getName());
             player.sell(s, 3);
             break;
         }

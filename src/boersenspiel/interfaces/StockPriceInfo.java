@@ -3,11 +3,11 @@ package boersenspiel.interfaces;
 import boersenspiel.stock.Share;
 
 /**
- * Created with IntelliJ IDEA.
  * User: jan
  * Date: 13.04.13
  * Time: 10:37
  */
+
 public interface StockPriceInfo {
 
     /**

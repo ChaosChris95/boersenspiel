@@ -1,7 +1,6 @@
 package boersenspiel.gui;
 
 /**
- * Created with IntelliJ IDEA.
  * User: jan
  * Date: 29.04.13
  * Time: 13:40

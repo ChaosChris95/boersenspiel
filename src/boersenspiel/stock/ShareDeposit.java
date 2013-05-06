@@ -4,7 +4,6 @@ import boersenspiel.account.Asset;
 import boersenspiel.exceptions.NotEnoughSharesException;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Jan
  * Date: 09.04.13
  * Time: 17:34

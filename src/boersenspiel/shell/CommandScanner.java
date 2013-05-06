@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Peach
  * Date: 02.05.13
  * Time: 16:24
@@ -23,8 +22,8 @@ public class CommandScanner {
         this.shellReader = shellReader;
     }
 
-    public void fillInCommandDesc(CommandDescriptor command) throws CommandScannerException {    //?
-        // Sucht auf der Konsoleneingabe nach gültigen Kommandos und speichert sie in command
+    public void fillInCommandDesc(CommandDescriptor command) throws CommandScannerException {
+
         String line = null;
         try {
             line = this.shellReader.readLine();
@@ -40,21 +39,18 @@ public class CommandScanner {
         for(int i = 0; i < this.commandTypeInfos.length; i++) {
             if(this.commandTypeInfos[i].getCmdName().equals(cmd)) {
                 command.commandType = this.commandTypeInfos[i];
-                // Kommando gefunden, Parameter prüfen
+
                 Class<?>[] classes = command.commandType.getParamTypes();
                 if(classes.length != parts.length - 1) {
-                    // Fehler. Nicht genug Parameter (exception)
                     throw new CommandScannerException("Nicht genug Parameter");
                 }
-                // Platz für die Parameter schaffen
+
                 command.params = new Object[classes.length];
 
                 for(int j = 0; j < classes.length; j++) {
                     Class<?> clas = classes[j];
                     command.params[j] = clas.getClass().cast(parts[j + 1]);
                 }
-
-
                 return;
             }
         }

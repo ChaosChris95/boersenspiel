@@ -13,11 +13,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Peach
  * Date: 02.05.13
  * Time: 17:01
  */
+
 public class StockGameCommandProcessor {
 
     private BufferedReader shellReader = new BufferedReader(new InputStreamReader(System.in));
@@ -34,10 +34,10 @@ public class StockGameCommandProcessor {
 
         CommandScanner commandScanner = new CommandScanner(StockGameCommandType.values(), shellReader);
 
-        while (true) { // die Schleife über alle Kommandos, jeweils ein Durchlauf pro Eingabezeile
-            //...
+        while (true) {
+
             CommandDescriptor command = new CommandDescriptor();
-            //...
+
 
             try {
                 commandScanner.fillInCommandDesc(command);
@@ -45,13 +45,12 @@ public class StockGameCommandProcessor {
                 System.out.println("Fehlerhafte Eingabe: " + e.getMessage());
                 continue;
             }
-            //...
 
             StockGameCommandType commandType = (StockGameCommandType) command.getCommandType();
             if(commandType == StockGameCommandType.EXIT) {
-                // Exit
+
             } else if(commandType == StockGameCommandType.HELP) {
-                // Help
+
             } else {
                 String target = commandType.getTarget();
                 String func = commandType.getFunc();
@@ -121,10 +120,7 @@ public class StockGameCommandProcessor {
                     UpdateTimer.getInstance().addTask(p.getTask(), 1000, 1000);
                     System.out.println("Stelle" + (String) params[0] + " um auf Bot");
                     break;
-                 */
-
-
-            }
+            }*/
         }
     }
 }

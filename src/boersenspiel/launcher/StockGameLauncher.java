@@ -16,6 +16,12 @@ import boersenspiel.provider.RandomStockPriceProvider;
 
 import java.util.logging.LogManager;
 
+/**
+ * User: Peach
+ * Date: 02.05.13
+ * Time: 17:01
+ */
+
 public class StockGameLauncher {
 
     public static void main(String [] args) throws Exception {

@@ -1,7 +1,6 @@
 package boersenspiel.provider;
 
 /**
-* Created with IntelliJ IDEA.
 * User: jan
 * Date: 15.04.13
 * Time: 14:10
@@ -35,7 +34,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {
             if (shareManagement.getShareByNumber(i) == null)
                 continue;
             erg = Math.round(Math.random() * (max - min + 1)+ min);
-            //System.out.println(erg);           //TODO comment out later - just debugger
+
             try{
                 shareManagement.getShareByNumber(i).increasePrice((long)erg);
             } catch (NegativeValueException e){

@@ -3,7 +3,6 @@ package boersenspiel.manager;
 import boersenspiel.account.Player;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Peach
  * Date: 09.04.13
  * Time: 17:57

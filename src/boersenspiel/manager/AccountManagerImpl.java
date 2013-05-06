@@ -6,11 +6,11 @@ import boersenspiel.exceptions.NotEnoughMoneyException;
 import boersenspiel.interfaces.AccountManager;
 
 /**
- * Created with IntelliJ IDEA.
  * User: Peach
  * Date: 09.04.13
  * Time: 17:34
  */
+
 public class AccountManagerImpl implements AccountManager {
 
     private UserManagement userManagement;

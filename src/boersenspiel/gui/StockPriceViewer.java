@@ -35,7 +35,7 @@ public class StockPriceViewer extends JFrame{
 
     public void updateInfo() {
         TickerTask tickerTask = new TickerTask();
-        UpdateTimer.getInstance().addTask(tickerTask);
+        //UpdateTimer.getInstance().addTask(tickerTask);
     }
 
     private class TickerTask extends TimerTask{
