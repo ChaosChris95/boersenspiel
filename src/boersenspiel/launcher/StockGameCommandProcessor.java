@@ -1,12 +1,10 @@
 package boersenspiel.launcher;
 
-import boersenspiel.PlayerAgent;
-import boersenspiel.account.Player;
+import boersenspiel.account.PlayerAgent;
 import boersenspiel.exceptions.CommandScannerException;
 import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.gui.UpdateTimer;
 import boersenspiel.interfaces.AccountManager;
-import boersenspiel.interfaces.CommandTypeInfo;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.manager.UserManagement;
 import boersenspiel.shell.*;

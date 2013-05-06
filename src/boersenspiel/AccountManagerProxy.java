@@ -1,4 +1,4 @@
-package boersenspiel.test;
+package boersenspiel;
 
 import boersenspiel.interfaces.AccountManager;
 

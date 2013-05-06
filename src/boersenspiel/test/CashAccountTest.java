@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.test;
 
 /**
  * Created with IntelliJ IDEA.

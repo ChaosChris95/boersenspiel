@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.account;
 
 import boersenspiel.account.Player;
 import boersenspiel.gui.UpdateTimer;
