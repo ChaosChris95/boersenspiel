@@ -6,7 +6,6 @@ package boersenspiel.exceptions;
  * Time: 15:21
  */
 public class NegativeValueException extends RuntimeException{
-
     public NegativeValueException(String message) {
         super(message);
     }
