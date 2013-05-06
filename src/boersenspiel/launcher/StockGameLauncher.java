@@ -13,9 +13,19 @@ import boersenspiel.provider.RandomStockPriceProvider;
  * Date: 02.05.13
  * Time: 17:42
  */
+
+import java.util.logging.LogManager;
+
 public class StockGameLauncher {
 
     public static void main(String [] args) throws Exception {
+
+        System.setProperty( "java.util.logging.config.file", "logging.properties" );
+
+        try { LogManager.getLogManager().readConfiguration(); }
+
+        catch ( Exception e ) { e.printStackTrace(); }
+
         RandomStockPriceProvider rnd = new RandomStockPriceProvider();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(),rnd);
         rnd.startUpdate();
