@@ -57,6 +57,6 @@ public class RandomStockPriceProvider extends StockPriceProvider {
              public void run() {
                   updateShareRates();
              }
-         });
+         }, 1000, 1000);
     }
 }

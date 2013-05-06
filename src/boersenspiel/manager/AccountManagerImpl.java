@@ -1,5 +1,7 @@
 package boersenspiel.manager;
 
+import boersenspiel.account.Player;
+import boersenspiel.account.PlayerAgent;
 import boersenspiel.exceptions.NotEnoughMoneyException;
 import boersenspiel.interfaces.AccountManager;
 
@@ -13,6 +15,7 @@ public class AccountManagerImpl implements AccountManager {
 
     private UserManagement userManagement;
     private ShareManagement shareManagement;
+    private PlayerAgent playerAgent;
 
     public AccountManagerImpl() {
         this.shareManagement = ShareManagement.getInstance();
@@ -22,6 +25,14 @@ public class AccountManagerImpl implements AccountManager {
     @Override
     public void createPlayer(String name, long cash) {
         userManagement.addPlayer(name, cash);
+    }
+
+    public void botPlayer(String name) {
+        this.playerAgent = new PlayerAgent(userManagement.getPlayer(name));
+    }
+
+    public Player getPlayer(String name) {
+        return userManagement.getPlayer(name);
     }
 
     @Override
@@ -51,5 +62,9 @@ public class AccountManagerImpl implements AccountManager {
     @Override
     public long getAssetValue(String name) {
         return (getCashAccountValue(name) + getShareDepositValue(name));
+    }
+
+    public String getStock(String name) {
+        return userManagement.getPlayer(name).getStockList();
     }
 }

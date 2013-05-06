@@ -61,8 +61,18 @@ public interface AccountManager {
     long getAssetValue(String name);
 
     /**
-     * get the current price of a Share
-     * @param shareName
-     * @return long
+     * get the current lost of Shares from Player
+     * @param name
+     * @return String
      */
+
+    String getStock(String name);
+
+    /**
+     * make player to bot
+     * @param name
+     */
+
+    void botPlayer(String name);
+
 }

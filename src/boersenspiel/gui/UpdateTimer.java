@@ -23,13 +23,13 @@ public class UpdateTimer {
     }
 
     private static final int TICK_PERIOD = 1000;
+    private Timer timer = new Timer();
 
     private UpdateTimer() {
     }
 
-    public void addTask(TimerTask wtd) {
-        Timer timer = new Timer(true); // as daemon
-        timer.scheduleAtFixedRate(wtd, 1000, 1000);
+    public void addTask(TimerTask wtd, int delay, int period) {
+        timer.scheduleAtFixedRate(wtd, delay, period);
     }
 
 

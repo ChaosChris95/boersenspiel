@@ -31,10 +31,10 @@ public interface CommandTypeInfo {
 
     /**
      * get the target
-     * @return Object
+     * @return String
      */
 
-    public Object getTarget();
+    public String getTarget();
 
 
 

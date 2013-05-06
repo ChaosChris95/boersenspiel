@@ -51,14 +51,10 @@ public class CommandScanner {
 
                 for(int j = 0; j < classes.length; j++) {
                     Class<?> clas = classes[j];
-                    if(clas == Integer.class) {
-                        command.params[j] = Integer.parseInt(parts[j + 1]);
-                    } else if(clas == Long.class) {
-                        command.params[j] = Long.parseLong(parts[j + 1]);
-                    } else {
-                        command.params[j] = parts[j + 1];
-                    }
+                    command.params[j] = clas.getClass().cast(parts[j + 1]);
                 }
+
+
                 return;
             }
         }

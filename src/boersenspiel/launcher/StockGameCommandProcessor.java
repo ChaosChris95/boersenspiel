@@ -47,35 +47,51 @@ public class StockGameCommandProcessor {
             }
             //...
 
-            Object[] params = command.getParams();
+            StockGameCommandType commandType = (StockGameCommandType) command.getCommandType();
+            if(commandType == StockGameCommandType.EXIT) {
+                // Exit
+            } else if(commandType == StockGameCommandType.HELP) {
+                // Help
+            } else {
+                String target = commandType.getTarget();
+                String func = commandType.getFunc();
 
-            StockGameCommandType commandType = (StockGameCommandType)command.getCommandType();
-            switch (commandType) {
+                //TODO
+            }
+
+
+
+            //Object[] params = command.getParams();
+            //StockGameCommandType commandType = (StockGameCommandType)command.getCommandType();
+
+            /*switch (commandType) {
                 case EXIT:
                     System.exit(0);
                     break;
                 case HELP:
                     StockGameCommandType en[] = StockGameCommandType.values();
                     for(int i = 0; i < en.length; i++) {
-
                         System.out.println(en[i].getCmdName() + ": " + en[i].getHelpText());
                     }
                     break;
                 case CREATEPLAYER:
-                    UserManagement.getInstance().addPlayer((String) params[0], (Long) params[1]);
+                    accountManager.createPlayer((String) params[0], (Long) params[1]);
                     System.out.println("Spieler " + (String) params[0] + " erstellt mit einem Accountwert von " + (Long) params[1]);
                     break;
                 case BUYSHARE:
-                    UserManagement.getInstance().getPlayer((String) params[0]).buy(
-                            ShareManagement.getInstance().getShare((String) params[1]),
-                            (Integer) params[2]);
+                    try {
+                        accountManager.buy((String) params[0], (String) params[1], (Integer) params[2]);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     System.out.println("Spieler " + (String) params[0] + " kaufte " + (Integer) params[2] + " Aktien von " + (String) params[1]);
                     break;
                 case SELLSHARE:
-                    UserManagement.getInstance().getPlayer((String) params[0]).sell(
-                            ShareManagement.getInstance().getShare((String) params[1]),
-                            (Integer) params[2]);
-
+                    try {
+                        accountManager.sell((String) params[0], (String) params[1], (Integer) params[2]);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     System.out.println("Spieler " + (String) params[0] + " verkaufte " + (Integer) params[2] + " Aktien von " + (String) params[1]);
                     break;
                 case GETALLSTOCKS:
@@ -85,7 +101,7 @@ public class StockGameCommandProcessor {
                     System.out.println(UserManagement.getInstance().getPlayer((String) params[0]).getStockList());
                     break;
                 case GETCASH:
-                    System.out.println(UserManagement.getInstance().getPlayer((String) params[0]).getCashAccountValue());
+                    System.out.println(accountManager.getCashAccountValue((String) params[0]));
                     break;
                 case CREATESHARE:
                     try {
@@ -101,9 +117,13 @@ public class StockGameCommandProcessor {
                     break;
                 case BOT:
                     PlayerAgent p = new PlayerAgent(UserManagement.getInstance().getPlayer((String) params[0]));
-                    UpdateTimer.getInstance().addTask(p.getTask());
+                    //p.update(wtd);
+                    UpdateTimer.getInstance().addTask(p.getTask(), 1000, 1000);
                     System.out.println("Stelle" + (String) params[0] + " um auf Bot");
                     break;
+                 */
+
+
             }
         }
     }

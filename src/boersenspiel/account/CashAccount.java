@@ -31,9 +31,9 @@ public class CashAccount extends Asset{
 	
 	public void subCash(long cash) throws NotEnoughMoneyException {
 		
-		if (cash > accountValue){
+		if (cash > accountValue) {
             throw new NotEnoughMoneyException("Sie besitzen nicht genügend Geld!");
-		}
+        }
 		accountValue -= cash;
 	}
 	
