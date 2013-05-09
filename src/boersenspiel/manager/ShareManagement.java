@@ -3,6 +3,8 @@ package boersenspiel.manager;
 import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.stock.Share;
 
+import java.util.logging.Logger;
+
 /**
  * User: Peach
  * Date: 09.04.13
@@ -10,6 +12,8 @@ import boersenspiel.stock.Share;
  */
 
 public class ShareManagement {
+
+    private static Logger logger = Logger.getLogger("ShareManagement");
 
     private static ShareManagement instance = null;
     public static ShareManagement getInstance() {
@@ -36,7 +40,7 @@ public class ShareManagement {
             }
             buffer[buffer.length - 1] = new Share(name, price);
             shares = buffer;
-            System.out.println("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
+            logger.fine("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
         }catch (ShareNameAlreadyExistsException e){
             e.printStackTrace();
         }
@@ -53,7 +57,7 @@ public class ShareManagement {
             j++;
         }
         shares = buffer;
-        System.out.println("Aktie " + name + " wurde aus dem System gelöscht.");
+        logger.fine("Aktie " + name + " wurde aus dem System gelöscht.");
     }
 
     public Share[] cloneShareList(){

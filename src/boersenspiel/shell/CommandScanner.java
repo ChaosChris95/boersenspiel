@@ -49,8 +49,9 @@ public class CommandScanner {
 
                 for (int j = 0; j < classes.length; j++) {
                     Class<?> clash = classes[j];
-                    command.params[j] = clash.getClass().cast(parts[j + 1]);
-                    throw new CommandScannerException("Fehlerhafte Eingabe");
+                    if (clash != null) {
+                        command.params[j] = clash.getClass().cast(parts[j + 1]);
+                    }
                 }
                 return;
             }

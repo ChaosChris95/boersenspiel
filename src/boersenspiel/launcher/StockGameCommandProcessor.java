@@ -8,6 +8,8 @@ import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.manager.UserManagement;
 import boersenspiel.shell.*;
+import sun.security.jca.GetInstance;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -26,13 +28,13 @@ public class StockGameCommandProcessor {
     private PrintWriter shellWriter = new PrintWriter(System.out);
     private AccountManager accountManager;
 
-    public StockGameCommandProcessor(AccountManager accountManager){
+    public StockGameCommandProcessor(AccountManager accountManager) {
 
         this.accountManager = accountManager;
 
     }
 
-    public void process(){
+    public void process() {
 
         CommandScanner commandScanner = new CommandScanner(StockGameCommandType.values(), shellReader);
 
@@ -50,48 +52,42 @@ public class StockGameCommandProcessor {
             //...
 
             StockGameCommandType commandType = (StockGameCommandType) command.getCommandType();
-            if(commandType == StockGameCommandType.EXIT) {
+            if (commandType == StockGameCommandType.EXIT) {
                 // Exit
             } else {
                 if (commandType == StockGameCommandType.HELP) {
                     // Help
                 } else {
-                    Class target = null;
-                    try {
-                        target = Class.forName(commandType.getTarget());
-                    } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                    }
-                    String func = commandType.getFunc();
 
-                    Method method = null;
                     try {
-                        method = target.getClass().getDeclaredMethod(func);
+                    //load class
+                    Class target = Class.forName(commandType.getTarget());
+
+                    Method getInstance = null;
+                    try {
+                        //check getInstance();
+                        getInstance = target.getMethod("getInstance", new Class[]{});
                     } catch (NoSuchMethodException e) {
-                        e.printStackTrace();
+                        throw new Error("kein Singleton");
                     }
-                    method.setAccessible(true);
-                    try {
-                        method.invoke(target, func, commandType);
+                    //make class to object
+                    Object targetInstance = getInstance.invoke(null, new Object[]{});
+                    //searh for correct method
+                    Method method = target.getMethod(commandType.getFunc(), commandType.getParamTypes());
+                    //run method
+                    method.invoke(targetInstance, command.getParams());
+                    } catch (NoSuchMethodException e) {
+                        throw new Error(commandType.getFunc() + " konnte nicht gefunden werden");
                     } catch (IllegalAccessException e) {
-                        e.printStackTrace();
+                        throw new Error(e);
                     } catch (InvocationTargetException e) {
-                        e.printStackTrace();
-}
-                    System.out.println(method);
+                        throw new Error(e);
+                    } catch (ClassNotFoundException e) {
+                        throw new Error(commandType.getTarget() + " konnte nicht gefunden werden");
+                    }
 
-
-
-
-
-
-
-
-                    //target = className
-                    //
                 }
             }
-
 
 
             //Object[] params = command.getParams();
@@ -155,7 +151,6 @@ public class StockGameCommandProcessor {
                     System.out.println("Stelle" + (String) params[0] + " um auf Bot");
                     break;
                  */
-
 
 
         }
