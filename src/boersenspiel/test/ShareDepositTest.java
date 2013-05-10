@@ -53,7 +53,6 @@ public class ShareDepositTest extends TestCase{
         shareDeposit1.removeShare(share1, 4);
         this.assertEquals("AddShare", 600, shareDeposit1.getValue());
         this.assertEquals("AddShare", 3, shareDeposit1.getShareAmount("BMW"));
-        //junit.framework.AssertionFailedError: AddShare expected:<600> but was:<1400>
     }
 
     public void testRemoveShareItem() {

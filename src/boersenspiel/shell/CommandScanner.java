@@ -24,11 +24,11 @@ public class CommandScanner {
 
     public void fillInCommandDesc(CommandDescriptor command) throws CommandScannerException {
 
-        String line;
+        String line = " ";
         try {
             line = this.shellReader.readLine();
             if(line == null) {
-                throw new CommandScannerException("Nichts eingegeben");
+                throw new CommandScannerException("Nichts eingegeben");     //TODO Debugging
             }
         } catch (IOException e) {
             throw new CommandScannerException(e.getMessage());

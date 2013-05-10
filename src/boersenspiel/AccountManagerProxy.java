@@ -1,22 +1,30 @@
 package boersenspiel;
 
-import boersenspiel.interfaces.AccountManager;
-
-import java.util.logging.Logger;
-
 /**
  * User: jan
  * Date: 04.05.13
  * Time: 10:38
  */
 
+import boersenspiel.interfaces.AccountManager;
+
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.Handler;
+
 public class AccountManagerProxy implements AccountManager{
 
     private AccountManager accountManager;
     private static Logger logger = Logger.getLogger(AccountManagerProxy.class.getName());
 
-    public AccountManagerProxy(AccountManager accountManager){
+    public AccountManagerProxy(AccountManager accountManager) throws IOException {
         this.accountManager = accountManager;
+        Handler handler = new FileHandler( "log.txt" );
+        logger.addHandler(handler);
+        handler.setLevel(Level.FINE);
+        logger.setLevel(Level.INFO);
     }
 
     public long getShareDepositValue(String name) {
