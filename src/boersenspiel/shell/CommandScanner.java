@@ -24,11 +24,11 @@ public class CommandScanner {
 
     public void fillInCommandDesc(CommandDescriptor command) throws CommandScannerException {
 
-        String line = " ";
+        String line;
         try {
             line = this.shellReader.readLine();
             if(line == null) {
-                throw new CommandScannerException("Nichts eingegeben");     //TODO Debugging
+                throw new CommandScannerException("Nichts eingegeben.");
             }
         } catch (IOException e) {
             throw new CommandScannerException(e.getMessage());
@@ -42,21 +42,27 @@ public class CommandScanner {
 
                 Class<?>[] classes = command.commandType.getParamTypes();
                 if (classes.length != parts.length - 1) {
-                    throw new CommandScannerException("Nicht genug Parameter");
+                    throw new CommandScannerException("Nicht genug Parameter.");
                 }
 
                 command.params = new Object[classes.length];
 
                 for (int j = 0; j < classes.length; j++) {
-                    Class<?> clash = classes[j];
-                    if (clash != null) {
-                        command.params[j] = clash.getClass().cast(parts[j + 1]);
+                    Class<?> clas = classes[j];
+                    if(clas == Integer.class) {
+                        command.params[j] = Integer.parseInt(parts[j + 1]);
+                    } else if(clas == Long.class) {
+                        command.params[j] = Long.parseLong(parts[j + 1]);
+                    } else {
+                        command.params[j] = parts[j + 1];
                     }
+                    //if (clas != null) {
+                    //command.params[j] = clas.getClass().cast(parts[j + 1]);
                 }
                 return;
             }
         }
-        throw new CommandScannerException("Kommando nicht gefunden");
+        throw new CommandScannerException("Kommando nicht gefunden.");
     }
 
 }

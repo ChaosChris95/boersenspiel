@@ -5,6 +5,7 @@ import boersenspiel.exceptions.CommandScannerException;
 import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.gui.UpdateTimer;
 import boersenspiel.interfaces.AccountManager;
+import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.manager.UserManagement;
 import boersenspiel.shell.*;
@@ -49,7 +50,6 @@ public class StockGameCommandProcessor {
                 System.out.println("Fehlerhafte Eingabe: " + e.getMessage());
                 continue;
             }
-            //...
 
             StockGameCommandType commandType = (StockGameCommandType) command.getCommandType();
             if (commandType == StockGameCommandType.EXIT) {
@@ -78,7 +78,7 @@ public class StockGameCommandProcessor {
                     //search for correct method
                     Method method = target.getMethod(commandType.getFunc(), commandType.getParamTypes());
                     //run method
-                    method.invoke(targetInstance, command.getParams());
+                    method.invoke(targetInstance, command.getParams());  //command.getParams()
                     } catch (NoSuchMethodException e) {
                         throw new Error(commandType.getFunc() + " konnte nicht gefunden werden");
                     } catch (IllegalAccessException e) {

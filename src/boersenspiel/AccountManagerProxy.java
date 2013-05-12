@@ -32,17 +32,17 @@ public class AccountManagerProxy implements AccountManager{
         return accountManager.getCashAccountValue(name);
     }
 
-    public void sell(String name, String shareName, int amount) throws Exception {
+    public void sell(String name, String shareName, Integer amount) throws Exception {
         logger.fine("AccountManagerProxy: sell(" + name + "," + shareName + "," + amount + ")");
         accountManager.sell(name, shareName, amount);
     }
 
-    public void createPlayer(String name, long cash) {
+    public void createPlayer(String name, Long cash) {
         logger.fine("AccountManagerProxy: createPlayer(" + name + "," + cash + ")");
         accountManager.createPlayer(name, cash);
     }
 
-    public void buy(String name, String shareName, int amount) throws Exception {
+    public void buy(String name, String shareName, Integer amount) throws Exception {
         logger.fine("AccountManagerProxy: buy(" + name + "," + shareName + ", " + amount + ")");
         accountManager.buy(name, shareName, amount);
     }

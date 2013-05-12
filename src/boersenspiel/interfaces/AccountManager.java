@@ -14,7 +14,7 @@ public interface AccountManager {
      * @param cash
      */
 
-    void createPlayer(String name, long cash);
+    void createPlayer(String name, Long cash);
 
 
     /**
@@ -25,7 +25,7 @@ public interface AccountManager {
      * @throws Exception
      */
 
-    void buy(String name, String shareName, int amount) throws Exception;
+    void buy(String name, String shareName, Integer amount) throws Exception;
 
     /**
      * sell a share
@@ -35,7 +35,7 @@ public interface AccountManager {
      * @throws Exception
      */
 
-    void sell(String name, String shareName, int amount) throws Exception;
+    void sell(String name, String shareName, Integer amount) throws Exception;
 
     /**
      * get the amount of money a certain player has

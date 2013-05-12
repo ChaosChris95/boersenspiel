@@ -23,12 +23,12 @@ import java.util.logging.LogManager;
 public class StockGameLauncher {
 
     public static void main(String [] args) throws Exception {
-
-        //System.setProperty( "java.util.logging.config.file", "boersenspiel/logging.properties");
+                /*
+        System.setProperty( "java.util.logging.config.file", "logging.properties");
 
         try { LogManager.getLogManager().readConfiguration(); }
 
-        catch ( Exception e ) { e.printStackTrace(); }
+        catch ( Exception e ) { e.printStackTrace(); }   */
 
         RandomStockPriceProvider rnd = new RandomStockPriceProvider();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(),rnd);

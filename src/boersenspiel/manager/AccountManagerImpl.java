@@ -36,7 +36,7 @@ public class AccountManagerImpl implements AccountManager {
     }
 
     @Override
-    public void createPlayer(String name, long cash) {
+    public void createPlayer(String name, Long cash) {
         userManagement.addPlayer(name, cash);
         logger.fine("Spieler " + name + " erstellt mit einem Accountwert von " + cash);
     }
@@ -51,7 +51,7 @@ public class AccountManagerImpl implements AccountManager {
     }
 
     @Override
-    public void buy(String playerName, String shareName, int amount) throws NotEnoughMoneyException, Exception{
+    public void buy(String playerName, String shareName, Integer amount) throws NotEnoughMoneyException, Exception{
         long shareValue = shareManagement.getSpecificRate(shareName);
         shareValue *= amount;
         userManagement.getPlayer(playerName).buy(shareManagement.getShare(shareName), amount);
@@ -59,7 +59,7 @@ public class AccountManagerImpl implements AccountManager {
     }
 
     @Override
-    public void sell(String playerName, String shareName, int amount) throws Exception {
+    public void sell(String playerName, String shareName, Integer amount) throws Exception {
         long shareValue = shareManagement.getSpecificRate(shareName);
         shareValue *= amount;
         userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);

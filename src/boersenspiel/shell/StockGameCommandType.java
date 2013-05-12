@@ -12,7 +12,7 @@ public enum StockGameCommandType implements CommandTypeInfo {
 
     HELP ("help", " * list all StockGameCommandType"),
     EXIT ("exit", "exit program"),
-    CREATEPLAYER ("crp",  "<playername> <cash> * create a new player by name", "AccountManagerImpl", "createPlayer", new Class[] {String.class, Long.class}),
+    CREATEPLAYER ("crp",  "<playername> <cash> * create a new player by name", "boersenspiel.manager.AccountManagerImpl", "createPlayer", new Class[] {String.class, Long.class}),
     BUYSHARE ("bus",  "<playername> <sharename> <amount> * buy that amount of shares", "AccountManagerImpl", "buy", new Class[] {String.class, String.class, Integer.class}),
     SELLSHARE ("ses",  "<playername> <sharename> <amount> * sell that amount of shares", "AccountManagerImpl", "sell", new Class[] {String.class, String.class, Integer.class}),
     GETSTOCKS ("getst", "<playername> * list all player stocks", "AccountManagerImpl", "getStock", new Class[] {String.class}),
