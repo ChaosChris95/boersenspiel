@@ -6,7 +6,7 @@ package boersenspiel.exceptions;
  * Time: 10:54
  */
 
-public class ShareDoesNotExistException extends RuntimeException{
+public class ShareDoesNotExistException extends Exception{
 
     public ShareDoesNotExistException() {
     }

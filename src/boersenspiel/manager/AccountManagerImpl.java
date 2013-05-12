@@ -3,6 +3,10 @@ package boersenspiel.manager;
 import boersenspiel.account.Player;
 import boersenspiel.account.PlayerAgent;
 import boersenspiel.exceptions.NotEnoughMoneyException;
+import boersenspiel.exceptions.NotEnoughSharesException;
+import boersenspiel.exceptions.PlayerAlreadyExistsException;
+import boersenspiel.exceptions.PlayerDoesNotExistException;
+import boersenspiel.gui.UpdateTimer;
 import boersenspiel.interfaces.AccountManager;
 
 import java.util.logging.Logger;
@@ -37,44 +41,74 @@ public class AccountManagerImpl implements AccountManager {
 
     @Override
     public void createPlayer(String name, Long cash) {
-        userManagement.addPlayer(name, cash);
-        logger.fine("Spieler " + name + " erstellt mit einem Accountwert von " + cash);
+        try {
+            userManagement.addPlayer(name, cash);
+            logger.fine("Spieler " + name + " erstellt mit einem Accountwert von " + cash);
+        } catch (PlayerAlreadyExistsException e) {
+            logger.info("Der Spieler existiert bereits");
+        }
     }
 
     public void botPlayer(String name) {
-        this.playerAgent = new PlayerAgent(userManagement.getPlayer(name));
-        logger.fine("Stelle" + name + " um auf Bot");
+        try {
+            this.playerAgent = new PlayerAgent(userManagement.getPlayer(name));
+            UpdateTimer.getInstance().addTask(this.playerAgent.getTask(), 10000, 10000);
+            logger.fine("Stelle" + name + " um auf Bot");
+        } catch (PlayerDoesNotExistException e) {
+            logger.info("Spieler existiert nicht");
+        }
+
     }
 
-    public Player getPlayer(String name) {
+    private Player getPlayer(String name) throws PlayerDoesNotExistException {
         return userManagement.getPlayer(name);
 
     }
 
     @Override
-    public void buy(String playerName, String shareName, Integer amount) throws NotEnoughMoneyException, Exception{
-        long shareValue = shareManagement.getSpecificRate(shareName);
-        shareValue *= amount;
-        userManagement.getPlayer(playerName).buy(shareManagement.getShare(shareName), amount);
-        logger.fine("Spieler " + playerName + " kaufte " + amount + " Aktien von " + shareName);
+    public void buy(String playerName, String shareName, Integer amount) {
+        try {
+            userManagement.getPlayer(playerName).buy(shareManagement.getShare(shareName), amount);
+            logger.fine("Spieler " + playerName + " kaufte " + amount + " Aktien von " + shareName);
+        } catch (NotEnoughMoneyException e) {
+            logger.info("Sie besitzen nicht genug Geld.");
+        } catch (PlayerDoesNotExistException e) {
+            logger.info("Spieler existiert nicht");
+        }
+
     }
 
     @Override
-    public void sell(String playerName, String shareName, Integer amount) throws Exception {
-        long shareValue = shareManagement.getSpecificRate(shareName);
-        shareValue *= amount;
-        userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);
-        logger.fine("Spieler " + playerName + " verkaufte " + amount + " Aktien von " + shareName);
+    public void sell(String playerName, String shareName, Integer amount) {
+        try {
+            userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);
+            logger.fine("Spieler " + playerName + " verkaufte " + amount + " Aktien von " + shareName);
+        } catch (NotEnoughSharesException e) {
+            logger.info("Sie besitzen nicht genug Anzahl dieser Aktien");
+        } catch (PlayerDoesNotExistException e) {
+            logger.info("Spieler existiert nicht");
+        }
+
     }
 
     @Override
     public long getCashAccountValue(String playerName) {
-        return userManagement.getPlayer(playerName).getCashAccountValue();
+        try {
+            return userManagement.getPlayer(playerName).getCashAccountValue();
+        } catch (PlayerDoesNotExistException e) {
+            logger.info("Spieler existiert nicht");
+        }
+        return 0;
     }
 
     @Override
     public long getShareDepositValue(String playerName) {
-        return userManagement.getPlayer(playerName).getShareDepositValue();
+        try {
+            return userManagement.getPlayer(playerName).getShareDepositValue();
+        } catch (PlayerDoesNotExistException e) {
+            logger.info("Spieler existiert nicht");
+        }
+        return 0;
     }
 
     @Override
@@ -83,6 +117,11 @@ public class AccountManagerImpl implements AccountManager {
     }
 
     public String getStock(String name) {
-        return userManagement.getPlayer(name).getStockList();
+        try {
+            return userManagement.getPlayer(name).getStockList();
+        } catch (PlayerDoesNotExistException e) {
+            logger.info("Spieler existiert nicht");
+        }
+        return null;
     }
 }

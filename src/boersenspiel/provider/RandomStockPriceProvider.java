@@ -34,12 +34,7 @@ public class RandomStockPriceProvider extends StockPriceProvider {
             if (shareManagement.getShareByNumber(i) == null)
                 continue;
             erg = Math.round(Math.random() * (max - min + 1)+ min);
-
-            try{
                 shareManagement.getShareByNumber(i).increasePrice((long)erg);
-            } catch (NegativeValueException e){
-                return;
-            }
         }
     }
 
@@ -54,7 +49,9 @@ public class RandomStockPriceProvider extends StockPriceProvider {
     public void startUpdate(){
          timer.addTask(new TimerTask() {
              public void run() {
-                  updateShareRates();
+                 try {
+                     updateShareRates();
+                 } catch (NegativeValueException e) {}
              }
          }, 1000, 1000);
     }

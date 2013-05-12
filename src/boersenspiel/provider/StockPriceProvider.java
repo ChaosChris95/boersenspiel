@@ -6,6 +6,8 @@ package boersenspiel.provider;
  * Time: 14:00
  */
 
+import boersenspiel.exceptions.NegativeValueException;
+import boersenspiel.exceptions.PlayerDoesNotExistException;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.manager.UserManagement;
 import boersenspiel.stock.Share;
@@ -31,11 +33,11 @@ public abstract class StockPriceProvider {
            return shareManagement.getSpecificRate(shareName);
     }
 
-    public Share[] getAllSharesAsSnapShot(){
+    /*public Share[] getAllSharesAsSnapShot(){
           return shareManagement.cloneShareList();
-    }
+    }*/
 
-    protected abstract void updateShareRates();
+    protected abstract void updateShareRates() throws NegativeValueException;
 
     protected abstract void updateShareRate(Share share);
 
@@ -45,7 +47,7 @@ public abstract class StockPriceProvider {
           return shareManagement.getShare(name);
     }
 
-    public long getShareItemValue(String playerName, String shareItemName) {
+    public long getShareItemValue(String playerName, String shareItemName) throws PlayerDoesNotExistException {
         return userManagement.getPlayer(playerName).getShareItemValue(shareItemName);
 
     }

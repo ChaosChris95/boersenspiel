@@ -1,17 +1,15 @@
 package boersenspiel.exceptions;
 
 /**
- * User: jan
- * Date: 01.05.13
- * Time: 10:34
+ * User: Peach
+ * Date: 12.05.13
+ * Time: 21:17
  */
-public class PlayerAlreadyExistsException extends RuntimeException{
+public class PlayerAlreadyExistsException extends Exception {
+    public PlayerAlreadyExistsException(String message) {
+        super(message);
+    }
 
     public PlayerAlreadyExistsException() {
     }
-
-    public PlayerAlreadyExistsException(String msg) {
-        System.out.println(msg);
-    }
-
 }

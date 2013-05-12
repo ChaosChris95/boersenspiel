@@ -6,6 +6,7 @@ package boersenspiel.test;
  * Time: 13:27
  */
 
+import boersenspiel.exceptions.NotEnoughSharesException;
 import boersenspiel.stock.Share;
 import boersenspiel.stock.ShareItem;
 import org.junit.*;
@@ -48,7 +49,7 @@ public class ShareItemTest extends TestCase{
     //Negative Values in methods addShareAmount, testAddValue and RemoveShareAmount should not be allowed
 
     @Test
-    public void testRemoveShareAmount1() {
+    public void testRemoveShareAmount1() throws NotEnoughSharesException {
         shareItem1.removeShareAmount(5);
         this.assertEquals("10-5", 5, shareItem1.getShareAmount());
     }

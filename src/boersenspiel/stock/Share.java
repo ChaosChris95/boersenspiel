@@ -6,7 +6,7 @@ package boersenspiel.stock;
  * Time: 17:34
  */
 
-public class Share {
+public class Share implements Comparable<Share> {
 
     private final String name;
     private long price;
@@ -44,4 +44,8 @@ public class Share {
 
     }
 
+    @Override
+    public int compareTo(Share o) {
+        return this.getName().compareTo(o.getName());
+    }
 }

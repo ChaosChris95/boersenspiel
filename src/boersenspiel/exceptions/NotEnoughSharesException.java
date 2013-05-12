@@ -6,7 +6,7 @@ package boersenspiel.exceptions;
  * Time: 15:02
  */
 
-public class NotEnoughSharesException extends RuntimeException{
+public class NotEnoughSharesException extends Exception{
 
     public NotEnoughSharesException() {
     }

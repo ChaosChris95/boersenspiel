@@ -3,13 +3,15 @@ package boersenspiel.stock;
 import boersenspiel.account.Asset;
 import boersenspiel.exceptions.NotEnoughSharesException;
 
+import java.util.Comparator;
+
 /**
  * User: Jan
  * Date: 09.04.13
  * Time: 17:34t
  */
 
-public class ShareItem extends Asset {
+public class ShareItem extends Asset implements Comparable<ShareItem> {
 
     private int shareAmount;
     private long value;
@@ -33,12 +35,10 @@ public class ShareItem extends Asset {
     }
 
     public void removeShareAmount(int amount) throws NotEnoughSharesException {
-        try {
             if (amount > shareAmount) {
             } else {
                 shareAmount -= amount;
             }
-        } catch (NotEnoughSharesException e) {}
     }
 
     public long getValue() {
@@ -57,4 +57,23 @@ public class ShareItem extends Asset {
         return ("ShareItem " + name + " mit einem Gesamtwert von " + getValue());
     }
 
+    public void merge(ShareItem i) {
+        this.addShareAmount(i.getShareAmount());
+        this.addValue(i.getValue());
+    }
+
+    public boolean equals(Object o) {
+        if (o instanceof ShareItem) {
+           ShareItem i = (ShareItem) o;
+            if (i.getName().equals(this.name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int compareTo(ShareItem o) {
+        return this.getName().compareTo(o.getName());
+    }
 }

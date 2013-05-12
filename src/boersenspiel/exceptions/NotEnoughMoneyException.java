@@ -5,7 +5,7 @@ package boersenspiel.exceptions;
  * Date: 19.04.13
  * Time: 16:02
  */
-public class NotEnoughMoneyException extends RuntimeException{
+public class NotEnoughMoneyException extends Exception{
 
     public NotEnoughMoneyException(String message) {
         super(message);

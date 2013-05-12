@@ -27,18 +27,13 @@ public class Player {
     }
 
     public void buy(Share share, int amount) throws NotEnoughMoneyException {
-        try {
             cashAccount.subCash(share.getPrice() * amount);
-        } catch (NotEnoughMoneyException n) {}
-        shareDeposit.addShare(share, amount);
-
+            shareDeposit.addShare(share, amount);
     }
 
     public void sell(Share share, int amount) throws NotEnoughSharesException{
-        try{
             shareDeposit.removeShare(share, amount);
-        } catch (NotEnoughSharesException s) {}
-        cashAccount.addCash(share.getPrice() * amount);
+            cashAccount.addCash(share.getPrice() * amount);
     }
 
     public void addCash(long cash) {

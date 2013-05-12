@@ -35,8 +35,12 @@ public class StockGameLauncher {
         rnd.startUpdate();
         stockPriceViewer.updateInfo();
 
-        ShareManagement.getInstance().addShare("BMW", 100);
-        ShareManagement.getInstance().addShare("Siemens", 150);
+        ShareManagement.getInstance().addShare("BMW", 100L);
+        ShareManagement.getInstance().addShare("Siemens", 150L);
+        ShareManagement.getInstance().addShare("Xaver", 100L);
+        ShareManagement.getInstance().addShare("Martin", 150L);
+        ShareManagement.getInstance().addShare("Harribert", 100L);
+        ShareManagement.getInstance().addShare("Lotto", 150L);
 
         AccountManager accountManager = AccountManagerImpl.getInstance();
         AccountManagerProxy accountManagerProxy = new AccountManagerProxy(accountManager);

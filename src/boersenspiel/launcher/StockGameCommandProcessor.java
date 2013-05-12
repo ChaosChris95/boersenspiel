@@ -81,7 +81,10 @@ public class StockGameCommandProcessor {
                     //search for correct method
                     Method method = target.getMethod(commandType.getFunc(), commandType.getParamTypes());
                     //run method
-                    method.invoke(targetInstance, command.getParams());  //command.getParams()
+                    Object ret = method.invoke(targetInstance, command.getParams());  //command.getParams()
+                           if (ret != null) {
+                               logger.fine("Antwort: " + ret);
+                           }
                     } catch (NoSuchMethodException e) {
                         throw new Error(commandType.getFunc() + " konnte nicht gefunden werden");
                     } catch (IllegalAccessException e) {

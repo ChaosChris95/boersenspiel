@@ -48,7 +48,7 @@ public class CashAccountTest extends TestCase{
     }
 
     @Test
-    public void testSubCash1() {
+    public void testSubCash1() throws NotEnoughMoneyException {
         cashAccount1.subCash(800);
         this.assertEquals("1000-800", 200, cashAccount1.getValue());
     }
@@ -59,7 +59,7 @@ public class CashAccountTest extends TestCase{
     }*/
 
     @Test
-    public void testSubCash3() {
+    public void testSubCash3() throws NotEnoughMoneyException {
         cashAccount1.subCash(1000);
         this.assertEquals("1000-1000", 0, cashAccount1.getValue());
     }

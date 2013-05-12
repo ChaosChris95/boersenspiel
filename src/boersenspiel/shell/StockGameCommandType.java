@@ -13,14 +13,14 @@ public enum StockGameCommandType implements CommandTypeInfo {
     HELP ("help", " * list all StockGameCommandType"),
     EXIT ("exit", "exit program"),
     CREATEPLAYER ("crp",  "<playername> <cash> * create a new player by name", "boersenspiel.manager.AccountManagerImpl", "createPlayer", new Class[] {String.class, Long.class}),
-    BUYSHARE ("bus",  "<playername> <sharename> <amount> * buy that amount of shares", "AccountManagerImpl", "buy", new Class[] {String.class, String.class, Integer.class}),
-    SELLSHARE ("ses",  "<playername> <sharename> <amount> * sell that amount of shares", "AccountManagerImpl", "sell", new Class[] {String.class, String.class, Integer.class}),
-    GETSTOCKS ("getst", "<playername> * list all player stocks", "AccountManagerImpl", "getStock", new Class[] {String.class}),
-    GETALLSTOCKS ("getallst", " * list all available stocks", "ShareManagement", "listAll"),
-    GETCASH ("gc", " <playername> * print players cashaccount Value", "AccountManagerImpl", "getCashAccountValue", new Class[] {String.class}),
-    BOT ("bot", " <playername> * set player as bot",  "AccountManagerImpl", "botPlayer", new Class[] {String.class}),
-    CREATESHARE ("crs", "<sharename> <price> * create share with given price in system", "ShareManagement", "addShare", new Class[] {String.class, Long.class}),
-    DELETESHARE ("des", "<sharename> * delete share from system ", "ShareManagement", "deleteShare", new Class[] {String.class})
+    BUYSHARE ("bus",  "<playername> <sharename> <amount> * buy that amount of shares", "boersenspiel.manager.AccountManagerImpl", "buy", new Class[] {String.class, String.class, Integer.class}),
+    SELLSHARE ("ses",  "<playername> <sharename> <amount> * sell that amount of shares", "boersenspiel.manager.AccountManagerImpl", "sell", new Class[] {String.class, String.class, Integer.class}),
+    GETSTOCKS ("getst", "<playername> * list all player stocks", "boersenspiel.manager.AccountManagerImpl", "getStock", new Class[] {String.class}),
+    GETALLSTOCKS ("getallst", " * list all available stocks", "boersenspiel.manager.ShareManagement", "listAll"),
+    GETCASH ("gc", " <playername> * print players cashaccount Value", "boersenspiel.manager.AccountManagerImpl", "getCashAccountValue", new Class[] {String.class}),
+    BOT ("bot", " <playername> * set player as bot",  "boersenspiel.manager.AccountManagerImpl", "botPlayer", new Class[] {String.class}),
+    CREATESHARE ("crs", "<sharename> <price> * create share with given price in system", "boersenspiel.manager.ShareManagement", "addShare", new Class[] {String.class, Long.class}),
+    DELETESHARE ("des", "<sharename> * delete share from system ", "boersenspiel.manager.ShareManagement", "deleteShare", new Class[] {String.class})
     ;
 
     private String cmdName;
