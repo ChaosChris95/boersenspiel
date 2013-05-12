@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.logging.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,6 +25,8 @@ import java.lang.reflect.Method;
  * Time: 17:01
  */
 public class StockGameCommandProcessor {
+
+    private static Logger logger = Logger.getLogger("StockGameCommandProcessor");
 
     private BufferedReader shellReader = new BufferedReader(new InputStreamReader(System.in));
     private PrintWriter shellWriter = new PrintWriter(System.out);
@@ -47,7 +50,7 @@ public class StockGameCommandProcessor {
             try {
                 commandScanner.fillInCommandDesc(command);
             } catch (CommandScannerException e) {
-                System.out.println("Fehlerhafte Eingabe: " + e.getMessage());
+                logger.fine("Fehlerhafte Eingabe: " + e.getMessage());
                 continue;
             }
 

@@ -25,11 +25,11 @@ public class PlayerAgent {
 
     }
 
-    public void sell(Share share, int amount) {
+    public void sell(Share share, Integer amount) {
         player.sell(share, amount);
     }
 
-    public void buy(Share share, int amount) {
+    public void buy(Share share, Integer amount) {
         player.buy(share, amount);
     }
 

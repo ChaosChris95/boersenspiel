@@ -12,7 +12,11 @@ import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.RandomStockPriceProvider;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 /**
  * User: Peach
@@ -23,12 +27,8 @@ import java.util.logging.LogManager;
 public class StockGameLauncher {
 
     public static void main(String [] args) throws Exception {
-                /*
-        System.setProperty( "java.util.logging.config.file", "logging.properties");
 
-        try { LogManager.getLogManager().readConfiguration(); }
-
-        catch ( Exception e ) { e.printStackTrace(); }   */
+        LogManager.getLogManager().readConfiguration(new BufferedInputStream(new FileInputStream("c:/logging.properties")));
 
         RandomStockPriceProvider rnd = new RandomStockPriceProvider();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(),rnd);

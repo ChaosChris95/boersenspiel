@@ -48,6 +48,7 @@ public class AccountManagerImpl implements AccountManager {
 
     public Player getPlayer(String name) {
         return userManagement.getPlayer(name);
+
     }
 
     @Override
