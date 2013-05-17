@@ -6,9 +6,16 @@ package boersenspiel;
  * Time: 10:38
  */
 
+import boersenspiel.account.LogEntry;
+import boersenspiel.account.Player;
+import boersenspiel.exceptions.PlayerDoesNotExistException;
 import boersenspiel.interfaces.AccountManager;
+import boersenspiel.manager.AccountManagerImpl;
+import boersenspiel.manager.ShareManagement;
+import boersenspiel.stock.Share;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,10 +23,11 @@ import java.util.logging.Handler;
 
 public class AccountManagerProxy implements AccountManager{
 
-    private AccountManager accountManager;
+    private AccountManagerImpl accountManager;
+    private ShareManagement shareManagement;
     private static Logger logger = Logger.getLogger(AccountManagerProxy.class.getName());
 
-    public AccountManagerProxy(AccountManager accountManager) throws IOException {
+    public AccountManagerProxy(AccountManagerImpl accountManager) throws IOException {
         this.accountManager = accountManager;
         Handler handler = new FileHandler( "log.txt" );
         logger.addHandler(handler);
@@ -35,6 +43,7 @@ public class AccountManagerProxy implements AccountManager{
     public void sell(String name, String shareName, Integer amount) throws Exception {
         logger.fine("AccountManagerProxy: sell(" + name + "," + shareName + "," + amount + ")");
         accountManager.sell(name, shareName, amount);
+        //accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), String sell, shareManagement.getShare(shareName), amount));
     }
 
     public void createPlayer(String name, Long cash) {

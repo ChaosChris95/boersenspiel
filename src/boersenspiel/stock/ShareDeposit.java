@@ -15,7 +15,6 @@ import java.util.List;
 
 public class ShareDeposit extends Asset {
 
-    //ShareItem[] shareItemList = new ShareItem[0];
     List<ShareItem> shareItemList = new ArrayList<ShareItem>();
 
     public ShareDeposit() {
@@ -32,21 +31,6 @@ public class ShareDeposit extends Asset {
         }
 
         shareItemList.add(add);
-
-
-        /*for (int i = 0; i < shareItemList.length; i++) {
-            if (shareItemList[i].getName() == add.getName()) {
-                shareItemList[i].addValue(add.getValue());
-                shareItemList[i].addShareAmount(add.getShareAmount());
-            }
-        }
-
-        ShareItem[] temporal = new ShareItem[shareItemList.length + 1];
-        for (int i = 0; i < shareItemList.length; i++) {
-            temporal[i] = shareItemList[i];
-        }
-        temporal[temporal.length - 1] = add;
-        shareItemList = temporal;  */
     }
 
     public String getName() {
@@ -64,15 +48,6 @@ public class ShareDeposit extends Asset {
     }
 
 
-        /*for (int i = 0; i < shareItemList.length; i++) {
-            if (shareItemList[i].getName().equals(share.getName())) {
-                shareItemList[i].addShareAmount(amount);
-                return;
-            }
-        }
-        addShareItem(new ShareItem(share, amount));*/
-
-
     public long removeShare(Share share, int amount) throws NotEnoughSharesException {
         for (ShareItem item : shareItemList) {
             if (item.getName().equals(share.getName())) {
@@ -84,21 +59,6 @@ public class ShareDeposit extends Asset {
             }
         }
         throw new NotEnoughSharesException("Sie besitzen keine Aktie mit diesem Namen");
-
-        /*boolean exists = false;
-        for (int i = 0; i < shareItemList.length; i++) {
-            if (shareItemList[i].getName().equals(share.getName())) {
-                exists = true;
-                if (getShareAmount(shareItemList[i].getName()) < amount)
-                    throw new NotEnoughSharesException("Sie besitzen nicht genügend Aktien mit diesen Namen!");
-                shareItemList[i].removeShareAmount(amount);
-                return shareItemList[i].getValue() * amount;
-            }
-            if (!exists) {
-                throw new NotEnoughSharesException("Sie besitzen keine Aktie diesen Namens!");
-            }
-        }
-        return 0;*/
     }
 
     public void removeShareItem(ShareItem remove) throws NoSuchShareItemException {
@@ -109,20 +69,6 @@ public class ShareDeposit extends Asset {
             }
         }
         throw new NoSuchShareItemException("Nicht vorhanden");
-
-
-        /*ShareItem[] temporal = new ShareItem[shareItemList.length - 1];
-        boolean identified = false;
-        for (int i = 0; i < shareItemList.length - 1; i++) {
-            if (shareItemList[i] == remove)
-                identified = true;
-            temporal[i] = shareItemList[i + 1];
-            if (identified) {
-                temporal[i] = shareItemList[i + 1];
-            } else
-                temporal[i] = shareItemList[i];
-        }
-        shareItemList = temporal;   */
     }
 
     public long getValue() {

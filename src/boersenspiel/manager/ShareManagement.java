@@ -68,18 +68,6 @@ public class ShareManagement {
            }
        }
         throw new ShareDoesNotExistException("Aktiene existiert nicht");
-
-        /*Share[] buffer = new Share[shares.length - 1];
-        int j = 0;
-        for (int i = 0; i < shares.length; i++) {
-            if (shares[i].getName().equals(name)){
-            continue;
-            }
-            buffer[j] = shares[i];
-            j++;
-        }
-        shares = buffer;
-        logger.fine("Aktie " + name + " wurde aus dem System gelöscht.");  */
     }
 
     /*public Share[] cloneShareList(){
@@ -101,25 +89,11 @@ public class ShareManagement {
                return share;
             }
         }
-
-        /*for (int i = 0; i < shares.length; i++) {
-            if (shareName.equals(shares[i].getName())) {
-                return shares[i];
-            }
-        }
-        return null;   */
         return null;
     }
 
     public Share getShareByNumber (Integer number) {
         return shareList.get(number);
-
-        /*for (int i = 0; i < shares.length; i++) {
-            if (number == i) {
-                return shares[i];
-            }
-        }
-        return null; */
     }
 
     public long getSpecificRate(String name) {
@@ -130,13 +104,6 @@ public class ShareManagement {
         }
         return 0;
     }
-
-        /*for (int i = 0; i < shares.length; i++) {
-            if (name.equals(shares[i].getName())) {
-                return shares[i].getPrice();
-            }
-        }
-        return 0;*/
 
 
     public String getSharesAndRates(){
@@ -151,13 +118,6 @@ public class ShareManagement {
             erg.append( "<br>" );
 
         }
-        /*for (int i = 0; i < shares.length; i++) {
-            erg.append( ' ' );
-            erg.append( shares[i].getName( ) );
-            erg.append( ' ' );
-            erg.append( shares[i].getPrice() );
-            erg.append( "<br>" );
-        }       */
         return erg.toString();
     }
 

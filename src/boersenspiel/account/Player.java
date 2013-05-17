@@ -5,6 +5,11 @@ import boersenspiel.exceptions.NotEnoughSharesException;
 import boersenspiel.stock.Share;
 import boersenspiel.stock.ShareDeposit;
 
+
+import java.util.List;
+
+import static java.util.Collections.*;
+
 /**
  * User: Jan
  * Date: 09.04.13
@@ -17,6 +22,7 @@ public class Player {
     private boolean broken = false;
     private CashAccount cashAccount;
     private ShareDeposit shareDeposit;
+    private List<LogEntry> logEntryList;
 
     public Player(String name) {
         this.name = name;
@@ -77,6 +83,32 @@ public class Player {
 
     public String toString() {
         return "Spieler mit dem Namen " + name + " und einem Kontostand von " + getCashAccountValue();
+    }
+
+    public void addLogEntry(LogEntry logEntry) {
+        logEntryList.add(logEntry);
+    }
+
+    public String getLogEntry() {
+        StringBuilder erg = new StringBuilder();
+        erg.append( "<br>" );
+        //Collections.sort(logEntryList);
+        for (LogEntry logEntry : logEntryList) {
+            erg.append(' ');
+            erg.append( logEntry.getTimeStamp());
+            erg.append( ' ' );
+            erg.append( logEntry.getShare());
+            erg.append( ' ' );
+            erg.append( logEntry.getAmount());
+            erg.append( "<br>" );
+
+        }
+        return erg.toString();
+    }
+
+    @Override
+    public int compareTo(LogEntry o) {
+        return 0;
     }
 
 }

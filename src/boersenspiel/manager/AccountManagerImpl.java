@@ -29,7 +29,6 @@ public class AccountManagerImpl implements AccountManager {
         return AccountManagerImpl.instance;
     }
 
-
     private UserManagement userManagement;
     private ShareManagement shareManagement;
     private PlayerAgent playerAgent;
@@ -60,7 +59,7 @@ public class AccountManagerImpl implements AccountManager {
 
     }
 
-    private Player getPlayer(String name) throws PlayerDoesNotExistException {
+    public Player getPlayer(String name) throws PlayerDoesNotExistException {
         return userManagement.getPlayer(name);
 
     }
@@ -119,6 +118,15 @@ public class AccountManagerImpl implements AccountManager {
     public String getStock(String name) {
         try {
             return userManagement.getPlayer(name).getStockList();
+        } catch (PlayerDoesNotExistException e) {
+            logger.info("Spieler existiert nicht");
+        }
+        return null;
+    }
+
+    public String getLog(String name) {
+        try {
+            return userManagement.getPlayer(name).getLogEntry();
         } catch (PlayerDoesNotExistException e) {
             logger.info("Spieler existiert nicht");
         }

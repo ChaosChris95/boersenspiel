@@ -1,11 +1,5 @@
 package boersenspiel.launcher;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Peach
- * Date: 02.05.13
- * Time: 17:42
- */
 import boersenspiel.AccountManagerProxy;
 import boersenspiel.gui.StockPriceViewer;
 import boersenspiel.interfaces.AccountManager;
@@ -42,7 +36,7 @@ public class StockGameLauncher {
         ShareManagement.getInstance().addShare("Harribert", 100L);
         ShareManagement.getInstance().addShare("Lotto", 150L);
 
-        AccountManager accountManager = AccountManagerImpl.getInstance();
+        AccountManagerImpl accountManager = AccountManagerImpl.getInstance();
         AccountManagerProxy accountManagerProxy = new AccountManagerProxy(accountManager);
         StockGameCommandProcessor cmp = new StockGameCommandProcessor(accountManagerProxy);
         cmp.process();
