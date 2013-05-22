@@ -26,9 +26,7 @@ public class Player {
     private CashAccount cashAccount;
     private ShareDeposit shareDeposit;
     private String method;
-    LogEntry log = new LogEntry();
-
-
+    List<LogEntry> logEntryList = new ArrayList<LogEntry>();
 
 
     public Player(String name) {
@@ -84,7 +82,6 @@ public class Player {
         return method;
     }
 
-
     private boolean isBroken() {
         if (getCashAccountValue() <= 0) {
             broken = true;
@@ -101,25 +98,17 @@ public class Player {
     }
 
     public void addLogEntry(LogEntry logEntry) {
-        log.logEntryList.add(logEntry);
+        logEntryList.add(logEntry);
     }
 
 
-    public String getLogEntry() {
-        StringBuilder erg = new StringBuilder();
-        erg.append( "<br>" );
-        //Collections.sort(logEntryList);
-        for (LogEntry logEntry : log.logEntryList) {
-            erg.append(' ');
-            erg.append( logEntry.getTimeStamp());
-            erg.append( ' ' );
-            erg.append( logEntry.getShare());
-            erg.append( ' ' );
-            erg.append( logEntry.getAmount());
-            erg.append( "<br>" );
+    public String print() {
 
+        String output = " ";
+        for (LogEntry item : logEntryList) {
+            output += ("\n" + item.getTimeStamp() + "\n Aktie: " + item.getShare() + " " + item.getAction() + "\n Anzahl: " + item.getAmount() + "\n");
         }
-        return erg.toString();
+        return output;
     }
 
 

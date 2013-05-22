@@ -50,7 +50,7 @@ public class AccountManagerProxy {
 
     public void sell(String name, String shareName, Integer amount) throws Exception {
         logger.fine("AccountManagerProxy: sell(" + name + "," + shareName + "," + amount + ")");
-        accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), accountManager.getPlayer(name).getMethod(), shareManagement.getShare(shareName), amount));
+        //accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), shareManagement.getShare(shareName), amount));
         accountManager.sell(name, shareName, amount);
 
     }
@@ -68,7 +68,7 @@ public class AccountManagerProxy {
 
     public void buy(String name, String shareName, Integer amount) throws Exception {
         logger.fine("AccountManagerProxy: buy(" + name + "," + shareName + ", " + amount + ")");
-        accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), accountManager.getPlayer(name).getMethod(), shareManagement.getShare(shareName), amount));
+        //accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), shareManagement.getShare(shareName), amount));
         accountManager.buy(name, shareName, amount);
     }
 

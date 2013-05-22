@@ -1,5 +1,6 @@
 package boersenspiel.manager;
 
+import boersenspiel.account.LogEntry;
 import boersenspiel.account.Player;
 import boersenspiel.account.PlayerAgent;
 import boersenspiel.exceptions.NotEnoughMoneyException;
@@ -9,6 +10,7 @@ import boersenspiel.exceptions.PlayerDoesNotExistException;
 import boersenspiel.gui.UpdateTimer;
 import boersenspiel.interfaces.AccountManager;
 
+import java.util.Date;
 import java.util.logging.Logger;
 
 /**
@@ -32,6 +34,8 @@ public class AccountManagerImpl implements AccountManager {
     private UserManagement userManagement;
     private ShareManagement shareManagement;
     private PlayerAgent playerAgent;
+    private String buy = "gekauft";
+    private String sell = "verkauft";
 
     public AccountManagerImpl() {
         this.shareManagement = ShareManagement.getInstance();
@@ -68,6 +72,7 @@ public class AccountManagerImpl implements AccountManager {
     public void buy(String playerName, String shareName, Integer amount) {
         try {
             userManagement.getPlayer(playerName).buy(shareManagement.getShare(shareName), amount);
+            userManagement.getPlayer(playerName).addLogEntry(new LogEntry(new Date(), buy, shareManagement.getShare(shareName), amount));
             logger.fine("Spieler " + playerName + " kaufte " + amount + " Aktien von " + shareName);
         } catch (NotEnoughMoneyException e) {
             logger.info("Sie besitzen nicht genug Geld.");
@@ -81,6 +86,7 @@ public class AccountManagerImpl implements AccountManager {
     public void sell(String playerName, String shareName, Integer amount) {
         try {
             userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);
+            userManagement.getPlayer(playerName).addLogEntry(new LogEntry(new Date(), sell, shareManagement.getShare(shareName), amount));
             logger.fine("Spieler " + playerName + " verkaufte " + amount + " Aktien von " + shareName);
         } catch (NotEnoughSharesException e) {
             logger.info("Sie besitzen nicht genug Anzahl dieser Aktien");
@@ -126,7 +132,7 @@ public class AccountManagerImpl implements AccountManager {
 
     public String getLog(String name) {
         try {
-            return userManagement.getPlayer(name).getLogEntry();
+            return userManagement.getPlayer(name).print();
         } catch (PlayerDoesNotExistException e) {
             logger.info("Spieler existiert nicht");
         }
