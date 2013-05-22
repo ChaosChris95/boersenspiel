@@ -11,7 +11,6 @@ import java.lang.reflect.Method;
  */
 public class InvocationHandler implements java.lang.reflect.InvocationHandler{
 
-    //AccountManagerImpl accountManager = AccountManagerImpl.getInstance();
     private Object AccountManagerImpl;
 
     public InvocationHandler(Object impl) {

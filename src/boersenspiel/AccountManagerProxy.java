@@ -30,12 +30,17 @@ public class AccountManagerProxy {
     private ShareManagement shareManagement;
     private static Logger logger = Logger.getLogger(AccountManagerProxy.class.getName());
 
+    AccountManager proxy = (AccountManager) Proxy.newProxyInstance(AccountManager.class.getClassLoader(),
+            new Class<?>[] {AccountManager.class},
+            new boersenspiel.shell.InvocationHandler(AccountManagerImpl.getInstance()));
+
+
     public AccountManagerProxy(AccountManagerImpl accountManager) throws IOException {
         this.accountManager = accountManager;
         Handler handler = new FileHandler( "log.txt" );
         logger.addHandler(handler);
         handler.setLevel(Level.FINE);
-        logger.setLevel(Level.INFO);
+        logger.setLevel(Level.FINE);
     }
 
     public long getShareDepositValue(String name) {
@@ -45,9 +50,16 @@ public class AccountManagerProxy {
 
     public void sell(String name, String shareName, Integer amount) throws Exception {
         logger.fine("AccountManagerProxy: sell(" + name + "," + shareName + "," + amount + ")");
+        accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), accountManager.getPlayer(name).getMethod(), shareManagement.getShare(shareName), amount));
         accountManager.sell(name, shareName, amount);
-        //accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), String sell, shareManagement.getShare(shareName), amount));
+
     }
+
+    /*public void createPlayer(String name, Long cash) {
+        logger.fine("AccountManagerProxy: createPlayer(" + name + "," + cash + ")");
+        proxy.createPlayer(name, cash);
+    }*/
+
 
     public void createPlayer(String name, Long cash) {
         logger.fine("AccountManagerProxy: createPlayer(" + name + "," + cash + ")");
@@ -56,6 +68,7 @@ public class AccountManagerProxy {
 
     public void buy(String name, String shareName, Integer amount) throws Exception {
         logger.fine("AccountManagerProxy: buy(" + name + "," + shareName + ", " + amount + ")");
+        accountManager.getPlayer(name).addLogEntry(new LogEntry(new Date(), accountManager.getPlayer(name).getMethod(), shareManagement.getShare(shareName), amount));
         accountManager.buy(name, shareName, amount);
     }
 

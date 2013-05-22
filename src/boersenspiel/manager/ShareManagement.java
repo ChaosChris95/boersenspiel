@@ -28,7 +28,6 @@ public class ShareManagement {
         return ShareManagement.instance;
     }
 
-    //private Share[] shares;
     private List<Share> shareList = new ArrayList<Share>();
 
     private ShareManagement() {
@@ -44,21 +43,6 @@ public class ShareManagement {
         logger.fine("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
     }
 
-        /*Share[] buffer = new Share[shares.length + 1];
-        try {
-            for (int i = 0; i < shares.length; i++) {
-                buffer[i] = shares[i];
-                if(shares[i].getName().equals(name)){
-                    throw new ShareNameAlreadyExistsException();
-                }
-            }
-            buffer[buffer.length - 1] = new Share(name, price);
-            shares = buffer;
-            logger.fine("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
-        }catch (ShareNameAlreadyExistsException e){
-            e.printStackTrace();
-        }  */
-
 
     public void deleteShare(String name) throws ShareDoesNotExistException {
        for (Share share : shareList) {
@@ -69,14 +53,6 @@ public class ShareManagement {
        }
         throw new ShareDoesNotExistException("Aktiene existiert nicht");
     }
-
-    /*public Share[] cloneShareList(){
-        Share[] sharesCopy = new Share[shares.length];
-        for (int i=0; i<shares.length; i++){
-            sharesCopy[i] = shares[i].clone();
-        }
-        return sharesCopy;
-    } */
 
     public int getShareLength(){
             return shareList.size();
@@ -129,10 +105,6 @@ public class ShareManagement {
             display.append(share.getName());
             display.append('\n');
         }
-        /*for (int i = 0; i < shares.length; i++) {
-            display.append(shares[i].getName() );
-            display.append( '\n' );
-        }  */
         return display.toString();
     }
 

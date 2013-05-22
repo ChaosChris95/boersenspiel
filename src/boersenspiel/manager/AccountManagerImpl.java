@@ -124,12 +124,14 @@ public class AccountManagerImpl implements AccountManager {
         return null;
     }
 
-    /*public String getLog(String name) {
+    public String getLog(String name) {
         try {
             return userManagement.getPlayer(name).getLogEntry();
         } catch (PlayerDoesNotExistException e) {
             logger.info("Spieler existiert nicht");
         }
         return null;
-    } */
+    }
+
+
 }

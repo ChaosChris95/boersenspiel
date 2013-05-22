@@ -6,6 +6,9 @@ import boersenspiel.stock.Share;
 import boersenspiel.stock.ShareDeposit;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import static java.util.Collections.*;
@@ -22,7 +25,11 @@ public class Player {
     private boolean broken = false;
     private CashAccount cashAccount;
     private ShareDeposit shareDeposit;
-    //private List<LogEntry> logEntryList;
+    private String method;
+    LogEntry log = new LogEntry();
+
+
+
 
     public Player(String name) {
         this.name = name;
@@ -35,11 +42,14 @@ public class Player {
     public void buy(Share share, int amount) throws NotEnoughMoneyException {
             cashAccount.subCash(share.getPrice() * amount);
             shareDeposit.addShare(share, amount);
+            String buy = method;
+
     }
 
     public void sell(Share share, int amount) throws NotEnoughSharesException{
             shareDeposit.removeShare(share, amount);
             cashAccount.addCash(share.getPrice() * amount);
+            String sell = method;
     }
 
     public void addCash(long cash) {
@@ -70,7 +80,12 @@ public class Player {
         return name;
     }
 
-    public boolean isBroken() {
+    public String getMethod() {
+        return method;
+    }
+
+
+    private boolean isBroken() {
         if (getCashAccountValue() <= 0) {
             broken = true;
         }
@@ -85,15 +100,16 @@ public class Player {
         return "Spieler mit dem Namen " + name + " und einem Kontostand von " + getCashAccountValue();
     }
 
-    /*public void addLogEntry(LogEntry logEntry) {
-        logEntryList.add(logEntry);
-    } */
+    public void addLogEntry(LogEntry logEntry) {
+        log.logEntryList.add(logEntry);
+    }
 
-    /*public String getLogEntry() {
+
+    public String getLogEntry() {
         StringBuilder erg = new StringBuilder();
         erg.append( "<br>" );
         //Collections.sort(logEntryList);
-        for (LogEntry logEntry : logEntryList) {
+        for (LogEntry logEntry : log.logEntryList) {
             erg.append(' ');
             erg.append( logEntry.getTimeStamp());
             erg.append( ' ' );
@@ -104,11 +120,8 @@ public class Player {
 
         }
         return erg.toString();
-    } */
+    }
 
-    /*@Override
-    public int compareTo(LogEntry o) {
-        return 0;
-    }*/
+
 
 }
