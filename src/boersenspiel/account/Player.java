@@ -19,7 +19,7 @@ import static java.util.Collections.*;
  * Time: 17:34
  */
 
-public class Player {
+public class Player  {
 
     private final String name;
     private boolean broken = false;
@@ -105,12 +105,11 @@ public class Player {
     public String print() {
 
         String output = " ";
+        Collections.sort(logEntryList);
         for (LogEntry item : logEntryList) {
             output += ("\n" + item.getTimeStamp() + "\n Aktie: " + item.getShare() + " " + item.getAction() + "\n Anzahl: " + item.getAmount() + "\n");
         }
         return output;
     }
-
-
 
 }

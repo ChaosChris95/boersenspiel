@@ -16,7 +16,7 @@ import java.util.List;
  * Date: 14.05.13
  * Time: 16:13
  */
-public class LogEntry {
+public class LogEntry implements Comparable<LogEntry> {
 
     private Timestamp stamp = new Timestamp(System.currentTimeMillis());
     Date date = new Date(stamp.getTime());
@@ -59,7 +59,11 @@ public class LogEntry {
     }
 
     public int compareTo(LogEntry o) {
-        return LogEntry.this.compareTo(o);
+        return this.getShare().compareTo(o.getShare());
+    }
+
+    public int compareToDate(LogEntry o) {
+        return this.getTimeStamp().compareTo(o.getTimeStamp());
     }
 }
 

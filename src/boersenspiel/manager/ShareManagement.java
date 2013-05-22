@@ -101,6 +101,7 @@ public class ShareManagement {
 
         StringBuilder display = new StringBuilder();
         display.append( "Alle verfügbaren Aktien:\n" );
+        Collections.sort(shareList);
         for (Share share : shareList) {
             display.append(share.getName());
             display.append('\n');
