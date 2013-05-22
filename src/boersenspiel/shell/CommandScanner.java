@@ -56,8 +56,6 @@ public class CommandScanner {
                     } else {
                         command.params[j] = parts[j + 1];
                     }
-                    //if (clas != null) {
-                    //command.params[j] = clas.getClass().cast(parts[j + 1]);
                 }
                 return;
             }

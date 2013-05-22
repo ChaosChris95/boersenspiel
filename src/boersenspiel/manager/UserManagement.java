@@ -41,14 +41,6 @@ public class UserManagement {
 
     }
 
-        /*Player[] buffer = new Player[this.players.length + 1];
-        for (int i = 0; i<this.players.length; i++){
-            buffer[i] = players[i];
-        }
-        Player p = new Player(name);
-        p.addCash(cash);
-        buffer[buffer.length - 1] = p;
-        players = buffer;  */
 
 
     public Player getPlayer(String name) throws PlayerDoesNotExistException {
@@ -57,12 +49,6 @@ public class UserManagement {
         }
         throw new PlayerDoesNotExistException("Spieler existiert nicht");
 
-        /*for (int i = 0; i<this.players.length; i++) {
-            if (name.equals(players[i].getName())) {
-                return players[i];
-            }
-        }
-        return null;   */
     }
 
 

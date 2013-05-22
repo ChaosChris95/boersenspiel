@@ -15,13 +15,16 @@ import boersenspiel.manager.ShareManagement;
 import boersenspiel.stock.Share;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.Date;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.Handler;
 
-public class AccountManagerProxy implements AccountManager{
+public class AccountManagerProxy {
 
     private AccountManagerImpl accountManager;
     private ShareManagement shareManagement;

@@ -19,7 +19,16 @@ public class LogEntry {
     public Share share;
 
     public LogEntry (Date timeStamp, String a, Share share, int amount) {
+        this.timeStamp = timeStamp;
+        this.amount = amount;
+        this.share = share;
     }
+
+    public enum action {
+        BUY,
+        SELL;
+    }
+
 
 
 }

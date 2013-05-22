@@ -22,7 +22,7 @@ public class Player {
     private boolean broken = false;
     private CashAccount cashAccount;
     private ShareDeposit shareDeposit;
-    private List<LogEntry> logEntryList;
+    //private List<LogEntry> logEntryList;
 
     public Player(String name) {
         this.name = name;
@@ -85,11 +85,11 @@ public class Player {
         return "Spieler mit dem Namen " + name + " und einem Kontostand von " + getCashAccountValue();
     }
 
-    public void addLogEntry(LogEntry logEntry) {
+    /*public void addLogEntry(LogEntry logEntry) {
         logEntryList.add(logEntry);
-    }
+    } */
 
-    public String getLogEntry() {
+    /*public String getLogEntry() {
         StringBuilder erg = new StringBuilder();
         erg.append( "<br>" );
         //Collections.sort(logEntryList);
@@ -104,11 +104,11 @@ public class Player {
 
         }
         return erg.toString();
-    }
+    } */
 
-    @Override
+    /*@Override
     public int compareTo(LogEntry o) {
         return 0;
-    }
+    }*/
 
 }
