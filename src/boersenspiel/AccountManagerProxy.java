@@ -6,6 +6,45 @@ package boersenspiel;
  * Time: 10:38
  */
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Logger;
+
+import boersenspiel.interfaces.AccountManager;
+import boersenspiel.manager.AccountManagerImpl;
+
+//TODO Location Handler
+
+public class AccountManagerProxy implements InvocationHandler{
+
+    Logger logger = Logger.getLogger("AccountManagerProxy");
+    private AccountManager accountManager;
+
+    public AccountManagerProxy(AccountManager accountManager){
+        this.accountManager = accountManager;
+    }
+
+    public Object invoke(Object proxy, Method method, Object[] args){
+        logger.info("* calling method " + method + " with params ");
+        for (int i = 0; i < args.length; i++)
+            logger.info(" " + args[i]);
+        logger.info("\n");
+
+        Object result = null;
+        try  {
+            result = method.invoke(accountManager, args);
+        } catch(IllegalAccessException ex)  {
+        } catch(InvocationTargetException ex)  {
+            logger.info("* exception:" + ex.getTargetException());
+            //throw ex.getTargetException();
+        }
+        logger.info("* result:" + result);
+        return result;
+    }
+}
+
+/*
 import boersenspiel.account.LogEntry;
 import boersenspiel.account.Player;
 import boersenspiel.exceptions.PlayerDoesNotExistException;
@@ -58,7 +97,7 @@ public class AccountManagerProxy {
     /*public void createPlayer(String name, Long cash) {
         logger.fine("AccountManagerProxy: createPlayer(" + name + "," + cash + ")");
         proxy.createPlayer(name, cash);
-    }*/
+    }
 
 
     public void createPlayer(String name, Long cash) {
@@ -91,4 +130,5 @@ public class AccountManagerProxy {
         logger.fine("AccountManagerProxy: getAssetValue(" + name + ")");
         accountManager.botPlayer(name);
     }
-}
+}*/
+
