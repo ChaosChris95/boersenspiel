@@ -3,10 +3,7 @@ package boersenspiel.manager;
 import boersenspiel.account.LogEntry;
 import boersenspiel.account.Player;
 import boersenspiel.account.PlayerAgent;
-import boersenspiel.exceptions.NotEnoughMoneyException;
-import boersenspiel.exceptions.NotEnoughSharesException;
-import boersenspiel.exceptions.PlayerAlreadyExistsException;
-import boersenspiel.exceptions.PlayerDoesNotExistException;
+import boersenspiel.exceptions.*;
 import boersenspiel.gui.UpdateTimer;
 import boersenspiel.interfaces.AccountManager;
 
@@ -83,7 +80,7 @@ public class AccountManagerImpl implements AccountManager {
     }
 
     @Override
-    public void sell(String playerName, String shareName, Integer amount) {
+    public void sell(String playerName, String shareName, Integer amount) throws NegativeValueException{
         try {
             userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);
             userManagement.getPlayer(playerName).addLogEntry(new LogEntry(new Date(), sell, shareManagement.getShare(shareName), amount));

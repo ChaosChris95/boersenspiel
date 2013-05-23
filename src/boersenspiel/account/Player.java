@@ -1,5 +1,6 @@
 package boersenspiel.account;
 
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NotEnoughMoneyException;
 import boersenspiel.exceptions.NotEnoughSharesException;
 import boersenspiel.stock.Share;
@@ -38,19 +39,19 @@ public class Player  {
     }
 
     public void buy(Share share, int amount) throws NotEnoughMoneyException {
-            cashAccount.subCash(share.getPrice() * amount);
-            shareDeposit.addShare(share, amount);
-            String buy = method;
+        cashAccount.subCash(share.getPrice() * amount);
+        shareDeposit.addShare(share, amount);
+        String buy = method;
 
     }
 
-    public void sell(Share share, int amount) throws NotEnoughSharesException{
-            shareDeposit.removeShare(share, amount);
-            cashAccount.addCash(share.getPrice() * amount);
-            String sell = method;
+    public void sell(Share share, int amount) throws NotEnoughSharesException, NegativeValueException{
+        shareDeposit.removeShare(share, amount);
+        cashAccount.addCash(share.getPrice() * amount);
+        String sell = method;
     }
 
-    public void addCash(long cash) {
+    public void addCash(long cash) throws NegativeValueException{
         cashAccount.addCash(cash);
     }
 

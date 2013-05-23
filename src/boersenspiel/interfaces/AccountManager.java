@@ -1,5 +1,7 @@
 package boersenspiel.interfaces;
 
+import boersenspiel.exceptions.NegativeValueException;
+
 /**
  * User: Peach
  * Date: 09.04.13
@@ -14,7 +16,7 @@ public interface AccountManager {
      * @param cash
      */
 
-    void createPlayer(String name, Long cash);
+    void createPlayer(String name, Long cash) throws NegativeValueException;
 
 
     /**

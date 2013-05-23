@@ -1,6 +1,7 @@
 package boersenspiel.manager;
 
 import boersenspiel.account.Player;
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.PlayerAlreadyExistsException;
 import boersenspiel.exceptions.PlayerDoesNotExistException;
 
@@ -30,7 +31,7 @@ public class UserManagement {
         //this.players = new Player[0];
     }
 
-    public void addPlayer(String name, long cash) throws PlayerAlreadyExistsException {
+    public void addPlayer(String name, long cash) throws PlayerAlreadyExistsException, NegativeValueException {
 
         if (players.containsKey(name)) {
             throw new PlayerAlreadyExistsException("Ein Spieler mit diesem Namen existiert schon");

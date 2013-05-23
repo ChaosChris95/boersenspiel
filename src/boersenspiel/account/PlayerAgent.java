@@ -1,6 +1,7 @@
 package boersenspiel.account;
 
 import boersenspiel.account.Player;
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NotEnoughMoneyException;
 import boersenspiel.exceptions.NotEnoughSharesException;
 import boersenspiel.gui.UpdateTimer;
@@ -27,7 +28,7 @@ public class PlayerAgent {
 
     }
 
-    public void sell(Share share, Integer amount) throws NotEnoughSharesException {
+    public void sell(Share share, Integer amount) throws NotEnoughSharesException, NegativeValueException {
         player.sell(share, amount);
     }
 
@@ -51,7 +52,8 @@ public class PlayerAgent {
             logger.info("Verkaufe 3 Aktien von " +  s.getName());
             try {
                 player.sell(s, 3);
-            } catch (NotEnoughSharesException e) {}
+            } catch (NotEnoughSharesException e) {
+            } catch (NegativeValueException e) {}
         }
     }
 
