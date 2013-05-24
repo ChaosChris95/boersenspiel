@@ -40,7 +40,7 @@ public class ShareManagement {
            }
        }
         shareList.add(new Share(name,price));
-        logger.fine("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
+        logger.info("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
     }
 
 
@@ -48,7 +48,7 @@ public class ShareManagement {
        for (Share share : shareList) {
            if (share.getName().equals(name)) {
               shareList.remove(name);
-              logger.fine("Aktie " + name + " wurde aus dem System gelöscht.");
+              logger.info("Aktie " + name + " wurde aus dem System gelöscht.");
            }
        }
         throw new ShareDoesNotExistException("Aktiene existiert nicht");

@@ -1,5 +1,7 @@
 package boersenspiel.account;
 
+import boersenspiel.account.comparators.ShareComparator;
+import boersenspiel.account.comparators.TimeComparator;
 import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NotEnoughMoneyException;
 import boersenspiel.exceptions.NotEnoughSharesException;
@@ -7,10 +9,7 @@ import boersenspiel.stock.Share;
 import boersenspiel.stock.ShareDeposit;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static java.util.Collections.*;
 
@@ -26,9 +25,7 @@ public class Player  {
     private boolean broken = false;
     private CashAccount cashAccount;
     private ShareDeposit shareDeposit;
-    private String method;
-    List<LogEntry> logEntryList = new ArrayList<LogEntry>();
-
+    private List<LogEntry> logEntryList = new ArrayList<LogEntry>();
 
     public Player(String name) {
         this.name = name;
@@ -39,19 +36,18 @@ public class Player  {
     }
 
     public void buy(Share share, int amount) throws NotEnoughMoneyException {
-        cashAccount.subCash(share.getPrice() * amount);
-        shareDeposit.addShare(share, amount);
-        String buy = method;
-
+            cashAccount.subCash(share.getPrice() * amount);
+            shareDeposit.addShare(share, amount);
+            logEntryList.add(new LogEntry(LogEntry.BUY, share, amount));
     }
 
-    public void sell(Share share, int amount) throws NotEnoughSharesException, NegativeValueException{
-        shareDeposit.removeShare(share, amount);
-        cashAccount.addCash(share.getPrice() * amount);
-        String sell = method;
+    public void sell(Share share, int amount) throws NotEnoughSharesException, NegativeValueException {
+            shareDeposit.removeShare(share, amount);
+            cashAccount.addCash(share.getPrice() * amount);
+            logEntryList.add(new LogEntry(LogEntry.SELL, share, amount));
     }
 
-    public void addCash(long cash) throws NegativeValueException{
+    public void addCash(long cash) throws NegativeValueException {
         cashAccount.addCash(cash);
     }
 
@@ -79,10 +75,6 @@ public class Player  {
         return name;
     }
 
-    public String getMethod() {
-        return method;
-    }
-
     private boolean isBroken() {
         if (getCashAccountValue() <= 0) {
             broken = true;
@@ -98,19 +90,20 @@ public class Player  {
         return "Spieler mit dem Namen " + name + " und einem Kontostand von " + getCashAccountValue();
     }
 
-    public void addLogEntry(LogEntry logEntry) {
-        logEntryList.add(logEntry);
+    public String printByShare() {
+        return this.doPrint(new ShareComparator());
+    }
+    public String printByDate() {
+        return this.doPrint(new TimeComparator());
     }
 
-
-    public String print() {
-
-        String output = " ";
-        Collections.sort(logEntryList);
+    private String doPrint(Comparator c) {
+        StringBuilder sb = new StringBuilder();
+        Collections.sort(logEntryList, c);
         for (LogEntry item : logEntryList) {
-            output += ("\n" + item.getTimeStamp() + "\n Aktie: " + item.getShare() + " " + item.getAction() + "\n Anzahl: " + item.getAmount() + "\n");
+            sb.append(item.toString());
+            sb.append("\n");
         }
-        return output;
+        return sb.toString();
     }
-
 }

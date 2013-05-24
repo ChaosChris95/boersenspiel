@@ -7,6 +7,7 @@ import boersenspiel.exceptions.PlayerDoesNotExistException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * User: Peach
@@ -16,6 +17,8 @@ import java.util.Map;
 
 public class UserManagement {
 
+    private static Logger logger = Logger.getLogger("UserManagement");
+
     private static UserManagement instance = null;
     public static UserManagement getInstance() {
         if(UserManagement.instance == null) {
@@ -24,11 +27,9 @@ public class UserManagement {
         return UserManagement.instance;
     }
 
-    //private Player[] players;
     private Map<String, Player> players = new HashMap<String, Player>();
 
     private UserManagement() {
-        //this.players = new Player[0];
     }
 
     public void addPlayer(String name, long cash) throws PlayerAlreadyExistsException, NegativeValueException {
@@ -37,15 +38,14 @@ public class UserManagement {
             throw new PlayerAlreadyExistsException("Ein Spieler mit diesem Namen existiert schon");
         }
         Player newPlayer = new Player(name);
+        logger.fine("Spieler wurde erstellt");
         newPlayer.addCash(cash);
         players.put(name, newPlayer);
-
     }
-
-
 
     public Player getPlayer(String name) throws PlayerDoesNotExistException {
         if (players.containsKey(name)) {
+            logger.fine("Spieler abgerufen");
             return players.get(name);
         }
         throw new PlayerDoesNotExistException("Spieler existiert nicht");

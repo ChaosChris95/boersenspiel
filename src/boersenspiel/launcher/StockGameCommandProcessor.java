@@ -83,7 +83,7 @@ public class StockGameCommandProcessor {
                     //run method
                     Object ret = method.invoke(targetInstance, command.getParams());  //command.getParams()
                            if (ret != null) {
-                               logger.fine("Antwort: " + ret);
+                               logger.info("Antwort: \n " + ret);
                            }
                     } catch (NoSuchMethodException e) {
                         throw new Error(commandType.getFunc() + " konnte nicht gefunden werden");
