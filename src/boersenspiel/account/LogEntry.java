@@ -18,52 +18,38 @@ import java.util.List;
  */
 public class LogEntry implements Comparable<LogEntry> {
 
-    private Timestamp stamp = new Timestamp(System.currentTimeMillis());
-    Date date = new Date(stamp.getTime());
-    private int amount;
-    private String share;
-    private String action;
 
-    public LogEntry(Date date, String action, Share share, int amount) {
-        this.date = date;
+    public static final int BUY = 1;
+    public static final int SELL = 2;
+
+    public Date date = null;
+    public int amount;
+    public String share;
+    public int action;
+
+    public LogEntry(int action, Share share, int amount) {
+        this.date = new Date();
         this.amount = amount;
         this.share = share.getName();
         this.action = action;
 
     }
 
-    public Date getTimeStamp(){
-        return this.date;
-    }
-
-    public String getShare() {
-        return this.share;
-    }
-
-    public int getAmount() {
-        return this.amount;
-    }
-
-    public String getAction() {
-        return this.action;
-    }
-
     public boolean equals(Object o) {
         if (o instanceof LogEntry) {
             LogEntry i = (LogEntry) o;
-            if (i.equals(LogEntry.this)) {
-                return true;
-            }
+            return this.action == i.action && this.date == i.date && this.amount == i.amount && this.share.equals(i.share);
         }
         return false;
     }
 
     public int compareTo(LogEntry o) {
-        return this.getShare().compareTo(o.getShare());
+        return this.share.compareTo(o.share);
     }
 
-    public int compareToDate(LogEntry o) {
-        return this.getTimeStamp().compareTo(o.getTimeStamp());
+    public String toString() {
+        String action = this.action == BUY ? "kauft" : "verkauft";
+        return "\n" + this.date.toString() + "\nSpieler " + action + " " + this.amount + " Aktien von " + this.share;
     }
 }
 
