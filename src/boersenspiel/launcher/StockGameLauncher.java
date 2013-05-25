@@ -1,11 +1,13 @@
 package boersenspiel.launcher;
 
+import boersenspiel.AccountManagerClient;
 import boersenspiel.AccountManagerProxy;
 import boersenspiel.gui.StockPriceViewer;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.RandomStockPriceProvider;
+import boersenspiel.provider.RealisticStockPriceProvider;
 import boersenspiel.shell.InvocationHandler;
 
 import java.io.BufferedInputStream;
@@ -27,7 +29,8 @@ public class StockGameLauncher {
         LogManager.getLogManager().readConfiguration(new BufferedInputStream(new FileInputStream("c:/logging.properties")));
 
         RandomStockPriceProvider rnd = new RandomStockPriceProvider();
-        StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(),rnd);
+        //RealisticStockPriceProvider rnd = new RealisticStockPriceProvider("aapl.cvs");
+        StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(), rnd);
 
         //loading Proxy
         AccountManager proxy = (AccountManager) Proxy.newProxyInstance(AccountManager.class.getClassLoader(),
@@ -45,8 +48,9 @@ public class StockGameLauncher {
         ShareManagement.getInstance().addShare("Harribert", 100L);
         ShareManagement.getInstance().addShare("Lotto", 150L);
 
-        AccountManagerImpl accountManager = AccountManagerImpl.getInstance();
+        AccountManager accountManager = AccountManagerImpl.getInstance();
         //AccountManagerProxy accountManagerProxy = new AccountManagerProxy(accountManager);
+        AccountManagerClient accountManagerClient = new AccountManagerClient(accountManager);
         StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
         cmp.process();
     }

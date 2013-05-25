@@ -9,6 +9,8 @@ package boersenspiel.gui;
 
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.RandomStockPriceProvider;
+import boersenspiel.provider.RealisticStockPriceProvider;
+import boersenspiel.provider.StockPriceProvider;
 
 import java.util.TimerTask;
 import java.util.Calendar;
@@ -20,12 +22,12 @@ import javax.swing.JLabel;
 public class StockPriceViewer extends JFrame{
 
     private ShareManagement shareManagement;
-    RandomStockPriceProvider randomStockPriceProvider;
+    StockPriceProvider stockPriceProvider;
     private JLabel clockLabel;
 
-    public StockPriceViewer(ShareManagement shareManagement, RandomStockPriceProvider randomStockPriceProvider){
+    public StockPriceViewer(ShareManagement shareManagement, StockPriceProvider stockPriceProvider){
         this.shareManagement = shareManagement;
-        this.randomStockPriceProvider = randomStockPriceProvider;
+        this.stockPriceProvider = stockPriceProvider;
         clockLabel = new JLabel();
         add("Center", clockLabel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,7 +47,10 @@ public class StockPriceViewer extends JFrame{
         }
 
         public void run(){
-            randomStockPriceProvider.startUpdate();
+            try{
+                stockPriceProvider.startUpdate();
+            } catch(Exception e){}
+
             clockLabel.setText(createText());
             clockLabel.repaint();
         }

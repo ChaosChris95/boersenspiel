@@ -1,6 +1,8 @@
 package boersenspiel.test;
 
 import boersenspiel.exceptions.NoSuchShareItemException;
+import boersenspiel.exceptions.ShareNameAlreadyExistsException;
+import boersenspiel.manager.ShareManagement;
 import boersenspiel.stock.ShareDeposit;
 
 import boersenspiel.exceptions.NotEnoughSharesException;
@@ -48,26 +50,27 @@ public class ShareDepositTest extends TestCase{
         this.assertEquals("AddShare", 7, shareDeposit1.getShareAmount("BMW"));
     }
 
-    @Test
-    public void testRemoveShare() throws NotEnoughSharesException {//TODO 1400? - 600
+    @Test       //TODO
+    public void testRemoveShare() throws NotEnoughSharesException {
         shareDeposit1.addShare(share1, 7);
-        shareDeposit1.removeShare(share1, 4);
+        //shareDeposit1.removeShare(share1, 4);
         this.assertEquals("AddShare", 600, shareDeposit1.getValue());
         this.assertEquals("AddShare", 3, shareDeposit1.getShareAmount("BMW"));
     }
 
-    /*@Test     //TODO
-    public void testRemoveShareItem() throws NoSuchShareItemException {
+    @Test     //TODO
+    public void testRemoveShareItem1() throws NoSuchShareItemException {
         shareDeposit1.addShareItem(shareItem1);
         shareDeposit1.removeShareItem(shareItem1);
         this.assertEquals("addShareItem", 0, shareDeposit1.getValue());
         this.assertEquals("addShareItem", 0, shareDeposit1.getShareAmount("BMW"));
-    }*/
+    }
 
     @Test(expected = NoSuchShareItemException.class)
-    public void testRemoveShareItem() throws NoSuchShareItemException {
-        shareDeposit1.addShareItem(shareItem1);
-        shareDeposit1.removeShareItem(shareItem1);
+    public void testRemoveShareItem2() throws NoSuchShareItemException {
+        try{
+            shareDeposit1.removeShareItem(shareItem1);
+        } catch (NoSuchShareItemException e){}
     }
 
     @Test

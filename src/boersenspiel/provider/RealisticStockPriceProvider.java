@@ -3,12 +3,14 @@ package boersenspiel.provider;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.TimerTask;
 
 import boersenspiel.gui.UpdateTimer;
 import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
+import boersenspiel.stock.Share;
 
 /**
  * User: Jan
@@ -16,44 +18,58 @@ import boersenspiel.manager.ShareManagement;
  * Time: 13:31
  */
 
-public class RealisticStockPriceProvider {
+public class RealisticStockPriceProvider extends StockPriceProvider{  //TODO inherit from StockPriceProvider
 
     private ShareManagement shareManagement;
-    private final String stockName;
-    //private final FileInputStream input;  //final
     public UpdateTimer timer = UpdateTimer.getInstance();
+    URL helpURL;
+    String fileName;
+    String[] splitText;
 
-    public RealisticStockPriceProvider(String fileName){     //wtf?  , FileInputStream input
+    public RealisticStockPriceProvider(String fileName){
         shareManagement = ShareManagement.getInstance();
-        stockName = fileName;
-        try{
-            final FileInputStream input = new FileInputStream(fileName);
-        } catch (FileNotFoundException e) {}
+        helpURL = getClass().getResource("../../Aktien/" + fileName);
+        if (helpURL == null){
+            return; //NullPointerException
+        }
+        String text = helpURL.toString();
+        this.fileName = fileName;
+        splitText = text.split("\n");
+        startUpdate();
+    }
+    public void updateShareRates(){
+
     }
 
-    public void decodeFile(FileInputStream input, String stockName) throws IOException {
-        String line;
-        while((line = input.toString()) != null) {
-            String[] splittedText = line.split("\n");
-            //Wiederhole
-            for (int i=0; i < splittedText.length; i++){
-                if (i==1){
-                    continue;
-                }
-                String[] splittedLine = line.split(",");
-                try{
-                    shareManagement.addShare(stockName, Long.parseLong(splittedLine[5]));
-                } catch (ShareNameAlreadyExistsException e) {}
-            }
+    public void updateShareRate(Share share){
+
+    }
+
+    public void decodeFile(int counter, String[] splitText, String stockName) throws IOException {
+        String[] splitLine = splitText[counter].split(",");   //NullPointerException
+        if (counter==1){
+            return;
+        }
+        if (counter==2){
+            try{
+                shareManagement.addShare(fileName, Long.parseLong(splitLine[4]));
+            } catch (ShareNameAlreadyExistsException e){}
+
+        }
+        else {
+            shareManagement.getShare(fileName).setPrice(Long.parseLong(splitLine[4]));
         }
     }
 
-    /*public void startUpdate(FileInputStream input){
+    public void startUpdate(){
         timer.addTask(new TimerTask() {
             public void run() {
-                decodeFile(input, stockName);
+                try{
+                    int counter = 0;
+                    decodeFile(counter, splitText, fileName);
+                    counter ++;
+                } catch (IOException e){}
             }
         }, 1000, 1000);
-    }*/
-
+    }
 }

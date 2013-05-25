@@ -52,14 +52,13 @@ public class ShareDeposit extends Asset {
     }
 
 
-    public long removeShare(Share share, int amount) throws NotEnoughSharesException {
+    public void removeShare(Share share, int amount) throws NotEnoughSharesException {
         for (ShareItem item : shareItemList) {
             if (item.getName().equals(share.getName())) {
                 if (item.getShareAmount() < amount) {
                     throw new NotEnoughSharesException("Sie besitzen nicht genügend Aktien");
                 }
                 item.removeShareAmount(amount);
-                return item.getValue() * amount;
             }
         }
         logger.finer("CashAccount.removeShare(" + share + amount + ")");

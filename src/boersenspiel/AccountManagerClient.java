@@ -17,7 +17,7 @@ import java.lang.reflect.Proxy;
 
 public class AccountManagerClient {
 
-    public AccountManagerClient(AccountManager accountManager) throws NegativeValueException {
+    public AccountManagerClient(AccountManager accountManager) throws NegativeValueException{
         AccountManagerProxy handler = new AccountManagerProxy(accountManager);
         AccountManagerProxy accountManagerProxy = new AccountManagerProxy(accountManager);
         AccountManager proxy = (AccountManager) Proxy.newProxyInstance(
@@ -25,7 +25,7 @@ public class AccountManagerClient {
         startTest(proxy);
     }
 
-    public void startTest(AccountManager proxy) throws NegativeValueException {
+    public void startTest(AccountManager proxy)throws NegativeValueException{
         proxy.createPlayer("Mr. Burns", 1000000L);
     }
 }
