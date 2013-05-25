@@ -1,6 +1,7 @@
 package boersenspiel.stock;
 
 import boersenspiel.account.Asset;
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NotEnoughSharesException;
 
 import java.util.Comparator;
@@ -29,7 +30,9 @@ public class ShareItem extends Asset implements Comparable<ShareItem> {
         return shareAmount;
     }
 
-    public void addShareAmount(int amount) {
+    public void addShareAmount(int amount) throws NegativeValueException{
+        if (amount < 0)
+            throw new NegativeValueException("adding a negative amount of share is not allowed");
         value += this.share.getPrice() * amount;
         shareAmount += amount;
     }
@@ -57,7 +60,7 @@ public class ShareItem extends Asset implements Comparable<ShareItem> {
         return ("ShareItem " + name + " mit einem Gesamtwert von " + getValue());
     }
 
-    public void merge(ShareItem i) {
+    public void merge(ShareItem i) throws NegativeValueException{
         this.addShareAmount(i.getShareAmount());
         this.addValue(i.getValue());
     }

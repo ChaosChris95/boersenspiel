@@ -35,7 +35,7 @@ public class Player  {
 
     }
 
-    public void buy(Share share, int amount) throws NotEnoughMoneyException {
+    public void buy(Share share, int amount) throws NotEnoughMoneyException, NegativeValueException {
             cashAccount.subCash(share.getPrice() * amount);
             shareDeposit.addShare(share, amount);
             logEntryList.add(new LogEntry(LogEntry.BUY, share, amount));

@@ -66,7 +66,7 @@ public class AccountManagerImpl implements AccountManager {
     }
 
     @Override
-    public void buy(String playerName, String shareName, Integer amount) {
+    public void buy(String playerName, String shareName, Integer amount) throws NegativeValueException {
         try {
             userManagement.getPlayer(playerName).buy(shareManagement.getShare(shareName), amount);
             logger.info("Spieler " + playerName + " kaufte " + amount + " Aktien von " + shareName);

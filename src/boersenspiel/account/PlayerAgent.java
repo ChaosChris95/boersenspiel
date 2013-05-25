@@ -32,7 +32,7 @@ public class PlayerAgent {
         player.sell(share, amount);
     }
 
-    public void buy(Share share, Integer amount) throws NotEnoughMoneyException {
+    public void buy(Share share, Integer amount) throws NotEnoughMoneyException, NegativeValueException {
         player.buy(share, amount);
     }
 
@@ -45,7 +45,8 @@ public class PlayerAgent {
             logger.info("Kaufe 5 Aktien von " +  s.getName());
             try {
                 player.buy(s, 5);
-            } catch (NotEnoughMoneyException e) {}
+            } catch (NotEnoughMoneyException e) {
+            } catch (NegativeValueException e){}
 
             n = (int)(Math.random() * (ShareManagement.getInstance().getShareLength() - 1));
             s = ShareManagement.getInstance().getShareByNumber(n);

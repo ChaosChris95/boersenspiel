@@ -1,6 +1,7 @@
 package boersenspiel.stock;
 
 import boersenspiel.account.Asset;
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NoSuchShareItemException;
 import boersenspiel.exceptions.NotEnoughSharesException;
 
@@ -23,7 +24,7 @@ public class ShareDeposit extends Asset {
         super("ShareDeposit");
     }
 
-    public void addShareItem(ShareItem add) {
+    public void addShareItem(ShareItem add) throws NegativeValueException{
 
         for (ShareItem item : shareItemList) {
             if (item.equals(add)){
@@ -40,7 +41,7 @@ public class ShareDeposit extends Asset {
         return name;
     }
 
-    public void addShare(Share share, int amount) {
+    public void addShare(Share share, int amount) throws NegativeValueException {
         for (ShareItem item : shareItemList) {
             if (item.getName().equals(share.getName())) {
                 item.addShareAmount(amount);
@@ -65,7 +66,7 @@ public class ShareDeposit extends Asset {
         throw new NotEnoughSharesException("Sie besitzen keine Aktie mit diesem Namen");
     }
 
-    public void removeShareItem(ShareItem remove) throws NoSuchShareItemException {
+    public void removeShareItem(ShareItem remove) throws NoSuchShareItemException {//TODO Exception wrong placed method does not work
         for (ShareItem item : shareItemList) {
             if (item.getName().equals(remove)) {
                 shareItemList.remove(item);
