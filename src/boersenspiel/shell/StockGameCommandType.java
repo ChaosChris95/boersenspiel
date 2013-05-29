@@ -21,7 +21,8 @@ public enum StockGameCommandType implements CommandTypeInfo {
     BOT ("bot", " <playername> * set player as bot",  "boersenspiel.manager.AccountManagerImpl", "botPlayer", new Class[] {String.class}),
     CREATESHARE ("crs", "<sharename> <price> * create share with given price in system", "boersenspiel.manager.ShareManagement", "addShare", new Class[] {String.class, Long.class}),
     DELETESHARE ("des", "<sharename> * delete share from system ", "boersenspiel.manager.ShareManagement", "deleteShare", new Class[] {String.class}),
-    GETLOG ("gl", "<playername> * list log entry", "boersenspiel.manager.AccountManagerImpl", "getLog", new Class[] {String.class})
+    PRINTLOG ("prl", "<playername> <sort> * print log as plain, sort parameter 1 = byShare, 2 = byTime", "boersenspiel.manager.AccountManagerImpl", "printPlain", new Class[] {String.class, Integer.class}),
+    PRINTLOGHTML ("prlf", "<playername> <filename> <sort> * print log as html, sort parameter 1 = byShare, 2 = byTime", "boersenspiel.manager.AccountManagerImpl", "printHtml", new Class[] {String.class, String.class, Integer.class})
     ;
 
     private String cmdName;

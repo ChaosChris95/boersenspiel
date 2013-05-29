@@ -7,6 +7,9 @@ import boersenspiel.exceptions.*;
 import boersenspiel.gui.UpdateTimer;
 import boersenspiel.interfaces.AccountManager;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Date;
 import java.util.logging.Logger;
 
@@ -74,12 +77,14 @@ public class AccountManagerImpl implements AccountManager {
             logger.warning("Sie besitzen nicht genug Geld.");
         } catch (PlayerDoesNotExistException e) {
             logger.warning("Spieler existiert nicht");
+        } catch (NegativeValueException e) {
+            logger.warning("Negativer Wert nicht erlaubt");
         }
 
     }
 
     @Override
-    public void sell(String playerName, String shareName, Integer amount) throws NegativeValueException{
+    public void sell(String playerName, String shareName, Integer amount) {
         try {
             userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);
             logger.info("Spieler " + playerName + " verkaufte " + amount + " Aktien von " + shareName);
@@ -87,6 +92,8 @@ public class AccountManagerImpl implements AccountManager {
             logger.warning("Sie besitzen nicht genug Anzahl dieser Aktien");
         } catch (PlayerDoesNotExistException e) {
             logger.warning("Spieler existiert nicht");
+        } catch (NegativeValueException e) {
+            logger.warning("Negativer Wert nicht erlaubt");
         }
 
     }
@@ -125,23 +132,20 @@ public class AccountManagerImpl implements AccountManager {
         return null;
     }
 
-    public String getLogByShare(String name) {
+    public void printHtml(String name, String filename, Integer sort) throws PlayerDoesNotExistException {
         try {
-            return userManagement.getPlayer(name).printByShare();
-        } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
+            userManagement.getPlayer(name).toFile(filename,sort,2);
+        } catch (FileNotFoundException e) {
+            logger.warning("Datei nicht gefunden.");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return null;
     }
 
-    public String getLogByDate(String name) {
-        try {
-            return userManagement.getPlayer(name).printByDate();
-        } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
-        }
-        return null;
+    public void printPlain(String name, Integer sort) throws PlayerDoesNotExistException, IOException {
+        userManagement.getPlayer(name).print(System.out, sort, 1);
     }
+
 
 
 }

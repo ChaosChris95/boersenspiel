@@ -49,7 +49,7 @@ public class StockGameLauncher {
         ShareManagement.getInstance().addShare("Lotto", 150L);
 
         AccountManager accountManager = AccountManagerImpl.getInstance();
-        //AccountManagerProxy accountManagerProxy = new AccountManagerProxy(accountManager);
+        AccountManagerClient accountManagerClient = new AccountManagerClient(accountManager);
         AccountManagerClient accountManagerClient = new AccountManagerClient(accountManager);
         StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
         cmp.process();
