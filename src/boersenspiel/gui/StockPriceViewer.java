@@ -8,8 +8,6 @@ package boersenspiel.gui;
  */
 
 import boersenspiel.manager.ShareManagement;
-import boersenspiel.provider.RandomStockPriceProvider;
-import boersenspiel.provider.RealisticStockPriceProvider;
 import boersenspiel.provider.StockPriceProvider;
 
 import java.util.TimerTask;

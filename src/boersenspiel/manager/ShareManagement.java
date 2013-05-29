@@ -55,7 +55,7 @@ public class ShareManagement {
     }
 
     public int getShareLength(){
-            return shareList.size();
+        return shareList.size();
     }
 
 
