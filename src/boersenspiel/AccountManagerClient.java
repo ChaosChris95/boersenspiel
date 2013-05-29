@@ -26,6 +26,6 @@ public class AccountManagerClient {
     }
 
     public void startTest(AccountManager proxy)throws NegativeValueException{
-        proxy.createPlayer("Mr. Burns", 1000000L);
+        proxy.createPlayer("Mr.Burns", 1000000L);
     }
 }

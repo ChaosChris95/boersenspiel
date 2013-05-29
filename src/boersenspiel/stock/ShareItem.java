@@ -5,6 +5,7 @@ import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NotEnoughSharesException;
 
 import java.util.Comparator;
+import java.util.logging.Logger;
 
 /**
  * User: Jan
@@ -14,6 +15,7 @@ import java.util.Comparator;
 
 public class ShareItem extends Asset implements Comparable<ShareItem> {
 
+    private static Logger logger = Logger.getLogger("ShareItem");
     private int shareAmount;
     private long value;
     private final Share share;
@@ -35,12 +37,15 @@ public class ShareItem extends Asset implements Comparable<ShareItem> {
             throw new NegativeValueException("adding a negative amount of share is not allowed");
         value += this.share.getPrice() * amount;
         shareAmount += amount;
+        logger.finest("Anzahl den Aktien hinzugefügt.");
+
     }
 
     public void removeShareAmount(int amount) throws NotEnoughSharesException {
             if (amount > shareAmount) {
             } else {
                 shareAmount -= amount;
+                logger.finest("Anzahl den Aktien abgezogen.");
             }
     }
 

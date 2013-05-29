@@ -50,7 +50,6 @@ public class StockGameLauncher {
 
         AccountManager accountManager = AccountManagerImpl.getInstance();
         AccountManagerClient accountManagerClient = new AccountManagerClient(accountManager);
-        AccountManagerClient accountManagerClient = new AccountManagerClient(accountManager);
         StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
         cmp.process();
     }
