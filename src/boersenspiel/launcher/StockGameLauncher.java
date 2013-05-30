@@ -1,5 +1,6 @@
 package boersenspiel.launcher;
 
+import boersenspiel.gui.MainWindow;
 import boersenspiel.proxy.AccountManagerClient;
 import boersenspiel.gui.StockPriceViewer;
 import boersenspiel.interfaces.AccountManager;
@@ -47,6 +48,8 @@ public class StockGameLauncher {
 
         StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
         cmp.process();
+
+        //MainWindow mainWindow = new MainWindow(args);
     }
 
 }
