@@ -33,10 +33,9 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
     public ArrayList<Long> readShareRate(Share share) throws IOException {
         BufferedReader reader = null;
         try {
-            if (share != null )
-                logger.warning("Share: " +  share.getName() );
+//            if (share != null)
+//                logger.warning("Share: " +  share.getName() );
             File fileURL = new File(ClassLoader.getSystemResource("./Aktien/" + share.getName() + ".csv").toURI());
-
             reader = new BufferedReader(new FileReader(fileURL));
         }catch (FileNotFoundException e) { logger.warning("FileNotFoundException");
         }catch (Exception e) { logger.warning("Exception: " + e.toString()); }
@@ -45,7 +44,6 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
         boolean firstLine = true;
         try{
             while ((line = reader.readLine()) != null) {
-                logger.info("line: " + line);
                 if (firstLine == true){
                     firstLine = false;
                     continue;
@@ -60,26 +58,20 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
     }
 
     public void readShareRates() throws IOException{
-        logger.info("readShareRates(): aufgerufen");
         pricesOfShares = new ArrayList<ArrayList<Long>>();
-        logger.info("Length: " + shareManagement.getShareLength());
         for (int i=0; i<shareManagement.getShareLength(); i++){
             pricesOfShares.add(readShareRate(shareManagement.getShareByNumber(i)));
         }
     }
 
     public void updateShareRate(Share share){
-        logger.info("readShareRate(Share share): aufgerufen");
         share.setPrice(prices.get(counter));
     }
 
     public void updateShareRates(){
-        logger.info("updateShareRates(): aufgerufen");
-        logger.info("Length: " + pricesOfShares.size());
-        for (int i=0; i< pricesOfShares.size(); i++){  //TODO size=0 = fail
+        for (int i=0; i< pricesOfShares.size(); i++){
             ArrayList<Long> price = pricesOfShares.get(i);
-            shareManagement.getShareByNumber(i).setPrice(price.get(counter));      //TODO stupid?
-//          } catch (NullPointerException e) {logger.warning("bitch NullPointerException");}
+            shareManagement.getShareByNumber(i).setPrice(price.get(counter));
         }
     }
 
@@ -87,8 +79,11 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
         timer.addTask(new TimerTask() {
             public void run() {
             updateShareRates();
-            counter ++;
+            if (counter == prices.size()-1)
+                counter = 0;
+            else
+                counter ++;
             }
-        }, 1000, 10000);
+        }, 10000, 10000);   //TODO refresh all 10 sec
     }
 }

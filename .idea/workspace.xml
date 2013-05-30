@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="022d19a9-c4d4-4b16-b447-22b370a25705" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Jan\Prg2\src\boersenspiel\provider\RealisticStockPriceProvider.java" afterPath="$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/manager/ShareManagement.java" afterPath="$PROJECT_DIR$/src/boersenspiel/manager/ShareManagement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/boersenspiel/proxy" />
+      <change type="MOVED" beforePath="C:\Users\Jan\Prg2\src\boersenspiel\AccountManagerClient.java" afterPath="$PROJECT_DIR$/src/boersenspiel/proxy/AccountManagerClient.java" />
+      <change type="MOVED" beforePath="C:\Users\Jan\Prg2\src\boersenspiel\AccountManagerProxy.java" afterPath="$PROJECT_DIR$/src/boersenspiel/proxy/AccountManagerProxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java" afterPath="$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/account/LogEntry.java" afterPath="$PROJECT_DIR$/src/boersenspiel/account/LogEntry.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" afterPath="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logging.properties" afterPath="$PROJECT_DIR$/src/logging.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Prg2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369649777365" ignored="false" />
+    <file path="/fragment.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369900063277" ignored="false" />
     <file path="/StockPriceInfo.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365842426611" ignored="false" />
-    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369474728182" ignored="false" />
+    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369857975057" ignored="false" />
     <file path="/AccountManager.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365843469661" ignored="false" />
     <file path="/ShareManagement.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369765781674" ignored="false" />
     <file path="/AccountManagerImpl.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369389544759" ignored="false" />
@@ -48,7 +49,7 @@
     <file path="/ShareItemTest.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369473983451" ignored="false" />
     <file path="/Player.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369472768766" ignored="false" />
     <file path="/PlayerAgent.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369472854216" ignored="false" />
-    <file path="/HistoricalStockPriceProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369853992783" ignored="false" />
+    <file path="/HistoricalStockPriceProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369858838036" ignored="false" />
     <file path="$USER_HOME$/Probations/src/HelloJavaFX.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369757357622" ignored="false" />
     <file path="$USER_HOME$/Probations/src/CounterApp1.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369763314962" ignored="false" />
     <file path="/CounterApp1.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369763293795" ignored="false" />
@@ -60,6 +61,7 @@
     <file path="$USER_HOME$/Probations/src/CounterApp3.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369764343595" ignored="false" />
     <file path="/CounterApp3.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369764052623" ignored="false" />
     <file path="/ButtonTextCombiControl.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369764224488" ignored="false" />
+    <file path="/AccountManagerProxy.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369898834825" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +86,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -121,7 +124,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -131,47 +133,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StockGameLauncher.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="20" selection-start="995" selection-end="995" vertical-scroll-proportion="0.45405406">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HistoricalStockPriceProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="82" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+            <state line="80" column="31" selection-start="2730" selection-end="2730" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3124#3253#0" expanded="true" />
-                <element signature="e#3242#3243#0" expanded="true" />
+                <element signature="e#2649#2872#0" expanded="true" />
+                <element signature="e#2861#2862#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boersenspiel_de.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/boersenspiel/boersenspiel_de.properties">
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
+      <file leaf-file-name="AccountManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/interfaces/AccountManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="10" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boersenspiel_en.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/boersenspiel/boersenspiel_en.properties">
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
+      <file leaf-file-name="CommandTypeInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/interfaces/CommandTypeInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="8" column="17" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockPriceInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/interfaces/StockPriceInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="17" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockGameCommandProcessor.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameCommandProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="106" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.5107143">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="155" column="24" selection-start="4638" selection-end="4638" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#994#1004#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerAgent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/PlayerAgent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="29" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandScannerException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/exceptions/CommandScannerException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockPriceViewer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="919" selection-end="1209" vertical-scroll-proportion="-7.32">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateTimer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/UpdateTimer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="13" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -187,7 +239,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/boersenspiel/manager/UserManagement.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/account/LogEntry.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/AccountManagerClient.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java" />
@@ -200,8 +251,9 @@
         <option value="$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/stock/ShareDeposit.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/provider/RealisticStockPriceProvider.java" />
-        <option value="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/manager/ShareManagement.java" />
+        <option value="$PROJECT_DIR$/src/boersenspiel/AccountManagerProxy.java" />
+        <option value="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java" />
       </list>
     </option>
@@ -274,8 +326,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -410,6 +460,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boersenspiel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="provider" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -476,7 +548,99 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boersenspiel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boersenspiel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boersenspiel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prg2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boersenspiel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comparators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -500,6 +664,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -516,132 +682,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-  </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\stock\ShareItem.java</PATH>
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\AccountManagerClient.java</PATH>
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\shell\StockGameCommandType.java</PATH>
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\manager\AccountManagerImpl.java</PATH>
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\account\PlayerAgent.java</PATH>
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\account\Player.java</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\boersenspiel_en.properties</PATH>
-            <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\boersenspiel_de.properties</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-          <PATH vcs="svn" revision="110">C:\Users\Jan\Prg2\src\boersenspiel\launcher\StockGameLauncher.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.StockGameLauncher">
     <configuration default="false" name="StockPriceViewer" type="Application" factoryName="Application" temporary="true">
@@ -761,6 +807,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -787,19 +846,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -996,7 +1042,11 @@
       <created>1369474744112</created>
       <updated>1369474744112</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010">
+      <created>1369858000641</created>
+      <updated>1369858000641</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1024,24 +1074,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39761093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24848025" sideWeight="0.42636988" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32423207" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712329" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.62969285" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.62969285" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20833333" sideWeight="0.6757679" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37030718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21212122" sideWeight="0.67064846" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58361775" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1115,124 +1165,120 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/test/ShareItemTest.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/comparators/TimeComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/ShareItem.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/LogEntry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+        <state line="18" column="13" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/AccountManagerProxy.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/exceptions/NoSuchShareItemException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_21/src.zip!/java/util/ArrayList.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/exceptions/NotEnoughSharesException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="603" column="0" selection-start="22213" selection-end="22213" vertical-scroll-proportion="0.0">
+        <state line="8" column="13" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/provider/RandomStockPriceProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/exceptions/PlayerAlreadyExistsException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="23" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/manager/ShareManagement.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/exceptions/ShareNameAlreadyExistsException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="16" selection-start="1668" selection-end="1668" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/test/CashAccountTest.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/UpdateTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="9" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
+        <state line="13" column="13" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/ShareDeposit.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="155" column="24" selection-start="4638" selection-end="4638" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#994#1004#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/exceptions/CommandScannerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="35" column="0" selection-start="919" selection-end="1209" vertical-scroll-proportion="-7.32">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_21/src.zip!/java/io/FileReader.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/PlayerAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="13" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_21/src.zip!/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_21/src.zip!/java/lang/Long.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="440" column="0" selection-start="15905" selection-end="15905" vertical-scroll-proportion="0.0">
+        <state line="29" column="29" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="82" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+        <state line="80" column="31" selection-start="2730" selection-end="2730" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3124#3253#0" expanded="true" />
-            <element signature="e#3242#3243#0" expanded="true" />
+            <element signature="e#2649#2872#0" expanded="true" />
+            <element signature="e#2861#2862#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/boersenspiel_de.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/interfaces/AccountManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="10" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/boersenspiel_en.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/interfaces/CommandTypeInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="8" column="17" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/interfaces/StockPriceInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="20" selection-start="995" selection-end="995" vertical-scroll-proportion="0.45405406">
+        <state line="10" column="17" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameCommandProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="106" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.5107143">
           <folding />
         </state>
       </provider>

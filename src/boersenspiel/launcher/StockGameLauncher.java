@@ -1,6 +1,6 @@
 package boersenspiel.launcher;
 
-import boersenspiel.AccountManagerClient;
+import boersenspiel.proxy.AccountManagerClient;
 import boersenspiel.gui.StockPriceViewer;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
@@ -45,8 +45,6 @@ public class StockGameLauncher {
         //rnd.startUpdate();
         stockPriceViewer.updateInfo();
 
-        AccountManager accountManager = AccountManagerImpl.getInstance();
-        AccountManagerClient accountManagerClient = new AccountManagerClient(accountManager);
         StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
         cmp.process();
     }

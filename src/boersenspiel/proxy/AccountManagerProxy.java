@@ -1,4 +1,4 @@
-package boersenspiel;
+package boersenspiel.proxy;
 
 /**
  * User: jan
@@ -26,20 +26,20 @@ public class AccountManagerProxy implements InvocationHandler{
     }
 
     public Object invoke(Object proxy, Method method, Object[] args){
-        logger.info("* calling method " + method + " with params ");
+        logger.fine("* calling method " + method + " with params ");
         for (int i = 0; i < args.length; i++)
-            logger.info(" " + args[i]);
-        logger.info("\n");
+            logger.fine(" " + args[i]);
+        //logger.fine("\n");
 
         Object result = null;
         try  {
             result = method.invoke(accountManager, args);
         } catch(IllegalAccessException ex)  {
         } catch(InvocationTargetException ex)  {
-            logger.info("* exception:" + ex.getTargetException());
+            logger.warning("* exception:" + ex.getTargetException());
             //throw ex.getTargetException();
         }
-        logger.info("* result:" + result);
+        logger.fine("* result:" + result);
         return result;
     }
 }

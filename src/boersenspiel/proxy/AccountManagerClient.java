@@ -1,12 +1,8 @@
-package boersenspiel;
+package boersenspiel.proxy;
 
 import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.interfaces.AccountManager;
-import boersenspiel.manager.AccountManagerImpl;
-import org.omg.CORBA.portable.InvokeHandler;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**

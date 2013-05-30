@@ -1,15 +1,8 @@
 package boersenspiel.account;
 
-import boersenspiel.AccountManagerProxy;
-import boersenspiel.interfaces.AccountManager;
 import boersenspiel.stock.Share;
 
-import java.io.IOException;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 /**
  * User: Peach
