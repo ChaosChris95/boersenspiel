@@ -1,8 +1,7 @@
 package boersenspiel.gui;
 
-import boersenspiel.exceptions.NegativeValueException;
-import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
+
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -17,8 +16,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.awt.TextField;
 import java.util.logging.Logger;
 
 /**
@@ -32,14 +29,8 @@ public class MainWindow extends Application {
     AccountManagerImpl accountManager;
 
     public static void main(String[] args){
-        //accountManager = AccountManagerImpl.getInstance();
         Application.launch(args);
     }
-
-    /*public MainWindow (String[] args){
-        accountManager = AccountManagerImpl.getInstance();
-        Application.launch(args);
-    }*/
 
     public void start(Stage primaryStage){
 
@@ -47,7 +38,7 @@ public class MainWindow extends Application {
         final Logger logger = Logger.getLogger("MainWindow");
 
         primaryStage.setTitle("Börsenspiel");
-        Label rightLabel = new Label("Console");
+        /*Label rightLabel = new Label("Console");
         Label leftLabel = new Label ("TickerTask");
 
         rightLabel.setAlignment(Pos.CENTER_RIGHT);
@@ -57,7 +48,7 @@ public class MainWindow extends Application {
         buyButton.setAlignment(Pos.BOTTOM_RIGHT);
         ChoiceBox choicePlayer = new ChoiceBox();
         ChoiceBox choiceShare = new ChoiceBox();
-        ChoiceBox choiceAmount = new ChoiceBox();
+        ChoiceBox choiceAmount = new ChoiceBox();*/
 
         MenuBar menuBar = new MenuBar();
 
@@ -105,12 +96,15 @@ public class MainWindow extends Application {
         scene.addEventHandler(Event.ANY, new EventHandler<Event>() {
             @Override
             public void handle(Event event) {
-                Frame frame = new Frame();
-                TextField textField = new TextField();
-                //class TextField extends TextInputControl{
 
-                if (event.getSource() == menuEditCrp){
-                    CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
+                if (event.getTarget() == menuEditCrp){
+                    System.out.println("Hallo!");
+                    /*CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
+                    try {
+                        createPlayerWindow.start(new Stage());
+                    } catch (WrongNumberOfParametersException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                     String name = createPlayerWindow.getName();
                     long cash = createPlayerWindow.getCash();
 
@@ -119,10 +113,10 @@ public class MainWindow extends Application {
                         accountManager.createPlayer(name, cash);
                     } catch (NegativeValueException e) {
                         logger.info("CashAccount value must be >0");
-                    }
+                    }*/
 
                 }
-                else if (event.getSource() == menuEditCtc){
+                /*else if (event.getSource() == menuEditCtc){
 
                 }
                 else if (event.getSource() == menuOptionsBot){
@@ -150,7 +144,7 @@ public class MainWindow extends Application {
 
                 } else {
 
-                }
+                }*/
             }
         });
 

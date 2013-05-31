@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="49" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="40" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="022d19a9-c4d4-4b16-b447-22b370a25705" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/boersenspiel/exceptions/WrongNumberOfParametersException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" afterPath="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/boersenspiel_de.properties" afterPath="$PROJECT_DIR$/src/boersenspiel/boersenspiel_de.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Prg2.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369931782867" ignored="false" />
     <file path="/StockPriceInfo.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365842426611" ignored="false" />
-    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369900514089" ignored="false" />
+    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369989622324" ignored="false" />
     <file path="/AccountManager.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365843469661" ignored="false" />
     <file path="/ShareManagement.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369765781674" ignored="false" />
     <file path="/AccountManagerImpl.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369389544759" ignored="false" />
@@ -39,7 +36,7 @@
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/ImageView.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369322662009" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/FileChooser.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369322662009" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/SaveProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369322662009" ignored="false" />
-    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369937411958" ignored="false" />
+    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369989292464" ignored="false" />
     <file path="/AccountManagerClient.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369393726735" ignored="false" />
     <file path="/ShareDeposit.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369474725129" ignored="false" />
     <file path="/CashAccountTest.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369400038642" ignored="false" />
@@ -65,8 +62,8 @@
     <file path="/ButtonTextCombiControl.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369764224488" ignored="false" />
     <file path="/AccountManagerProxy.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369898834825" ignored="false" />
     <file path="/boersenspiel_de.properties" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369901980719" ignored="false" />
-    <file path="$USER_HOME$/Probations/src/TextFieldProbation.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369930937145" ignored="false" />
-    <file path="/TextFieldProbation.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369930937145" ignored="false" />
+    <file path="$USER_HOME$/Probations/src/TextFieldProbation.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369938463262" ignored="false" />
+    <file path="/TextFieldProbation.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369938170840" ignored="false" />
     <file path="/CreatePlayerWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369932601825" ignored="false" />
     <file path="/WrongNumberOfParametersException.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369932087179" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -161,11 +158,11 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="60" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.32839507">
+            <state line="87" column="51" selection-start="3203" selection-end="3203" vertical-scroll-proportion="0.08395062">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3805#5423#0" expanded="true" />
-                <element signature="e#5412#5413#0" expanded="true" />
+                <element signature="e#3458#5274#0" expanded="true" />
+                <element signature="e#5263#5264#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,7 +171,7 @@
       <file leaf-file-name="CreatePlayerWindow.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="20" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0">
+            <state line="33" column="35" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,7 +182,7 @@
       <file leaf-file-name="Asset.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Asset.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="10" selection-start="174" selection-end="176" vertical-scroll-proportion="-7.8">
+            <state line="13" column="10" selection-start="174" selection-end="176" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -194,7 +191,7 @@
       <file leaf-file-name="CashAccount.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/CashAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="17" selection-start="704" selection-end="709" vertical-scroll-proportion="-5.04">
+            <state line="30" column="17" selection-start="704" selection-end="709" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -204,9 +201,7 @@
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="155" column="13" selection-start="4638" selection-end="4638" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#994#1004#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -695,8 +690,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -713,12 +708,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.MainWindow">
     <configuration default="false" name="StockPriceViewer" type="Application" factoryName="Application" temporary="true">
@@ -855,19 +850,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -894,6 +876,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1100,7 +1095,11 @@
       <created>1369900536147</created>
       <updated>1369900536147</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012">
+      <created>1369937475111</created>
+      <updated>1369937475111</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1130,7 +1129,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.73549485" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.73549485" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39761093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1146,6 +1144,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1285,9 +1284,7 @@
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="155" column="13" selection-start="4638" selection-end="4638" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#994#1004#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1307,21 +1304,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Asset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="174" selection-end="176" vertical-scroll-proportion="-7.8">
+        <state line="13" column="10" selection-start="174" selection-end="176" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/CashAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="17" selection-start="704" selection-end="709" vertical-scroll-proportion="-5.04">
+        <state line="30" column="17" selection-start="704" selection-end="709" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="20" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0">
+        <state line="33" column="35" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1330,11 +1327,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="60" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.32839507">
+        <state line="87" column="51" selection-start="3203" selection-end="3203" vertical-scroll-proportion="0.08395062">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3805#5423#0" expanded="true" />
-            <element signature="e#5412#5413#0" expanded="true" />
+            <element signature="e#3458#5274#0" expanded="true" />
+            <element signature="e#5263#5264#0" expanded="true" />
           </folding>
         </state>
       </provider>

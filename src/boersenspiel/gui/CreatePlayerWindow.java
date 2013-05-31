@@ -24,7 +24,7 @@ public class CreatePlayerWindow extends Application {
 //    }
 
     public void start(Stage stage) throws WrongNumberOfParametersException{
-        stage.setTitle("Test");
+        stage.setTitle("Create Player");
         TextField textField = new TextField();
         String characters;
         characters = (textField.getCharacters()).toString();
