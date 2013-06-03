@@ -12,6 +12,8 @@ import boersenspiel.shell.InvocationHandler;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.lang.reflect.Proxy;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.logging.LogManager;
 
 /**
@@ -33,6 +35,13 @@ public class StockGameLauncher {
         ShareManagement.getInstance().addShare("Siemens", 100L);
         ShareManagement.getInstance().addShare("Volkswagen", 100L);
         ShareManagement.getInstance().addShare("Yahoo", 100L);
+
+        Locale currentLocale = new Locale("de","de");
+
+        ResourceBundle greetings = ResourceBundle.getBundle("boersenspiel/boersenspiel_de.properties",currentLocale);
+        String value  = greetings.getString("morning");
+
+        //Locale.setDefault(Locale.GERMAN);
 
         //RandomStockPriceProvider rnd = new RandomStockPriceProvider();
         HistoricalStockPriceProvider rnd = new HistoricalStockPriceProvider();

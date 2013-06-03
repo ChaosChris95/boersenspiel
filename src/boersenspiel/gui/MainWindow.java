@@ -3,6 +3,7 @@ package boersenspiel.gui;
 import boersenspiel.manager.AccountManagerImpl;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -51,9 +52,11 @@ public class MainWindow extends Application {
         ChoiceBox choiceAmount = new ChoiceBox();*/
 
         MenuBar menuBar = new MenuBar();
+        EventHandler<ActionEvent> action = changeTabPlacement();
 
         final Menu menuEdit = new Menu ("Edit");
         final MenuItem menuEditCrp = new MenuItem("Create Player");
+        menuEditCrp.setOnAction(action);
         final MenuItem menuEditCtc = new MenuItem("Change to Console");
         menuEdit.getItems().addAll(menuEditCrp);
         menuEdit.getItems().addAll(menuEditCtc);
@@ -93,60 +96,8 @@ public class MainWindow extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        scene.addEventHandler(Event.ANY, new EventHandler<Event>() {
-            @Override
-            public void handle(Event event) {
 
-                if (event.getTarget() == menuEditCrp){
-                    System.out.println("Hallo!");
-                    /*CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
-                    try {
-                        createPlayerWindow.start(new Stage());
-                    } catch (WrongNumberOfParametersException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    }
-                    String name = createPlayerWindow.getName();
-                    long cash = createPlayerWindow.getCash();
-
-                    //createPlayerWindow.start();
-                    try {
-                        accountManager.createPlayer(name, cash);
-                    } catch (NegativeValueException e) {
-                        logger.info("CashAccount value must be >0");
-                    }*/
-
-                }
-                /*else if (event.getSource() == menuEditCtc){
-
-                }
-                else if (event.getSource() == menuOptionsBot){
-
-                }
-                else if (event.getSource() == menuOptionsCs){
-
-                }
-                else if (event.getSource() == menuOptionsDs){
-
-                }
-                else if (event.getSource() == menuInformationGs){
-
-                }
-                else if (event.getSource() == menuInformationGas){
-
-                }
-                else if (event.getSource() == menuInformationCs){
-
-                }
-                else if (event.getSource() == menuLogShow){
-
-                }
-                else if (event.getSource() == menuLogPrint){
-
-                } else {
-
-                }*/
-            }
-        });
+    //scene.addEventHandler(Event.ANY, eventHandler);
 
         /*HBox hBox = new HBox(10);
         hBox.setAlignment(Pos.BOTTOM_RIGHT);
@@ -178,4 +129,63 @@ public class MainWindow extends Application {
         primaryStage.show();
 */
     }
+
+    private EventHandler<ActionEvent> changeTabPlacement() {
+        return new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                MenuItem mItem = (MenuItem) event.getSource();
+                String side = mItem.getText();
+                if ("menuEditCrp".equalsIgnoreCase(side)){
+                    System.out.println("Hallo!");
+                        /*CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
+                        try {
+                            createPlayerWindow.start(new Stage());
+                        } catch (WrongNumberOfParametersException e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                        String name = createPlayerWindow.getName();
+                        long cash = createPlayerWindow.getCash();
+
+                        //createPlayerWindow.start();
+                        try {
+                            accountManager.createPlayer(name, cash);
+                        } catch (NegativeValueException e) {
+                            logger.info("CashAccount value must be >0");
+                        }*/
+
+                }
+                    /*else if (event.getSource() == menuEditCtc){
+
+                    }
+                    else if (event.getSource() == menuOptionsBot){
+
+                    }
+                    else if (event.getSource() == menuOptionsCs){
+
+                    }
+                    else if (event.getSource() == menuOptionsDs){
+
+                    }
+                    else if (event.getSource() == menuInformationGs){
+
+                    }
+                    else if (event.getSource() == menuInformationGas){
+
+                    }
+                    else if (event.getSource() == menuInformationCs){
+
+                    }
+                    else if (event.getSource() == menuLogShow){
+
+                    }
+                    else if (event.getSource() == menuLogPrint){
+
+                    } else {
+
+                    }*/
+            }
+        };
+    }
+
 }
