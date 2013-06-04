@@ -6,11 +6,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -29,6 +25,8 @@ public class MainWindow extends Application {
 
     AccountManagerImpl accountManager;
 
+    private MenuItem menuEditCrp;
+
     public static void main(String[] args){
         Application.launch(args);
     }
@@ -39,24 +37,22 @@ public class MainWindow extends Application {
         final Logger logger = Logger.getLogger("MainWindow");
 
         primaryStage.setTitle("Börsenspiel");
-        /*Label rightLabel = new Label("Console");
-        Label leftLabel = new Label ("TickerTask");
 
-        rightLabel.setAlignment(Pos.CENTER_RIGHT);
-        Button buyButton = new Button("Buy");
-        Button sellButton = new Button("Sell");
-        sellButton.setAlignment(Pos.BOTTOM_RIGHT);
-        buyButton.setAlignment(Pos.BOTTOM_RIGHT);
-        ChoiceBox choicePlayer = new ChoiceBox();
-        ChoiceBox choiceShare = new ChoiceBox();
-        ChoiceBox choiceAmount = new ChoiceBox();*/
+        Scene scene = new Scene(new VBox(), 800, 600);
+        ((VBox) scene.getRoot()).getChildren().addAll(setMenuBar(handleAction()));
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+        scene.addEventHandler(Event.ANY, handleAction());
+    }
+
+    public MenuBar setMenuBar(EventHandler event){
 
         MenuBar menuBar = new MenuBar();
-        EventHandler<ActionEvent> action = changeTabPlacement();
 
         final Menu menuEdit = new Menu ("Edit");
-        final MenuItem menuEditCrp = new MenuItem("Create Player");
-        menuEditCrp.setOnAction(action);
+        menuEditCrp = new MenuItem("Create Player");
+        menuEditCrp.setOnAction(event);
         final MenuItem menuEditCtc = new MenuItem("Change to Console");
         menuEdit.getItems().addAll(menuEditCrp);
         menuEdit.getItems().addAll(menuEditCtc);
@@ -88,104 +84,65 @@ public class MainWindow extends Application {
         menuHelp.getItems().addAll(menuHelpAbout);
 
         menuBar.getMenus().addAll(
-        menuEdit, menuOptions, menuInformation, menuLog, menuHelp
+                menuEdit, menuOptions, menuInformation, menuLog, menuHelp
         );
-
-        Scene scene = new Scene(new VBox(), 800, 600);
-        ((VBox) scene.getRoot()).getChildren().addAll(menuBar);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
-
-    //scene.addEventHandler(Event.ANY, eventHandler);
-
-        /*HBox hBox = new HBox(10);
-        hBox.setAlignment(Pos.BOTTOM_RIGHT);
-        final Button button = new Button("Close");
-        hBox.getChildren().add(button);
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
-*/
-
-        /*GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.CENTER);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        gridPane.setPadding(new Insets(25, 25, 25, 25));
-
-        Label label = new Label("Current Value:");
-        gridPane.add(label, 0, 1);
-        final TextField textField = new TextField("Test!");
-        gridPane.add(textField,1,1);
-        HBox hBox = new HBox(10);
-        hBox.setAlignment(Pos.BOTTOM_RIGHT);
-        final Button button = new Button("Close");
-        hBox.getChildren().add(button);
-        gridPane.add(hBox,1,4);
-
-        Scene scene = new Scene(gridPane, 300, 275);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-*/
+        return menuBar;
     }
 
-    private EventHandler<ActionEvent> changeTabPlacement() {
-        return new EventHandler<ActionEvent>() {
-
-            public void handle(ActionEvent event) {
-                MenuItem mItem = (MenuItem) event.getSource();
-                String side = mItem.getText();
-                if ("menuEditCrp".equalsIgnoreCase(side)){
+    public EventHandler handleAction(){
+        EventHandler event = new EventHandler<Event>() {
+            @Override
+            public void handle(Event event) {
+                if (event.getTarget() == menuEditCrp){
                     System.out.println("Hallo!");
-                        /*CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
-                        try {
-                            createPlayerWindow.start(new Stage());
-                        } catch (WrongNumberOfParametersException e) {
-                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                        }
-                        String name = createPlayerWindow.getName();
-                        long cash = createPlayerWindow.getCash();
+                    /*CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
+                    try {
+                        createPlayerWindow.start(new Stage());
+                    } catch (WrongNumberOfParametersException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    String name = createPlayerWindow.getName();
+                    long cash = createPlayerWindow.getCash();
 
-                        //createPlayerWindow.start();
-                        try {
-                            accountManager.createPlayer(name, cash);
-                        } catch (NegativeValueException e) {
-                            logger.info("CashAccount value must be >0");
-                        }*/
+                    //createPlayerWindow.start();
+                    try {
+                        accountManager.createPlayer(name, cash);
+                    } catch (NegativeValueException e) {
+                        logger.info("CashAccount value must be >0");
+                    }*/
+
+                /*else if (event.getSource() == menuEditCtc){
 
                 }
-                    /*else if (event.getSource() == menuEditCtc){
+                else if (event.getSource() == menuOptionsBot){
 
-                    }
-                    else if (event.getSource() == menuOptionsBot){
+                }
+                else if (event.getSource() == menuOptionsCs){
 
-                    }
-                    else if (event.getSource() == menuOptionsCs){
+                }
+                else if (event.getSource() == menuOptionsDs){
 
-                    }
-                    else if (event.getSource() == menuOptionsDs){
+                }
+                else if (event.getSource() == menuInformationGs){
 
-                    }
-                    else if (event.getSource() == menuInformationGs){
+                }
+                else if (event.getSource() == menuInformationGas){
 
-                    }
-                    else if (event.getSource() == menuInformationGas){
+                }
+                else if (event.getSource() == menuInformationCs){
 
-                    }
-                    else if (event.getSource() == menuInformationCs){
+                }
+                else if (event.getSource() == menuLogShow){
 
-                    }
-                    else if (event.getSource() == menuLogShow){
+                }
+                else if (event.getSource() == menuLogPrint){
 
-                    }
-                    else if (event.getSource() == menuLogPrint){
+                } else {
 
-                    } else {
-
-                    }*/
+                }*/
+                }
             }
         };
+        return event;
     }
-
 }

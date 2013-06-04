@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="41" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="38" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="022d19a9-c4d4-4b16-b447-22b370a25705" name="Default" comment="">
@@ -13,7 +13,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369931782867" ignored="false" />
     <file path="/StockPriceInfo.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365842426611" ignored="false" />
-    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369989622324" ignored="false" />
+    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370345037319" ignored="false" />
     <file path="/AccountManager.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365843469661" ignored="false" />
     <file path="/ShareManagement.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369765781674" ignored="false" />
     <file path="/AccountManagerImpl.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369389544759" ignored="false" />
@@ -36,7 +36,7 @@
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/ImageView.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369322662009" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/FileChooser.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369322662009" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/SaveProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369322662009" ignored="false" />
-    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369991575047" ignored="false" />
+    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370344939057" ignored="false" />
     <file path="/AccountManagerClient.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369393726735" ignored="false" />
     <file path="/ShareDeposit.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369474725129" ignored="false" />
     <file path="/CashAccountTest.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369400038642" ignored="false" />
@@ -92,6 +92,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -129,7 +130,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -139,10 +139,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StockGameLauncher.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StockGameLauncher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="10" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.7">
+            <state line="41" column="10" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -157,12 +157,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainWindow.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="48" selection-start="5269" selection-end="5269" vertical-scroll-proportion="0.0">
+            <state line="19" column="58" selection-start="474" selection-end="474" vertical-scroll-proportion="0.13333334">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3122#4937#0" expanded="true" />
+                <element signature="e#4926#4927#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -255,8 +257,8 @@
         <option value="$PROJECT_DIR$/src/boersenspiel/boersenspiel_de.properties" />
         <option value="$PROJECT_DIR$/src/boersenspiel/exceptions/WrongNumberOfParametersException.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" />
-        <option value="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" />
+        <option value="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -329,6 +331,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -689,7 +692,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1101,7 +1103,11 @@
       <created>1369989635162</created>
       <updated>1369989635162</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014">
+      <created>1370279194200</created>
+      <updated>1370279194200</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1130,28 +1136,28 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.73549485" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.73549485" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.73549485" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39761093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24848025" sideWeight="0.42636988" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712329" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.62969285" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21212122" sideWeight="0.73549485" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26450512" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26450512" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1197,7 +1203,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="LAST_COMMIT_MESSAGE" value="handler funktioniert endlich :D" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1211,6 +1217,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="handler funktioniert endlich :D" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1318,19 +1325,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="48" selection-start="5269" selection-end="5269" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="41" column="10" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java">
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="10" selection-start="1574" selection-end="1574" vertical-scroll-proportion="0.7">
-          <folding />
+        <state line="19" column="58" selection-start="474" selection-end="474" vertical-scroll-proportion="0.13333334">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3122#4937#0" expanded="true" />
+            <element signature="e#4926#4927#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

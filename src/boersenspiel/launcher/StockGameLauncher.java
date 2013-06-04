@@ -38,8 +38,8 @@ public class StockGameLauncher {
 
         Locale currentLocale = new Locale("de","de");
 
-        ResourceBundle greetings = ResourceBundle.getBundle("boersenspiel/boersenspiel_de.properties",currentLocale);
-        String value  = greetings.getString("morning");
+        //ResourceBundle greetings = ResourceBundle.getBundle("boersenspiel/boersenspiel_de.properties",currentLocale);
+        //String value  = greetings.getString("morning");
 
         //Locale.setDefault(Locale.GERMAN);
 
