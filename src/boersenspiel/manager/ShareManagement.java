@@ -4,10 +4,7 @@ import boersenspiel.exceptions.ShareDoesNotExistException;
 import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.stock.Share;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -18,6 +15,7 @@ import java.util.logging.Logger;
 
 public class ShareManagement {
 
+    ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
     private static Logger logger = Logger.getLogger("ShareManagement");
 
     private static ShareManagement instance = null;
@@ -40,7 +38,7 @@ public class ShareManagement {
            }
        }
         shareList.add(new Share(name,price));
-        logger.info("Aktie " + name + " mit einem Preis von " + price + " erstellt.");
+        logger.info(rs.getString("Share1")+ " " + name + " " + rs.getString("SharePrice") + " " + price + " " + rs.getString("ShareCreate"));
     }
 
 
@@ -91,6 +89,11 @@ public class ShareManagement {
             erg.append( share.getName( ) );
             erg.append( ' ' );
             erg.append( share.getPrice() );
+            if(Locale.getDefault() == Locale.GERMAN) {
+                erg.append(Currency.getInstance("EUR").getSymbol());
+            } else {
+                erg.append(Currency.getInstance("GBP").getSymbol());
+            }
             erg.append( "<br>" );
 
         }

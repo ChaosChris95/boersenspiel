@@ -10,6 +10,7 @@ package boersenspiel.gui;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.StockPriceProvider;
 
+import java.util.Locale;
 import java.util.TimerTask;
 import java.util.Calendar;
 import java.util.Date;
@@ -54,7 +55,7 @@ public class StockPriceViewer extends JFrame{
             stringBuffer.append("<html><body>Die verfügbaren Aktien mit ihrem Kurs:<br>");
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
-            DateFormat dateFormatter = DateFormat.getDateTimeInstance();
+            DateFormat dateFormatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, Locale.getDefault());
             stringBuffer.append(dateFormatter.format(date));
             stringBuffer.append("<br>");
             stringBuffer.append(shareManagement.getSharesAndRates());

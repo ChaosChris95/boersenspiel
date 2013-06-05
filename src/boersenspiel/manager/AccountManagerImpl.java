@@ -11,6 +11,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Date;
+import java.util.Locale;
+import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -22,6 +25,9 @@ import java.util.logging.Logger;
 public class AccountManagerImpl implements AccountManager {
 
     private static Logger logger = Logger.getLogger("AccountManagerImpl");
+    private ResourceBundle resourceBundle = ResourceBundle.getBundle("boersenspiel");
+
+
 
     private static AccountManagerImpl instance = null;
     public static AccountManagerImpl getInstance() {
@@ -40,15 +46,16 @@ public class AccountManagerImpl implements AccountManager {
         this.userManagement = UserManagement.getInstance();
     }
 
+
     @Override
     public void createPlayer(String name, Long cash) throws NegativeValueException{
         try {
             userManagement.addPlayer(name, cash);
-            logger.info("Spieler " + name + " erstellt mit einem Accountwert von " + cash);
-        } catch (PlayerAlreadyExistsException e) {
-            logger.warning("Der Spieler existiert bereits");
+            logger.info(resourceBundle.getString("LogPlayer") + " " + name + " " + resourceBundle.getString("AMCreate") + " " + cash);
+        } catch (PlayerAlreadyExistsException e) {;
+            logger.warning(resourceBundle.getString("AMPlayerExist"));
         } catch (NegativeValueException e) {
-            logger.warning("Negativer Wert nicht erlaubt");
+            logger.warning(resourceBundle.getString("AMNegativ"));
         }
     }
 
@@ -58,7 +65,7 @@ public class AccountManagerImpl implements AccountManager {
             UpdateTimer.getInstance().addTask(this.playerAgent.getTask(), 10000, 10000);
             logger.info("Stelle" + name + " um auf Bot");
         } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
+            logger.warning(resourceBundle.getString("AMPlayerNo"));
         }
 
     }
@@ -144,6 +151,20 @@ public class AccountManagerImpl implements AccountManager {
 
     public void printPlain(String name, Integer sort) throws PlayerDoesNotExistException, IOException {
         userManagement.getPlayer(name).print(System.out, sort, 1);
+    }
+
+    public void setLocale(String locale) throws LanguageNotFoundException {
+        if (locale.equals("en")) {
+            Locale.setDefault(Locale.ENGLISH);
+            logger.info("Set English");
+        } else if (locale.equals("de")) {
+            Locale.setDefault(Locale.GERMAN);
+            logger.info("Umgestellt auf Deutsch");
+        } else {
+            throw new LanguageNotFoundException("Sprache nicht gefunden");
+        }
+
+
     }
 
 

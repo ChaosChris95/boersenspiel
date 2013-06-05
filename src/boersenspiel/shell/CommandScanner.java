@@ -5,6 +5,7 @@ import boersenspiel.interfaces.CommandTypeInfo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * User: Peach
@@ -16,6 +17,7 @@ public class CommandScanner {
 
     private CommandTypeInfo commandTypeInfos[];
     private BufferedReader shellReader;
+
 
     public CommandScanner(CommandTypeInfo[] commandTypeInfos, BufferedReader shellReader){
         this.commandTypeInfos = commandTypeInfos;

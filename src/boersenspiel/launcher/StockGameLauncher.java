@@ -28,6 +28,17 @@ public class StockGameLauncher {
 
         LogManager.getLogManager().readConfiguration(new BufferedInputStream(new FileInputStream("c:\\logging.properties")));
 
+        String lang = System.getProperty("lang");
+        if (lang == null) {
+           Locale.setDefault(Locale.GERMAN);
+        } else {
+            if (lang.equals("en")) {
+                Locale.setDefault(Locale.ENGLISH);
+            } else {
+                Locale.setDefault(Locale.GERMAN);
+            }
+        }
+
         ShareManagement.getInstance().addShare("Apple", 100L);
         ShareManagement.getInstance().addShare("BMW", 100L);
         ShareManagement.getInstance().addShare("DeutscheBank", 100L);
@@ -36,12 +47,6 @@ public class StockGameLauncher {
         ShareManagement.getInstance().addShare("Volkswagen", 100L);
         ShareManagement.getInstance().addShare("Yahoo", 100L);
 
-        Locale currentLocale = new Locale("de","de");
-
-        //ResourceBundle greetings = ResourceBundle.getBundle("boersenspiel/boersenspiel_de.properties",currentLocale);
-        //String value  = greetings.getString("morning");
-
-        //Locale.setDefault(Locale.GERMAN);
 
         //RandomStockPriceProvider rnd = new RandomStockPriceProvider();
         HistoricalStockPriceProvider rnd = new HistoricalStockPriceProvider();
