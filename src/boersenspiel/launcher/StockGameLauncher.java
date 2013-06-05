@@ -45,6 +45,7 @@ public class StockGameLauncher {
 
         //RandomStockPriceProvider rnd = new RandomStockPriceProvider();
         HistoricalStockPriceProvider rnd = new HistoricalStockPriceProvider();
+        rnd.startUpdate();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(), rnd);
 
         //loading Proxy

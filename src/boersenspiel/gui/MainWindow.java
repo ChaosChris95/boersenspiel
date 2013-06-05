@@ -1,5 +1,7 @@
 package boersenspiel.gui;
 
+import boersenspiel.exceptions.NegativeValueException;
+import boersenspiel.exceptions.WrongNumberOfParametersException;
 import boersenspiel.manager.AccountManagerImpl;
 
 import javafx.application.Application;
@@ -26,6 +28,16 @@ public class MainWindow extends Application {
     AccountManagerImpl accountManager;
 
     private MenuItem menuEditCrp;
+    private MenuItem menuEditCtc;
+    private MenuItem menuOptionsBot;
+    private MenuItem menuOptionsCs;
+    private MenuItem menuOptionsDs;
+    private MenuItem menuInformationGs;
+    private MenuItem menuInformationGas;
+    private MenuItem menuInformationCs;
+    private MenuItem menuLogShow;
+    private MenuItem menuLogPrint;
+    private MenuItem menuHelpAbout;
 
     public static void main(String[] args){
         Application.launch(args);
@@ -34,7 +46,7 @@ public class MainWindow extends Application {
     public void start(Stage primaryStage){
 
         accountManager = AccountManagerImpl.getInstance();
-        final Logger logger = Logger.getLogger("MainWindow");
+        //Logger logger = Logger.getLogger("MainWindow");
 
         primaryStage.setTitle("Börsenspiel");
 
@@ -53,34 +65,44 @@ public class MainWindow extends Application {
         final Menu menuEdit = new Menu ("Edit");
         menuEditCrp = new MenuItem("Create Player");
         menuEditCrp.setOnAction(event);
-        final MenuItem menuEditCtc = new MenuItem("Change to Console");
+        menuEditCtc = new MenuItem("Change to Console");
+        menuEditCtc.setOnAction(event);
         menuEdit.getItems().addAll(menuEditCrp);
         menuEdit.getItems().addAll(menuEditCtc);
 
         final Menu menuOptions = new Menu ("Options");
-        final MenuItem menuOptionsBot = new MenuItem("Start Bot");
-        final MenuItem menuOptionsCs = new MenuItem("Create Share");
-        final MenuItem menuOptionsDs = new MenuItem("Delete Share");
+        menuOptionsBot = new MenuItem("Start Bot");
+        menuOptionsBot.setOnAction(event);
+        menuOptionsCs = new MenuItem("Create Share");
+        menuOptionsCs.setOnAction(event);
+        menuOptionsDs = new MenuItem("Delete Share");
+        menuOptionsDs.setOnAction(event);
         menuOptions.getItems().addAll(menuOptionsBot);
         menuOptions.getItems().addAll(menuOptionsCs);
         menuOptions.getItems().addAll(menuOptionsDs);
 
         Menu menuInformation = new Menu ("Information");
-        final MenuItem menuInformationGs = new MenuItem("Get Stock");
-        final MenuItem menuInformationGas = new MenuItem("Get All Stock");
-        final MenuItem menuInformationCs = new MenuItem("Get Cash");
+        menuInformationGs = new MenuItem("Get Stock");
+        menuInformationGs.setOnAction(event);
+        menuInformationGas = new MenuItem("Get All Stock");
+        menuInformationGas.setOnAction(event);
+        menuInformationCs = new MenuItem("Get Cash");
+        menuInformationCs.setOnAction(event);
         menuInformation.getItems().addAll(menuInformationGs);
         menuInformation.getItems().addAll(menuInformationGas);
         menuInformation.getItems().addAll(menuInformationCs);
 
         Menu menuLog = new Menu ("Log");
-        final MenuItem menuLogShow = new MenuItem("Show Logs");
-        final MenuItem menuLogPrint = new MenuItem("Print Logs");
+        menuLogShow = new MenuItem("Show Logs");
+        menuLogShow.setOnAction(event);
+        menuLogPrint = new MenuItem("Print Logs");
+        menuLogPrint.setOnAction(event);
         menuLog.getItems().addAll(menuLogShow);
         menuLog.getItems().addAll(menuLogPrint);
 
         Menu menuHelp = new Menu ("Help");
-        final MenuItem menuHelpAbout = new MenuItem("About");
+        menuHelpAbout = new MenuItem("About");
+        menuHelpAbout.setOnAction(event);
         menuHelp.getItems().addAll(menuHelpAbout);
 
         menuBar.getMenus().addAll(
@@ -94,52 +116,38 @@ public class MainWindow extends Application {
             @Override
             public void handle(Event event) {
                 if (event.getTarget() == menuEditCrp){
-                    System.out.println("Hallo!");
-                    /*CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
-                    try {
-                        createPlayerWindow.start(new Stage());
-                    } catch (WrongNumberOfParametersException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    }
-                    String name = createPlayerWindow.getName();
-                    long cash = createPlayerWindow.getCash();
-
-                    //createPlayerWindow.start();
-                    try {
-                        accountManager.createPlayer(name, cash);
-                    } catch (NegativeValueException e) {
-                        logger.info("CashAccount value must be >0");
-                    }*/
-
-                /*else if (event.getSource() == menuEditCtc){
-
+                    System.out.println("menuEditCrp");
+                    //CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
                 }
-                else if (event.getSource() == menuOptionsBot){
-
+                else if (event.getTarget() == menuEditCtc){
+                    System.out.println("menuEditCtc");
                 }
-                else if (event.getSource() == menuOptionsCs){
-
+                else if (event.getTarget() == menuOptionsBot){
+                    System.out.println("menuOptionsBot");
                 }
-                else if (event.getSource() == menuOptionsDs){
-
+                else if (event.getTarget() == menuOptionsCs){
+                    System.out.println("menuOptionsCs");
                 }
-                else if (event.getSource() == menuInformationGs){
-
+                else if (event.getTarget() == menuOptionsDs){
+                    System.out.println("menuOptionsDs");
                 }
-                else if (event.getSource() == menuInformationGas){
-
+                else if (event.getTarget() == menuInformationGs){
+                    System.out.println("menuInformationGs");
                 }
-                else if (event.getSource() == menuInformationCs){
-
+                else if (event.getTarget() == menuInformationGas){
+                    System.out.println("menuInformationGas");
                 }
-                else if (event.getSource() == menuLogShow){
-
+                else if (event.getTarget() == menuInformationCs){
+                    System.out.println("menuInformationCs");
                 }
-                else if (event.getSource() == menuLogPrint){
-
-                } else {
-
-                }*/
+                else if (event.getTarget() == menuLogShow){
+                    System.out.println("menuLogShow");
+                }
+                else if (event.getTarget() == menuLogPrint){
+                    System.out.println("menuLogPrint");
+                }
+                else if (event.getTarget() == menuHelpAbout){
+                    System.out.println("menuHelpAbout");
                 }
             }
         };

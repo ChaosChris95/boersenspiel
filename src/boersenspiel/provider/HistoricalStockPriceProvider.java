@@ -27,7 +27,6 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
     public HistoricalStockPriceProvider() throws IOException {
         shareManagement = ShareManagement.getInstance();
         readShareRates();
-        startUpdate();
     }
 
     public ArrayList<Long> readShareRate(Share share) throws IOException {
@@ -76,6 +75,7 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
     }
 
     public void startUpdate(){
+        logger.info("starting Timer");
         timer.addTask(new TimerTask() {
             public void run() {
             updateShareRates();
@@ -84,6 +84,6 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
             else
                 counter ++;
             }
-        }, 10000, 10000);   //TODO refresh all 10 sec
+        }, 0, 4000);   //TODO refresh all 10 sec
     }
 }

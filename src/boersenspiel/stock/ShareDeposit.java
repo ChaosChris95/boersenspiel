@@ -25,15 +25,17 @@ public class ShareDeposit extends Asset {
     }
 
     public void addShareItem(ShareItem add) throws NegativeValueException{
-
+        logger.finer("CashAccount.addShareItem(" + add + ")");
         for (ShareItem item : shareItemList) {
             if (item.equals(add)){
+                logger.finest("Item exists merging");
                 item.merge(add);
                 return;
             }
         }
+        logger.finest("new Item");
         shareItemList.add(add);
-        logger.finer("CashAccount.addShareItem(" + add + ")");
+
     }
 
     public String getName() {
@@ -54,26 +56,27 @@ public class ShareDeposit extends Asset {
 
 
     public void removeShare(Share share, int amount) throws NotEnoughSharesException {
+        logger.finer("CashAccount.removeShare(" + share + amount + ")");
         for (ShareItem item : shareItemList) {
             if (item.getName().equals(share.getName())) {
                 if (item.getShareAmount() < amount) {
                     throw new NotEnoughSharesException("Sie besitzen nicht genügend Aktien");
                 }
                 item.removeShareAmount(amount);
+                return;
             }
         }
-        logger.finer("CashAccount.removeShare(" + share + amount + ")");
         throw new NotEnoughSharesException("Sie besitzen keine Aktie mit diesem Namen");
     }
 
     public void removeShareItem(ShareItem remove) throws NoSuchShareItemException {//TODO Exception wrong placed method does not work
+        logger.finer("CashAccount.removeShareItem(" + remove + ")");
         for (ShareItem item : shareItemList) {
-            if (item.getName().equals(remove)) {
+            if (item.getName().equals(remove.getName())) {
                 shareItemList.remove(item);
                 return;
             }
         }
-        logger.finer("CashAccount.removeShareItem(" + remove + ")");
         throw new NoSuchShareItemException("Nicht vorhanden");
     }
 

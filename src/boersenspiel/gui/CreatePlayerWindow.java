@@ -4,9 +4,14 @@ import boersenspiel.exceptions.WrongNumberOfParametersException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import boersenspiel.exceptions.WrongNumberOfParametersException;
+
+import java.awt.*;
 
 /**
  * User: Jan
@@ -19,13 +24,11 @@ public class CreatePlayerWindow extends Application {
     private String name;
     private long cash;
 
-//    public static void main (String[] args){
-//        Application.launch(args);
-//    }
-
     public void start(Stage stage) throws WrongNumberOfParametersException{
+
         stage.setTitle("Create Player");
         TextField textField = new TextField();
+        //
         String characters;
         characters = (textField.getCharacters()).toString();
         String[] parameters = characters.split(" ");
@@ -34,6 +37,7 @@ public class CreatePlayerWindow extends Application {
         }
         name = parameters[0];
         cash = Long.parseLong(parameters[1]);
+        //
         Scene scene = new Scene(textField, 800, 600);
         stage.setScene(scene);
         stage.show();

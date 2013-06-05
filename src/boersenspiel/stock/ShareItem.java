@@ -45,8 +45,10 @@ public class ShareItem extends Asset implements Comparable<ShareItem> {
             if (amount > shareAmount) {
             } else {
                 shareAmount -= amount;
+                value -= this.share.getPrice()*amount;
                 logger.finest("Anzahl den Aktien abgezogen.");
             }
+
     }
 
     public long getValue() {

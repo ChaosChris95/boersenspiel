@@ -45,10 +45,6 @@ public class StockPriceViewer extends JFrame{
         }
 
         public void run(){
-            try{
-                stockPriceProvider.startUpdate();
-            } catch(Exception e){}
-
             clockLabel.setText(createText());
             clockLabel.repaint();
         }
