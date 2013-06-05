@@ -10,11 +10,9 @@ package boersenspiel.gui;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.StockPriceProvider;
 
-import java.util.Locale;
-import java.util.TimerTask;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 import java.text.DateFormat;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -23,6 +21,7 @@ public class StockPriceViewer extends JFrame{
     private ShareManagement shareManagement;
     StockPriceProvider stockPriceProvider;
     private JLabel clockLabel;
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public StockPriceViewer(ShareManagement shareManagement, StockPriceProvider stockPriceProvider){
         this.shareManagement = shareManagement;
@@ -42,7 +41,7 @@ public class StockPriceViewer extends JFrame{
     private class TickerTask extends TimerTask{
 
         public TickerTask() {
-            run();
+              run();
         }
 
         public void run(){
@@ -52,7 +51,7 @@ public class StockPriceViewer extends JFrame{
 
         private String createText(){
             StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append("<html><body>Die verfügbaren Aktien mit ihrem Kurs:<br>");
+            stringBuffer.append("<html><body>" + rs.getString("GuiAktie") + " :<br>");
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             DateFormat dateFormatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, Locale.getDefault());

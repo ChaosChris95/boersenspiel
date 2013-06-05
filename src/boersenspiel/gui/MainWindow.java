@@ -15,6 +15,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -38,6 +39,7 @@ public class MainWindow extends Application {
     private MenuItem menuLogShow;
     private MenuItem menuLogPrint;
     private MenuItem menuHelpAbout;
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public static void main(String[] args){
         Application.launch(args);
@@ -48,7 +50,7 @@ public class MainWindow extends Application {
         accountManager = AccountManagerImpl.getInstance();
         //Logger logger = Logger.getLogger("MainWindow");
 
-        primaryStage.setTitle("Börsenspiel");
+        primaryStage.setTitle(rs.getString("programTitle"));
 
         Scene scene = new Scene(new VBox(), 800, 600);
         ((VBox) scene.getRoot()).getChildren().addAll(setMenuBar(handleAction()));

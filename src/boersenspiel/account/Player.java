@@ -24,6 +24,7 @@ import static java.util.Collections.*;
 public class Player {
 
     private static Logger logger = Logger.getLogger("Player");
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
     public static final int SHARE = 1;
     public static final int TIME = 2;
 
@@ -96,7 +97,7 @@ public class Player {
     }
 
     public String toString() {
-        return "Spieler mit dem Namen " + name + " und einem Kontostand von " + getCashAccountValue();
+        return rs.getString("PlayerName") + " " + name + " " + rs.getString("PlayerCash") + getCashAccountValue();
     }
 
     public void print(OutputStream stream, int sort, int output) throws IOException {
@@ -110,7 +111,7 @@ public class Player {
         } else if (sort == TIME) {
             comparator = new TimeComparator();
         } else {
-            logger.warning("Falsche Eingabe für Sortierung");
+            logger.warning(rs.getString("PlayerSort"));
             return;
         }
         Collections.sort(logEntryList, comparator);
@@ -129,7 +130,7 @@ public class Player {
             }
             w.write("</ul>");
         } else {
-            logger.warning("Falsche Eingabe für Ausgabetyp");
+            logger.warning(rs.getString("PlayerTyp"));
         }
     }
 

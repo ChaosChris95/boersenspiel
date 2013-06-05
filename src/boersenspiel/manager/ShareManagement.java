@@ -34,7 +34,7 @@ public class ShareManagement {
     public void addShare(String name, Long price) throws ShareNameAlreadyExistsException {
        for (Share share : shareList) {
            if (share.getName().equals(name)) {
-               throw new ShareNameAlreadyExistsException("Aktie existiert schon");
+               throw new ShareNameAlreadyExistsException(rs.getString("ShareExist"));
            }
        }
         shareList.add(new Share(name,price));
@@ -46,10 +46,10 @@ public class ShareManagement {
        for (Share share : shareList) {
            if (share.getName().equals(name)) {
               shareList.remove(name);
-              logger.info("Aktie " + name + " wurde aus dem System gelöscht.");
+              logger.info(rs.getString("Share1")+ " " + name + " " + rs.getString("ShareDelete"));
            }
        }
-        throw new ShareDoesNotExistException("Aktiene existiert nicht");
+        throw new ShareDoesNotExistException(rs.getString("ShareNo"));
     }
 
     public int getShareLength(){
@@ -103,7 +103,7 @@ public class ShareManagement {
     public String listAll() {
 
         StringBuilder display = new StringBuilder();
-        display.append( "Alle verfügbaren Aktien:\n" );
+        display.append( rs.getString("ShareAll")+ " :\n" );
         Collections.sort(shareList);
         for (Share share : shareList) {
             display.append(share.getName());

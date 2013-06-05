@@ -3,6 +3,7 @@ package boersenspiel.account;
 import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.NotEnoughMoneyException;
 
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -15,6 +16,7 @@ public class CashAccount extends Asset{
 
     private long accountValue;
     private static Logger logger = Logger.getLogger("CashAccount");
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public CashAccount(long accountValue){
         super("CashAccount");
@@ -36,13 +38,13 @@ public class CashAccount extends Asset{
 
     public String toString(){
         logger.finer("CashAccount.toString()");
-        return ("Der Kontostand des Accounts " + name + " betraegt: " + getValue());
+        return (rs.getString("CashValue") +" "+ name +" "+ rs.getString("CashIs") +" "+ getValue());
     }
 
     public void subCash(long cash) throws NotEnoughMoneyException {
 
         if (cash > accountValue) {
-            throw new NotEnoughMoneyException("Sie besitzen nicht genügend Geld!");
+            throw new NotEnoughMoneyException(rs.getString("CashNo"));
         }
         accountValue -= cash;
         logger.finer("CashAccount.subCash(" + cash + ")");

@@ -7,6 +7,7 @@ import boersenspiel.exceptions.NotEnoughSharesException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -19,6 +20,7 @@ public class ShareDeposit extends Asset {
 
     private List<ShareItem> shareItemList = new ArrayList<ShareItem>();
     private static Logger logger = Logger.getLogger("ShareDeposit");
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public ShareDeposit() {
         super("ShareDeposit");
@@ -60,13 +62,13 @@ public class ShareDeposit extends Asset {
         for (ShareItem item : shareItemList) {
             if (item.getName().equals(share.getName())) {
                 if (item.getShareAmount() < amount) {
-                    throw new NotEnoughSharesException("Sie besitzen nicht genügend Aktien");
+                    throw new NotEnoughSharesException(rs.getString("SDNoShare"));
                 }
                 item.removeShareAmount(amount);
                 return;
             }
         }
-        throw new NotEnoughSharesException("Sie besitzen keine Aktie mit diesem Namen");
+        throw new NotEnoughSharesException(rs.getString("SDNotShare"));
     }
 
     public void removeShareItem(ShareItem remove) throws NoSuchShareItemException {//TODO Exception wrong placed method does not work
@@ -77,7 +79,7 @@ public class ShareDeposit extends Asset {
                 return;
             }
         }
-        throw new NoSuchShareItemException("Nicht vorhanden");
+        throw new NoSuchShareItemException(rs.getString("SDNoFound"));
     }
 
     public long getValue() {

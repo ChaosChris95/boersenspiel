@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 public class AccountManagerImpl implements AccountManager {
 
     private static Logger logger = Logger.getLogger("AccountManagerImpl");
-    private ResourceBundle resourceBundle = ResourceBundle.getBundle("boersenspiel");
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
 
 
@@ -51,11 +51,11 @@ public class AccountManagerImpl implements AccountManager {
     public void createPlayer(String name, Long cash) throws NegativeValueException{
         try {
             userManagement.addPlayer(name, cash);
-            logger.info(resourceBundle.getString("LogPlayer") + " " + name + " " + resourceBundle.getString("AMCreate") + " " + cash);
+            logger.info(rs.getString("LogPlayer") + " " + name + " " + rs.getString("AMCreate") + " " + cash);
         } catch (PlayerAlreadyExistsException e) {;
-            logger.warning(resourceBundle.getString("AMPlayerExist"));
+            logger.warning(rs.getString("AMPlayerExist"));
         } catch (NegativeValueException e) {
-            logger.warning(resourceBundle.getString("AMNegativ"));
+            logger.warning(rs.getString("AMNegativ"));
         }
     }
 
@@ -63,9 +63,9 @@ public class AccountManagerImpl implements AccountManager {
         try {
             this.playerAgent = new PlayerAgent(userManagement.getPlayer(name));
             UpdateTimer.getInstance().addTask(this.playerAgent.getTask(), 10000, 10000);
-            logger.info("Stelle" + name + " um auf Bot");
+            logger.info(rs.getString("AMBot")+ " " + name + " " + rs.getString("AMBot1"));
         } catch (PlayerDoesNotExistException e) {
-            logger.warning(resourceBundle.getString("AMPlayerNo"));
+            logger.warning(rs.getString("AMPlayerNo"));
         }
 
     }
@@ -79,13 +79,13 @@ public class AccountManagerImpl implements AccountManager {
     public void buy(String playerName, String shareName, Integer amount) throws NegativeValueException {
         try {
             userManagement.getPlayer(playerName).buy(shareManagement.getShare(shareName), amount);
-            logger.info("Spieler " + playerName + " kaufte " + amount + " Aktien von " + shareName);
+            logger.info(rs.getString("LogPlayer")+" "+playerName + " " +rs.getString("AMBuy")+ " " + amount + rs.getString("LogShare")+ " " + shareName);
         } catch (NotEnoughMoneyException e) {
-            logger.warning("Sie besitzen nicht genug Geld.");
+            logger.warning(rs.getString("CashNo"));
         } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
+            logger.warning(rs.getString("AMPlayerNo"));
         } catch (NegativeValueException e) {
-            logger.warning("Negativer Wert nicht erlaubt");
+            logger.warning(rs.getString("AMNegativ"));
         }
 
     }
@@ -94,13 +94,13 @@ public class AccountManagerImpl implements AccountManager {
     public void sell(String playerName, String shareName, Integer amount) {
         try {
             userManagement.getPlayer(playerName).sell(shareManagement.getShare(shareName), amount);
-            logger.info("Spieler " + playerName + " verkaufte " + amount + " Aktien von " + shareName);
+            logger.info(rs.getString("LogPlayer")+" "+ playerName + " "+ rs.getString("AMSell")+" "+ amount + " " +rs.getString("LogShare")+ " " + shareName);
         } catch (NotEnoughSharesException e) {
-            logger.warning("Sie besitzen nicht genug Anzahl dieser Aktien");
+            logger.warning(rs.getString("AMNoShare"));
         } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
+            logger.warning(rs.getString("AMPlayerNo"));
         } catch (NegativeValueException e) {
-            logger.warning("Negativer Wert nicht erlaubt");
+            logger.warning(rs.getString("AMNegativ"));
         }
 
     }
@@ -110,7 +110,7 @@ public class AccountManagerImpl implements AccountManager {
         try {
             return userManagement.getPlayer(playerName).getCashAccountValue();
         } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
+            logger.warning(rs.getString("AMPlayerNo"));
         }
         return 0;
     }
@@ -120,7 +120,7 @@ public class AccountManagerImpl implements AccountManager {
         try {
             return userManagement.getPlayer(playerName).getShareDepositValue();
         } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
+            logger.warning(rs.getString("AMPlayerNo"));
         }
         return 0;
     }
@@ -134,7 +134,7 @@ public class AccountManagerImpl implements AccountManager {
         try {
             return userManagement.getPlayer(name).getStockList();
         } catch (PlayerDoesNotExistException e) {
-            logger.warning("Spieler existiert nicht");
+            logger.warning(rs.getString("AMPlayerNo"));
         }
         return null;
     }
@@ -143,7 +143,7 @@ public class AccountManagerImpl implements AccountManager {
         try {
             userManagement.getPlayer(name).toFile(filename,sort,2);
         } catch (FileNotFoundException e) {
-            logger.warning("Datei nicht gefunden.");
+            logger.warning(rs.getString("AMFileNo"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -156,12 +156,12 @@ public class AccountManagerImpl implements AccountManager {
     public void setLocale(String locale) throws LanguageNotFoundException {
         if (locale.equals("en")) {
             Locale.setDefault(Locale.ENGLISH);
-            logger.info("Set English");
+            logger.info("Set Language to English");
         } else if (locale.equals("de")) {
             Locale.setDefault(Locale.GERMAN);
             logger.info("Umgestellt auf Deutsch");
         } else {
-            throw new LanguageNotFoundException("Sprache nicht gefunden");
+            throw new LanguageNotFoundException(rs.getString("AMLang"));
         }
 
 

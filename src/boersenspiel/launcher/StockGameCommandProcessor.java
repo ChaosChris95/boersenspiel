@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -31,6 +32,7 @@ public class StockGameCommandProcessor {
     private BufferedReader shellReader = new BufferedReader(new InputStreamReader(System.in));
     private PrintWriter shellWriter = new PrintWriter(System.out);
     private AccountManager accountManager;
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public StockGameCommandProcessor(AccountManager accountManager) {
 
@@ -50,7 +52,7 @@ public class StockGameCommandProcessor {
             try {
                 commandScanner.fillInCommandDesc(command);
             } catch (CommandScannerException e) {
-                logger.fine("Fehlerhafte Eingabe: " + e.getMessage());
+                logger.fine(rs.getString("GCPInput") + ": " + e.getMessage());
                 continue;
             }
 
@@ -74,7 +76,7 @@ public class StockGameCommandProcessor {
                         //check getInstance();
                         getInstance = target.getMethod("getInstance", new Class[]{});
                     } catch (NoSuchMethodException e) {
-                        throw new Error("kein Singleton");
+                        throw new Error(rs.getString("GCPSingleton"));
                     }
                     //make class to object
                     Object targetInstance = getInstance.invoke(null, new Object[]{});
@@ -83,16 +85,16 @@ public class StockGameCommandProcessor {
                     //run method
                     Object ret = method.invoke(targetInstance, command.getParams());  //command.getParams()
                            if (ret != null) {
-                               logger.info("Antwort: \n " + ret);
+                               logger.info(rs.getString("GCPAnswer") + ": \n " + ret);
                            }
                     } catch (NoSuchMethodException e) {
-                        throw new Error(commandType.getFunc() + " konnte nicht gefunden werden");
+                        throw new Error(commandType.getFunc() + " " + rs.getString("GCPNo"));
                     } catch (IllegalAccessException e) {
                         throw new Error(e);
                     } catch (InvocationTargetException e) {
                         throw new Error(e);
                     } catch (ClassNotFoundException e) {
-                        throw new Error(commandType.getTarget() + " konnte nicht gefunden werden");
+                        throw new Error(commandType.getTarget() + " " + rs.getString("GCPNo"));
                     }
 
                 }

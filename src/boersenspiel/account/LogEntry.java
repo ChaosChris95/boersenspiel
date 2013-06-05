@@ -3,6 +3,7 @@ package boersenspiel.account;
 import boersenspiel.stock.Share;
 
 import java.util.Date;
+import java.util.ResourceBundle;
 
 /**
  * User: Peach
@@ -12,6 +13,7 @@ import java.util.Date;
 public class LogEntry implements Comparable<LogEntry> {
 
 
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
     public static final int BUY = 1;
     public static final int SELL = 2;
 
@@ -41,8 +43,9 @@ public class LogEntry implements Comparable<LogEntry> {
     }
 
     public String toString() {
-        String action = this.action == BUY ? "kauft" : "verkauft";
-        return "\n" + this.date.toString() + "\nSpieler " + action + " " + this.amount + " Aktien von " + this.share;
+        String action = this.action == BUY ? rs.getString("LogBuy") : rs.getString("LogSell");
+        return "\n" + this.date.toString() + "\n" + rs.getString("LogPlayer")+ " " + action + " " + this.amount + " "
+                + rs.getString("LogShare")+ " " + this.share;
     }
 }
 

@@ -22,6 +22,7 @@ public class PlayerAgent {
 
     Player player;
     private static Logger logger = Logger.getLogger(PlayerAgent.class.getName());
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public PlayerAgent(Player player) {
         this.player = player;
@@ -42,7 +43,7 @@ public class PlayerAgent {
         while(player.getCashAccountValue() > 0) {
             n = (int)(Math.random() * (ShareManagement.getInstance().getShareLength() - 1));
             s = ShareManagement.getInstance().getShareByNumber(n);
-            logger.info("Kaufe 5 Aktien von " +  s.getName());
+            logger.info(rs.getString("AgentBuy") + " " +  s.getName());
             try {
                 player.buy(s, 5);
             } catch (NotEnoughMoneyException e) {
@@ -50,7 +51,7 @@ public class PlayerAgent {
 
             n = (int)(Math.random() * (ShareManagement.getInstance().getShareLength() - 1));
             s = ShareManagement.getInstance().getShareByNumber(n);
-            logger.info("Verkaufe 3 Aktien von " +  s.getName());
+            logger.info(rs.getString("AgentSell") + " " +  s.getName());
             try {
                 player.sell(s, 3);
             } catch (NotEnoughSharesException e) {

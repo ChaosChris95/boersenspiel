@@ -68,7 +68,8 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
     }
 
     public void updateShareRates(){
-        for (int i=0; i< pricesOfShares.size(); i++){
+        int size = pricesOfShares.size();
+        for (int i=0; i< size; i++){
             ArrayList<Long> price = pricesOfShares.get(i);
             shareManagement.getShareByNumber(i).setPrice(price.get(counter));
         }

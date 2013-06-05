@@ -6,6 +6,7 @@ import boersenspiel.interfaces.CommandTypeInfo;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * User: Peach
@@ -17,6 +18,7 @@ public class CommandScanner {
 
     private CommandTypeInfo commandTypeInfos[];
     private BufferedReader shellReader;
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
 
     public CommandScanner(CommandTypeInfo[] commandTypeInfos, BufferedReader shellReader){
@@ -30,7 +32,7 @@ public class CommandScanner {
         try {
             line = this.shellReader.readLine();
             if(line == null) {
-                throw new CommandScannerException("Nichts eingegeben.");
+                throw new CommandScannerException(rs.getString("ScanNothing"));
             }
         } catch (IOException e) {
             throw new CommandScannerException(e.getMessage());
@@ -44,7 +46,7 @@ public class CommandScanner {
 
                 Class<?>[] classes = command.commandType.getParamTypes();
                 if (classes.length != parts.length - 1) {
-                    throw new CommandScannerException("Nicht genug Parameter.");
+                    throw new CommandScannerException(rs.getString("ScanParams"));
                 }
 
                 command.params = new Object[classes.length];
@@ -62,7 +64,7 @@ public class CommandScanner {
                 return;
             }
         }
-        throw new CommandScannerException("Kommando nicht gefunden.");
+        throw new CommandScannerException(rs.getString("ScanCommand"));
     }
 
 }

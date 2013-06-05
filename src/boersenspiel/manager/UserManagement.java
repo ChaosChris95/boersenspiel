@@ -7,6 +7,7 @@ import boersenspiel.exceptions.PlayerDoesNotExistException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -18,6 +19,7 @@ import java.util.logging.Logger;
 public class UserManagement {
 
     private static Logger logger = Logger.getLogger("UserManagement");
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     private static UserManagement instance = null;
     public static UserManagement getInstance() {
@@ -35,20 +37,20 @@ public class UserManagement {
     public void addPlayer(String name, long cash) throws PlayerAlreadyExistsException, NegativeValueException {
 
         if (players.containsKey(name)) {
-            throw new PlayerAlreadyExistsException("Ein Spieler mit diesem Namen existiert schon");
+            throw new PlayerAlreadyExistsException(rs.getString("UserExist"));
         }
         Player newPlayer = new Player(name);
-        logger.fine("Spieler wurde erstellt");
+        logger.fine(rs.getString("UserCreate"));
         newPlayer.addCash(cash);
         players.put(name, newPlayer);
     }
 
     public Player getPlayer(String name) throws PlayerDoesNotExistException {
         if (players.containsKey(name)) {
-            logger.fine("Spieler abgerufen");
+            logger.fine(rs.getString("User1"));
             return players.get(name);
         }
-        throw new PlayerDoesNotExistException("Spieler existiert nicht");
+        throw new PlayerDoesNotExistException(rs.getString("UserNo"));
 
     }
 
