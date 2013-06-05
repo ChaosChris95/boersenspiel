@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="50" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="58" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="022d19a9-c4d4-4b16-b447-22b370a25705" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java" afterPath="$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/stock/ShareDeposit.java" afterPath="$PROJECT_DIR$/src/boersenspiel/stock/ShareDeposit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java" afterPath="$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/stock/ShareItem.java" afterPath="$PROJECT_DIR$/src/boersenspiel/stock/ShareItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" afterPath="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Prg2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369931782867" ignored="false" />
+    <file path="/fragment.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370435500975" ignored="false" />
     <file path="/StockPriceInfo.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365842426611" ignored="false" />
-    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370422278727" ignored="false" />
+    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370434907416" ignored="false" />
     <file path="/AccountManager.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365843469661" ignored="false" />
     <file path="/ShareManagement.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369765781674" ignored="false" />
     <file path="/AccountManagerImpl.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369389544759" ignored="false" />
@@ -42,7 +35,7 @@
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/ImageView.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370353100465" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/FileChooser.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370353100465" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/SaveProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370353100465" ignored="false" />
-    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370353743529" ignored="false" />
+    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370444928060" ignored="false" />
     <file path="/AccountManagerClient.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369393726735" ignored="false" />
     <file path="/ShareDeposit.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370430220067" ignored="false" />
     <file path="/CashAccountTest.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369400038642" ignored="false" />
@@ -52,7 +45,7 @@
     <file path="/RealisticStockPriceProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369471986528" ignored="false" />
     <file path="/ShareItem.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370433150646" ignored="false" />
     <file path="/ShareItemTest.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369473983451" ignored="false" />
-    <file path="/Player.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369472768766" ignored="false" />
+    <file path="/Player.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370438173755" ignored="false" />
     <file path="/PlayerAgent.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369472854216" ignored="false" />
     <file path="/HistoricalStockPriceProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370433778739" ignored="false" />
     <file path="$USER_HOME$/Probations/src/HelloJavaFX.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369757357622" ignored="false" />
@@ -140,7 +133,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java" line="70" class="boersenspiel.test.ShareDepositTest" package="boersenspiel.test">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -169,10 +162,8 @@
       <file leaf-file-name="StockGameLauncher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="61" selection-start="1853" selection-end="1853" vertical-scroll-proportion="-4.52">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="67" column="61" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,19 +171,17 @@
       <file leaf-file-name="StockPriceViewer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="34" selection-start="917" selection-end="917" vertical-scroll-proportion="0.0">
+            <state line="1" column="34" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainWindow.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="1" selection-start="4199" selection-end="4199" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="71" column="54" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.5839695">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -215,14 +204,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HistoricalStockPriceProvider.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HistoricalStockPriceProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="49" selection-start="2864" selection-end="2864" vertical-scroll-proportion="0.5458015">
-              <folding>
-                <element signature="e#2665#2888#0" expanded="true" />
-                <element signature="e#2877#2878#0" expanded="true" />
-              </folding>
+            <state line="38" column="115" selection-start="1060" selection-end="1229" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="40" selection-start="3151" selection-end="3151" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountManagerImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/boersenspiel/manager/AccountManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="160" column="32" selection-start="5683" selection-end="5683" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -230,10 +234,8 @@
       <file leaf-file-name="ShareDeposit.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/ShareDeposit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="53" selection-start="4009" selection-end="4009" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#474#485#0" expanded="true" />
-              </folding>
+            <state line="129" column="0" selection-start="4096" selection-end="4096" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -241,25 +243,7 @@
       <file leaf-file-name="ShareItem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/ShareItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="54" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-7.44">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Share.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/Share.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Asset.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Asset.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
+            <state line="47" column="54" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -275,7 +259,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/boersenspiel/account/PlayerAgent.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/test/CashAccountTest.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/test/ShareItemTest.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/provider/RealisticStockPriceProvider.java" />
@@ -284,13 +267,14 @@
         <option value="$PROJECT_DIR$/src/boersenspiel/boersenspiel_de.properties" />
         <option value="$PROJECT_DIR$/src/boersenspiel/exceptions/WrongNumberOfParametersException.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" />
-        <option value="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/stock/ShareDeposit.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/stock/ShareItem.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java" />
         <option value="$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java" />
+        <option value="$PROJECT_DIR$/src/boersenspiel/account/Player.java" />
+        <option value="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -362,6 +346,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -430,95 +416,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resource Bundle 'boersenspiel'" />
-              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boersenspiel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boersenspiel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boersenspiel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shell" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boersenspiel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proxy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -585,28 +483,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="launcher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Prg2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boersenspiel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -722,8 +598,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -747,7 +621,133 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Application.StockGameLauncher">
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel_en.properties</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\launcher\StockGameCommandProcessor.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\stock\ShareDeposit.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\gui\StockPriceViewer.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\shell\CommandScanner.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\provider\HistoricalStockPriceProvider.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\manager\ShareManagement.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\manager\AccountManagerImpl.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\manager\UserManagement.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\account\LogEntry.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\account\CashAccount.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\account\PlayerAgent.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\account\Player.java</PATH>
+            <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel_de.properties</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with property conflicts" />
+          <option name="myStatusName" value="Will be merged with property conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+          <PATH vcs="svn" revision="121">C:\Users\Jan\Prg2\src\boersenspiel\gui\MainWindow.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
+  </component>
+  <component name="RunManager" selected="Application.MainWindow">
     <configuration default="false" name="StockPriceViewer" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -774,6 +774,29 @@
       </RunnerSettings>
       <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MainWindow" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="boersenspiel.gui.MainWindow" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Prg2" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="false" name="ShareDepositTest" type="JUnit" factoryName="JUnit" temporary="true">
@@ -848,29 +871,6 @@
       <envs />
       <patterns />
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="MainWindow" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="boersenspiel.gui.MainWindow" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Prg2" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -965,7 +965,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="StockGameLauncher" type="Application" factoryName="Application">
+    <configuration default="false" name="StockGameLauncher" type="Application" factoryName="Application" singleton="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="boersenspiel.launcher.StockGameLauncher" />
       <option name="VM_PARAMETERS" value="" />
@@ -1017,15 +1017,15 @@
       <item index="0" class="java.lang.String" itemvalue="Application.StockGameLauncher" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.CashAccountTest" />
       <item index="2" class="java.lang.String" itemvalue="Application.StockPriceViewer" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ShareDepositTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ShareItemTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ShareDepositTest.testRemoveShareItem1" />
-      <item index="6" class="java.lang.String" itemvalue="Application.MainWindow" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MainWindow" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ShareDepositTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ShareItemTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.ShareDepositTest.testRemoveShareItem1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ShareDepositTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MainWindow" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ShareDepositTest" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.ShareDepositTest.testRemoveShareItem1" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.ShareItemTest" />
         <item index="4" class="java.lang.String" itemvalue="Application.StockPriceViewer" />
@@ -1149,7 +1149,11 @@
       <created>1370345053180</created>
       <updated>1370345053180</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="handler funktioniert endlich :D">
+      <created>1370434931142</created>
+      <updated>1370434931142</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1174,7 +1178,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.73549485" order="7" side_tool="false" content_ui="tabs" />
@@ -1184,13 +1188,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26450512" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24848025" sideWeight="0.42636988" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3225256" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712329" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.62969285" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21212122" sideWeight="0.49146757" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5085324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5085324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1269,32 +1273,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/CashAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="17" selection-start="704" selection-end="709" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_21/src.zip!/java/lang/AbstractStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_21/src.zip!/java/lang/StringBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="2815" selection-end="2815" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="85" column="0" selection-start="2815" selection-end="2815" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Asset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="0" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/Share.java">
@@ -1306,47 +1292,72 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_21/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="43" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="43" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/ShareItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="54" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-7.44">
+        <state line="47" column="54" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/stock/ShareDeposit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="53" selection-start="4009" selection-end="4009" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#474#485#0" expanded="true" />
-          </folding>
+        <state line="129" column="0" selection-start="4096" selection-end="4096" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/provider/RandomStockPriceProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="387" selection-end="387" vertical-scroll-proportion="0.30357143">
-          <folding />
-        </state>
+        <state line="18" column="13" selection-start="387" selection-end="387" vertical-scroll-proportion="0.30357143" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/src/boersenspiel/junit-4.4.jar!/org/junit/internal/runners/MethodRoadie.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.70689654">
+        <state line="26" column="17" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.70689654" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="6" selection-start="2499" selection-end="2499" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="34" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/launcher/StockGameLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="61" selection-start="1853" selection-end="1853" vertical-scroll-proportion="-4.52">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="67" column="61" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="115" selection-start="1060" selection-end="1229" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/manager/AccountManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="32" selection-start="5683" selection-end="5683" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boersenspiel/account/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="40" selection-start="3151" selection-end="3151" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1357,36 +1368,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/StockPriceViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="34" selection-start="917" selection-end="917" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="1" selection-start="4199" selection-end="4199" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/test/ShareDepositTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="6" selection-start="2499" selection-end="2499" vertical-scroll-proportion="0.0">
+        <state line="71" column="54" selection-start="2166" selection-end="2166" vertical-scroll-proportion="0.5839695">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/boersenspiel/provider/HistoricalStockPriceProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="49" selection-start="2864" selection-end="2864" vertical-scroll-proportion="0.5458015">
-          <folding>
-            <element signature="e#2665#2888#0" expanded="true" />
-            <element signature="e#2877#2878#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

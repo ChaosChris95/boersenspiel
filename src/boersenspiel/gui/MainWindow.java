@@ -1,5 +1,6 @@
 package boersenspiel.gui;
 
+import boersenspiel.exceptions.LanguageNotFoundException;
 import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.WrongNumberOfParametersException;
 import boersenspiel.manager.AccountManagerImpl;
@@ -8,10 +9,15 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -52,11 +58,22 @@ public class MainWindow extends Application {
 
         primaryStage.setTitle(rs.getString("programTitle"));
 
-        Scene scene = new Scene(new VBox(), 800, 600);
-        ((VBox) scene.getRoot()).getChildren().addAll(setMenuBar(handleAction()));
+        Label consoleText = new Label("test!");
+        VBox labelBox = new VBox();
+        labelBox.setAlignment(Pos.CENTER_RIGHT);
+        labelBox.getChildren().addAll(consoleText);
+
+        BorderPane border = new BorderPane();
+        VBox menuBox = new VBox();
+
+        menuBox.getChildren().addAll(setMenuBar(handleAction()));   //)consoleText);
+        border.setTop(menuBox);
+        border.setRight(labelBox);
+
+        Scene scene = new Scene(border, 800, 600);    //new VBox()
+        //((VBox) scene.getRoot()).getChildren().addAll(setMenuBar(handleAction()));
         primaryStage.setScene(scene);
         primaryStage.show();
-
         scene.addEventHandler(Event.ANY, handleAction());
     }
 
