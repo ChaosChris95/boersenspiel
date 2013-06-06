@@ -14,12 +14,20 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -44,6 +52,8 @@ public class MainWindow extends Application {
     private MenuItem menuLogShow;
     private MenuItem menuLogPrint;
     private MenuItem menuHelpAbout;
+
+    private Stage stage;
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public static void main(String[] args){
@@ -98,6 +108,7 @@ public class MainWindow extends Application {
                 + "");
 
         ScrollPane rightScrollBar = new ScrollPane();
+        //rightScrollBar.setStyle("-fx-font-size: 40px;");
         rightScrollBar.setContent(consoleText);
 
         GridPane labelRightBox = new GridPane();
@@ -114,6 +125,7 @@ public class MainWindow extends Application {
         menuBox.getChildren().addAll(setMenuBar(handleAction()));   //)tickerText);
         border.setTop(menuBox);
         border.setRight(leftLabelBox);
+        //border.setPreferredSize(new Dimension(350, 400));
         border.setLeft(labelRightBox);//TODO
         border.setBottom(gridPane);
 
@@ -182,7 +194,11 @@ public class MainWindow extends Application {
             public void handle(Event event) {
                 if (event.getTarget() == menuEditCrp){
                     System.out.println("menuEditCrp");
-                    //CreatePlayerWindow createPlayerWindow = new CreatePlayerWindow();
+                    stage = new Stage();
+                    //Starten des nächsten Fensters
+                    CreatePlayerWindow cpw = new CreatePlayerWindow();
+                    cpw.start(stage);
+
                 }
                 else if (event.getTarget() == menuEditCtc){
                     System.out.println("menuEditCtc");
