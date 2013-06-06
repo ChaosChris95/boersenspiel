@@ -2,6 +2,9 @@ package boersenspiel.gui;
 
 import boersenspiel.exceptions.WrongNumberOfParametersException;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -32,23 +35,23 @@ public class CreatePlayerWindow extends Application {
 
         primaryStage.setTitle("Create Player");
         GridPane gridPane = new GridPane();
-        TextField textFieldName = new TextField();
-        TextField textFieldCash = new TextField();
+        final TextField textFieldName = new TextField();
+        final TextField textFieldCash = new TextField();
         Button crp = new Button("Create Player");
+        crp.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                name = textFieldName.getText();
+                cash = Long.parseLong(textFieldCash.getText());
+                //System.out.println("name = " + name);
+                //System.out.println("cash = " + cash);
+            }
+        });
+
         gridPane.add(textFieldName, 0, 0);
         gridPane.add(textFieldCash, 1, 0);
         gridPane.add(crp, 2, 0);
 
-        /*
-        String characters;
-        characters = (textField.getCharacters()).toString();
-        String[] parameters = characters.split(" ");
-        if (parameters.length != 2){
-            throw new WrongNumberOfParametersException("two parameters are needed");
-        }
-        name = parameters[0];
-        cash = Long.parseLong(parameters[1]);
-        */
         Scene scene = new Scene(gridPane, 370, 10);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
