@@ -11,12 +11,11 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -48,30 +47,77 @@ public class MainWindow extends Application {
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public static void main(String[] args){
+        MainWindow mainWindow = new MainWindow();
         Application.launch(args);
+    }
+
+    public MainWindow(){
+        Logger logger = Logger.getLogger("MainWindow");
     }
 
     public void start(Stage primaryStage){
 
         accountManager = AccountManagerImpl.getInstance();
-        //Logger logger = Logger.getLogger("MainWindow");
 
         primaryStage.setTitle(rs.getString("programTitle"));
 
-        Label consoleText = new Label("test!");
-        VBox labelBox = new VBox();
-        labelBox.setAlignment(Pos.CENTER_RIGHT);
-        labelBox.getChildren().addAll(consoleText);
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.BOTTOM_RIGHT);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        //gridPane.setPadding(new Insets(25, 25, 25, 25));
+        TextField textField1 = new TextField("Name");
+        gridPane.add(textField1, 0, 1);
+        TextField textField2 = new TextField("Share");
+        gridPane.add(textField2, 1, 1);
+        TextField textField3 = new TextField("Amount");
+        gridPane.add(textField3, 2, 1);
+        //HBox hBox = new HBox(10);
+        //hBox.setAlignment(Pos.BOTTOM_RIGHT);
+        Button buttonBuy = new Button("Buy");
+        gridPane.add(buttonBuy, 3, 1);
+        Button buttonSell = new Button("Sell");
+        gridPane.add(buttonSell, 4, 1);
+
+        Label tickerText = new Label("" +
+        "Java ist eine objektorientierte Programmiersprache und eine eingetragene Marke des Unternehmens Sun Microsystems (2010 von Oracle aufgekauft). \nDie Programmiersprache ist ein Bestandteil der Java-Technologie – diese besteht grundsätzlich aus dem Java-Entwicklungswerkzeug (JDK) \nzum Erstellen von Java-Programmen und der Java-Laufzeitumgebung (JRE) zu deren Ausführung. \nDie Laufzeitumgebung selbst umfasst die virtuelle Maschine (JVM) und die mitgelieferten Bibliotheken."
+        + "");
+
+        ScrollPane leftScrollBar = new ScrollPane();
+        leftScrollBar.setContent(tickerText);
+
+        GridPane leftLabelBox = new GridPane();
+        leftLabelBox.setAlignment(Pos.CENTER_RIGHT);
+        leftLabelBox.getChildren().addAll(leftScrollBar);
+        leftLabelBox.setHgap(10);
+        leftLabelBox.setVgap(10);
+        leftLabelBox.setGridLinesVisible(true);
+
+        Label consoleText = new Label("" +
+                "Java ist eine objektorientierte Programmiersprache und eine eingetragene Marke des Unternehmens Sun Microsystems (2010 von Oracle aufgekauft). \nDie Programmiersprache ist ein Bestandteil der Java-Technologie – diese besteht grundsätzlich aus dem Java-Entwicklungswerkzeug (JDK) \nzum Erstellen von Java-Programmen und der Java-Laufzeitumgebung (JRE) zu deren Ausführung. \nDie Laufzeitumgebung selbst umfasst die virtuelle Maschine (JVM) und die mitgelieferten Bibliotheken."
+                + "");
+
+        ScrollPane rightScrollBar = new ScrollPane();
+        rightScrollBar.setContent(consoleText);
+
+        GridPane labelRightBox = new GridPane();
+        labelRightBox.setAlignment(Pos.CENTER_RIGHT);
+        labelRightBox.getChildren().addAll(rightScrollBar);
+        labelRightBox.setHgap(10);
+        labelRightBox.setVgap(10);
+        labelRightBox.setGridLinesVisible(true);
+
 
         BorderPane border = new BorderPane();
         VBox menuBox = new VBox();
 
-        menuBox.getChildren().addAll(setMenuBar(handleAction()));   //)consoleText);
+        menuBox.getChildren().addAll(setMenuBar(handleAction()));   //)tickerText);
         border.setTop(menuBox);
-        border.setRight(labelBox);
+        border.setRight(leftLabelBox);
+        border.setLeft(labelRightBox);//TODO
+        border.setBottom(gridPane);
 
-        Scene scene = new Scene(border, 800, 600);    //new VBox()
-        //((VBox) scene.getRoot()).getChildren().addAll(setMenuBar(handleAction()));
+        Scene scene = new Scene(border, 800, 600);    //border
         primaryStage.setScene(scene);
         primaryStage.show();
         scene.addEventHandler(Event.ANY, handleAction());
