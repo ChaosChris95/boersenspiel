@@ -3,7 +3,7 @@ package boersenspiel.gui;
 import boersenspiel.exceptions.LanguageNotFoundException;
 import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.WrongNumberOfParametersException;
-import boersenspiel.manager.AccountManagerImpl;
+
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -27,7 +27,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -38,8 +37,6 @@ import java.util.logging.Logger;
  */
 
 public class MainWindow extends Application {
-
-    AccountManagerImpl accountManager;
 
     private MenuItem menuEditCrp;
     private MenuItem menuEditCtc;
@@ -66,8 +63,6 @@ public class MainWindow extends Application {
     }
 
     public void start(Stage primaryStage){
-
-        accountManager = AccountManagerImpl.getInstance();
 
         primaryStage.setTitle(rs.getString("programTitle"));
 
@@ -195,10 +190,8 @@ public class MainWindow extends Application {
                 if (event.getTarget() == menuEditCrp){
                     System.out.println("menuEditCrp");
                     stage = new Stage();
-                    //Starten des nächsten Fensters
                     CreatePlayerWindow cpw = new CreatePlayerWindow();
                     cpw.start(stage);
-
                 }
                 else if (event.getTarget() == menuEditCtc){
                     System.out.println("menuEditCtc");

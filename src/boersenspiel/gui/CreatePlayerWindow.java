@@ -1,5 +1,6 @@
 package boersenspiel.gui;
 
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.WrongNumberOfParametersException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -14,7 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import boersenspiel.exceptions.WrongNumberOfParametersException;
+import boersenspiel.manager.AccountManagerImpl;
 
 /**
  * User: Jan
@@ -27,11 +28,13 @@ public class CreatePlayerWindow extends Application {
     private String name;
     private long cash;
     private Stage stage;
+    private AccountManagerImpl accountManager;
 
     public CreatePlayerWindow(){
+        accountManager = AccountManagerImpl.getInstance();
     }
 
-    public void start(Stage primaryStage){//throws WrongNumberOfParametersException{
+    public void start(Stage primaryStage) {//throws NegativeValueException{
 
         primaryStage.setTitle("Create Player");
         GridPane gridPane = new GridPane();
@@ -43,6 +46,10 @@ public class CreatePlayerWindow extends Application {
             public void handle(ActionEvent actionEvent) {
                 name = textFieldName.getText();
                 cash = Long.parseLong(textFieldCash.getText());
+                try{
+                    accountManager.createPlayer(name, cash);
+                } catch (NegativeValueException e){} //TODO how catch it?
+
                 //System.out.println("name = " + name);
                 //System.out.println("cash = " + cash);
             }
@@ -57,13 +64,4 @@ public class CreatePlayerWindow extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
-    public String getName (){
-        return name;
-    }
-
-    public long getCash(){
-        return cash;
-    }
-
 }

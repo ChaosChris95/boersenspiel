@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="71" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" line="66" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="022d19a9-c4d4-4b16-b447-22b370a25705" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" afterPath="$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Prg2.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370501834938" ignored="false" />
     <file path="/StockPriceInfo.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365842426611" ignored="false" />
-    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370519390811" ignored="false" />
+    <file path="/Dummy.txt" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370520116759" ignored="false" />
     <file path="/AccountManager.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1365843469661" ignored="false" />
     <file path="/ShareManagement.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369765781674" ignored="false" />
     <file path="/AccountManagerImpl.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369389544759" ignored="false" />
@@ -35,7 +36,7 @@
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/ImageView.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370512677037" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/FileChooser.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370353100465" ignored="false" />
     <file path="$USER_HOME$/projekt/Stromnetz/src/frames/SaveProvider.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370512677037" ignored="false" />
-    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370519385732" ignored="false" />
+    <file path="/MainWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370520166384" ignored="false" />
     <file path="/AccountManagerClient.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369393726735" ignored="false" />
     <file path="/ShareDeposit.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370430220067" ignored="false" />
     <file path="/CashAccountTest.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369400038642" ignored="false" />
@@ -63,7 +64,7 @@
     <file path="/boersenspiel_de.properties" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370501064443" ignored="false" />
     <file path="$USER_HOME$/Probations/src/TextFieldProbation.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369938463262" ignored="false" />
     <file path="/TextFieldProbation.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369938170840" ignored="false" />
-    <file path="/CreatePlayerWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370519989190" ignored="false" />
+    <file path="/CreatePlayerWindow.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370520648849" ignored="false" />
     <file path="/WrongNumberOfParametersException.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369932087179" ignored="false" />
     <file path="$USER_HOME$/Probations/src/Main.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1370501640024" ignored="false" />
     <file path="/Main.java" changelist="022d19a9-c4d4-4b16-b447-22b370a25705" time="1369991065823" ignored="false" />
@@ -183,11 +184,11 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="25" selection-start="5552" selection-end="5557" vertical-scroll-proportion="46.0">
+            <state line="65" column="0" selection-start="1852" selection-end="1852" vertical-scroll-proportion="-44.2">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7551#9389#0" expanded="true" />
-                <element signature="e#9378#9379#0" expanded="true" />
+                <element signature="e#7385#9170#0" expanded="true" />
+                <element signature="e#9159#9160#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -226,11 +227,11 @@
       <file leaf-file-name="CreatePlayerWindow.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="18" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.34615386">
+            <state line="49" column="76" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.6576923">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1144#1505#0" expanded="true" />
-                <element signature="e#1494#1495#0" expanded="true" />
+                <element signature="e#1279#1797#0" expanded="true" />
+                <element signature="e#1786#1787#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1049,7 +1050,11 @@
       <created>1370519401143</created>
       <updated>1370519401143</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="handler funktioniert endlich :D">
+      <created>1370520126102</created>
+      <updated>1370520126102</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1260,22 +1265,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="25" selection-start="5552" selection-end="5557" vertical-scroll-proportion="46.0">
+        <state line="65" column="0" selection-start="1852" selection-end="1852" vertical-scroll-proportion="-44.2">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7551#9389#0" expanded="true" />
-            <element signature="e#9378#9379#0" expanded="true" />
+            <element signature="e#7385#9170#0" expanded="true" />
+            <element signature="e#9159#9160#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/boersenspiel/gui/CreatePlayerWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="18" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.34615386">
+        <state line="49" column="76" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.6576923">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1144#1505#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
+            <element signature="e#1279#1797#0" expanded="true" />
+            <element signature="e#1786#1787#0" expanded="true" />
           </folding>
         </state>
       </provider>
