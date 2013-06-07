@@ -122,13 +122,16 @@ public class Player {
            }
         } else if (output == HTML) {
             logger.fine("output: html");
-               w.write("<ul>");
+                w.write("<!DOCTYPE html PUBLIC-//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>\n");
+                w.write("<html> \n");
+                w.write("<ul> \n");
             for (LogEntry item: logEntryList) {
-                w.write("<li>");
+                w.write("<li> \n");
                 w.write(item.toString());
-                w.write("</li>");
+                w.write("</li> \n");
             }
-            w.write("</ul>");
+            w.write("</ul> \n");
+            w.write("</html> \n");
             w.flush();
         } else {
             logger.warning(rs.getString("PlayerTyp"));
