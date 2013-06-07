@@ -143,7 +143,7 @@ public class AccountManagerImpl implements AccountManager {
         try {
             userManagement.getPlayer(name).toFile(filename,sort,2);
         } catch (FileNotFoundException e) {
-            logger.warning(rs.getString("AMFileNo"));
+            logger.warning(rs.getString("AMNoFile"));
         } catch (IOException e) {
             e.printStackTrace();
         }
