@@ -31,6 +31,7 @@ public class Player {
     public static final int PLAIN = 1;
     public static final int HTML = 2;
 
+    //private Currency cur = Currency.getInstance(Locale.getDefault());
     private final String name;
     private boolean broken = false;
     private CashAccount cashAccount;
@@ -139,7 +140,7 @@ public class Player {
     }
 
     public void toFile(String filename, int sort, int output) throws IOException {
-        FileOutputStream out = new FileOutputStream(filename);
+        FileOutputStream out = new FileOutputStream(filename + ".html");
         print(out, sort, output);
         out.flush();
         out.close();
