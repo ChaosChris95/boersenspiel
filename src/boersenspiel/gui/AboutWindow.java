@@ -22,13 +22,13 @@ public class AboutWindow extends Application{
     public void start(Stage stage){
         stage.setTitle("About");
         VBox vBox = new VBox();
-        Image image = new Image("./res/Icon.ico");
+        Image image = new Image("./res/Icon.png");//TODO does not work
         Label label = new Label("The legendary Börsenspiel");
         ImageView iv = new ImageView();
         iv.setImage(image);
         vBox.getChildren().addAll(iv, label);
         Scene scene = new Scene(vBox, 200, 200);
-        stage.setResizable(false);
+        //stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

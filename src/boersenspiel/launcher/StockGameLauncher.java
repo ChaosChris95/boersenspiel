@@ -8,6 +8,7 @@ import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.HistoricalStockPriceProvider;
 import boersenspiel.shell.InvocationHandler;
+import javafx.application.Application;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -48,23 +49,20 @@ public class StockGameLauncher {
         ShareManagement.getInstance().addShare("Yahoo", 100L);
 
 
-        //RandomStockPriceProvider rnd = new RandomStockPriceProvider();
+        //start actualisation of the shares and display them
         HistoricalStockPriceProvider rnd = new HistoricalStockPriceProvider();
         rnd.startUpdate();
         StockPriceViewer stockPriceViewer = new StockPriceViewer(ShareManagement.getInstance(), rnd);
+        stockPriceViewer.updateInfo();
 
         //loading Proxy
-        AccountManager proxy = (AccountManager) Proxy.newProxyInstance(AccountManager.class.getClassLoader(),
+        /*AccountManager proxy = (AccountManager) Proxy.newProxyInstance(AccountManager.class.getClassLoader(),
                 new Class<?>[] {AccountManager.class},
                 new InvocationHandler(AccountManagerImpl.getInstance()));
 
-        //rnd.startUpdate();
-        stockPriceViewer.updateInfo();
-
         StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
-        cmp.process();
+        cmp.process();*/
 
-        //MainWindow mainWindow = new MainWindow(args);
     }
 
 }

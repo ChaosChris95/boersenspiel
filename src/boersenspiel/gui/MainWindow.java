@@ -3,7 +3,9 @@ package boersenspiel.gui;
 import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.PlayerDoesNotExistException;
 import boersenspiel.manager.AccountManagerImpl;
+import boersenspiel.manager.ShareManagement;
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -39,6 +41,8 @@ public class MainWindow extends Application {
     private MenuItem menuOptionsBot;
     private MenuItem menuOptionsCs;
     private MenuItem menuOptionsDs;
+    private MenuItem menuOptionsLd;
+    private MenuItem menuOptionsLe;
     private MenuItem menuInformationGs;
     private MenuItem menuInformationGas;
     private MenuItem menuInformationCs;
@@ -53,7 +57,7 @@ public class MainWindow extends Application {
     private String player;
     private int amount;
     private String shareName;
-    //TODO instances with players
+    private ShareManagement shareManagement;
 
     public static void main(String[] args){
         MainWindow mainWindow = new MainWindow();
@@ -63,7 +67,7 @@ public class MainWindow extends Application {
     public MainWindow(){
         logger = Logger.getLogger("MainWindow");
         accountManager = AccountManagerImpl.getInstance();
-        final String player = "jan";
+        shareManagement = ShareManagement.getInstance();
     }
 
     public void start(Stage primaryStage){
@@ -142,6 +146,10 @@ public class MainWindow extends Application {
         final Menu menuOptions = new Menu ("Options");
         menuOptionsBot = new MenuItem("Start Bot");
         menuOptionsBot.setOnAction(event);
+        menuOptionsLd = new MenuItem("Deutsch");
+        menuOptionsLd.setOnAction(event);
+        menuOptionsLe = new MenuItem("English");
+        menuOptionsLe.setOnAction(event);
         menuOptionsCs = new MenuItem("Create Share");
         menuOptionsCs.setOnAction(event);
         menuOptionsDs = new MenuItem("Delete Share");
@@ -149,6 +157,8 @@ public class MainWindow extends Application {
         menuOptions.getItems().addAll(menuOptionsBot);
         menuOptions.getItems().addAll(menuOptionsCs);
         menuOptions.getItems().addAll(menuOptionsDs);
+        menuOptions.getItems().addAll(menuOptionsLd);
+        menuOptions.getItems().addAll(menuOptionsLe);
 
         Menu menuInformation = new Menu ("Information");
         menuInformationGs = new MenuItem("Get Stock");
@@ -190,7 +200,7 @@ public class MainWindow extends Application {
                     CreatePlayerWindow cpw = new CreatePlayerWindow();
                     cpw.start(stage);
                     player = cpw.getName(); //TODO does not work
-
+                    System.out.println(player);
                 }
                 else if (event.getTarget() == menuEditCtc){
                     System.out.println("menuEditCtc");
@@ -212,12 +222,11 @@ public class MainWindow extends Application {
                 else if (event.getTarget() == menuInformationGs){
                     System.out.println("menuInformationGs");
                     stage = new Stage();
-                    GetStockWindow getStockWindow = new GetStockWindow();   //does not work as expected!
-                    getStockWindow.start(stage);
+                    accountManager.getStock(player);
                 }
                 else if (event.getTarget() == menuInformationGas){
                     System.out.println("menuInformationGas");
-                    accountManager.getStock(player);
+                    logger.info(shareManagement.getSharesAndRates());
                 }
                 else if (event.getTarget() == menuInformationCs){
                     System.out.println("menuInformationCs");
@@ -244,6 +253,12 @@ public class MainWindow extends Application {
                     stage = new Stage();
                     AboutWindow aboutWindow = new AboutWindow();
                     aboutWindow.start(stage);
+                }
+                else if (event.getTarget() == menuOptionsLd){
+                    System.out.println("menuOptionsLd");
+                }
+                else if (event.getTarget() == menuOptionsLe){
+                    System.out.println("menuOptionsLe");
                 }
             }
         };
