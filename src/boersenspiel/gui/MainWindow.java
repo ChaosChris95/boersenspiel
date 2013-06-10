@@ -1,19 +1,12 @@
 package boersenspiel.gui;
 
-import boersenspiel.exceptions.LanguageNotFoundException;
-import boersenspiel.exceptions.NegativeValueException;
-import boersenspiel.exceptions.WrongNumberOfParametersException;
-
-
+import boersenspiel.exceptions.PlayerDoesNotExistException;
+import boersenspiel.manager.AccountManagerImpl;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
@@ -23,11 +16,12 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -52,6 +46,10 @@ public class MainWindow extends Application {
 
     private Stage stage;
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
+    private Logger logger;
+    private AccountManagerImpl accountManager;
+    private String player;
+    //TODO instances with players
 
     public static void main(String[] args){
         MainWindow mainWindow = new MainWindow();
@@ -59,75 +57,63 @@ public class MainWindow extends Application {
     }
 
     public MainWindow(){
-        Logger logger = Logger.getLogger("MainWindow");
+        logger = Logger.getLogger("MainWindow");
+        accountManager = AccountManagerImpl.getInstance();
+        final String player = "";
     }
 
     public void start(Stage primaryStage){
 
-        primaryStage.setTitle(rs.getString("programTitle"));
-
-        GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.BOTTOM_RIGHT);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        //gridPane.setPadding(new Insets(25, 25, 25, 25));
-        TextField textField1 = new TextField("Name");
-        gridPane.add(textField1, 0, 1);
-        TextField textField2 = new TextField("Share");
-        gridPane.add(textField2, 1, 1);
-        TextField textField3 = new TextField("Amount");
-        gridPane.add(textField3, 2, 1);
-        //HBox hBox = new HBox(10);
-        //hBox.setAlignment(Pos.BOTTOM_RIGHT);
-        Button buttonBuy = new Button("Buy");
-        gridPane.add(buttonBuy, 3, 1);
-        Button buttonSell = new Button("Sell");
-        gridPane.add(buttonSell, 4, 1);
-
-        Label tickerText = new Label("" +
-        "Java ist eine objektorientierte Programmiersprache und eine eingetragene Marke des Unternehmens Sun Microsystems (2010 von Oracle aufgekauft). \nDie Programmiersprache ist ein Bestandteil der Java-Technologie – diese besteht grundsätzlich aus dem Java-Entwicklungswerkzeug (JDK) \nzum Erstellen von Java-Programmen und der Java-Laufzeitumgebung (JRE) zu deren Ausführung. \nDie Laufzeitumgebung selbst umfasst die virtuelle Maschine (JVM) und die mitgelieferten Bibliotheken."
-        + "");
-
-        ScrollPane leftScrollBar = new ScrollPane();
-        leftScrollBar.setContent(tickerText);
-
-        GridPane leftLabelBox = new GridPane();
-        leftLabelBox.setAlignment(Pos.CENTER_RIGHT);
-        leftLabelBox.getChildren().addAll(leftScrollBar);
-        leftLabelBox.setHgap(10);
-        leftLabelBox.setVgap(10);
-        leftLabelBox.setGridLinesVisible(true);
+        primaryStage.setTitle(rs.getString("programTitle"));// + " " + player);
 
         Label consoleText = new Label("" +
                 "Java ist eine objektorientierte Programmiersprache und eine eingetragene Marke des Unternehmens Sun Microsystems (2010 von Oracle aufgekauft). \nDie Programmiersprache ist ein Bestandteil der Java-Technologie – diese besteht grundsätzlich aus dem Java-Entwicklungswerkzeug (JDK) \nzum Erstellen von Java-Programmen und der Java-Laufzeitumgebung (JRE) zu deren Ausführung. \nDie Laufzeitumgebung selbst umfasst die virtuelle Maschine (JVM) und die mitgelieferten Bibliotheken."
                 + "");
 
-        ScrollPane rightScrollBar = new ScrollPane();
-        //rightScrollBar.setStyle("-fx-font-size: 40px;");
-        rightScrollBar.setContent(consoleText);
+        ScrollPane consoleScrollBar = new ScrollPane();
+        consoleScrollBar.setContent(consoleText);
+        //consoleScrollBar.setFitToWidth(true);
 
-        GridPane labelRightBox = new GridPane();
-        labelRightBox.setAlignment(Pos.CENTER_RIGHT);
-        labelRightBox.getChildren().addAll(rightScrollBar);
-        labelRightBox.setHgap(10);
-        labelRightBox.setVgap(10);
-        labelRightBox.setGridLinesVisible(true);
-
+        /*GridPane consoleBox = new GridPane();
+        consoleBox.setAlignment(Pos.CENTER);
+        consoleBox.setHgap(10);
+        consoleBox.setVgap(10);
+        consoleBox.getChildren().addAll(consoleScrollBar);
+        //consoleBox.setGridLinesVisible(true);*/
 
         BorderPane border = new BorderPane();
         VBox menuBox = new VBox();
 
-        menuBox.getChildren().addAll(setMenuBar(handleAction()));   //)tickerText);
+        menuBox.getChildren().addAll(setMenuBar(handleAction()));
         border.setTop(menuBox);
-        border.setRight(leftLabelBox);
-        //border.setPreferredSize(new Dimension(350, 400));
-        border.setLeft(labelRightBox);//TODO
-        border.setBottom(gridPane);
+        border.setCenter(consoleScrollBar);
+        border.setBottom(setGridPane(handleAction()));
 
-        Scene scene = new Scene(border, 800, 600);    //border
+        Scene scene = new Scene(border, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
         scene.addEventHandler(Event.ANY, handleAction());
+    }
+
+    public GridPane setGridPane (EventHandler event){
+
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.BOTTOM_RIGHT);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        /*TextField textField1 = new TextField("Name");
+        gridPane.add(textField1, 0, 1);*/
+        TextField textField2 = new TextField("Share");
+        gridPane.add(textField2, 1, 1);
+        TextField textField3 = new TextField("Amount");
+        gridPane.add(textField3, 2, 1);
+        Button buttonBuy = new Button("Buy");
+        buttonBuy.setOnAction(event);
+        gridPane.add(buttonBuy, 3, 1);
+        Button buttonSell = new Button("Sell");
+        buttonSell.setOnAction(event);
+        gridPane.add(buttonSell, 4, 1);
+        return gridPane;
     }
 
     public MenuBar setMenuBar(EventHandler event){
@@ -192,37 +178,72 @@ public class MainWindow extends Application {
                     stage = new Stage();
                     CreatePlayerWindow cpw = new CreatePlayerWindow();
                     cpw.start(stage);
+                    player = cpw.getName();
+
                 }
                 else if (event.getTarget() == menuEditCtc){
                     System.out.println("menuEditCtc");
+                    //TODO start new instance
                 }
                 else if (event.getTarget() == menuOptionsBot){
                     System.out.println("menuOptionsBot");
+                    accountManager.botPlayer(player);
+
                 }
                 else if (event.getTarget() == menuOptionsCs){
                     System.out.println("menuOptionsCs");
+                    //Does not make sense yet
                 }
                 else if (event.getTarget() == menuOptionsDs){
                     System.out.println("menuOptionsDs");
+                    //Does not make sense yet
                 }
                 else if (event.getTarget() == menuInformationGs){
                     System.out.println("menuInformationGs");
+                    stage = new Stage();
+                    GetStockWindow getStockWindow = new GetStockWindow();   //does not work as expected!
+                    getStockWindow.start(stage);
                 }
                 else if (event.getTarget() == menuInformationGas){
                     System.out.println("menuInformationGas");
+                    accountManager.getStock(player);
                 }
                 else if (event.getTarget() == menuInformationCs){
                     System.out.println("menuInformationCs");
+                    accountManager.getCashAccountValue(player);
                 }
                 else if (event.getTarget() == menuLogShow){
                     System.out.println("menuLogShow");
+                    try{
+                        accountManager.printPlain(player, 1);   //TODO new Window 0 or 1 sort
+                    } catch (PlayerDoesNotExistException e){
+                        logger.log(Level.SEVERE, "FileNotFoundException", e);
+                    } catch (IOException e){
+                        logger.log(Level.SEVERE, "IOException", e);
+                    }
                 }
-                else if (event.getTarget() == menuLogPrint){
+                else if (event.getTarget() == menuLogPrint){    //TODO new Window 0 or 1 sort and filename
                     System.out.println("menuLogPrint");
+                    try{
+                        accountManager.printHtml(player, "dummy", 1);
+                    } catch (PlayerDoesNotExistException e){
+                        logger.log(Level.SEVERE, "FileNotFoundException", e);
+                    }
+
                 }
                 else if (event.getTarget() == menuHelpAbout){
                     System.out.println("menuHelpAbout");
+                    stage = new Stage();
+                    AboutWindow aboutWindow = new AboutWindow();
+                    aboutWindow.start(stage);
                 }
+                /*else if (event.getTarget() == buttonBuy){
+                    System.out.println("buttonBuy");
+                }
+
+                else if (event.getTarget() == buttonSell){
+                    System.out.println("buttonSell");
+                }*/
             }
         };
         return event;

@@ -2,7 +2,9 @@ package boersenspiel.provider;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.TimerTask;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import boersenspiel.gui.UpdateTimer;
@@ -20,9 +22,13 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
     Logger logger = Logger.getLogger("HistoricalStockPriceProvider");
     private ShareManagement shareManagement;
     public UpdateTimer timer = UpdateTimer.getInstance();
-    private int counter = 1;    //TODO
-    ArrayList<Long> prices;
-    ArrayList<ArrayList<Long>> pricesOfShares;
+    private int counter = 1;
+    private ArrayList<Long> prices;
+    private ArrayList<ArrayList<Long>> pricesOfShares;
+    //private HashMap allShareFiles;
+    //private String name;
+
+    private final String PATH = "./Aktien/";
 
     public HistoricalStockPriceProvider() throws IOException {
         shareManagement = ShareManagement.getInstance();
@@ -32,16 +38,12 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
     public ArrayList<Long> readShareRate(Share share) throws IOException {
         BufferedReader reader = null;
         try {
-//            if (share != null)
-//                logger.warning("Share: " +  share.getName() );
-            File fileURL = new File(ClassLoader.getSystemResource("./Aktien/" + share.getName() + ".csv").toURI());
+            File fileURL = new File(ClassLoader.getSystemResource(PATH + share.getName() + ".csv").toURI());
+            //name = share.getName(); //
             reader = new BufferedReader(new FileReader(fileURL));
-        }catch (FileNotFoundException e) { logger.warning("FileNotFoundException");
-        }catch (Exception e) { logger.warning("Exception: " + e.toString()); }
-        String line;
-        prices = new ArrayList<Long>();
-        boolean firstLine = true;
-        try{
+            String line;
+            prices = new ArrayList<Long>();
+            boolean firstLine = true;
             while ((line = reader.readLine()) != null) {
                 if (firstLine == true){
                     firstLine = false;
@@ -52,14 +54,20 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
                 prices.add((long)erg);
             }
             reader.close();
-        } catch (NullPointerException e){};
+        }catch (FileNotFoundException e) {
+            logger.log(Level.SEVERE, "FileNotFoundException", e);
+        }catch (Exception e) {
+            logger.log( Level.SEVERE, "Exception: ", e );
+        }
         return prices;
     }
 
     public void readShareRates() throws IOException{
         pricesOfShares = new ArrayList<ArrayList<Long>>();
+        //allShareFiles = new HashMap<String, ArrayList<Long>>();
         for (int i=0; i<shareManagement.getShareLength(); i++){
             pricesOfShares.add(readShareRate(shareManagement.getShareByNumber(i)));
+            //allShareFiles.put(name,readShareRate(shareManagement.getShareByNumber(i)));
         }
     }
 

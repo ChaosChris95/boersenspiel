@@ -64,4 +64,9 @@ public class CreatePlayerWindow extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    public String getName(){
+        return name;
+    }
+
 }
