@@ -5,7 +5,6 @@ import boersenspiel.exceptions.PlayerDoesNotExistException;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
 import javafx.application.Application;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -59,15 +58,21 @@ public class MainWindow extends Application {
     private String shareName;
     private ShareManagement shareManagement;
 
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         MainWindow mainWindow = new MainWindow();
         Application.launch(args);
-    }
+    }*/
 
     public MainWindow(){
         logger = Logger.getLogger("MainWindow");
         accountManager = AccountManagerImpl.getInstance();
         shareManagement = ShareManagement.getInstance();
+        try{
+            accountManager.createPlayer("jan", 2000L);
+        } catch (NegativeValueException e){
+            logger.log(Level.SEVERE, "NegativeValueException", e);
+        }
+        player = "jan";
     }
 
     public void start(Stage primaryStage){

@@ -9,6 +9,7 @@ import boersenspiel.manager.ShareManagement;
 import boersenspiel.provider.HistoricalStockPriceProvider;
 import boersenspiel.shell.InvocationHandler;
 import javafx.application.Application;
+import javafx.stage.Stage;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -23,7 +24,9 @@ import java.util.logging.LogManager;
  * Time: 17:01
  */
 
-public class StockGameLauncher {
+public class StockGameLauncher extends Application{
+
+    private Stage stage;
 
     public static void main(String [] args) throws Exception {
 
@@ -56,13 +59,24 @@ public class StockGameLauncher {
         stockPriceViewer.updateInfo();
 
         //loading Proxy
-        /*AccountManager proxy = (AccountManager) Proxy.newProxyInstance(AccountManager.class.getClassLoader(),
+        final AccountManager proxy = (AccountManager) Proxy.newProxyInstance(AccountManager.class.getClassLoader(),
                 new Class<?>[] {AccountManager.class},
                 new InvocationHandler(AccountManagerImpl.getInstance()));
 
-        StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
-        cmp.process();*/
+        (new Thread() {
+            @Override
+            public void run() {
+                StockGameCommandProcessor cmp = new StockGameCommandProcessor(proxy);
+                cmp.process();
+            };
+        }).start();
 
+        Application.launch();
     }
 
+    public void start (Stage primaryStage){
+        MainWindow mainWindow = new MainWindow();
+        stage = new Stage();
+        mainWindow.start(stage);
+    }
 }
