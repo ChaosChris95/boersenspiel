@@ -10,13 +10,7 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -28,13 +22,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * User: Jan
- * Date: 30.05.13
- * Time: 10:15
+ * User: Peach
+ * Date: 10.06.13
+ * Time: 14:39
  */
+public class PlayerGUI extends Thread {
 
-public class MainWindow extends Application {
-
+    private static String player;
     private MenuItem menuEditCrp;
     private MenuItem menuEditCtc;
     private MenuItem menuOptionsBot;
@@ -54,31 +48,27 @@ public class MainWindow extends Application {
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
     private Logger logger;
     private AccountManagerImpl accountManager;
-    private String player;
+    private ShareManagement shareManagement;
+    private StockPriceViewer stockPriceViewer;
     private int amount;
     private String shareName;
-    private ShareManagement shareManagement;
+
 
     public static void main(String[] args){
-        MainWindow mainWindow = new MainWindow();
+        PlayerGUI playerGUI = new PlayerGUI(player);
         Application.launch(args);
     }
 
-    public MainWindow() {
-        logger = Logger.getLogger("MainWindow");
+    public PlayerGUI(String player){
+        logger = Logger.getLogger("PlayerWindow");
+        this.player = player;
         accountManager = AccountManagerImpl.getInstance();
         shareManagement = ShareManagement.getInstance();
-        /*try{
-            accountManager.createPlayer("jan", 2000L);
-        } catch (NegativeValueException e){
-            logger.log(Level.SEVERE, "NegativeValueException", e);
-        }
-        player = "jan"; */
     }
 
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage){
 
-        primaryStage.setTitle(rs.getString("programTitle"));
+        primaryStage.setTitle("Player: " + " " + this.player);
 
         Label consoleText = new Label("" +
                 "Java ist eine objektorientierte Programmiersprache und eine eingetragene Marke des Unternehmens Sun Microsystems (2010 von Oracle aufgekauft). \nDie Programmiersprache ist ein Bestandteil der Java-Technologie – diese besteht grundsätzlich aus dem Java-Entwicklungswerkzeug (JDK) \nzum Erstellen von Java-Programmen und der Java-Laufzeitumgebung (JRE) zu deren Ausführung. \nDie Laufzeitumgebung selbst umfasst die virtuelle Maschine (JVM) und die mitgelieferten Bibliotheken."
@@ -104,9 +94,9 @@ public class MainWindow extends Application {
             public void handle(ActionEvent actionEvent) {
                 shareName = textField2.getText();
                 amount = Integer.parseInt(textField3.getText());
-                try {
+                try{
                     accountManager.buy(player, shareName, amount);
-                } catch (NegativeValueException e) {
+                } catch (NegativeValueException e){
                     logger.log(Level.SEVERE, "NegativeValueException", e);
                 }
             }
@@ -137,7 +127,7 @@ public class MainWindow extends Application {
         scene.addEventHandler(Event.ANY, handleAction());
     }
 
-    public GridPane setGridPane(EventHandler event) {
+    public GridPane setGridPane (EventHandler event){
 
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.BOTTOM_RIGHT);
@@ -158,36 +148,27 @@ public class MainWindow extends Application {
         return gridPane;
     }
 
-    public MenuBar setMenuBar(EventHandler event) {
+    public MenuBar setMenuBar(EventHandler event){
 
         MenuBar menuBar = new MenuBar();
 
-        final Menu menuEdit = new Menu("Edit");
-        menuEditCrp = new MenuItem("Create Player");
-        menuEditCrp.setOnAction(event);
+        final Menu menuEdit = new Menu ("Edit");
         menuEditCtc = new MenuItem("Change to Console");
         menuEditCtc.setOnAction(event);
-        menuEdit.getItems().addAll(menuEditCrp);
         menuEdit.getItems().addAll(menuEditCtc);
 
-        final Menu menuOptions = new Menu("Options");
+        final Menu menuOptions = new Menu ("Options");
         menuOptionsBot = new MenuItem("Start Bot");
         menuOptionsBot.setOnAction(event);
         menuOptionsLd = new MenuItem("Deutsch");
         menuOptionsLd.setOnAction(event);
         menuOptionsLe = new MenuItem("English");
         menuOptionsLe.setOnAction(event);
-        menuOptionsCs = new MenuItem("Create Share");
-        menuOptionsCs.setOnAction(event);
-        menuOptionsDs = new MenuItem("Delete Share");
-        menuOptionsDs.setOnAction(event);
         menuOptions.getItems().addAll(menuOptionsBot);
-        menuOptions.getItems().addAll(menuOptionsCs);
-        menuOptions.getItems().addAll(menuOptionsDs);
         menuOptions.getItems().addAll(menuOptionsLd);
         menuOptions.getItems().addAll(menuOptionsLe);
 
-        Menu menuInformation = new Menu("Information");
+        Menu menuInformation = new Menu ("Information");
         menuInformationGs = new MenuItem("Get Stock");
         menuInformationGs.setOnAction(event);
         menuInformationGas = new MenuItem("Get All Stock");
@@ -198,7 +179,7 @@ public class MainWindow extends Application {
         menuInformation.getItems().addAll(menuInformationGas);
         menuInformation.getItems().addAll(menuInformationCs);
 
-        Menu menuLog = new Menu("Log");
+        Menu menuLog = new Menu ("Log");
         menuLogShow = new MenuItem("Show Logs");
         menuLogShow.setOnAction(event);
         menuLogPrint = new MenuItem("Print Logs");
@@ -206,7 +187,7 @@ public class MainWindow extends Application {
         menuLog.getItems().addAll(menuLogShow);
         menuLog.getItems().addAll(menuLogPrint);
 
-        Menu menuHelp = new Menu("Help");
+        Menu menuHelp = new Menu ("Help");
         menuHelpAbout = new MenuItem("About");
         menuHelpAbout.setOnAction(event);
         menuHelp.getItems().addAll(menuHelpAbout);
@@ -217,53 +198,65 @@ public class MainWindow extends Application {
         return menuBar;
     }
 
-    public EventHandler handleAction() {
+    public EventHandler handleAction(){
         EventHandler event = new EventHandler<Event>() {
             @Override
             public void handle(Event event) {
-                if (event.getTarget() == menuEditCrp) {
+                if (event.getTarget() == menuEditCrp){
                     System.out.println("menuEditCrp");
                     stage = new Stage();
                     CreatePlayerWindow cpw = new CreatePlayerWindow();
                     cpw.start(stage);
-                } else if (event.getTarget() == menuEditCtc) {
+                    //player = cpw.getName(); //TODO does not work
+                    //System.out.println(player);
+                }
+                else if (event.getTarget() == menuEditCtc){
                     System.out.println("menuEditCtc");
                     //TODO start new instance
-                } else if (event.getTarget() == menuOptionsBot) {
+                }
+                else if (event.getTarget() == menuOptionsBot){
                     System.out.println("menuOptionsBot");
                     accountManager.botPlayer(player);
 
-                } else if (event.getTarget() == menuOptionsCs) {
+                }
+                else if (event.getTarget() == menuOptionsCs){
                     System.out.println("menuOptionsCs");
                     //Does not make sense yet
-                } else if (event.getTarget() == menuOptionsDs) {
+                }
+                else if (event.getTarget() == menuOptionsDs){
                     System.out.println("menuOptionsDs");
                     //Does not make sense yet
-                } else if (event.getTarget() == menuInformationGs) {
+                }
+                else if (event.getTarget() == menuInformationGs){
                     System.out.println("menuInformationGs");
                     stage = new Stage();
                     accountManager.getStock(player);
-                } else if (event.getTarget() == menuInformationGas) {
+                }
+                else if (event.getTarget() == menuInformationGas){
                     System.out.println("menuInformationGas");
                     logger.info(shareManagement.getSharesAndRates());
-                } else if (event.getTarget() == menuInformationCs) {
+                }
+                else if (event.getTarget() == menuInformationCs){
                     System.out.println("menuInformationCs");
                     accountManager.getCashAccountValue(player);
-                } else if (event.getTarget() == menuLogShow) {
+                }
+                else if (event.getTarget() == menuLogShow){
                     System.out.println("menuLogShow");
-                    try {
+                    try{
                         accountManager.printPlain(player, 1);   //TODO new Window 0 or 1 sort
-                    } catch (PlayerDoesNotExistException e) {
+                    } catch (PlayerDoesNotExistException e){
                         logger.log(Level.SEVERE, "FileNotFoundException", e);
-                    } catch (IOException e) {
+                    } catch (IOException e){
                         logger.log(Level.SEVERE, "IOException", e);
                     }
-                } else if (event.getTarget() == menuLogPrint) {    //TODO new Window 0 or 1 sort and filename
+                }
+                else if (event.getTarget() == menuLogPrint){    //TODO new Window 0 or 1 sort and filename
                     System.out.println("menuLogPrint");
                     PrintHtmlWindow phw = new PrintHtmlWindow(player);
                     stage = new Stage();
                     phw.start(stage);
-                } else if (event.getTarget() == menuHelpAbout) {
+                }
+                else if (event.getTarget() == menuHelpAbout){
                     System.out.println("menuHelpAbout");
                     stage = new Stage();
                     AboutWindow aboutWindow = new AboutWindow();

@@ -33,7 +33,8 @@ public class StockGameLauncher extends Application{
         LogManager.getLogManager().readConfiguration(new BufferedInputStream(new FileInputStream("c:\\logging.properties")));
 
         String lang = System.getProperty("lang");
-        if (lang == null) {
+        //System.out.print(lang);
+        /*if (lang == null) {
            Locale.setDefault(Locale.GERMAN);
         } else {
             if (lang.equals("en")) {
@@ -41,7 +42,7 @@ public class StockGameLauncher extends Application{
             } else {
                 Locale.setDefault(Locale.GERMAN);
             }
-        }
+        } */
 
         ShareManagement.getInstance().addShare("Apple", 100L);
         ShareManagement.getInstance().addShare("BMW", 100L);

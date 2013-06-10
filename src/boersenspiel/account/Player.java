@@ -104,7 +104,6 @@ public class Player {
     public void print(OutputStream stream, int sort, int output) throws IOException {
         Comparator comparator;
         BufferedWriter w = new BufferedWriter(new OutputStreamWriter(stream));
-        //PrintWriter writer = new PrintWriter(stream);
         if (sort == SHARE) {
             comparator = new ShareComparator();
         } else if (sort == TIME) {
@@ -116,14 +115,12 @@ public class Player {
 
         Collections.sort(logEntryList, comparator);
         if (output == PLAIN) {
-           logger.fine("output: plain");
            for (LogEntry item : logEntryList) {
                w.write(item.toString());
                w.flush();
            }
         } else if (output == HTML) {
-            logger.fine("output: html");
-                w.write("<!DOCTYPE html PUBLIC-//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>\n");
+                //w.write("<!DOCTYPE html PUBLIC-//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>\n");
                 w.write("<html> \n");
                 w.write("<ul> \n");
             for (LogEntry item: logEntryList) {
@@ -146,52 +143,4 @@ public class Player {
         out.close();
     }
 
-
-
-    /*public void printHTML(OutputStream stream, String filename, int sort) {
-        Comparator comparator;
-        BufferedWriter w = new BufferedWriter(new OutputStreamWriter(stream));
-        Writer fw = null;
-
-        if (sort == SHARE) {
-            comparator = new ShareComparator();
-        } else if (sort == TIME) {
-            comparator = new TimeComparator();
-        } else {
-            logger.warning(rs.getString("PlayerSort"));
-            return;
-        }
-
-        Collections.sort(logEntryList, comparator);
-        try {
-            new FileWriter(filename);
-
-            logger.fine("output: html");
-            fw.write("<ul>");
-            for (LogEntry item: logEntryList) {
-                fw.write("<li>");
-                fw.write(item.toString());
-                fw.write("</li>");
-            }
-            fw.write("</ul>");
-        }
-        catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-
-    /*private String doPrint(Comparator c) {
-        StringBuilder sb = new StringBuilder();
-        Collections.sort(logEntryList, c);
-        for (LogEntry item : logEntryList) {
-            sb.append(item.toString());
-            sb.append("\n");
-        }
-        return sb.toString();
-    } */
 }

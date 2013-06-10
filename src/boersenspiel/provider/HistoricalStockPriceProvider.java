@@ -45,7 +45,7 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
             prices = new ArrayList<Long>();
             boolean firstLine = true;
             while ((line = reader.readLine()) != null) {
-                if (firstLine == true){
+                if (firstLine){
                     firstLine = false;
                     continue;
                 }

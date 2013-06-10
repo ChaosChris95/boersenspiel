@@ -28,6 +28,13 @@ public class CashAccount extends Asset{
         return accountValue;
     }
 
+    /**
+     * add cash to selected playeraccount
+     * @param cash  number from type long
+     * @exception   NegativeValueException
+     * @return      new accountValue
+     */
+
     public void addCash(long cash) throws NegativeValueException{
         if (cash<0){
             throw new NegativeValueException();

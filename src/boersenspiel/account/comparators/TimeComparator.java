@@ -6,14 +6,22 @@ import java.util.Comparator;
 
 
 public class TimeComparator implements Comparator<LogEntry> {
-    @Override
-    public int compare(LogEntry o1, LogEntry o2) {
+
+
+    /**
+     * Compares two different LogEntries by TimeStamp
+     * @param log1
+     * @param log2
+     * @see LogEntry
+     */
+
+    public int compare(LogEntry log1, LogEntry log2) {
         /*
             o1 > o2: -1
             o1 == o2: 0
             o1 < o2: 1
          */
 
-        return o1.date.compareTo(o2.date);
+        return log1.date.compareTo(log2.date);
     }
 }

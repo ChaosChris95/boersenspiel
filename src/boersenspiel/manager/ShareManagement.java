@@ -90,9 +90,9 @@ public class ShareManagement {
             erg.append( ' ' );
             erg.append( share.getPrice() );
             if(Locale.getDefault() == Locale.GERMAN) {
-                erg.append(Currency.getInstance("EUR").getSymbol());
+                erg.append(" " + Currency.getInstance("EUR").getSymbol());
             } else {
-                erg.append(Currency.getInstance("GBP").getSymbol());
+                erg.append(" " + Currency.getInstance("GBP").getSymbol());
             }
             erg.append( "<br>" );
 

@@ -6,14 +6,21 @@ import boersenspiel.account.LogEntry;
 import java.util.Comparator;
 
 public class ShareComparator implements Comparator<LogEntry> {
-    @Override
-    public int compare(LogEntry o1, LogEntry o2) {
+
+    /**
+     * Compares two different LogEntries by ShareName
+     * @param log1
+     * @param log2
+     * @see LogEntry
+     */
+
+    public int compare(LogEntry log1, LogEntry log2) {
          /*
             o1 > o2: -1
             o1 == o2: 0
             o1 < o2: 1
          */
-         return o1.share.compareTo(o2.share);
+         return log1.share.compareTo(log2.share);
 
     }
 }
