@@ -1,8 +1,10 @@
 package boersenspiel.gui;
 
+import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.exceptions.PlayerDoesNotExistException;
 import boersenspiel.manager.AccountManagerImpl;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -49,6 +51,8 @@ public class MainWindow extends Application {
     private Logger logger;
     private AccountManagerImpl accountManager;
     private String player;
+    private int amount;
+    private String shareName;
     //TODO instances with players
 
     public static void main(String[] args){
@@ -59,7 +63,7 @@ public class MainWindow extends Application {
     public MainWindow(){
         logger = Logger.getLogger("MainWindow");
         accountManager = AccountManagerImpl.getInstance();
-        final String player = "";
+        final String player = "jan";
     }
 
     public void start(Stage primaryStage){
@@ -74,12 +78,40 @@ public class MainWindow extends Application {
         consoleScrollBar.setContent(consoleText);
         //consoleScrollBar.setFitToWidth(true);
 
-        /*GridPane consoleBox = new GridPane();
-        consoleBox.setAlignment(Pos.CENTER);
-        consoleBox.setHgap(10);
-        consoleBox.setVgap(10);
-        consoleBox.getChildren().addAll(consoleScrollBar);
-        //consoleBox.setGridLinesVisible(true);*/
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.BOTTOM_RIGHT);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        /*TextField textField1 = new TextField("Name");
+        gridPane.add(textField1, 0, 1);*/
+        final TextField textField2 = new TextField("Share");
+        gridPane.add(textField2, 1, 1);
+        final TextField textField3 = new TextField("Amount");
+        gridPane.add(textField3, 2, 1);
+        Button buttonBuy = new Button("Buy");
+        buttonBuy.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                shareName = textField2.getText();
+                amount = Integer.parseInt(textField3.getText());
+                try{
+                    accountManager.buy(player, shareName, amount);
+                } catch (NegativeValueException e){
+                    logger.log(Level.SEVERE, "NegativeValueException", e);
+                }
+            }
+        });
+        gridPane.add(buttonBuy, 3, 1);
+        Button buttonSell = new Button("Sell");
+        buttonSell.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                shareName = textField2.getText();
+                amount = Integer.parseInt(textField3.getText());
+                accountManager.sell(player, shareName, amount);
+            }
+        });
+        gridPane.add(buttonSell, 4, 1);
 
         BorderPane border = new BorderPane();
         VBox menuBox = new VBox();
@@ -87,33 +119,12 @@ public class MainWindow extends Application {
         menuBox.getChildren().addAll(setMenuBar(handleAction()));
         border.setTop(menuBox);
         border.setCenter(consoleScrollBar);
-        border.setBottom(setGridPane(handleAction()));
+        border.setBottom(gridPane);
 
         Scene scene = new Scene(border, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
         scene.addEventHandler(Event.ANY, handleAction());
-    }
-
-    public GridPane setGridPane (EventHandler event){
-
-        GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.BOTTOM_RIGHT);
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-        /*TextField textField1 = new TextField("Name");
-        gridPane.add(textField1, 0, 1);*/
-        TextField textField2 = new TextField("Share");
-        gridPane.add(textField2, 1, 1);
-        TextField textField3 = new TextField("Amount");
-        gridPane.add(textField3, 2, 1);
-        Button buttonBuy = new Button("Buy");
-        buttonBuy.setOnAction(event);
-        gridPane.add(buttonBuy, 3, 1);
-        Button buttonSell = new Button("Sell");
-        buttonSell.setOnAction(event);
-        gridPane.add(buttonSell, 4, 1);
-        return gridPane;
     }
 
     public MenuBar setMenuBar(EventHandler event){
@@ -178,7 +189,7 @@ public class MainWindow extends Application {
                     stage = new Stage();
                     CreatePlayerWindow cpw = new CreatePlayerWindow();
                     cpw.start(stage);
-                    player = cpw.getName();
+                    player = cpw.getName(); //TODO does not work
 
                 }
                 else if (event.getTarget() == menuEditCtc){
@@ -224,12 +235,9 @@ public class MainWindow extends Application {
                 }
                 else if (event.getTarget() == menuLogPrint){    //TODO new Window 0 or 1 sort and filename
                     System.out.println("menuLogPrint");
-                    try{
-                        accountManager.printHtml(player, "dummy", 1);
-                    } catch (PlayerDoesNotExistException e){
-                        logger.log(Level.SEVERE, "FileNotFoundException", e);
-                    }
-
+                    PrintHtmlWindow phw = new PrintHtmlWindow(player);
+                    stage = new Stage();
+                    phw.start(stage);
                 }
                 else if (event.getTarget() == menuHelpAbout){
                     System.out.println("menuHelpAbout");
@@ -237,13 +245,6 @@ public class MainWindow extends Application {
                     AboutWindow aboutWindow = new AboutWindow();
                     aboutWindow.start(stage);
                 }
-                /*else if (event.getTarget() == buttonBuy){
-                    System.out.println("buttonBuy");
-                }
-
-                else if (event.getTarget() == buttonSell){
-                    System.out.println("buttonSell");
-                }*/
             }
         };
         return event;

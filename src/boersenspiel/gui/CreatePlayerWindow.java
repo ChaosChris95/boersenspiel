@@ -36,7 +36,8 @@ public class CreatePlayerWindow extends Application {
 
     public void start(Stage primaryStage) {//throws NegativeValueException{
 
-        primaryStage.setTitle("Create Player");
+        final Stage stage = primaryStage;
+        stage.setTitle("Create Player");
         GridPane gridPane = new GridPane();
         final TextField textFieldName = new TextField();
         final TextField textFieldCash = new TextField();
@@ -49,9 +50,7 @@ public class CreatePlayerWindow extends Application {
                 try{
                     accountManager.createPlayer(name, cash);
                 } catch (NegativeValueException e){} //TODO how catch it?
-
-                //System.out.println("name = " + name);
-                //System.out.println("cash = " + cash);
+                stage.close();
             }
         });
 
@@ -60,9 +59,9 @@ public class CreatePlayerWindow extends Application {
         gridPane.add(crp, 2, 0);
 
         Scene scene = new Scene(gridPane, 370, 10);
-        primaryStage.setResizable(false);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public String getName(){
