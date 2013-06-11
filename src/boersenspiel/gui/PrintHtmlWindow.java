@@ -33,40 +33,22 @@ public class PrintHtmlWindow extends Application{
     private String player;
     Logger logger = Logger.getLogger("PrintHtmlWindow");
 
-    public PrintHtmlWindow(String player){
+    public PrintHtmlWindow(String player, int option){
+        this.option = option;
         this.player = player;
         accountManager = AccountManagerImpl.getInstance();
     }
 
     public void start(Stage stage){
-        stage.setTitle("Print HTML");
-        VBox vBox = new VBox();
-        Label label = new Label("Choose your type of sort");
 
-        Button time = new Button("Time");
-        time.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                option = 0;
-            }
-        });
-
-        Button share = new Button("Share");
-        share.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                option = 1;
-            }
-        });
-        vBox.getChildren().addAll(label, time, share);
-        //showFileDialog(title, false);
-        Scene scene = new Scene(vBox, 200, 200);
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
-
+        if (option == 0){
+            System.out.println("FEHLER");
+            return; //TODO Exception
+        }
+        String path = showFileDialog(title, false).getAbsolutePath();
+        System.out.println(path);
         try{
-            accountManager.printHtml(player, showFileDialog(title, false).getAbsolutePath(), option);//"dummy", 1);
+            accountManager.printHtml(player, path, option);//"dummy", 1);
         } catch (PlayerDoesNotExistException e){
             logger.log(Level.SEVERE, "FileNotFoundException", e);
         }

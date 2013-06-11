@@ -39,8 +39,10 @@ public class PlayerGUI extends Thread {
     private MenuItem menuInformationGs;
     private MenuItem menuInformationGas;
     private MenuItem menuInformationCs;
-    private MenuItem menuLogShow;
-    private MenuItem menuLogPrint;
+    private MenuItem menuLogShowShare;
+    private MenuItem menuLogShowTime;
+    private MenuItem menuLogPrintShare;
+    private MenuItem menuLogPrintTime;
     private MenuItem menuHelpAbout;
 
 
@@ -153,8 +155,11 @@ public class PlayerGUI extends Thread {
         MenuBar menuBar = new MenuBar();
 
         final Menu menuEdit = new Menu ("Edit");
+        menuEditCrp = new MenuItem("Create Player");
+        menuEditCrp.setOnAction(event);
         menuEditCtc = new MenuItem("Change to Console");
         menuEditCtc.setOnAction(event);
+        menuEdit.getItems().addAll(menuEditCrp);
         menuEdit.getItems().addAll(menuEditCtc);
 
         final Menu menuOptions = new Menu ("Options");
@@ -164,7 +169,13 @@ public class PlayerGUI extends Thread {
         menuOptionsLd.setOnAction(event);
         menuOptionsLe = new MenuItem("English");
         menuOptionsLe.setOnAction(event);
+        menuOptionsCs = new MenuItem("Create Share");
+        menuOptionsCs.setOnAction(event);
+        menuOptionsDs = new MenuItem("Delete Share");
+        menuOptionsDs.setOnAction(event);
         menuOptions.getItems().addAll(menuOptionsBot);
+        menuOptions.getItems().addAll(menuOptionsCs);
+        menuOptions.getItems().addAll(menuOptionsDs);
         menuOptions.getItems().addAll(menuOptionsLd);
         menuOptions.getItems().addAll(menuOptionsLe);
 
@@ -180,10 +191,20 @@ public class PlayerGUI extends Thread {
         menuInformation.getItems().addAll(menuInformationCs);
 
         Menu menuLog = new Menu ("Log");
-        menuLogShow = new MenuItem("Show Logs");
-        menuLogShow.setOnAction(event);
-        menuLogPrint = new MenuItem("Print Logs");
-        menuLogPrint.setOnAction(event);
+        Menu menuLogShow = new Menu ("Show Logs");
+        menuLogShowShare = new MenuItem("sorted by share");
+        menuLogShowShare.setOnAction(event);
+        menuLogShowTime = new MenuItem("sorted by time");
+        menuLogShowTime.setOnAction(event);
+        menuLogShow.getItems().addAll(menuLogShowShare);
+        menuLogShow.getItems().addAll(menuLogShowTime);
+        Menu menuLogPrint = new Menu ("Print Logs");
+        menuLogPrintShare = new MenuItem("sorted by share");
+        menuLogPrintShare.setOnAction(event);
+        menuLogPrintTime = new MenuItem("sorted by time");
+        menuLogPrintTime.setOnAction(event);
+        menuLogPrint.getItems().addAll(menuLogPrintShare);
+        menuLogPrint.getItems().addAll(menuLogPrintTime);;
         menuLog.getItems().addAll(menuLogShow);
         menuLog.getItems().addAll(menuLogPrint);
 
@@ -208,7 +229,7 @@ public class PlayerGUI extends Thread {
                     CreatePlayerWindow cpw = new CreatePlayerWindow();
                     cpw.start(stage);
                     //player = cpw.getName(); //TODO does not work
-                    //System.out.println(player);
+                    System.out.println(player);
                 }
                 else if (event.getTarget() == menuEditCtc){
                     System.out.println("menuEditCtc");
@@ -229,7 +250,6 @@ public class PlayerGUI extends Thread {
                 }
                 else if (event.getTarget() == menuInformationGs){
                     System.out.println("menuInformationGs");
-                    stage = new Stage();
                     accountManager.getStock(player);
                 }
                 else if (event.getTarget() == menuInformationGas){
@@ -240,7 +260,7 @@ public class PlayerGUI extends Thread {
                     System.out.println("menuInformationCs");
                     accountManager.getCashAccountValue(player);
                 }
-                else if (event.getTarget() == menuLogShow){
+                else if (event.getTarget() == menuLogShowShare){
                     System.out.println("menuLogShow");
                     try{
                         accountManager.printPlain(player, 1);   //TODO new Window 0 or 1 sort
@@ -250,9 +270,25 @@ public class PlayerGUI extends Thread {
                         logger.log(Level.SEVERE, "IOException", e);
                     }
                 }
-                else if (event.getTarget() == menuLogPrint){    //TODO new Window 0 or 1 sort and filename
-                    System.out.println("menuLogPrint");
-                    PrintHtmlWindow phw = new PrintHtmlWindow(player);
+                else if (event.getTarget() == menuLogShowTime){
+                    System.out.println("menuLogShow");
+                    try{
+                        accountManager.printPlain(player, 2);   //TODO new Window 0 or 1 sort
+                    } catch (PlayerDoesNotExistException e){
+                        logger.log(Level.SEVERE, "FileNotFoundException", e);
+                    } catch (IOException e){
+                        logger.log(Level.SEVERE, "IOException", e);
+                    }
+                }
+                else if (event.getTarget() == menuLogPrintShare){    //TODO new Window 0 or 1 sort and filename
+                    System.out.println("menuLogPrintShare");
+                    PrintHtmlWindow phw = new PrintHtmlWindow(player, 1);
+                    stage = new Stage();
+                    phw.start(stage);
+                }
+                else if (event.getTarget() == menuLogPrintTime){    //TODO new Window 0 or 1 sort and filename
+                    System.out.println("menuLogPrintTime");
+                    PrintHtmlWindow phw = new PrintHtmlWindow(player, 2);
                     stage = new Stage();
                     phw.start(stage);
                 }

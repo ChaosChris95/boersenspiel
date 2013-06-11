@@ -108,7 +108,10 @@ public class AccountManagerImpl implements AccountManager {
     @Override
     public long getCashAccountValue(String playerName) {
         try {
-            return userManagement.getPlayer(playerName).getCashAccountValue();
+            long cash;
+            cash = userManagement.getPlayer(playerName).getCashAccountValue();
+            logger.info("Account: " + cash);
+            return cash;
         } catch (PlayerDoesNotExistException e) {
             logger.warning(rs.getString("AMPlayerNo"));
         }
@@ -132,7 +135,10 @@ public class AccountManagerImpl implements AccountManager {
 
     public String getStock(String name) {
         try {
-            return userManagement.getPlayer(name).getStockList();
+            String stocks;
+            stocks = userManagement.getPlayer(name).getStockList();
+            logger.info(stocks);
+            return stocks;
         } catch (PlayerDoesNotExistException e) {
             logger.warning(rs.getString("AMPlayerNo"));
         }
