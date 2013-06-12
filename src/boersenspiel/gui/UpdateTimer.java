@@ -30,8 +30,4 @@ public class UpdateTimer {
     public void addTask(TimerTask wtd, int delay, int period) {
         timer.scheduleAtFixedRate(wtd, delay, period);
     }
-
-
-
-
 }

@@ -36,9 +36,6 @@ public class CreatePlayerWindow extends Application {
 
     public void start(final Stage primaryStage) {
 
-//        final Stage[] stage = {primaryStage};
-//        final Stage[] stageNew = new Stage[1];
-        //stage = primaryStage;
         primaryStage.setTitle("Create Player");
         GridPane gridPane = new GridPane();
         final TextField textFieldName = new TextField();

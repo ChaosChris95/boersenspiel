@@ -32,6 +32,7 @@ public class PrintHtmlWindow extends Application{
     private String title = "Save";
     private AccountManagerImpl accountManager;
     private String player;
+    private String filePath;
     Logger logger = Logger.getLogger("PrintHtmlWindow");
 
     public PrintHtmlWindow(String player, int option){
@@ -45,13 +46,18 @@ public class PrintHtmlWindow extends Application{
         /*if (option != 1 || option !=2){
             throw new WrongParametersException("unexpected parameters");
         }*/
+
         String path = showFileDialog(title, false).getAbsolutePath();
-        System.out.println(path);
+        filePath = path;
         try{
             accountManager.printHtml(player, path, option);
         } catch (PlayerDoesNotExistException e){
             logger.log(Level.SEVERE, "FileNotFoundException", e);
         }
+    }
+
+    public String getPath(){
+        return filePath;
     }
 
     public File showFileDialog(String title, boolean open) {
