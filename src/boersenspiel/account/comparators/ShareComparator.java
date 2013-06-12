@@ -9,8 +9,8 @@ public class ShareComparator implements Comparator<LogEntry> {
 
     /**
      * Compares two different LogEntries by ShareName
-     * @param log1
-     * @param log2
+     * @param log1 first LogEntry
+     * @param log2 second LogEntry
      * @see LogEntry
      */
 
