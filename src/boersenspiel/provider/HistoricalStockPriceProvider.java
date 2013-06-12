@@ -93,6 +93,6 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
             else
                 counter ++;
             }
-        }, 0, 4000);   //TODO refresh all 10 sec
+        }, 0, 4000);
     }
 }

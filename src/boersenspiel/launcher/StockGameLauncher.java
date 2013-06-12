@@ -1,7 +1,6 @@
 package boersenspiel.launcher;
 
 import boersenspiel.gui.MainWindow;
-import boersenspiel.proxy.AccountManagerClient;
 import boersenspiel.gui.StockPriceViewer;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
@@ -76,8 +75,7 @@ public class StockGameLauncher extends Application{
     }
 
     public void start (Stage primaryStage){
-        MainWindow mainWindow = new MainWindow();
-        stage = new Stage();
-        mainWindow.start(stage);
+        MainWindow mainWindow = new MainWindow("Börsenspiel");
+        mainWindow.start(primaryStage);
     }
 }

@@ -1,6 +1,7 @@
 package boersenspiel.gui;
 
 import boersenspiel.exceptions.PlayerDoesNotExistException;
+import boersenspiel.exceptions.WrongParametersException;
 import boersenspiel.interfaces.AccountManager;
 import boersenspiel.manager.AccountManagerImpl;
 import javafx.application.Application;
@@ -39,16 +40,15 @@ public class PrintHtmlWindow extends Application{
         accountManager = AccountManagerImpl.getInstance();
     }
 
-    public void start(Stage stage){
+    public void start(Stage stage) throws WrongParametersException{
 
-        if (option == 0){
-            System.out.println("FEHLER");
-            return; //TODO Exception
+        if (option != 1 || option !=2){
+            throw new WrongParametersException("unexpected parameters");
         }
         String path = showFileDialog(title, false).getAbsolutePath();
         System.out.println(path);
         try{
-            accountManager.printHtml(player, path, option);//"dummy", 1);
+            accountManager.printHtml(player, path, option);
         } catch (PlayerDoesNotExistException e){
             logger.log(Level.SEVERE, "FileNotFoundException", e);
         }
