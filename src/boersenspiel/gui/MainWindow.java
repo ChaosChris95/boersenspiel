@@ -73,6 +73,7 @@ public class MainWindow extends Application {
             title = name;
         } else {
             player = name;
+            title = name;
         }
         /*try{
             accountManager.createPlayer(player, 2000L);

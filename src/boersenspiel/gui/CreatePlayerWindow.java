@@ -34,12 +34,12 @@ public class CreatePlayerWindow extends Application {
         logger = Logger.getLogger("CreatePlayerWindow");
     }
 
-    public void start(Stage primaryStage) {
+    public void start(final Stage primaryStage) {
 
 //        final Stage[] stage = {primaryStage};
 //        final Stage[] stageNew = new Stage[1];
-        stage = primaryStage;
-        stage.setTitle("Create Player");
+        //stage = primaryStage;
+        primaryStage.setTitle("Create Player");
         GridPane gridPane = new GridPane();
         final TextField textFieldName = new TextField();
         final TextField textFieldCash = new TextField();
@@ -55,11 +55,10 @@ public class CreatePlayerWindow extends Application {
                     stage = new Stage();
                     MainWindow mainWindow = new MainWindow(name);
                     mainWindow.start(stage);
+                    primaryStage.close();
                 } catch (NegativeValueException e) {
                     logger.log(Level.SEVERE, "negative value not allowed");
                 }
-
-                stage.close();
             }
         });
 
@@ -68,9 +67,9 @@ public class CreatePlayerWindow extends Application {
         gridPane.add(crp, 2, 0);
 
         Scene scene = new Scene(gridPane, 370, 10);
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+        primaryStage.setResizable(false);
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
 
     }
