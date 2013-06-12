@@ -18,6 +18,11 @@ public class CashAccount extends Asset{
     private static Logger logger = Logger.getLogger("CashAccount");
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
+    /**
+     * Constructor for CashAccount will set account value and inherits from Asset
+     * @param accountValue  from type long
+     */
+
     public CashAccount(long accountValue){
         super("CashAccount");
         this.accountValue=accountValue;
@@ -29,10 +34,9 @@ public class CashAccount extends Asset{
     }
 
     /**
-     * add cash to selected playeraccount
+     * add cash to selected player account
      * @param cash  number from type long
-     * @exception   NegativeValueException
-     * @return      new accountValue
+     * @exception   NegativeValueException if given cash value is a negative number
      */
 
     public void addCash(long cash) throws NegativeValueException{
@@ -43,10 +47,22 @@ public class CashAccount extends Asset{
         logger.finer("CashAccount.addCash(" + cash + ")");
     }
 
+    /**
+     * The string representation is "name=NAME, getValue()=VALUE"
+     * Where NAME is the player name,VALUE is the value of cash account
+     */
+
     public String toString(){
         logger.finer("CashAccount.toString()");
         return (rs.getString("CashValue") +" "+ name +" "+ rs.getString("CashIs") +" "+ getValue());
     }
+
+    /**
+     * subtract cash to selected player account
+     * @param cash  number from type long
+     * @exception   NotEnoughMoneyException if player did not have enough value to subtract of
+     */
+
 
     public void subCash(long cash) throws NotEnoughMoneyException {
 

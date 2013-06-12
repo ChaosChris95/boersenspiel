@@ -38,6 +38,11 @@ public class Player {
     private ShareDeposit shareDeposit;
     private List<LogEntry> logEntryList = new ArrayList<LogEntry>();
 
+    /**
+     * Constructor for Player set broken false, create new CashAccount and a ShareDeposit
+     * @param name String for the player name
+     */
+
     public Player(String name) {
         this.name = name;
         broken = false;
@@ -46,11 +51,27 @@ public class Player {
 
     }
 
+    /**
+     * Method which player makes possible to buy shares
+     * @param share  String for wanted share
+     * @param amount Integer to know how many share player wants
+     * @exception NotEnoughMoneyException if player does not have enough money to buy a share
+     * @exception NegativeValueException if given amount is a negative number
+     */
+
     public void buy(Share share, int amount) throws NotEnoughMoneyException, NegativeValueException {
         cashAccount.subCash(share.getPrice() * amount);
         shareDeposit.addShare(share, amount);
         logEntryList.add(new LogEntry(LogEntry.BUY, share, amount));
     }
+
+    /**
+     * Method which player makes possible to sell shares
+     * @param share  String for wanted share
+     * @param amount Integer to know how many share player wants
+     * @exception NotEnoughSharesException if player does not have enough shares to sell
+     * @exception NegativeValueException if given amount is a negative number
+     */
 
     public void sell(Share share, int amount) throws NotEnoughSharesException, NegativeValueException {
         shareDeposit.removeShare(share, amount);
@@ -58,13 +79,24 @@ public class Player {
         logEntryList.add(new LogEntry(LogEntry.SELL, share, amount));
     }
 
+    /**
+     * add Cash to the players cash account
+     * @param cash  from type long
+     */
+
     public void addCash(long cash) throws NegativeValueException {
         cashAccount.addCash(cash);
     }
 
+    /**
+     * subtract Cash from the players cash account
+     * @param cash  from type long
+     */
+
     public void subCash(long cash) throws Exception {
         cashAccount.subCash(cash);
     }
+
 
     public long getCashAccountValue() {
         return cashAccount.getValue();
@@ -86,6 +118,11 @@ public class Player {
         return name;
     }
 
+    /**
+     * Check if the Player is broken
+     * @return if players Cash Account <= 0 its true, else is false
+     */
+
     private boolean isBroken() {
         if (getCashAccountValue() <= 0) {
             broken = true;
@@ -93,13 +130,35 @@ public class Player {
         return broken;
     }
 
+    /**
+     * @return StockList as String
+     * @see ShareDeposit toString()
+     */
+
     public String getStockList() {
         return shareDeposit.toString();
     }
 
+    /**
+     * The string representation is "name=NAME, getCashAccountValue()=VALUE"
+     * Where NAME is the player name and VALUE is the Cash Account Value of player
+     */
+
     public String toString() {
         return rs.getString("PlayerName") + " " + name + " " + rs.getString("PlayerCash") + getCashAccountValue();
     }
+
+    /**
+     * print all player activities by given properties
+     * first creates a new BufferedReader give over a OutputStreamWriter.
+     * Our stream give over to OutputStreamWriter.
+     * Then the compare for sort type starts.
+     * After that the player activities will be sorted.
+     * The given output is picked by if-statement and saves the activities in BufferedWriter.
+     * @param stream OutputStream
+     * @param sort   Integer for sort type, 1 will sort by Share, 2 will sort by Time
+     * @param output Integer for output type, 1 as plain, 2 as html document
+     */
 
     public void print(OutputStream stream, int sort, int output) throws IOException {
         Comparator comparator;
@@ -120,7 +179,6 @@ public class Player {
                w.flush();
            }
         } else if (output == HTML) {
-                //w.write("<!DOCTYPE html PUBLIC-//W3C//DTD XHTML 1.0 Strict//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>\n");
                 w.write("<html> \n");
                 w.write("<ul> \n");
             for (LogEntry item: logEntryList) {
@@ -135,6 +193,13 @@ public class Player {
             logger.warning(rs.getString("PlayerTyp"));
         }
     }
+
+    /**
+     * convert the content in BufferedWriter into a html file
+     * @param filename  String to give the file a name
+     * @param sort      Integer for sort type, 1 sort by Share, 2 sort by Time
+     * @param output    Integer for output type is always given as 2
+     */
 
     public void toFile(String filename, int sort, int output) throws IOException {
         FileOutputStream out = new FileOutputStream(filename + ".html");

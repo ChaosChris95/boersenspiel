@@ -24,18 +24,20 @@ public class PlayerAgent {
     private static Logger logger = Logger.getLogger(PlayerAgent.class.getName());
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
+    /**
+     * Constructor for PlayerAgent, set Player as PlayerAgent
+     * @param player Player Object
+     */
+
     public PlayerAgent(Player player) {
         this.player = player;
 
     }
 
-    public void sell(Share share, Integer amount) throws NotEnoughSharesException, NegativeValueException {
-        player.sell(share, amount);
-    }
-
-    public void buy(Share share, Integer amount) throws NotEnoughMoneyException, NegativeValueException {
-        player.buy(share, amount);
-    }
+    /**
+     * Algorithm for PlayerAgent to buy and sell Shares randomly with Math.random and check
+     * if enough shares are there and whether player is brocken or not.
+     */
 
     public void algorithm() {
         int n;
