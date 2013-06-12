@@ -26,7 +26,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -53,6 +52,8 @@ public class MainWindow extends Application {
     private MenuItem menuLogPrintShare;
     private MenuItem menuLogPrintTime;
 
+    private Label consoleText;
+
     private Stage stage;
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
     private Logger logger;
@@ -75,11 +76,6 @@ public class MainWindow extends Application {
             player = name;
             title = name;
         }
-        /*try{
-            accountManager.createPlayer(player, 2000L);
-        } catch (NegativeValueException e){
-            logger.log(Level.SEVERE, "NegativeValueException", e);
-        }*/
     }
 
     public void start(Stage primaryStage){
@@ -87,11 +83,17 @@ public class MainWindow extends Application {
         primaryStage.setTitle(title);
 
         /**
+         * label with console-text
+         */
+        consoleText = new Label();
+        stringBuffer.append("Ausgabe:\n");
+        consoleText.setText(stringBuffer.toString());
+
+        /**
          * ScrollPane
          */
-
         ScrollPane consoleScrollBar = new ScrollPane();
-        consoleScrollBar.setContent(setLabel());
+        consoleScrollBar.setContent(consoleText);
         //consoleScrollBar.setFitToWidth(true);
 
         /**
@@ -101,8 +103,6 @@ public class MainWindow extends Application {
         gridPane.setAlignment(Pos.BOTTOM_RIGHT);
         gridPane.setHgap(10);
         gridPane.setVgap(10);
-        /*TextField textField1 = new TextField("Name");
-        gridPane.add(textField1, 0, 1);*/
         final TextField textField2 = new TextField("Share");
         gridPane.add(textField2, 1, 1);
         final TextField textField3 = new TextField("Amount");
@@ -153,25 +153,22 @@ public class MainWindow extends Application {
         scene.addEventHandler(Event.ANY, handleAction());
     }
 
-    public Label setLabel(){
-        /**
-         * label with console-text
-         */
+    /*public Label setLabel(){
         Label consoleText = new Label();
         stringBuffer.append("Ausgabe:\n");
 
         consoleText.setText(stringBuffer.toString());
 
         return consoleText;
-    }
+    }*/
 
-    public void startUpdate(){
+    /*public void startUpdate(){
         timer.addTask(new TimerTask() {
             public void run() {
-                setLabel();
+                //TODO
             }
         }, 0, 1000);
-    }
+    }*/
 
     public MenuBar setMenuBar(EventHandler event){
 
@@ -253,16 +250,19 @@ public class MainWindow extends Application {
                     System.out.println("menuOptionsBot");
                     accountManager.botPlayer(player);
                     stringBuffer.append("started Bot\n");
+                    consoleText.setText(stringBuffer.toString());
 
                 }
                 else if (event.getTarget() == menuOptionsCs){
                     System.out.println("menuOptionsCs");
                     stringBuffer.append("not implemented yet\n");
+                    consoleText.setText(stringBuffer.toString());
                     //Does not make sense yet
                 }
                 else if (event.getTarget() == menuOptionsDs){
                     System.out.println("menuOptionsDs");
                     stringBuffer.append("not implemented yet\n");
+                    consoleText.setText(stringBuffer.toString());
                     //Does not make sense yet
                 }
                 else if (event.getTarget() == menuOptionsLd){
@@ -273,6 +273,7 @@ public class MainWindow extends Application {
                         logger.log(Level.SEVERE, "Wrong Language", e);
                     }
                     stringBuffer.append("Sprache jetzt Deutsch\n");
+                    consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuOptionsLe){
                     System.out.println("menuOptionsLe");
@@ -282,18 +283,22 @@ public class MainWindow extends Application {
                         logger.log(Level.SEVERE, "Wrong Language", e);
                     }
                     stringBuffer.append("Sprache jetzt Englisch\n");
+                    consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuInformationGs){
                     System.out.println("menuInformationGs");
                     stringBuffer.append(accountManager.getStock(player) + "\n");
+                    consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuInformationGas){
                     System.out.println("menuInformationGas");
                     stringBuffer.append(shareManagement.getSharesAndRates() + "\n");
+                    consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuInformationCs){
                     System.out.println("menuInformationCs");
                     stringBuffer.append(accountManager.getCashAccountValue(player) + "\n");
+                    consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuLogShowShare){
                     System.out.println("menuLogShow");
@@ -317,27 +322,29 @@ public class MainWindow extends Application {
                     }
                     //TODO how? StringBuffer
                 }
-                else if (event.getTarget() == menuLogPrintShare){    //TODO new Window 0 or 1 sort and filename
+                else if (event.getTarget() == menuLogPrintShare){
                     System.out.println("menuLogPrintShare");
                     PrintHtmlWindow phw = new PrintHtmlWindow(player, 1);
                     stage = new Stage();
-                    try{
+                    //try{
                         phw.start(stage);
-                    } catch(WrongParametersException e){
+                    /*} catch(WrongParametersException e){
                         logger.log(Level.SEVERE, "Wrong sort option");
-                    }
+                    }*/
                     stringBuffer.append("Logs in einen File gespeichert, sortiert nach Aktien\n");
+                    consoleText.setText(stringBuffer.toString());
                 }
-                else if (event.getTarget() == menuLogPrintTime){    //TODO new Window 0 or 1 sort and filename
+                else if (event.getTarget() == menuLogPrintTime){
                     System.out.println("menuLogPrintTime");
                     PrintHtmlWindow phw = new PrintHtmlWindow(player, 2);
                     stage = new Stage();
-                    try{
+                    //try{
                         phw.start(stage);
-                    } catch(WrongParametersException e){
+                    /*} catch(WrongParametersException e){
                         logger.log(Level.SEVERE, "Wrong sort option");
-                    }
+                    }*/
                     stringBuffer.append("Logs in einen File gespeichert, sortiert nach Zeit\n");
+                    consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuHelpAbout){
                     System.out.println("menuHelpAbout");
