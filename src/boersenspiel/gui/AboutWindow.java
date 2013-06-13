@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URISyntaxException;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,6 +33,7 @@ public class AboutWindow extends Application{
     private Stage stage;
     private Logger logger;
     private File fileURL;
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public static void main(String[] args) {
         AboutWindow aboutWindow = new AboutWindow();
@@ -42,7 +44,7 @@ public class AboutWindow extends Application{
     }
 
     public void start(Stage stage){
-        stage.setTitle("About");
+        stage.setTitle(rs.getString("About"));
         VBox vBox = new VBox();
         Label label = new Label("The legendary Börsenspiel! \n\n" +
                                 "Creators: \n" +  "Jan Kowalke & \n" + "Bianca Bergmann \n\n" +

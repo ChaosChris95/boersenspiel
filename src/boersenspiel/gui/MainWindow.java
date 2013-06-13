@@ -282,14 +282,14 @@ public class MainWindow extends Application {
                     } catch (LanguageNotFoundException e){
                         logger.log(Level.SEVERE, "Language not supported", e);
                     }
-                    stringBuffer.append("Sprache jetzt Englisch\n");
+                    stringBuffer.append("Language now English\n");
                     consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuInformationGs){
                     String gs = accountManager.getStock(player) + "\n";
 
                     if (player == null){
-                        stringBuffer.append("Noch kein Spieler erstellt");
+                        stringBuffer.append(rs.getString("NoPlayerCreate"));
                         consoleText.setText(stringBuffer.toString());
                     }
                     else {
@@ -338,7 +338,7 @@ public class MainWindow extends Application {
                     /*} catch(WrongParametersException e){
                         logger.log(Level.SEVERE, "Wrong sort option");
                     }*/
-                    stringBuffer.append("Logs in File "  + phw.getPath() + " gespeichert, sortiert nach Aktien\n");
+                    stringBuffer.append(rs.getString("Log")+ " " + rs.getString("File")+ " "  + phw.getPath() + rs.getString("Saved") +  ", "  + rs.getString("ByShare") + "\n");
                     consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuLogPrintTime){
@@ -349,7 +349,7 @@ public class MainWindow extends Application {
                     /*} catch(WrongParametersException e){
                         logger.log(Level.SEVERE, "Wrong sort option");
                     }*/
-                    stringBuffer.append("Logs in File "  + phw.getPath() + " gespeichert, sortiert nach Zeit\n");
+                    stringBuffer.append(rs.getString("Log")+ " " + rs.getString("File")+ " "  + phw.getPath() + rs.getString("Saved") +  ", "  + rs.getString("ByTime") + "\n");
                     consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuHelpAbout){

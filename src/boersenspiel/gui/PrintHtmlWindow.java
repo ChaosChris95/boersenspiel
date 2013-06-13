@@ -17,6 +17,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,8 +29,9 @@ import java.util.logging.Logger;
 
 public class PrintHtmlWindow extends Application{
 
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
     private int option = 0;
-    private String title = "Save";
+    private String title = rs.getString("Save");
     private AccountManagerImpl accountManager;
     private String player;
     private String filePath;
