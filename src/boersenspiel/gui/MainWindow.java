@@ -22,6 +22,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Currency;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -73,6 +75,8 @@ public class MainWindow extends Application {
             player = name;
             title = name;
         }
+
+
     }
 
     public static void main(String[] args) {
@@ -118,10 +122,11 @@ public class MainWindow extends Application {
             public void handle(ActionEvent actionEvent) {
                 String shareName = textField2.getText();
                 int amount = Integer.parseInt(textField3.getText());
-                try{    //TODO Exception no share with this name
+                try{
                     accountManager.buy(player, shareName, amount);
-                    stringBuffer.append(rs.getString("Gamer")+ " " + player + " "
-                            + rs.getString("AMBuy") + amount + rs.getString("Of") + shareName);
+                    stringBuffer.append(rs.getString("Gamer") + " " + player + " "
+                            + rs.getString("AMBuy") + " " + amount + " " + rs.getString("Of") + " " + shareName);
+                    consoleText.setText(stringBuffer.toString());
                 } catch (NegativeValueException e){
                     logger.log(Level.SEVERE, "NegativeValueException", e);
                 } catch (PlayerDoesNotExistException e) {
@@ -149,7 +154,8 @@ public class MainWindow extends Application {
                     e.printStackTrace();
                 }
                 stringBuffer.append(rs.getString("Gamer")+ " " + player + " "
-                        + rs.getString("AMSell") + amount + rs.getString("Of") + shareName);
+                        + rs.getString("AMSell") + " " + amount + " " + rs.getString("Of") + " " + shareName);
+                consoleText.setText(stringBuffer.toString());
             }
         });
         gridPane.add(buttonSell, 4, 1);
@@ -305,7 +311,11 @@ public class MainWindow extends Application {
                     consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuInformationCs){
-                    stringBuffer.append(accountManager.getCashAccountValue(player) + "\n");
+                    if(Locale.getDefault() == Locale.GERMAN) {
+                        stringBuffer.append(accountManager.getCashAccountValue(player) + " " + Currency.getInstance("EUR").getSymbol());
+                    } else {
+                        stringBuffer.append(accountManager.getCashAccountValue(player) + " " + Currency.getInstance("GBP").getSymbol());
+                    }
                     consoleText.setText(stringBuffer.toString());
                 }
                 else if (event.getTarget() == menuLogShowShare){
