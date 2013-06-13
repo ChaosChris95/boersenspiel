@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import boersenspiel.exceptions.NegativeValueException;
 import boersenspiel.manager.AccountManagerImpl;
 
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,6 +29,7 @@ public class CreatePlayerWindow extends Application {
     private Stage stage;
     private AccountManagerImpl accountManager;
     Logger logger;
+    private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     public CreatePlayerWindow() {
         accountManager = AccountManagerImpl.getInstance();
@@ -36,11 +38,11 @@ public class CreatePlayerWindow extends Application {
 
     public void start(final Stage primaryStage) {
 
-        primaryStage.setTitle("Create Player");
+        primaryStage.setTitle(rs.getString("createPlayer"));
         GridPane gridPane = new GridPane();
         final TextField textFieldName = new TextField();
         final TextField textFieldCash = new TextField();
-        Button crp = new Button("Create Player");
+        Button crp = new Button(rs.getString("createPlayer"));
         crp.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -54,7 +56,7 @@ public class CreatePlayerWindow extends Application {
                     mainWindow.start(stage);
                     primaryStage.close();
                 } catch (NegativeValueException e) {
-                    logger.log(Level.SEVERE, "negative value not allowed");
+                    logger.log(Level.SEVERE, rs.getString("AMNegativ"));
                 }
             }
         });

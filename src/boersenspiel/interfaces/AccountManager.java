@@ -11,29 +11,30 @@ import boersenspiel.exceptions.NegativeValueException;
 public interface AccountManager {
 
     /**
-     * Creates a player with a name
-     * @param name
-     * @param cash
+     * Creates a player with a name and given cash
+     * @param name String for player name
+     * @param cash Long for cash value
+     * @exception NegativeValueException if the given Long is a negative number
      */
 
     void createPlayer(String name, Long cash) throws NegativeValueException;
 
 
     /**
-     * buy a share
-     * @param name
-     * @param shareName
-     * @param amount
+     * buy a share for given Player with given amount
+     * @param name  String for player name
+     * @param shareName String for share name
+     * @param amount Integer for amount of share
      * @throws Exception
      */
 
     void buy(String name, String shareName, Integer amount) throws Exception;
 
     /**
-     * sell a share
-     * @param name
-     * @param shareName
-     * @param amount
+     * sell a share for given Player with given amount
+     * @param name  String for player name
+     * @param shareName String for share name
+     * @param amount Integer for amount of share
      * @throws Exception
      */
 

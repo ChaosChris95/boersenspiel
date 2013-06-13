@@ -28,6 +28,11 @@ public class CashAccount extends Asset{
         this.accountValue=accountValue;
     }
 
+    /**
+     *
+     * @return
+     */
+
     public long getValue(){
         logger.finer("CashAccount.getValue()");
         return accountValue;

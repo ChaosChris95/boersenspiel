@@ -27,18 +27,18 @@ public class CashAccountTest {
     }
 
     @Test
-    public void testSubCash1() throws NotEnoughMoneyException {
+    public void testSubCash1() throws Exception {
         cashAccount1.subCash(800);
         assertEquals("testSubCash1: 1000-800 = 200", 200, cashAccount1.getValue());
     }
 
     @Test(expected=NotEnoughMoneyException.class)
-    public void testSubCash2() throws NotEnoughMoneyException{
+    public void testSubCash2() throws Exception {
             cashAccount1.subCash(2000);
     }
 
     @Test
-    public void testSubCash3() throws NotEnoughMoneyException {
+    public void testSubCash3() throws Exception {
         cashAccount1.subCash(1000);
         assertEquals("testSubCash3: 1000-1000 = 0", 0, cashAccount1.getValue());
     }

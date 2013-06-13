@@ -41,11 +41,7 @@ public class PrintHtmlWindow extends Application{
         accountManager = AccountManagerImpl.getInstance();
     }
 
-    public void start(Stage stage){//} throws WrongParametersException{
-
-        /*if (option != 1 || option !=2){
-            throw new WrongParametersException("unexpected parameters");
-        }*/
+    public void start(Stage stage){
 
         String path = showFileDialog(title, false).getAbsolutePath();
         filePath = path;

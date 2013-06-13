@@ -14,24 +14,31 @@ import javafx.stage.Stage;
  * Date: 10.06.13
  * Time: 15:38
  */
-public class PopUp extends Application {
+public class PopUp extends Thread {
 
-    public void popUp(String msg) {
-        Stage stage = new Stage();
+    private Stage stage;
+    private String msg;
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
+    public PopUp(String message) throws Exception {
+        this.msg = message;
+        start(stage);
+    }
+
+    public void start(Stage primaryStage) throws Exception {
+        final Stage stage = new Stage();
         HBox hBox = new HBox();
         Label label = new Label(msg);
         hBox.getChildren().add(label);
         hBox.setPadding(new Insets(25, 25, 25, 25));
         stage.setScene(new Scene(hBox));
-        stage.setTitle("My modal window");
+        stage.setTitle("Fehlermeldung");
         stage.initModality(Modality.WINDOW_MODAL);
-        JFXPanel primaryStage = null;
         stage.initOwner(primaryStage.getScene().getWindow());
         stage.show();
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
-
-    }
 }

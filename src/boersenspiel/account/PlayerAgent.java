@@ -49,7 +49,9 @@ public class PlayerAgent {
             try {
                 player.buy(s, 5);
             } catch (NotEnoughMoneyException e) {
-            } catch (NegativeValueException e) {}
+            } catch (NegativeValueException e) {} catch (Exception e) {
+                e.printStackTrace();
+            }
 
             n = (int)(Math.random() * (ShareManagement.getInstance().getShareLength() - 1));
             s = ShareManagement.getInstance().getShareByNumber(n);

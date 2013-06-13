@@ -1,5 +1,6 @@
 package boersenspiel.launcher;
 
+import boersenspiel.exceptions.ShareNameAlreadyExistsException;
 import boersenspiel.gui.MainWindow;
 import boersenspiel.gui.StockPriceViewer;
 import boersenspiel.interfaces.AccountManager;
@@ -32,8 +33,7 @@ public class StockGameLauncher extends Application{
         LogManager.getLogManager().readConfiguration(new BufferedInputStream(new FileInputStream("c:\\logging.properties")));
 
         String lang = System.getProperty("lang");
-        //System.out.print(lang);
-        /*if (lang == null) {
+        if (lang == null) {
            Locale.setDefault(Locale.GERMAN);
         } else {
             if (lang.equals("en")) {
@@ -41,7 +41,7 @@ public class StockGameLauncher extends Application{
             } else {
                 Locale.setDefault(Locale.GERMAN);
             }
-        } */
+        }
 
         ShareManagement.getInstance().addShare("Apple", 100L);
         ShareManagement.getInstance().addShare("BMW", 100L);
@@ -74,7 +74,7 @@ public class StockGameLauncher extends Application{
         Application.launch();
     }
 
-    public void start (Stage primaryStage){
+    public void start (Stage primaryStage) throws ShareNameAlreadyExistsException {
         MainWindow mainWindow = new MainWindow("Börsenspiel");
         mainWindow.start(primaryStage);
     }

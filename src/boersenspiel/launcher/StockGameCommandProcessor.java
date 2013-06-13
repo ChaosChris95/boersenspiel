@@ -34,11 +34,24 @@ public class StockGameCommandProcessor {
     private AccountManager accountManager;
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
+    /**
+     * StockGameCommandProcessor Constructor, set accountManager
+     * @param accountManager AccountManager Instance
+     * @see AccountManager
+     */
+
     public StockGameCommandProcessor(AccountManager accountManager) {
 
         this.accountManager = accountManager;
 
     }
+
+    /**
+     * This method reads in and handle all commands and parameters by call methods dynamic
+     * @throws Error NoSuchMethodException if method is not implemented
+     * @throws Error IllegalAccessException if called class isn´t a singleton
+     * @throws Error InvocationTargetException
+     */
 
     public void process() {
 

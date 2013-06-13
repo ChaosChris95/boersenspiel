@@ -21,10 +21,27 @@ public class CommandScanner {
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
 
+    /**
+     * Constructor to create a CommandScanner with needed parameters
+     * @param commandTypeInfos Interface to get the needed Commands
+     * @param shellReader BufferedReader for input
+     */
+
     public CommandScanner(CommandTypeInfo[] commandTypeInfos, BufferedReader shellReader){
         this.commandTypeInfos = commandTypeInfos;
         this.shellReader = shellReader;
     }
+
+    /**
+     * This method will read in the line which the player use for running the game
+     * We read the line, split the string to recognize the specified commands, parameters
+     * und what kind of numbers are given. We know the first string will be a command
+     * with this information we can compare the player input with our commands in the system.
+     * After that we know the second string will be a parameter same routine as commands.
+     * At the end we need to parse the given Strings to there format which the system can work with.
+     * @param command CommandDescriptor
+     * @exception CommandScannerException if the string for readLine,commands or parameters are empty
+     */
 
     public void fillInCommandDesc(CommandDescriptor command) throws CommandScannerException {
 

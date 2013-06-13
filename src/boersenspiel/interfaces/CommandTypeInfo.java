@@ -30,11 +30,16 @@ public interface CommandTypeInfo {
     public Class<?>[] getParamTypes();
 
     /**
-     * get the target
+     * get the target which stands for the used Class
      * @return String
      */
 
     public String getTarget();
+
+    /**
+     * get the target which stands for the used Method
+     * @return String
+     */
 
     public String getFunc();
 

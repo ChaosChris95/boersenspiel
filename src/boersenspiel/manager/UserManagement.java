@@ -22,6 +22,12 @@ public class UserManagement {
     private ResourceBundle rs = ResourceBundle.getBundle("boersenspiel");
 
     private static UserManagement instance = null;
+
+    /**
+     * Method to make certain there is only one instance of UserManagement (Singleton)
+     * @return if it exists no instance a new one will be created, else the existing is used
+     */
+
     public static UserManagement getInstance() {
         if(UserManagement.instance == null) {
             UserManagement.instance = new UserManagement();

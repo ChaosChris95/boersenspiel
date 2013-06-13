@@ -1,9 +1,6 @@
 package boersenspiel.gui;
 
-import boersenspiel.exceptions.LanguageNotFoundException;
-import boersenspiel.exceptions.NegativeValueException;
-import boersenspiel.exceptions.PlayerDoesNotExistException;
-import boersenspiel.exceptions.WrongParametersException;
+import boersenspiel.exceptions.*;
 import boersenspiel.manager.AccountManagerImpl;
 import boersenspiel.manager.ShareManagement;
 import javafx.application.Application;
@@ -26,6 +23,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -77,6 +75,11 @@ public class MainWindow extends Application {
         }
     }
 
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
+
     public void start(Stage primaryStage){
 
         primaryStage.setTitle(title);
@@ -85,7 +88,7 @@ public class MainWindow extends Application {
          * label with console-text
          */
         consoleText = new Label();
-        stringBuffer.append("Ausgabe:\n");
+        stringBuffer.append(rs.getString("Output") + ":\n");
         consoleText.setText(stringBuffer.toString());
 
         /**
@@ -102,12 +105,14 @@ public class MainWindow extends Application {
         gridPane.setAlignment(Pos.BOTTOM_RIGHT);
         gridPane.setHgap(10);
         gridPane.setVgap(10);
-        final TextField textField2 = new TextField("Share");
+        /*TextField textField1 = new TextField("Name");
+        gridPane.add(textField1, 0, 1);*/
+        final TextField textField2 = new TextField(rs.getString("Share1"));
         gridPane.add(textField2, 1, 1);
-        final TextField textField3 = new TextField("Amount");
+        final TextField textField3 = new TextField(rs.getString("ShareAmount"));
         gridPane.add(textField3, 2, 1);
 
-        Button buttonBuy = new Button("Buy");
+        Button buttonBuy = new Button(rs.getString("Buy"));
         buttonBuy.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -115,24 +120,36 @@ public class MainWindow extends Application {
                 int amount = Integer.parseInt(textField3.getText());
                 try{    //TODO Exception no share with this name
                     accountManager.buy(player, shareName, amount);
-                    stringBuffer.append("Spieler " + player + " kauft Aktie " + shareName + " " + amount + " mal\n");
-                    consoleText.setText(stringBuffer.toString());
+                    stringBuffer.append(rs.getString("Gamer")+ " " + player + " "
+                            + rs.getString("AMBuy") + amount + rs.getString("Of") + shareName);
                 } catch (NegativeValueException e){
                     logger.log(Level.SEVERE, "NegativeValueException", e);
+                } catch (PlayerDoesNotExistException e) {
+                    e.printStackTrace();
+                } catch (NotEnoughMoneyException e) {
+                    e.printStackTrace();
                 }
             }
         });
         gridPane.add(buttonBuy, 3, 1);
 
-        Button buttonSell = new Button("Sell");
+        Button buttonSell = new Button(rs.getString("Sell"));
         buttonSell.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 String shareName = textField2.getText();
                 int amount = Integer.parseInt(textField3.getText());
-                accountManager.sell(player, shareName, amount);
-                stringBuffer.append("Spieler " + player + " verkauft Aktie " + shareName + " " + amount + " mal\n");
-                consoleText.setText(stringBuffer.toString());
+                try {
+                    accountManager.sell(player, shareName, amount);
+                } catch (NegativeValueException e) {
+                    e.printStackTrace();
+                } catch (PlayerDoesNotExistException e) {
+                    e.printStackTrace();
+                } catch (NotEnoughSharesException e) {
+                    e.printStackTrace();
+                }
+                stringBuffer.append(rs.getString("Gamer")+ " " + player + " "
+                        + rs.getString("AMSell") + amount + rs.getString("Of") + shareName);
             }
         });
         gridPane.add(buttonSell, 4, 1);
@@ -158,21 +175,21 @@ public class MainWindow extends Application {
 
         MenuBar menuBar = new MenuBar();
 
-        final Menu menuEdit = new Menu ("Edit");
-        menuEditCrp = new MenuItem("Create Player");
+        final Menu menuEdit = new Menu (rs.getString("Edit"));
+        menuEditCrp = new MenuItem(rs.getString("createPlayer"));
         menuEditCrp.setOnAction(event);
         menuEdit.getItems().addAll(menuEditCrp);
 
-        final Menu menuOptions = new Menu ("Options");
-        menuOptionsBot = new MenuItem("Start Bot");
+        final Menu menuOptions = new Menu (rs.getString("Option"));
+        menuOptionsBot = new MenuItem(rs.getString("StartB"));
         menuOptionsBot.setOnAction(event);
         menuOptionsLd = new MenuItem("Deutsch");
         menuOptionsLd.setOnAction(event);
         menuOptionsLe = new MenuItem("English");
         menuOptionsLe.setOnAction(event);
-        menuOptionsCs = new MenuItem("Create Share");
+        menuOptionsCs = new MenuItem(rs.getString("createShare"));
         menuOptionsCs.setOnAction(event);
-        menuOptionsDs = new MenuItem("Delete Share");
+        menuOptionsDs = new MenuItem(rs.getString("deleteShare"));
         menuOptionsDs.setOnAction(event);
         menuOptions.getItems().addAll(menuOptionsBot);
         menuOptions.getItems().addAll(menuOptionsCs);
@@ -181,36 +198,36 @@ public class MainWindow extends Application {
         menuOptions.getItems().addAll(menuOptionsLe);
 
         Menu menuInformation = new Menu ("Information");
-        menuInformationGs = new MenuItem("Get Stock");
+        menuInformationGs = new MenuItem(rs.getString("GetStock"));
         menuInformationGs.setOnAction(event);
-        menuInformationGas = new MenuItem("Get All Stock");
+        menuInformationGas = new MenuItem(rs.getString("GetAllStk"));
         menuInformationGas.setOnAction(event);
-        menuInformationCs = new MenuItem("Get Cash");
+        menuInformationCs = new MenuItem(rs.getString("GetCash"));
         menuInformationCs.setOnAction(event);
         menuInformation.getItems().addAll(menuInformationGs);
         menuInformation.getItems().addAll(menuInformationGas);
         menuInformation.getItems().addAll(menuInformationCs);
 
-        Menu menuLog = new Menu ("Log");
-        Menu menuLogShow = new Menu ("Show Logs");
-        menuLogShowShare = new MenuItem("sorted by share");
+        Menu menuLog = new Menu (rs.getString("Log"));
+        Menu menuLogShow = new Menu (rs.getString("ShowLog"));
+        menuLogShowShare = new MenuItem(rs.getString("ByShare"));
         menuLogShowShare.setOnAction(event);
-        menuLogShowTime = new MenuItem("sorted by time");
+        menuLogShowTime = new MenuItem(rs.getString("ByTime"));
         menuLogShowTime.setOnAction(event);
         menuLogShow.getItems().addAll(menuLogShowShare);
         menuLogShow.getItems().addAll(menuLogShowTime);
-        Menu menuLogPrint = new Menu ("Print Logs");
-        menuLogPrintShare = new MenuItem("sorted by share");
+        Menu menuLogPrint = new Menu (rs.getString("PrintLog"));
+        menuLogPrintShare = new MenuItem(rs.getString("ByShare"));
         menuLogPrintShare.setOnAction(event);
-        menuLogPrintTime = new MenuItem("sorted by time");
+        menuLogPrintTime = new MenuItem(rs.getString("ByTime"));
         menuLogPrintTime.setOnAction(event);
         menuLogPrint.getItems().addAll(menuLogPrintShare);
         menuLogPrint.getItems().addAll(menuLogPrintTime);;
         menuLog.getItems().addAll(menuLogShow);
         menuLog.getItems().addAll(menuLogPrint);
 
-        Menu menuHelp = new Menu ("Help");
-        menuHelpAbout = new MenuItem("About");
+        Menu menuHelp = new Menu (rs.getString("Help"));
+        menuHelpAbout = new MenuItem(rs.getString("About"));
         menuHelpAbout.setOnAction(event);
         menuHelp.getItems().addAll(menuHelpAbout);
 
@@ -231,12 +248,12 @@ public class MainWindow extends Application {
                 }
                 else if (event.getTarget() == menuOptionsBot){
                     if (player == null){
-                        stringBuffer.append("Noch kein Spieler erstellt");
+                        stringBuffer.append(rs.getString("NoPlayerCreate"));
                         consoleText.setText(stringBuffer.toString());
                     }
                     else{
                         accountManager.botPlayer(player);
-                        stringBuffer.append("started Bot\n");
+                        stringBuffer.append(rs.getString("BotStart") + "\n");
                         consoleText.setText(stringBuffer.toString());
                     }
                 }
@@ -254,7 +271,7 @@ public class MainWindow extends Application {
                     try{
                         accountManager.setLocale("de");
                     } catch (LanguageNotFoundException e){
-                        logger.log(Level.SEVERE, "Wrong Language", e);
+                        logger.log(Level.SEVERE, "Language not supported", e);
                     }
                     stringBuffer.append("Sprache jetzt Deutsch\n");
                     consoleText.setText(stringBuffer.toString());
@@ -263,7 +280,7 @@ public class MainWindow extends Application {
                     try{
                         accountManager.setLocale("en");
                     } catch (LanguageNotFoundException e){
-                        logger.log(Level.SEVERE, "Wrong Language", e);
+                        logger.log(Level.SEVERE, "Language not supported", e);
                     }
                     stringBuffer.append("Sprache jetzt Englisch\n");
                     consoleText.setText(stringBuffer.toString());

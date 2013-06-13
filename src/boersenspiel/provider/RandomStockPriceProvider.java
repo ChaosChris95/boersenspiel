@@ -26,6 +26,11 @@ public class RandomStockPriceProvider extends StockPriceProvider {
         super();
     }
 
+    /**
+     * updates the rate of all existing Shares randomly
+     * @throws NegativeValueException if price of a share will become a negative number
+     */
+
     public void updateShareRates() throws NegativeValueException {
 
         double erg=0;
@@ -38,6 +43,10 @@ public class RandomStockPriceProvider extends StockPriceProvider {
         }
     }
 
+    /**
+     * updates the rate of a single existing Share randomly
+     */
+
     public void updateShareRate(Share share){
 
         double erg=0;
@@ -45,6 +54,10 @@ public class RandomStockPriceProvider extends StockPriceProvider {
         erg = (long)Math.round(Math.random() * (max - min + 1)+ min);
         shareManagement.getShare(share.getName()).increasePrice((long)erg);
     }
+
+    /**
+     * updates the shares every seconds on display
+     */
 
     public void startUpdate(){
          timer.addTask(new TimerTask() {

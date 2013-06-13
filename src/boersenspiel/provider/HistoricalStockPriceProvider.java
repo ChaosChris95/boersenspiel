@@ -30,10 +30,24 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
 
     private final String PATH = "./Aktien/";
 
+    /**
+     * Constructor to create HistoricalStockPriceProvider which need ShareManagement to create
+     * and update Shares
+     * This Provider inherits from StockPriceProvider
+     * @see StockPriceProvider
+     */
+
     public HistoricalStockPriceProvider() throws IOException {
         shareManagement = ShareManagement.getInstance();
         readShareRates();
     }
+
+    /**
+     * Method will read out the information from the existing Stock CSV files
+     * @param share Share which will be read
+     * @return the prices from the given Share
+     * @exception IOException if method causes a input/output error
+     */
 
     public ArrayList<Long> readShareRate(Share share) throws IOException {
         BufferedReader reader = null;
@@ -62,6 +76,11 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
         return prices;
     }
 
+    /**
+     * Will read out the information from all Shares which exists in the system
+     * @exception IOException if method causes a input/output error
+     */
+
     public void readShareRates() throws IOException{
         pricesOfShares = new ArrayList<ArrayList<Long>>();
         //allShareFiles = new HashMap<String, ArrayList<Long>>();
@@ -71,9 +90,18 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
         }
     }
 
+    /**
+     * updates the rate of a given Share
+     * @param share which will be updated
+     */
+
     public void updateShareRate(Share share){
         share.setPrice(prices.get(counter));
     }
+
+    /**
+     * updates the rate of all Share which exsists
+     */
 
     public void updateShareRates(){
         int size = pricesOfShares.size();
@@ -82,6 +110,10 @@ public class HistoricalStockPriceProvider extends StockPriceProvider{
             shareManagement.getShareByNumber(i).setPrice(price.get(counter));
         }
     }
+
+    /**
+     * updates the shares every 4 seconds on display
+     */
 
     public void startUpdate(){
         logger.info("starting Timer");
