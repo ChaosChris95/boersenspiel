@@ -5,7 +5,7 @@ package boersenspiel.account;
  * Date: 09.04.13
  * Time: 17:34
  */
-
+werwerwerwer
 public abstract class Asset {
 	
 	protected String name;
