@@ -8,7 +8,7 @@ import boersenspiel.exceptions.NotEnoughSharesException;
 import boersenspiel.stock.Share;
 import boersenspiel.stock.ShareDeposit;
 
-
+qweqweqwe
 import java.io.*;
 import java.util.*;
 import java.util.logging.Logger;
