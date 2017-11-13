@@ -5,8 +5,8 @@ import java.util.Timer;
 import java.util.Calendar;
 import java.util.Date;
 import java.text.DateFormat;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+
+shdhashda
 
 public class ViewerDemo extends JFrame {
     private static final int TICK_PERIOD = 1000;
