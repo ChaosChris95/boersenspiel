@@ -4,20 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
-import boersenspiel.exceptions.NegativeValueException;
-import boersenspiel.manager.AccountManagerImpl;
-
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/**
- * User: Jan
+import
  * Date: 30.05.13
  * Time: 18:25
  */

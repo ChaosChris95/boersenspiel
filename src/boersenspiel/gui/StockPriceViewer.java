@@ -13,6 +13,20 @@ import boersenspiel.provider.StockPriceProvider;
 import java.util.*;
 import java.text.DateFormat;
 import java.util.logging.Logger;
+
+fdsf
+f
+ds
+
+
+fsd
+fssd
+final sdf
+ds
+final dsf
+ds
+fs
+f
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
