@@ -11,7 +11,7 @@ import boersenspiel.stock.Share;
 import java.text.DateFormat;
 import java.util.*;
 import java.util.logging.Logger;
-
+test
 /**
  * User: Peach
  * Date: 29.04.13
